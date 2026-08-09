@@ -1,0 +1,52 @@
+# ---- CONFIDENTIAL — never publish ----
+# Assessment papers and answer keys are trainer-only and go to Google Drive only.
+assessment/
+**/assessment/
+*WA (SAQ)*
+*PP Assessment*
+*Answer to *
+
+# Secrets
+.env
+**/.env
+*.key
+*_api_key
+lms_tms_api_key
+
+# Superseded courseware versions
+courseware/archive/
+
+# Source material not for redistribution
+reference/
+
+# OS / editor junk
+.DS_Store
+**/.DS_Store
+~$*
+*.tmp
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ---- Internal toolchain — NOT published ----
+# These carry the assessment answer keys, shared class credentials and internal
+# push scripts. Only the single-source COURSE BUILD (.claude/skills/courseware-build)
+# is published, so the courseware in this repo is reproducible from source.
+.claude/agents/
+.claude/commands/
+.claude/hooks/
+.claude/scripts/
+.claude/settings.json
+.claude/settings.local.json
+.claude/skills/wsq-assessment/
+.claude/skills/gdrive-push/
+.claude/skills/lms-push/
+.claude/skills/tertiary-course-slides/
+.claude/skills/tertiary-learner-guide/
+.claude/skills/tertiary-lesson-plan/
+.claude/skills/tertiary-ppt-design/
+.claude/skills/wsq-learner-guide/
+.claude/skills/wsq-lesson-plan/
+.claude/skills/wsq-slides/
