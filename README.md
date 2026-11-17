@@ -1,6 +1,20 @@
+<div align="center">
+
 # Business Innovation with Agentic AI and AI Agents
 
-Find where AI agents pay off in your business, plan how to get started, then sustain and operate it: a hands-on WSQ course built on the Business Model Canvas, the AGENT action plan and the SCALE framework, practised with the always-on AI agent Meta Muse.
+**Find where AI agents pay off in your business, plan how to get started, then sustain and operate it.**
+A hands-on WSQ course built on the Business Model Canvas, the AGENT action plan and the SCALE framework, practised with the always-on AI agent Meta Muse.
+
+[![Register](https://img.shields.io/badge/Register-this%20course-D97757?style=for-the-badge)](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html)
+![WSQ](https://img.shields.io/badge/WSQ-up%20to%2070%25%20funding-3A7D7B)
+![Duration](https://img.shields.io/badge/Duration-2%20days%20%C2%B7%2016%20h-21201C)
+![TSC](https://img.shields.io/badge/TSC-ICT--SNA--5003--1.1-21201C)
+![Activities](https://img.shields.io/badge/Activities-3-D97757)
+![Assessment](https://img.shields.io/badge/Assessment-WA--SAQ%20%2B%20PP-3A7D7B)
+
+**[📝 Register for this course →](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html)**
+
+</div>
 
 | Course detail | Information |
 |---|---|
@@ -8,7 +22,7 @@ Find where AI agents pay off in your business, plan how to get started, then sus
 | Programme | WSQ (Skills Framework TSC Business Innovation, ICT-SNA-5003-1.1) |
 | Duration | 2 days, 16 hours (14 h training + 2 h assessment) |
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html) |
-| Funding | Up to 70% WSQ course fee funding; SkillsFuture Credit claimable. Eligibility and terms apply; see the course page. |
+| Funding | Up to 70% WSQ course fee funding; SkillsFuture Credit claimable. Eligibility and terms apply; see the [course page](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html). |
 | Activity Studio (group boards) | [alfredang.github.io/bcm](https://alfredang.github.io/bcm/): no login; one shared board per group for Activities 1-3 |
 | Meta Muse prompt templates | [alfredang.github.io/bcm/prompts.html](https://alfredang.github.io/bcm/prompts.html) |
 | Courseware version | v43 · 18 November 2026 |
@@ -56,10 +70,56 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 | [activities/](activities/) | One folder per activity with its Instructions PDF |
 | [.claude/skills/courseware-build/](.claude/skills/courseware-build/) | Single-source build: `bash .claude/skills/courseware-build/build/build_courseware.sh` |
 
+## Repository structure
+
+```
+courseware/      slide deck (.pptx + .pdf), Lesson Plan, Learner Guide, CHANGELOG, slide assets
+activities/      one folder per activity, each with its Instructions PDF
+prompts/         offline copy of the Meta Muse prompt templates page
+LG-*.md          Markdown mirror of the Learner Guide
+.claude/skills/courseware-build/   single-source build scripts
+```
+
+The confidential `assessment/` folder (question papers and answer keys), the Facilitator Guide and the Assessment Plan are **not** in this repository.
+
+## Course details
+
+| Item | Details |
+|---|---|
+| Title | Business Innovation with Agentic AI and AI Agents |
+| Course code | TGS-2023037472 |
+| Skills Framework TSC | Business Innovation (ICT-SNA-5003-1.1), K1-K6 and A1-A6 |
+| Duration | 2 days, 9:30 am-6:30 pm; 16 hours (14 h training + 2 h assessment) |
+| Assessment | Written Assessment (short-answer questions) and Practical Performance, open book |
+| Mode | Classroom, group activities on shared online boards |
+| Certification | WSQ Statement of Attainment (SkillsFuture Singapore) on passing the assessment with at least 75% attendance |
+| Provider | Tertiary Infotech Academy Pte Ltd (UEN 201200696W) |
+
+**Funding:** up to 70% WSQ course fee funding, and SkillsFuture Credit is claimable. Eligibility and terms apply; check the [course page](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html).
+
+## Building the courseware
+
+```bash
+bash .claude/skills/courseware-build/build/build_courseware.sh
+```
+
+One source (`course_data.py` + `data_bi.py`) builds the deck, Lesson Plan, Learner Guide, activity PDFs, the prompt templates page and the Activity Studio board templates.
+
 ## Distribution boundary
 
 This repository holds the learner-facing courseware only. Assessment papers, answer keys, the Facilitator Guide and the Assessment Plan are trainer-only and are not published here.
 
-## Provider
+## Contact
 
-Developed and delivered by **Tertiary Infotech Academy Pte Ltd** (UEN 201200696W) · [www.tertiarycourses.com.sg](https://www.tertiarycourses.com.sg/)
+- **Website / Register:** https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html
+- **Email:** enquiry@tertiaryinfotech.com
+- **Tel:** +65 6100 0613
+- **LMS / TMS:** https://lms-tms.tertiaryinfotech.com
+
+<div align="center">
+
+**[📝 Register for Business Innovation with Agentic AI and AI Agents →](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html)**
+
+© 2026 Tertiary Infotech Academy Pte Ltd · UEN 201200696W
+
+</div>

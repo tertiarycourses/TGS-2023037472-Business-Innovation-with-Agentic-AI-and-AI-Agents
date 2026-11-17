@@ -65,3 +65,10 @@ courseware/qa/
 .claude/skills/courseware-build/build/archive-v40/
 /.playwright-mcp/
 **/~$*
+
+# Distribution archives (rebuildable, never pushed to GitHub)
+*.zip
+# Source material the project was derived from
+**/reference/
+# Drive push record: holds trainer-only FG/AP links
+**/pushed_links.json
