@@ -64,7 +64,7 @@ cards(D, "What you'll achieve", "Learning Outcomes", [
     (f"LO2 · {C.LO_SHORT[1]}", C.LEARNING_OUTCOMES[1].split(": ", 1)[1], "map"),
     (f"LO3 · {C.LO_SHORT[2]}", C.LEARNING_OUTCOMES[2].split(": ", 1)[1], "org")],
     cols=3, sub=f"Mapped to the TSC {C.TSC_TITLE} ({C.TSC_CODE}).", desc_pt=16)
-s = D.new(); header(D, s, "Roadmap", "BMC → AGENT → SCALE: One Business, Three Moves", "Identify and evaluate the opportunity, plan how to start, then sustain and operate. Each ends with a group board for the PP.")
+s = D.new(); header(D, s, "Roadmap", "BMC → 90-Day Plan → SCALE: One Business, Three Moves", "Identify and evaluate the opportunity, plan how to start, then sustain and operate. Each ends with a group board for the PP.")
 for i, tp in enumerate(C.TOPICS):
     x = 0.6 + i * 4.1; dark = i == 1
     card(s, x, 2.4, 3.9, 4.3, fill=CHAR if dark else WHITE)
@@ -146,7 +146,7 @@ T.topic3(D, C, mark)
 mark("wrap")
 s = D.new(dark=True); header(D, s, "Wrap-up", "Three Outcomes. One Business Ready to Move.")
 for i, (tp, ic, line) in enumerate(zip(C.TOPICS, ["search", "map", "org"],
-        ["BMC: you identified and evaluated where AI agents pay off.", "AGENT: you planned how to get started in 90 days.", "SCALE: you know how to sustain, review and grow it."])):
+        ["BMC: you identified and evaluated where AI agents pay off.", "90-day plan: you planned how to get started in five steps.", "SCALE: you know how to sustain, review and grow it."])):
     x = 0.6 + i * 4.1; card(s, x, 2.0, 3.9, 4.4, fill=PANEL, shadow=False)
     icon(s, ic, x + 1.45, 2.3, 1.0)
     text(s, x + 0.2, 3.5, 3.5, 0.5, f"LO{i+1}", 16, ACC, bold=True, align="c", autofit=False)
@@ -157,7 +157,7 @@ mark("assess")
 s = D.new(); header(D, s, "Assessment", "Final Assessment")
 for i, (ic, t, d, dark) in enumerate([
         ("pen", "Written Assessment (WA)", "Short-Answer Questions · 1 hour · open book · five questions on Topics 1-3.", False),
-        ("tool", "Practical Performance (PP)", "Scenario-based · 1 hour · open book.\nTask 1: Activity 1 BMC screenshot.\nTask 2: Activity 2 AGENT board screenshot.\nTask 3: Activity 3 SCALE board screenshot.\nEach with a short written analysis.", True)]):
+        ("tool", "Practical Performance (PP)", "Scenario-based · 1 hour · open book.\nTask 1: Activity 1 BMC screenshot.\nTask 2: Activity 2 action plan screenshot.\nTask 3: Activity 3 SCALE board screenshot.\nEach with a short written analysis.", True)]):
     x = 0.6 + i * 6.15; card(s, x, 1.95, 5.95, 3.9, fill=CHAR if dark else WHITE)
     icon(s, ic, x + 0.3, 2.25, 0.6)
     text(s, x + 1.05, 2.3, 4.7, 0.5, t, 20, WHITE if dark else INK, bold=True, font=SERIF)

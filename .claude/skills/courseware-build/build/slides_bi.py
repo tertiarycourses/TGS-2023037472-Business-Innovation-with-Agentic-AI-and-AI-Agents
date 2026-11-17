@@ -290,7 +290,7 @@ def concept(D, term, topic):
     return s
 
 def framework(D, kicker, name, title, rows, sub, dark=False, tipt=None):
-    """AGENT / SCALE framework: five big letters, each with its move and what you decide."""
+    """Five-step plan (numbers) / SCALE (letters): five big marks, each with its move and what you decide."""
     s = D.new(dark=dark); header(D, s, kicker, title, sub)
     w = 12.1 / 5
     for i, (letter, word, line, ic) in enumerate(rows):
@@ -448,7 +448,7 @@ def topic1(D, C, mark):
         text(s, x, 3.75, 2.85, 0.6, lab, 18, WHITE if i == 3 else INK, font=SERIF, align="c")
         text(s, x, 4.3, 2.85, 0.4, "pass / fail gate" if i == 3 else "score 1-5", 12, SOFT if i == 3 else MUTED, align="c", autofit=False)
         if i < 3: text(s, x + 2.82, 3.25, 0.3, 0.6, "×" if i < 2 else "→", 30, ACC, bold=True, align="c", autofit=False)
-    rich(s, 0.6, 5.2, 12.1, 1.2, [[("Meridian:  ", dict(color=ACC, bold=True, size=20, font=SERIF)),
+    rich(s, 0.6, 5.2, 12.1, 1.2, [[("Example:  ", dict(color=ACC, bold=True, size=20, font=SERIF)),
                                    ("triage agent 5 × 4 × 4 = 80  ·  report agent 75  ·  fault predictor 24 → park it", dict(color=INK, size=20, font=SERIF))]])
     tip(D, s, "Set a veto: any score of 1 on data or risk stops the idea, whatever the total.", y=6.3)
     # --- activity 1
@@ -458,8 +458,8 @@ def topic1(D, C, mark):
     step_slide(D, L1, 3)
     board_steps(D, L1)
     muse_board(D, "Topic 1 · Activity 1 · Step 6 · Meta Muse", c1)
-    board(D, "Topic 1 · Activity 1 · Worked example", c1, f"The Canvas, Filled In for {B.EXAMPLE_CO}",
-          "The classic nine blocks, asked about AI agents. Screenshot your group board for PP Task 1.")
+    board(D, "Topic 1 · Activity 1 · Your board", c1, "Your Canvas: The Question Each Block Answers",
+          "Answer every block for your own organisation. Screenshot your group board for PP Task 1.", example=False)
     big_statement(D, "Next · Topic 2 · Action Plan to Get Started", "You found the opportunity.\nNow plan how to get started.",
                   "Give the agents what they lack, your data, your language and safe access, then write the 90-day plan.")
     mark("t1end")
@@ -468,57 +468,57 @@ def topic1(D, C, mark):
 def topic2(D, C, mark):
     tp = C.TOPICS[1]; K2 = "Topic 2 · Action plan"
     mark("t2"); topic_open(D, C, tp)
-    framework(D, "Topic 2 · The AGENT action plan", "AGENT", "AGENT: Five Moves to Get Started with AI Agents", B.AGENT,
-              "Every slide in this topic serves one move. Activity 2 is the AGENT plan for your business.",
-              tipt="Aim and Ground first: no agent before a goal and a real process.")
+    framework(D, "Topic 2 · The 90-day action plan", "PLAN", "Five Steps to Get Started with AI Agents", B.PLAN,
+              "Every slide in this topic serves one step. Activity 2 is the 90-day plan for your business.",
+              tipt="Steps 1 and 2 first: no agent before a goal and a real process.")
     big_statement(D, K2, "Your best data is asleep.", "The real story of your company sits in calls, chats and tickets nobody reads. AI can now read all of it.")
     concept(D, "Dormant data", 2)
-    full_image(D, "Topic 2 · G · Ground", "Awaken the Data You Already Own", asset("ainative", "dormant-data.png"),
-               "Text, audio, images, spreadsheets, logs: one model reads them all.")
+    full_image(D, "Topic 2 · Step 2 · Mine the process", "Awaken the Data You Already Own", asset("ainative", "dormant-data.png"),
+               "Digitise what you already have: text, audio, images, spreadsheets and logs, read by one model.")
     mark("t2layer")
     concept(D, "Enterprise AI decision layer", 2)
-    full_image(D, "Topic 2 · E · Embed", "Four Parts Turn Data into Decisions", asset("ainative", "decision-layer.png"),
+    full_image(D, "Topic 2 · Step 3 · Plug in the agents", "Four Parts Turn Data into Decisions", asset("ainative", "decision-layer.png"),
                "Brain, map, navigation, operating system: wired across the whole company.")
     mark("t2map")
     concept(D, "Company map (ontology)", 2)
-    hubbig(D, "Topic 2 · E · Embed", "The Map Teaches AI How Your Business Works", "Company map", [
+    hubbig(D, "Topic 2 · Step 3 · Plug in the agents", "The Map Teaches AI How Your Business Works", "Company map", [
         ("user", "People", "Who decides what"), ("users", "Customers", "What 'active' means here"), ("box", "Products", "SKU = product code?"),
         ("cart", "Orders", "Life cycle and states"), ("file", "Contracts", "Linked to obligations"), ("check", "Approvals", "Three more after signing")],
         foot="Ontology 2.0: drawn in plain language by the people who run the business, and revised any day.")
-    icons(D, "Topic 2 · E · Embed", "Four Subsystems Let Agents Act Safely", [
+    icons(D, "Topic 2 · Step 3 · Plug in the agents", "Four Subsystems Let Agents Act Safely", [
         ("calendar", "Scheduling", "Plans the steps. Knows how to wait."), ("flask", "Execution", "Tests first: execute, check, correct"),
         ("plug", "Access", "One keycard to CRM, ERP, email (MCP)"), ("eye", "Control", "Your permissions. Every action logged.")], cols=4,
         tipt="An agent never has more rights than the person who asks it.")
     # --- Step 1 / Step 2
     mark("t2steps")
-    icons(D, "Topic 2 · G · Ground", "G · Ground: Mine the Business Process", arrows=True, items=[
+    icons(D, "Topic 2 · Step 2 · Mine the process", "Step 2: Mine the Business Process", arrows=True, items=[
         ("target", "Pick one", "A process that hurts weekly"), ("inbox", "Pull the trail", "Emails, tickets, logs, chats"),
         ("list", "Rebuild it", "Trigger, steps, hand-offs"), ("clock", "Measure", "Waits, rework, touch time"),
         ("hand", "Mark decisions", "Who judges, on what evidence")],
-        sub="See what really happens, not what the SOP says.", tipt="Meridian: 6 steps, 3 hand-offs, 38% of time spent re-keying.")
-    ladder(D, "Topic 2 · E · Embed", "E · Embed: Where Agents Plug In", [
+        sub="See what really happens, not what the SOP says.", tipt="Example: 6 steps, 3 hand-offs, 38% of the time spent re-keying.")
+    ladder(D, "Topic 2 · Step 3 · Plug in the agents", "Step 3: Where Agents Plug In", [
         ("Inform", "Summarise, alert"), ("Recommend", "Rank, suggest"), ("Prepare", "Draft the ticket"),
         ("Execute with approval", "Acts after your yes"), ("Execute with monitoring", "Acts; you audit")],
         sub="Climb the Agent Stairway one rung at a time. Each rung needs a named human.")
-    vs(D, "Topic 2 · E · Embed", "Meridian Triage: Before and After",
+    vs(D, "Topic 2 · Step 3 · Plug in the agents", "Example: A Service Desk Before and After",
        ("Before", "user", ["Coordinator reads 80 emails a day", "Re-keys every ticket by hand", "18 min a request · 14% rework"]),
        ("After", "robot", ["Agent drafts every ticket in 1 min", "Coordinator approves and calls clients", "Target 11 min · rework below 12%"]))
     mark("t2arch")
-    ladder(D, "Topic 2 · E · Embed", "Choose the Simplest Pattern That Works", [
+    ladder(D, "Topic 2 · Step 3 · Plug in the agents", "Choose the Simplest Pattern That Works", [
         ("Automation", "Fixed rules"), ("Assistant", "Grounded answers"), ("Agentic workflow", "Fixed steps, AI inside"),
         ("Single agent", "Chooses its own steps"), ("Multi-agent", "A team with a hub")])
-    icons(D, "Topic 2 · E · Embed", "Build, Buy or Both? Decide on Five Numbers", [
+    icons(D, "Topic 2 · Step 3 · Plug in the agents", "Build, Buy or Both? Decide on Five Numbers", [
         ("star", "Our edge", "Is it what makes us different?"), ("rocket", "Time to value", "Weeks or months?"), ("plug", "Integration", "Fits our systems?"),
         ("coins", "3-year TCO", "Licences + build + run + change"), ("route", "Exit", "Can we leave cleanly?")], cols=5,
         tipt="Most firms land on hybrid: buy the platform, own the company map and the rules.")
-    s = D.new(dark=True); header(D, s, "Topic 2 · A · Aim", "A · Aim: Write the Contract Before You Write the Prompt")
+    s = D.new(dark=True); header(D, s, "Topic 2 · Step 1 · Set the goal", "Step 1: Write the Contract Before You Write the Prompt")
     for i, (w, ex) in enumerate([("Population", "10,000 eligible of 28,800"), ("Baseline", "18 min"), ("Target", "≤ 11 min by day 90"),
                                  ("Owner", "Head of Service Desk"), ("Counter-metric", "Complaints ≤ 2%")]):
         x = 0.6 + i * 2.46; card(s, x, 2.3, 2.3, 3.4, fill=PANEL, shadow=False)
         text(s, x, 2.55, 2.3, 0.6, str(i + 1), 34, ACC, bold=True, font=SERIF, align="c", autofit=False)
         text(s, x + 0.1, 3.3, 2.1, 0.9, w, 21, WHITE, bold=True, font=SERIF, align="c", minpt=13)
         text(s, x + 0.1, 4.35, 2.1, 1.2, ex, 15, SOFT, align="c", minpt=10)
-    tip(D, s, "No baseline, no owner, no counter-metric: no build.", y=6.1)
+    tip(D, s, "Example values for a service-desk agent. No baseline, no owner, no counter-metric: no build.", y=6.1)
     # --- activities 3 and 2, labs 7-10
     mark("act2a")
     c2 = B.CANVAS["actionplan"]
@@ -530,8 +530,8 @@ def topic2(D, C, mark):
     step_slide(D, L2, 2)
     board_steps(D, L2)
     muse_board(D, "Topic 2 · Activity 2 · Step 5 · Meta Muse", c2)
-    board(D, "Topic 2 · Activity 2 · Worked example", c2, "Meridian's AGENT Action Plan",
-          "Aim, Ground, Embed, Name the owner, Test in 90 days. Screenshot your group board for PP Task 2.")
+    board(D, "Topic 2 · Activity 2 · Your board", c2, "Your 90-Day Plan: The Question Each Block Answers",
+          "Steps 1 to 5, for your own organisation. Screenshot your group board for PP Task 2.", example=False)
     big_statement(D, "Next · Topic 3 · Sustain and Operate", "The plan is live.\nNow keep it running.",
                   "Run the business on DRIs and agent teams, keep people judging, review the numbers and keep new ideas coming.")
     mark("t2end")
@@ -552,10 +552,10 @@ def topic3(D, C, mark):
         ("layers", "Flatten slowly", "Relay layers fade out")],
         sub="Bayer went from 12-13 layers to 6-7 over a planned three-year journey.", tipt="Run old and new side by side (Kotter's dual operating system).")
     mark("t3work")
-    quadrant(D, "Topic 3 · A · Augment people", "Same Tools. Four Very Different Futures.", [
-        ("Amplified commander (DRI)", "One person, a fleet of agents, 10x output"), ("Human-to-human work", "Trust, warmth, negotiation, care"),
-        ("Rubber-stamp manager", "Signs off without judging: hollowed out"), ("Rule-bound work", "AI already does it cheaper")],
-        "thrive  ↑   ·   at risk  ↓", "")
+    vs(D, "Topic 3 · A · Augment people", "Agents Take the Routine. Move Your People Up.",
+       ("Work that shrinks", "stop", ["Rule-bound tasks agents do cheaper", "Relaying messages up and down layers", "Signing off without really checking"]),
+       ("Work that grows", "trend", ["Directing a team of agents as the DRI", "Judging the exceptions agents flag", "Human work: trust, negotiation, care"]),
+       sub="Plan where each role goes before the agents arrive.")
     icons(D, "Topic 3 · A · Augment people", "Managers Move from Relay to Judgement", [
         ("gavel", "Judge at scale", "Owns outcomes for agents + people"), ("users", "Coach", "Teaches teams to work with agents"),
         ("network", "Translate", "Moves tacit know-how into the system"), ("stop", "Relay", "Only passes messages: most exposed")], cols=4)
@@ -573,7 +573,7 @@ def topic3(D, C, mark):
     bignums(D, "Topic 3 · E · Evaluate", "Day 90: The Numbers Decide", [
         ("10.7", "minutes per request", "from 18 · target ≤ 11"), ("95.1%", "quality", "target ≥ 94%"),
         ("1.7%", "complaints", "limit 2%"), ("77.5%", "staff adoption", "target ≥ 70%")],
-        tipt="Benefit SGD 39,200 vs year-1 cost SGD 39,000: scale, redesign, hold or stop?")
+        tipt="Example pilot: benefit SGD 39,200 vs year-1 cost SGD 39,000. Scale, redesign, hold or stop?")
     icons(D, "Topic 3 · E · Evaluate", "Singapore's Rulebook for Agents", [
         ("alert", "Bound the risk", "Assess and limit upfront"), ("user", "Humans accountable", "Meaningful oversight"),
         ("tool", "Technical controls", "Test, monitor, change-manage"), ("users", "Users responsible", "Train the people using agents")], cols=4,
@@ -597,8 +597,8 @@ def topic3(D, C, mark):
     for i in range(2): step_slide(D, L3, i)
     board_steps(D, L3)
     muse_board(D, "Topic 3 · Activity 3 · Step 4 · Meta Muse", c4)
-    board(D, "Topic 3 · Activity 3 · Worked example", c4, "Meridian's SCALE Board",
-          "Story, Commanders, Augment people, Loop information, Evaluate. Screenshot your group board for PP Task 3.")
+    board(D, "Topic 3 · Activity 3 · Your board", c4, "Your SCALE Board: The Question Each Block Answers",
+          "Story, Commanders, Augment people, Loop information, Evaluate, for your own organisation. Screenshot your group board for PP Task 3.", example=False)
     mark("lab13")
     step_slide(D, L3, 5)
     mark("t3end")

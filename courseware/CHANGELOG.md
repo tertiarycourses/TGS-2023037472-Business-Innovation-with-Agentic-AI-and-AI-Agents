@@ -1,5 +1,13 @@
 # Courseware Changelog
 
+## v44 - 18 November 2026
+
+- Learners work on their own organisation throughout: the named example company is removed. Board slides show the question each block answers; sample figures are labelled "Example".
+- Topic 2 is a plain five-step 90-day action plan (set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot); the AGENT acronym is retired and the Activity 2 board blocks are numbered 1-5.
+- The "four futures" slide is replaced by "Agents Take the Routine. Move Your People Up." (work that shrinks / work that grows).
+- Topic lists refreshed to what the slides teach; dormant data is tied to digitising the business.
+- WA-SAQ questions and PP tasks rewritten at the owner's request to match the slides and Activities 1-3 (same five questions with K1-K6, same three tasks with A1-A6).
+
 ## v43 - 18 November 2026
 
 - The course follows one spine: LO1 identify and evaluate (Business Model Canvas), LO2 get started (AGENT: Aim, Ground, Embed, Name the owner, Test in 90 days), LO3 sustain and operate (SCALE: Story, Commanders, Augment people, Loop information, Evaluate).

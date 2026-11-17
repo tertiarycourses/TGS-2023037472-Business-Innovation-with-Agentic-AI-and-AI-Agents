@@ -79,7 +79,7 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name
 <header><div class="k">WSQ {e(C.COURSE_CODE)} · Meta Muse prompts</div><h1>Copy. Paste into Meta Muse. Paste the answer into your board.</h1>
 <p>{e(C.TITLE)}. Open <a href="https://muse.ai/" target="_blank" rel="noopener" style="color:#F2B49B">muse.ai</a> (or the Muse app), copy a prompt, replace the [ ] parts, then paste Muse's reply into your group board in the <a href="{e(B.BCM_URL)}" style="color:#F2B49B">Activity Studio</a>.</p>
 <div class="orgbox"><label><span>Your organisation (two sentences: industry, size, customers, this year's objective). Fills every prompt that needs it; saved in this browser only.</span>
-<textarea id="org" rows="2" placeholder="e.g. Meridian Services Pte Ltd is a Singapore facilities-maintenance firm with 140 staff serving 30 commercial buildings. This year we want same-day response for every client."></textarea></label></div>
+<textarea id="org" rows="2" placeholder="e.g. We are a Singapore facilities-maintenance firm with 140 staff serving 30 commercial buildings. This year we want same-day response for every client."></textarea></label></div>
 <div class="how"><span>0 · Fill in the blanks</span><span>1 · Copy the prompt</span><span>2 · Paste into Meta Muse</span><span>3 · Check the answer</span><span>4 · Paste into your group board</span><span>5 · Screenshot for the PP</span></div></header>
 <nav>{"".join(f'<a href="#{i}">{e(t)}</a>' for i, t in nav)}</nav>
 <main>{"".join(sec)}</main>

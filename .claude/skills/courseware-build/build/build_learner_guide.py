@@ -30,7 +30,7 @@ h1("About This Course")
 p(f"{C.TITLE} ({C.COURSE_CODE}) is a two-day WSQ course for managers, business owners and innovation leads. {C.PITCH}")
 tbl(["Item", "Details"], [("Course", C.TITLE), ("Course code", C.COURSE_CODE), ("Skills Framework TSC", f"{C.TSC_TITLE} ({C.TSC_CODE})"),
                           ("Duration", C.CONTACT_TIME_NOTE), ("Provider", f"{C.ORG} ({C.UEN})"),
-                          ("Activity Studio", f"{B.BCM_URL} (no login)"), ("Worked example", f"{B.EXAMPLE_CO}. {B.EXAMPLE_BLURB}")], [1.8, 4.9])
+                          ("Activity Studio", f"{B.BCM_URL} (no login)"), ("Your case", "Your own organisation, in every activity and in the PP")], [1.8, 4.9])
 h2("Learning Outcomes")
 bl([f"{lo} (In short: {C.LO_SHORT[i]}.)" for i, lo in enumerate(C.LEARNING_OUTCOMES)])
 h2("Skills Framework: Abilities and Knowledge")
@@ -38,12 +38,12 @@ bl(C.TSC_ABILITIES + C.TSC_KNOWLEDGE)
 h2("How the Course Runs")
 tbl(["Topic", "Outcome", "Activity (Meta Muse + group board)", "Instructions"], [
     (f"1 · {C.TOPICS[0]['title']}", "LO1 · K1, K2, A1, A2", "Activity 1 · Business Model Canvas for AI Agents (PP Task 1)", "activities/activity-01"),
-    (f"2 · {C.TOPICS[1]['title']}", "LO2 · K3, K4, A3, A4", "Activity 2 · AI Agent Action Plan, AGENT (PP Task 2)", "activities/activity-02"),
+    (f"2 · {C.TOPICS[1]['title']}", "LO2 · K3, K4, A3, A4", "Activity 2 · AI Agent 90-Day Action Plan (PP Task 2)", "activities/activity-02"),
     (f"3 · {C.TOPICS[2]['title']}", "LO3 · K5, K6, A5, A6", "Activity 3 · Sustain and Operate, SCALE (PP Task 3)", "activities/activity-03")], [2.3, 1.3, 2.2, 0.9])
-p("Every activity is done in groups of 3-5 on one shared online board in the Activity Studio: one member (or the trainer) creates it and everyone joins with the Board ID or QR code; edits sync live. Your group types its answers into each block, can load a worked "
-  "example for Meridian Services, and can copy a ready-made Meta Muse prompt that drafts the whole board. At the end each member screenshots the group board or "
+p("Every activity is done in groups of 3-5 on one shared online board in the Activity Studio: one member (or the trainer) creates it and everyone joins with the Board ID or QR code; edits sync live. Your group types its answers into each block, can view a short "
+  "example from a fictional sample company, and can copy a ready-made Meta Muse prompt that drafts the whole board. At the end each member screenshots the group board or "
   "downloads it as PNG or PDF, pastes it into the Practical Performance assessment and answers the questions individually.")
-note("Use your own organisation if you can; otherwise use Meridian Services. Never put personal data (NRIC, phone numbers, "
+note("Work on your own organisation. Never put personal data (NRIC, phone numbers, "
      "customer names) or confidential figures on a board: boards are shared by link.")
 
 # ------------------------------------------------------------------ Topic 1
@@ -101,7 +101,7 @@ ol(["Private data: contracts, customer records and internal processes are blank 
 p("Like a brilliant graduate nobody onboards, the model stays stuck on day one. A business opportunity is viable only if you can close these gaps for it.")
 h2("1.7 Investigating and Evaluating Opportunities (A1, A2)")
 p("Analyse the business need before you pick technology. Gather evidence from five sources:")
-tbl(["Evidence", "Questions", "Example (Meridian)"], [
+tbl(["Evidence", "Questions", "Example (a service desk)"], [
     ("Stakeholders", "Who feels the pain? What does each want and fear?", "Clients chase job status; coordinators fear replacement."),
     ("Process", "Trigger, steps, hand-offs, waits, rework, decisions?", "6 steps, 3 hand-offs, 38% of time re-keying."),
     ("Data", "What data exists, is it clean, current and permitted?", "5 years of tickets; tenant phone numbers must be masked (PDPA)."),
@@ -115,9 +115,9 @@ X.append(("canvas", "opportunity"))
 # ------------------------------------------------------------------ Topic 2
 h1("Topic 2 — " + C.TOPICS[1]["title"])
 p(C.LEARNING_OUTCOMES[1] + " (K3, K4, A3, A4)")
-h2("The AGENT Action Plan: Five Moves to Get Started")
-p("Topic 2 and Activity 2 follow one framework. Each move is a block on your AGENT board.")
-tbl(["", "Move", "What you decide"], [(l, w, d) for l, w, d, _ in B.AGENT], [0.4, 1.5, 4.8])
+h2("The 90-Day Action Plan: Five Steps to Get Started")
+p("Topic 2 and Activity 2 follow one five-step plan. Each step is a numbered block on your action plan board.")
+tbl(["Step", "What you do", "What you decide"], [(l, w, d) for l, w, d, _ in B.PLAN], [0.5, 1.6, 4.6])
 h2("2.1 The Power of Dormant Data")
 p("A company keeps two sets of records. The official set (reports, reviews, strategy papers) is polished and filtered. The second set "
   "records what actually happened: meeting audio, chat logs, edit history, customer tickets, code logs, photos and system logs. It is "
@@ -157,7 +157,7 @@ p("Choose the simplest pattern that works: deterministic automation, a grounded 
   "a single agent that chooses its steps, or a multi-agent team with a coordinator. More autonomy needs more controls.")
 h2("2.6 Business Planning Methods for Agentic AI (K3)")
 bl(["Business Model Canvas: re-read each block for agent opportunities (Activity 1).",
-    "Outcome contract: population, baseline, target, owner and counter-metric agreed before building. Meridian: 10,000 eligible requests (of 28,800 a year), "
+    "Outcome contract: population, baseline, target, owner and counter-metric agreed before building. Example (a service desk): 10,000 eligible requests (of 28,800 a year), "
     "18-minute baseline, at most 11 minutes by day 90, owned by the Head of Service Desk, complaints held at or below 2%.",
     "Evidence-based option comparison: compare options on the same criteria and evidence, not on demos.",
     "Decision rights: who may decide, approve or override, written down before go-live."])
@@ -168,7 +168,7 @@ tbl(["Layer", "What it holds"], [("Data", "Sources, quality, permissions, dorman
 p("Draw trust boundaries where data or actions cross systems or organisations; apply least privilege at each boundary. Decide custom, "
   "buy or hybrid on differentiation, time to value, integration fit, assurance, three-year total cost of ownership (licences, build, run, "
   "change, incidents) and an exit option. Most firms buy the platform and own the company map and rules.")
-h2("Activity 2 — AI Agent Action Plan (AGENT) with Meta Muse (PP Task 2)")
+h2("Activity 2 — AI Agent 90-Day Action Plan with Meta Muse (PP Task 2)")
 X.append(("canvas", "actionplan"))
 
 # ------------------------------------------------------------------ Topic 3
@@ -279,7 +279,7 @@ def md():
                 if step_prompt(L, st): o += ["```text", step_prompt(L, st), "```", ""]
                 if st.get("check"): o += [f"Check: {st['check']}", ""]
             o += [cv["pitch"], "", f"Board: {B.BCM_URL}?activity={cv['key']} · {cv['minutes']} min · {cv['evidence']}", "",
-                  "Discuss: " + " ".join(cv["discuss"]), "", "| Block | Question | Worked example (Meridian) |", "|---|---|---|"]
+                  "Discuss: " + " ".join(cv["discuss"]), "", "| Block | Question | Example (fictional sample company) |", "|---|---|---|"]
             o += [f"| {a} | {q} | {e} |" for a, q, e in rows] + [""]
     return "\n".join(o)
 open(os.path.join(REPO, f"LG-{C.SHORT_TITLE}.md"), "w", encoding="utf-8").write(md())
@@ -337,7 +337,7 @@ for b in X:
                 cr = doc.add_paragraph().add_run("Check: " + st["check"]); cr.italic = True
         doc.add_paragraph("Discuss in your team:")
         for q in cv["discuss"]: doc.add_paragraph(q, style="List Bullet")
-        table(["Block", "Question", "Worked example (Meridian)"], rows, [1.5, 2.2, 3.0])
+        table(["Block", "Question", "Example (fictional sample company)"], rows, [1.5, 2.2, 3.0])
 prodoc.add_page_numbers(doc); prodoc.enable_update_fields(doc)
 OUT = os.path.join(REPO, "courseware", f"LG-{C.SHORT_TITLE}.docx")
 doc.save(OUT); print("Saved", OUT)

@@ -28,4 +28,11 @@ V43 = ("43", "18 November 2026",
        "reading only); four agent-centred key concepts kept (dormant data, decision layer, company map, DRI) plus how agents act safely; "
        "repeated or abstract slides removed (AI Native map, duplicate decision-layer, flywheel, Boss AI, work landscape and others).",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43]
+V44 = ("44", "18 November 2026",
+       "Learners work on their own organisation throughout: the named example company is removed from the slides, Learner Guide, "
+       "activities, prompts and assessment (board examples stay unnamed). Topic 2 framework is now a plain five-step 90-day action plan "
+       "(set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot) instead of the AGENT acronym. "
+       "The 'four futures' slide is replaced by a clearer before/after slide on where people's work moves. WA-SAQ questions and "
+       "PP tasks rewritten to match the slides and Activities 1-3 (same five questions and K1-K6 mapping; same three tasks and A1-A6).",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44]

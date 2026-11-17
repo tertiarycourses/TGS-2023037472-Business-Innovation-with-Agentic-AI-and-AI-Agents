@@ -11,7 +11,7 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v43"
+VERSION      = "v44"
 VERSION_DATE = "18 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
@@ -48,7 +48,7 @@ LEARNING_OUTCOMES = [
     "LO2: Develop action plans to implement business innovation with agentic AI and design digital architectures to apply technologies across the business.",
     "LO3: Manage business innovation and facilitate information flow among stakeholders to review success and develop innovative ideas.",
 ]
-FRAME = ["BMC", "AGENT", "SCALE"]   # the course spine: LO1 BMC -> LO2 AGENT -> LO3 SCALE
+FRAME = ["BMC", "90-Day Plan", "SCALE"]   # the course spine: LO1 BMC -> LO2 five-step 90-day plan -> LO3 SCALE
 LO_SHORT = ["Identify and Evaluate AI Agent Business Opportunities", "Action Plan to Get Started with AI Agents", "Sustain and Operate the Business with AI Agents"]
 
 # ------------------------------------------------------------------ topics
@@ -63,20 +63,20 @@ TOPICS = [
  dict(num=2, code="02", lo=1, codes="K3, K4, A3, A4", day="Day 1 PM - Day 2 AM",
       title="Designing Digital Architectures and AI Agent Implementation Plans",
       short="Action Plan to Get Started",
-      pitch="AGENT: aim, ground, embed, name the owner, test in 90 days. A plan you can start on Monday.",
-      items=["Dormant data and the enterprise AI decision layer", "The company map, live navigation and the AI flywheel",
-             "Step 1 mine the business process · Step 2 where agents integrate", "Patterns, custom/buy/hybrid and TCO",
-             "Activity 2 · AI Agent Action Plan (AGENT)"]),
+      pitch="Five steps: set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot. A plan you can start on Monday.",
+      items=["Dormant data and the enterprise AI decision layer", "The company map and how agents act safely",
+             "The five-step 90-day action plan: goal, process, where agents plug in, owner, pilot", "Patterns, custom/buy/hybrid and TCO",
+             "Activity 2 · AI Agent 90-Day Action Plan"]),
  dict(num=3, code="03", lo=2, codes="K5, K6, A5, A6", day="Day 2 PM",
       title="Managing AI-Driven Innovation, Governance and Stakeholder Collaboration",
       short="Sustain and Operate",
       pitch="SCALE: story, commanders, augment people, loop information, evaluate. Keep it running and growing.",
-      items=["Boss AI, the flattened org chart and the DRI", "A new workforce and tomorrow's managers", "Training for adoption and the atrophy trap",
+      items=["The SCALE framework, the flattened org chart and the DRI", "Where work moves: a new workforce and tomorrow's managers", "Training for adoption and the atrophy trap",
              "Reviewing success: metrics, ROI, governance, PDPA",
              "Activity 3 · Sustain and Operate (SCALE)"]),
 ]
-DAY_THEMES = {1: "Identify and evaluate AI agent opportunities (BMC), then start the AGENT action plan",
-              2: "Finish the AGENT action plan, then sustain and operate with SCALE; assessment"}
+DAY_THEMES = {1: "Identify and evaluate AI agent opportunities (BMC), then start the 90-day action plan",
+              2: "Finish the 90-day action plan, then sustain and operate with SCALE; assessment"}
 
 # ------------------------------------------------------------------ assessment (methods fixed by the approved CP: WA-SAQ + PP)
 ASSESSMENT = dict(
@@ -91,6 +91,6 @@ RECOMMENDED = [
     "WSQ - Fundamentals of AI Ethics and Responsible AI",
 ]
 
-# Synthetic ROI case (Meridian Services) shared by the deck, LG and PP Task 3.
+# Synthetic ROI case (unnamed sample company) shared by the deck, LG and PP Task 3.
 ROI_CASE = dict(eligible_cases=10000, baseline_mean_min=18, pilot_mean_min=11, labour_rate=42, realisation=0.60,
                 first_year_cost=39000, day90_benefit=39200)

@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 43 · 18 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 44 · 18 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -14,7 +14,7 @@ Business Innovation with Agentic AI and AI Agents (TGS-2023037472) is a two-day 
 | Duration | 16 hours in total (14 hours training + 2 hours assessment) over 2 days, 9:30 am-6:30 pm; 1-hour lunch not counted; the assessment runs on Day 2 from 4:30 pm. |
 | Provider | Tertiary Infotech Academy Pte Ltd (UEN: 201200696W) |
 | Activity Studio | https://alfredang.github.io/bcm/ (no login) |
-| Worked example | Meridian Services Pte Ltd. Fictional Singapore facilities-maintenance firm: 140 staff, 28,800 service requests a year, 18-minute average handling time, 14% rework, 1.4% complaints. |
+| Your case | Your own organisation, in every activity and in the PP |
 
 ## Learning Outcomes
 
@@ -42,12 +42,12 @@ Business Innovation with Agentic AI and AI Agents (TGS-2023037472) is a two-day 
 | Topic | Outcome | Activity (Meta Muse + group board) | Instructions |
 |---|---|---|---|
 | 1 · Identifying Business Innovation Opportunities with Agentic AI and AI Agents | LO1 · K1, K2, A1, A2 | Activity 1 · Business Model Canvas for AI Agents (PP Task 1) | activities/activity-01 |
-| 2 · Designing Digital Architectures and AI Agent Implementation Plans | LO2 · K3, K4, A3, A4 | Activity 2 · AI Agent Action Plan, AGENT (PP Task 2) | activities/activity-02 |
+| 2 · Designing Digital Architectures and AI Agent Implementation Plans | LO2 · K3, K4, A3, A4 | Activity 2 · AI Agent 90-Day Action Plan (PP Task 2) | activities/activity-02 |
 | 3 · Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | LO3 · K5, K6, A5, A6 | Activity 3 · Sustain and Operate, SCALE (PP Task 3) | activities/activity-03 |
 
-Every activity is done in groups of 3-5 on one shared online board in the Activity Studio: one member (or the trainer) creates it and everyone joins with the Board ID or QR code; edits sync live. Your group types its answers into each block, can load a worked example for Meridian Services, and can copy a ready-made Meta Muse prompt that drafts the whole board. At the end each member screenshots the group board or downloads it as PNG or PDF, pastes it into the Practical Performance assessment and answers the questions individually.
+Every activity is done in groups of 3-5 on one shared online board in the Activity Studio: one member (or the trainer) creates it and everyone joins with the Board ID or QR code; edits sync live. Your group types its answers into each block, can view a short example from a fictional sample company, and can copy a ready-made Meta Muse prompt that drafts the whole board. At the end each member screenshots the group board or downloads it as PNG or PDF, pastes it into the Practical Performance assessment and answers the questions individually.
 
-> Use your own organisation if you can; otherwise use Meridian Services. Never put personal data (NRIC, phone numbers, customer names) or confidential figures on a board: boards are shared by link.
+> Work on your own organisation. Never put personal data (NRIC, phone numbers, customer names) or confidential figures on a board: boards are shared by link.
 
 # Topic 1 — Identifying Business Innovation Opportunities with Agentic AI and AI Agents
 
@@ -125,7 +125,7 @@ Like a brilliant graduate nobody onboards, the model stays stuck on day one. A b
 
 Analyse the business need before you pick technology. Gather evidence from five sources:
 
-| Evidence | Questions | Example (Meridian) |
+| Evidence | Questions | Example (a service desk) |
 |---|---|---|
 | Stakeholders | Who feels the pain? What does each want and fear? | Clients chase job status; coordinators fear replacement. |
 | Process | Trigger, steps, hand-offs, waits, rework, decisions? | 6 steps, 3 hand-offs, 38% of time re-keying. |
@@ -181,7 +181,7 @@ Check: A ranked list of up to five emails, each with a reason; newsletters are e
 
 **Step 4 — Ask Muse for the agentic AI opportunities**
 
-- Describe your organisation (or Meridian Services Pte Ltd) and let Muse suggest and rank the opportunities.
+- Describe your own organisation and let Muse suggest and rank the opportunities.
 
 ```text
 My organisation: [your organisation in two sentences: industry, size, customers, this year's objective]. Suggest six opportunities where an AI agent or agentic workflow could help. For each: the process it improves, the dormant data it uses, the human who stays accountable, and which of these gaps it must overcome: private data, internal language, live context, ability to act, guardrails. Then rank them by value x feasibility x data readiness and argue against your top choice.
@@ -226,7 +226,7 @@ Reply ONLY in this format, so I can paste it into our board:
 **Step 7 — Refine it together**
 
 - Check every note: is it specific, owned and true? Delete guesses; type better answers into each block.
-- Click View example to compare with the Meridian Services worked example.
+- Click View example to see what a finished board looks like; then make every note about your own organisation.
 - Score your top three opportunities in Value & Objectives Fit.
 
 **Step 8 — Capture your evidence**
@@ -240,7 +240,7 @@ Board: https://alfredang.github.io/bcm/?activity=opportunity · 110 min · PP Ta
 
 Discuss: Which block of your business model would an AI agent change the most? Which opportunity moves a number your leadership already tracks? Which of the five capability gaps (private data, internal language, live context, action, guardrails) could stop it?
 
-| Block | Question | Worked example (Meridian) |
+| Block | Question | Example (fictional sample company) |
 |---|---|---|
 | Key Partners | Which partners hold the data, systems or AI platforms your agents need? | ServiceNow (ticketing vendor): Holds every service request since 2019; agent API access needs a contract addendum; Meta Muse / Google Workspace: Always-on agent reads Gmail and Calendar for 140 staff; Building owners: Share sensor feeds an agent can watch for faults. |
 | Key Activities | Which key activities could AI agents do, speed up or watch over? | Request triage (agent): Agent reads 80 emails and WhatsApps a day, drafts tickets; coordinators approve; Technician scheduling: Agent proposes routes; supervisor confirms; Monthly client reports: Agent drafts from tickets; account manager reviews. |
@@ -256,17 +256,17 @@ Discuss: Which block of your business model would an AI agent change the most? W
 
 LO2: Develop action plans to implement business innovation with agentic AI and design digital architectures to apply technologies across the business. (K3, K4, A3, A4)
 
-## The AGENT Action Plan: Five Moves to Get Started
+## The 90-Day Action Plan: Five Steps to Get Started
 
-Topic 2 and Activity 2 follow one framework. Each move is a block on your AGENT board.
+Topic 2 and Activity 2 follow one five-step plan. Each step is a numbered block on your action plan board.
 
-|  | Move | What you decide |
+| Step | What you do | What you decide |
 |---|---|---|
-| A | Aim | Objective, baseline, target and counter-metric; cost and value |
-| G | Ground | Mine the real business process from dormant data |
-| E | Embed | Where agents plug in, and the architecture they work in |
-| N | Name the owner | One DRI with decision and resource rights |
-| T | Test in 90 days | 30/60/90 pilot, risks and controls, success measures, stop rule |
+| 1 | Set the goal | Objective, baseline, target and counter-metric; cost and value |
+| 2 | Mine the process | Map the real business process from dormant data |
+| 3 | Plug in the agents | Where agents plug in, and the architecture they work in |
+| 4 | Name the owner | One DRI with decision and resource rights |
+| 5 | Run a 90-day pilot | 30/60/90 pilot, risks and controls, success measures, stop rule |
 
 ## 2.1 The Power of Dormant Data
 
@@ -325,7 +325,7 @@ Choose the simplest pattern that works: deterministic automation, a grounded ass
 ## 2.6 Business Planning Methods for Agentic AI (K3)
 
 - Business Model Canvas: re-read each block for agent opportunities (Activity 1).
-- Outcome contract: population, baseline, target, owner and counter-metric agreed before building. Meridian: 10,000 eligible requests (of 28,800 a year), 18-minute baseline, at most 11 minutes by day 90, owned by the Head of Service Desk, complaints held at or below 2%.
+- Outcome contract: population, baseline, target, owner and counter-metric agreed before building. Example (a service desk): 10,000 eligible requests (of 28,800 a year), 18-minute baseline, at most 11 minutes by day 90, owned by the Head of Service Desk, complaints held at or below 2%.
 - Evidence-based option comparison: compare options on the same criteria and evidence, not on demos.
 - Decision rights: who may decide, approve or override, written down before go-live.
 
@@ -341,11 +341,11 @@ Choose the simplest pattern that works: deterministic automation, a grounded ass
 
 Draw trust boundaries where data or actions cross systems or organisations; apply least privilege at each boundary. Decide custom, buy or hybrid on differentiation, time to value, integration fit, assurance, three-year total cost of ownership (licences, build, run, change, incidents) and an exit option. Most firms buy the platform and own the company map and rules.
 
-## Activity 2 — AI Agent Action Plan (AGENT) with Meta Muse (PP Task 2)
+## Activity 2 — AI Agent 90-Day Action Plan with Meta Muse (PP Task 2)
 
-Use the AGENT framework (Aim, Ground, Embed, Name the owner, Test in 90 days) to plan how to get started; Meta Muse supplies the inputs.
+Use the five-step 90-day action plan (set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot) to plan how to get started; Meta Muse supplies the inputs.
 
-**Step 1 — G · Ground: mine your business process from dormant data**
+**Step 1 — Mine your business process from dormant data**
 
 - Pick one recurring process you handle: approvals, quotes, scheduling or reporting.
 
@@ -355,7 +355,7 @@ Look at my emails and calendar from the last 30 days about [process, e.g. 'clien
 
 Check: Each step and friction cites a real email or meeting; you corrected anything Muse guessed.
 
-**Step 2 — E · Embed: draft your company map**
+**Step 2 — Draft your company map**
 
 - Let Muse write the terms, relationships and rules an agent needs; correct every definition that differs from how your company really works.
 
@@ -365,43 +365,43 @@ For the process [process name], draft a company map for an AI agent: (1) the 6 k
 
 Check: Muse asked at least one clarifying question; your corrections are in the final map.
 
-**Step 3 — A · N · T: draft the 90-day action plan**
+**Step 3 — Draft the 90-day action plan**
 
 - Paste your top opportunity from Activity 1 and your company map from Step 2.
 
 ```text
-Using this opportunity [paste your top opportunity from Activity 1] and this company map [paste your company map from Step 2], draft a 90-day action plan in the AGENT order: A - Aim: objective with baseline, target and one counter-metric, plus year-1 cost and value; G - Ground: the as-is process steps and the three biggest frictions; E - Embed: where agents plug in (inform, recommend, prepare, execute with approval, execute with monitoring) and the architecture (data, model, company map, connectors, guardrails; custom, buy or hybrid); N - Name the owner: one DRI with decision rights, team and budget; T - Test in 90 days: 30/60/90 milestones, risks and controls, KPIs and a kill criterion.
+Using this opportunity [paste your top opportunity from Activity 1] and this company map [paste your company map from Step 2], draft a 90-day action plan in five steps: 1 - Set the goal: objective with baseline, target and one counter-metric, plus year-1 cost and value; 2 - Mine the process: the as-is process steps and the three biggest frictions; 3 - Plug in the agents: where agents plug in (the decision level at each step) and the architecture (data, model, company map, connectors, guardrails; custom, buy or hybrid); 4 - Name the owner: one DRI with decision rights, team and budget; 5 - Run a 90-day pilot: 30/60/90 milestones, risks and controls, KPIs and a kill criterion.
 ```
 
-Check: The plan follows A-G-E-N-T; every milestone has an owner and a measurable result; there is a kill criterion.
+Check: The plan covers all five steps; every milestone has an owner and a measurable result; there is a kill criterion.
 
 **Step 4 — Join your group board**
 
 - Open alfredang.github.io/bcm and pick Activity 2, or scan your trainer's QR code; join your group board.
 
-**Step 5 — Let Muse draft the whole AGENT board**
+**Step 5 — Let Muse draft the whole action plan board**
 
 - Click Copy Muse prompt on the board, fill in your organisation, paste it into Meta Muse.
 - Copy Muse's reply; on the board click Paste Muse answer, tick the lines you agree with, click Add.
 
 ```text
-Act as my innovation consultant. Our organisation: [your organisation in two sentences: industry, size, customers, this year's objective]. Draft our AI Agent Action Plan (AGENT) with these 9 blocks:
-1. A · Objective & Outcome: Which organisational objective does this serve, and how will you know?
-2. A · Cost & Value: What does it cost and what does it return?
-3. G · Mine the Business Process: What actually happens today, step by step?
-4. E · Where Agents Plug In: Which steps go to an agent, which stay human?
-5. E · Digital Architecture: Which systems, data, agents and controls make it work?
-6. N · DRI, Team & Resources: Who owns it and what can they mobilise?
-7. T · Pilot: 30 / 60 / 90 Days: What ships when?
-8. T · Risks & Controls: What could go wrong and what stops it?
-9. T · Success Measures: Which numbers decide scale, redesign or stop?
+Act as my innovation consultant. Our organisation: [your organisation in two sentences: industry, size, customers, this year's objective]. Draft our AI Agent 90-Day Action Plan with these 9 blocks:
+1. 1 · Objective & Outcome: Which organisational objective does this serve, and how will you know?
+2. 1 · Cost & Value: What does it cost and what does it return?
+3. 2 · Mine the Business Process: What actually happens today, step by step?
+4. 3 · Where Agents Plug In: Which steps go to an agent, which stay human?
+5. 3 · Digital Architecture: Which systems, data, agents and controls make it work?
+6. 4 · DRI, Team & Resources: Who owns it and what can they mobilise?
+7. 5 · Pilot: 30 / 60 / 90 Days: What ships when?
+8. 5 · Risks & Controls: What could go wrong and what stops it?
+9. 5 · Success Measures: Which numbers decide scale, redesign or stop?
 
 Rules: two specific notes per block, at most 15 words each, with names, numbers and owners. Use my email and calendar only where relevant and name the source. Mark guesses as (assumption).
 Reply ONLY in this format, so I can paste it into our board:
-1. A · Objective & Outcome
+1. 1 · Objective & Outcome
 - first note
 - second note
-2. A · Cost & Value
+2. 1 · Cost & Value
 - first note
 - second note
 (continue to block 9). End with: Verify first: the three notes I should check.
@@ -409,30 +409,30 @@ Reply ONLY in this format, so I can paste it into our board:
 
 **Step 6 — Refine it together**
 
-- Go block by block, A to T: check Ground against what you mined, name one DRI, make every milestone measurable.
+- Go block by block, 1 to 5: check step 2 against what you mined, name one DRI, make every milestone measurable.
 - Compare with View example.
 
 **Step 7 — Capture your evidence**
 
 - Screenshot view, then Download PNG or PDF. Keep it for PP Task 2.
 
-Five moves to get started: Aim, Ground, Embed, Name the owner, Test in 90 days.
+Five steps to get started: set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot.
 
-Board: https://alfredang.github.io/bcm/?activity=actionplan · 155 min · PP Task 2 · screenshot of your AGENT board
+Board: https://alfredang.github.io/bcm/?activity=actionplan · 155 min · PP Task 2 · screenshot of your action plan board
 
 Discuss: Which step of the mined process gives the fastest visible win? What must be true at day 30 for you to keep going? Who is the DRI, and what decision rights do they hold?
 
-| Block | Question | Worked example (Meridian) |
+| Block | Question | Example (fictional sample company) |
 |---|---|---|
-| A · Objective & Outcome | Which organisational objective does this serve, and how will you know? | Same-day response for every client: Handling time 18 -> 11 min by day 90; complaints stay at or below 2%. |
-| A · Cost & Value | What does it cost and what does it return? | Year 1: Cost SGD 39,000; realised benefit SGD 39,200 at 60% realisation; Downside: At 55% adoption, benefit falls; keep scope small until proven. |
-| G · Mine the Business Process | What actually happens today, step by step? | As-is triage: 6 steps, 3 handoffs: Email -> coordinator reads -> re-keys ticket -> calls client -> assigns -> chases; Friction: 38% of time spent re-keying; 14% rework from missing details. |
-| E · Where Agents Plug In | Which steps go to an agent, which stay human? | Agent prepares: Reads email, extracts site, fault and urgency, drafts the ticket; Human approves: Coordinator confirms routing for urgent and VIP clients; Agent monitors: Watches SLA timers and alerts the supervisor. |
-| E · Digital Architecture | Which systems, data, agents and controls make it work? | Hybrid: Bought ticketing AI add-on + our own routing rules and terms; Connectors: Gmail, WhatsApp Business API, ServiceNow via MCP; read + draft only; Controls: Coordinator approval on urgent jobs; every agent action logged. |
-| N · DRI, Team & Resources | Who owns it and what can they mobilise? | DRI: Head of Service Desk: Decides routing rules; budget SGD 39,000; 2 coordinators as reviewers; IT: Connectors and access reviews; DPO: PDPA check before go-live. |
-| T · Pilot: 30 / 60 / 90 Days | What ships when? | Day 30: Agent drafts tickets for 2 sites; coordinators approve 100%; Day 60: 10 sites; measure handling time and rework weekly; Day 90: Board review: scale, redesign or stop. |
-| T · Risks & Controls | What could go wrong and what stops it? | Misrouted urgent job: Human approval for urgent tickets; daily sample audit; Kill criterion: Stop if rework rises above 20% for 2 weeks. |
-| T · Success Measures | Which numbers decide scale, redesign or stop? | KPIs: Handling time, first-pass accuracy, complaints, coordinator adoption; Rhythm: Weekly DRI review; day-90 board decision. |
+| 1 · Objective & Outcome | Which organisational objective does this serve, and how will you know? | Same-day response for every client: Handling time 18 -> 11 min by day 90; complaints stay at or below 2%. |
+| 1 · Cost & Value | What does it cost and what does it return? | Year 1: Cost SGD 39,000; realised benefit SGD 39,200 at 60% realisation; Downside: At 55% adoption, benefit falls; keep scope small until proven. |
+| 2 · Mine the Business Process | What actually happens today, step by step? | As-is triage: 6 steps, 3 handoffs: Email -> coordinator reads -> re-keys ticket -> calls client -> assigns -> chases; Friction: 38% of time spent re-keying; 14% rework from missing details. |
+| 3 · Where Agents Plug In | Which steps go to an agent, which stay human? | Agent prepares: Reads email, extracts site, fault and urgency, drafts the ticket; Human approves: Coordinator confirms routing for urgent and VIP clients; Agent monitors: Watches SLA timers and alerts the supervisor. |
+| 3 · Digital Architecture | Which systems, data, agents and controls make it work? | Hybrid: Bought ticketing AI add-on + our own routing rules and terms; Connectors: Gmail, WhatsApp Business API, ServiceNow via MCP; read + draft only; Controls: Coordinator approval on urgent jobs; every agent action logged. |
+| 4 · DRI, Team & Resources | Who owns it and what can they mobilise? | DRI: Head of Service Desk: Decides routing rules; budget SGD 39,000; 2 coordinators as reviewers; IT: Connectors and access reviews; DPO: PDPA check before go-live. |
+| 5 · Pilot: 30 / 60 / 90 Days | What ships when? | Day 30: Agent drafts tickets for 2 sites; coordinators approve 100%; Day 60: 10 sites; measure handling time and rework weekly; Day 90: Board review: scale, redesign or stop. |
+| 5 · Risks & Controls | What could go wrong and what stops it? | Misrouted urgent job: Human approval for urgent tickets; daily sample audit; Kill criterion: Stop if rework rises above 20% for 2 weeks. |
+| 5 · Success Measures | Which numbers decide scale, redesign or stop? | KPIs: Handling time, first-pass accuracy, complaints, coordinator adoption; Rhythm: Weekly DRI review; day-90 board decision. |
 
 # Topic 3 — Managing AI-Driven Innovation, Governance and Stakeholder Collaboration
 
@@ -600,7 +600,7 @@ Board: https://alfredang.github.io/bcm/?activity=change · 120 min · PP Task 3 
 
 Discuss: Which group hears about the change last today, and should hear first? Which manager role becomes a DRI, a coach or a translator? How will staff send you new ideas once the agents are live?
 
-| Block | Question | Worked example (Meridian) |
+| Block | Question | Example (fictional sample company) |
 |---|---|---|
 | S · The Change Story | Why, what and when, in three sentences anyone can repeat. | Why: Clients wait too long and coordinators drown in re-keying; What: An agent drafts every ticket; people decide, approve and handle clients; Not changing: No one loses their job in the pilot; every client still reaches a person. |
 | S · Stakeholder Map | Who is affected, how much, and what do they worry about? | CEO (sponsor): Wants proof by day 90; Coordinators: Fear replacement; want less re-keying; Clients: Want faster answers, not a chatbot wall. |

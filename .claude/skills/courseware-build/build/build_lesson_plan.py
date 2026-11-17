@@ -56,7 +56,7 @@ for k, v in [("Course Title", C.TITLE), ("WSQ Course Reference", C.COURSE_CODE),
              ("Training Provider", f"{C.ORG} ({C.UEN.replace('UEN: ', 'UEN ')})"),
              ("Skills Framework TSC", f"{C.TSC_TITLE} ({C.TSC_CODE})"), ("Duration", C.CONTACT_TIME_NOTE),
              ("Mode", "Instructor-led; three step-by-step activities with the Meta Muse always-on agent (phone app or muse.ai website) on shared group boards (no login); learner laptop or phone"),
-             ("Worked example", f"{B.EXAMPLE_CO}: {B.EXAMPLE_BLURB}"),
+             ("Learner case", "Each group works on its own organisation (one member's company); no named example company"),
              ("Activity Studio", B.BCM_URL), ("Slide deck", f"{C.SHORT_TITLE}-{C.VERSION}.pptx ({MAP['end'] - 1} slides)"),
              ("Trainer", C.TRAINER)]:
     c = t.add_row().cells; cell(c[0], k, bold=True, size=10, fill=TOPIC_FILL); cell(c[1], v, size=10)

@@ -3,7 +3,7 @@
 # Business Innovation with Agentic AI and AI Agents
 
 **Find where AI agents pay off in your business, plan how to get started, then sustain and operate it.**
-A hands-on WSQ course built on the Business Model Canvas, the AGENT action plan and the SCALE framework, practised with the always-on AI agent Meta Muse.
+A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day action plan and the SCALE framework, practised with the always-on AI agent Meta Muse.
 
 [![Register](https://img.shields.io/badge/Register-this%20course-D97757?style=for-the-badge)](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html)
 ![WSQ](https://img.shields.io/badge/WSQ-up%20to%2070%25%20funding-3A7D7B)
@@ -25,7 +25,7 @@ A hands-on WSQ course built on the Business Model Canvas, the AGENT action plan 
 | Funding | Up to 70% WSQ course fee funding; SkillsFuture Credit claimable. Eligibility and terms apply; see the [course page](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html). |
 | Activity Studio (group boards) | [alfredang.github.io/bcm](https://alfredang.github.io/bcm/): no login; one shared board per group for Activities 1-3 |
 | Meta Muse prompt templates | [alfredang.github.io/bcm/prompts.html](https://alfredang.github.io/bcm/prompts.html) |
-| Courseware version | v43 · 18 November 2026 |
+| Courseware version | v44 · 18 November 2026 |
 
 ## About the course
 
@@ -42,10 +42,10 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 | Topic | Framework | What you learn |
 |---|---|---|
 | 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents | **BMC** | History of AI, the Agent Stairway and the 2023-2026 engineering lenses; Agentic AI vs AI agent; Singapore government news; Always-on AI agents (Meta Muse); Five scenarios of human-AI agent collaboration; Five capability gaps and evaluating opportunities; Activity 1 · Business Model Canvas for AI Agents (identify and evaluate) |
-| 2. Designing Digital Architectures and AI Agent Implementation Plans | **AGENT** | Dormant data and the enterprise AI decision layer; The company map, live navigation and the AI flywheel; Step 1 mine the business process · Step 2 where agents integrate; Patterns, custom/buy/hybrid and TCO; Activity 2 · AI Agent Action Plan (AGENT) |
-| 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | **SCALE** | Boss AI, the flattened org chart and the DRI; A new workforce and tomorrow's managers; Training for adoption and the atrophy trap; Reviewing success: metrics, ROI, governance, PDPA; Activity 3 · Sustain and Operate (SCALE) |
+| 2. Designing Digital Architectures and AI Agent Implementation Plans | **90-Day Plan** | Dormant data and the enterprise AI decision layer; The company map and how agents act safely; The five-step 90-day action plan: goal, process, where agents plug in, owner, pilot; Patterns, custom/buy/hybrid and TCO; Activity 2 · AI Agent 90-Day Action Plan |
+| 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | **SCALE** | The SCALE framework, the flattened org chart and the DRI; Where work moves: a new workforce and tomorrow's managers; Training for adoption and the atrophy trap; Reviewing success: metrics, ROI, governance, PDPA; Activity 3 · Sustain and Operate (SCALE) |
 
-**AGENT** (action plan): Aim · Ground · Embed · Name the owner · Test in 90 days.
+**90-Day Action Plan**: 1 Set the goal · 2 Mine the process · 3 Plug in the agents · 4 Name the owner · 5 Run a 90-day pilot.
 **SCALE** (sustain and operate): Story · Commanders · Augment people · Loop information · Evaluate.
 
 ## Activities
@@ -53,7 +53,7 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 | # | Activity | Topic · LO | Materials | Assessment evidence |
 |---|---|---|---|---|
 | 1 | **Business Model Canvas for AI Agents** | Topic 1 · LO1 | [Instructions PDF](<activities/activity-01-business-model-canvas-for-ai-agents/ACTIVITY-01-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=opportunity) | PP Task 1 · screenshot of your BMC |
-| 2 | **AI Agent Action Plan (AGENT)** | Topic 2 · LO2 | [Instructions PDF](<activities/activity-02-ai-agent-action-plan-agent/ACTIVITY-02-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=actionplan) | PP Task 2 · screenshot of your AGENT board |
+| 2 | **AI Agent 90-Day Action Plan** | Topic 2 · LO2 | [Instructions PDF](<activities/activity-02-ai-agent-90-day-action-plan/ACTIVITY-02-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=actionplan) | PP Task 2 · screenshot of your action plan board |
 | 3 | **Sustain and Operate with AI Agents (SCALE)** | Topic 3 · LO3 | [Instructions PDF](<activities/activity-03-sustain-and-operate-with-ai-agents-scale/ACTIVITY-03-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=change) | PP Task 3 · screenshot of your SCALE board |
 
 - **Activity Studio** (group boards, no login): https://alfredang.github.io/bcm/
@@ -64,7 +64,7 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 
 | File | What it is |
 |---|---|
-| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v43.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v43.pdf>) | Trainer slides |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v44.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v44.pdf>) | Trainer slides |
 | [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
 | [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
 | [activities/](activities/) | One folder per activity with its Instructions PDF |
