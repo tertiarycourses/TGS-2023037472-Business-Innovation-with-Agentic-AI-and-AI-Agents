@@ -1,106 +1,65 @@
-# Digital Transformation and Business Innovation with Generative AI (GenAI)
+# Business Innovation with Agentic AI and AI Agents
 
-**WSQ Course Code:** TGS-2023037472
-**Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
-**Duration:** 2 days · 16 training hours · assessment 2 hours
-**Skills Framework:** Business Innovation — `ICT-SNA-5003-1.1`
-**Version:** v38 · 9 August 2026
+Find where AI agents pay off in your business, plan how to get started, then sustain and operate it: a hands-on WSQ course built on the Business Model Canvas, the AGENT action plan and the SCALE framework, practised with the always-on AI agent Meta Muse.
 
-Course page: <https://www.tertiarycourses.com.sg/wsq-digital-transformation-and-business-innovation-with-generative-ai-genai.html>
+| Course detail | Information |
+|---|---|
+| Course code | `TGS-2023037472` |
+| Programme | WSQ (Skills Framework TSC Business Innovation, ICT-SNA-5003-1.1) |
+| Duration | 2 days, 16 hours (14 h training + 2 h assessment) |
+| Registration | [View course details and register](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html) |
+| Funding | Up to 70% WSQ course fee funding; SkillsFuture Credit claimable. Eligibility and terms apply; see the course page. |
+| Activity Studio (group boards) | [alfredang.github.io/bcm](https://alfredang.github.io/bcm/): no login; one shared board per group for Activities 1-3 |
+| Meta Muse prompt templates | [alfredang.github.io/bcm/prompts.html](https://alfredang.github.io/bcm/prompts.html) |
+| Courseware version | v43 · 18 November 2026 |
 
----
+## About the course
 
-## The course in one line
-
-You choose **one business idea** on Day 1 and carry it through **18 connected labs** —
-research it, score it, model it, design it, produce a marketing video for it, pitch it,
-govern it, and finally **automate the entire pipeline as an agentic AI workflow with a
-human review gate.** Nothing is rebuilt from scratch; each lab consumes the artifact the
-previous one produced.
-
-```
-Research → Evaluate → Design Thinking → Business Model Canvas → Architecture
-   → Script → Voiceover → Soundtrack → Video → Pitch deck
-      → Risk → Guardrails & Ethics → Action plan → KPIs → Comms → CAPSTONE (agentic workflow)
-```
+Turn agentic AI from a demo into a business advantage: find the opportunity, plan the build, lead the change. Learners work in groups on one shared online board per activity (no login), let Meta Muse draft the inputs, and judge, refine and own the result. Each board is the evidence for one Practical Performance task.
 
 ## Learning outcomes
 
-| | Outcome |
+- **LO1** (Identify and Evaluate AI Agent Business Opportunities): Evaluate and investigate agentic AI and AI agents business strategies to identify viable opportunities compatible with organizational objectives.
+- **LO2** (Action Plan to Get Started with AI Agents): Develop action plans to implement business innovation with agentic AI and design digital architectures to apply technologies across the business.
+- **LO3** (Sustain and Operate the Business with AI Agents): Manage business innovation and facilitate information flow among stakeholders to review success and develop innovative ideas.
+
+## Topics covered
+
+| Topic | Framework | What you learn |
+|---|---|---|
+| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents | **BMC** | History of AI, the Agent Stairway and the 2023-2026 engineering lenses; Agentic AI vs AI agent; Singapore government news; Always-on AI agents (Meta Muse); Five scenarios of human-AI agent collaboration; Five capability gaps and evaluating opportunities; Activity 1 · Business Model Canvas for AI Agents (identify and evaluate) |
+| 2. Designing Digital Architectures and AI Agent Implementation Plans | **AGENT** | Dormant data and the enterprise AI decision layer; The company map, live navigation and the AI flywheel; Step 1 mine the business process · Step 2 where agents integrate; Patterns, custom/buy/hybrid and TCO; Activity 2 · AI Agent Action Plan (AGENT) |
+| 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | **SCALE** | Boss AI, the flattened org chart and the DRI; A new workforce and tomorrow's managers; Training for adoption and the atrophy trap; Reviewing success: metrics, ROI, governance, PDPA; Activity 3 · Sustain and Operate (SCALE) |
+
+**AGENT** (action plan): Aim · Ground · Embed · Name the owner · Test in 90 days.
+**SCALE** (sustain and operate): Story · Commanders · Augment people · Loop information · Evaluate.
+
+## Activities
+
+| # | Activity | Topic · LO | Materials | Assessment evidence |
+|---|---|---|---|---|
+| 1 | **Business Model Canvas for AI Agents** | Topic 1 · LO1 | [Instructions PDF](<activities/activity-01-business-model-canvas-for-ai-agents/ACTIVITY-01-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=opportunity) | PP Task 1 · screenshot of your BMC |
+| 2 | **AI Agent Action Plan (AGENT)** | Topic 2 · LO2 | [Instructions PDF](<activities/activity-02-ai-agent-action-plan-agent/ACTIVITY-02-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=actionplan) | PP Task 2 · screenshot of your AGENT board |
+| 3 | **Sustain and Operate with AI Agents (SCALE)** | Topic 3 · LO3 | [Instructions PDF](<activities/activity-03-sustain-and-operate-with-ai-agents-scale/ACTIVITY-03-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=change) | PP Task 3 · screenshot of your SCALE board |
+
+- **Activity Studio** (group boards, no login): https://alfredang.github.io/bcm/
+- **Meta Muse prompt templates** (fill in the blanks, copy, paste into Muse): https://alfredang.github.io/bcm/prompts.html · offline copy: [prompts/index.html](prompts/index.html)
+- **Meta Muse**: phone app (App Store / Google Play, "Muse from Meta") or the website [muse.ai](https://muse.ai/)
+
+## Public package
+
+| File | What it is |
 |---|---|
-| **LO1** | Evaluate and investigate generative AI business strategies to identify viable opportunities compatible with organisational objectives. |
-| **LO2** | Develop action plans to implement business innovation with generative AI and design digital architectures to apply technologies across the business. |
-| **LO3** | Manage business innovation and facilitate information flow among stakeholders to review success and develop innovative ideas. |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v43.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v43.pdf>) | Trainer slides |
+| [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
+| [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
+| [activities/](activities/) | One folder per activity with its Instructions PDF |
+| [.claude/skills/courseware-build/](.claude/skills/courseware-build/) | Single-source build: `bash .claude/skills/courseware-build/build/build_courseware.sh` |
 
-## The 18 labs
+## Distribution boundary
 
-### Topic 1 — Introduction to Business Innovation and Generative AI  (K1, K2, A1, A2)
-| # | Lab | Tools |
-|---|---|---|
-| 1 | [Compare Predictive and Generative AI](labs/lab-01-compare-predictive-and-generative-ai-on-a-business-task.md) | ChatGPT · Gemini · Claude |
-| 2 | [Map the Generative AI Tool Landscape](labs/lab-02-map-the-generative-ai-tool-landscape.md) | Perplexity · Firefly · Suno |
-| 3 | [Research a Business Idea](labs/lab-03-research-a-business-idea-with-perplexity-and-notebooklm.md) | Perplexity · NotebookLM |
-| 4 | [Evaluate and Prioritise Your Business Idea](labs/lab-04-evaluate-and-prioritise-your-business-idea.md) | Chat assistant · Sheets |
+This repository holds the learner-facing courseware only. Assessment papers, answer keys, the Facilitator Guide and the Assessment Plan are trainer-only and are not published here.
 
-### Topic 2 — Designing Digital Architectures and Processes  (K3, K4, A3, A4)
-| # | Lab | Tools |
-|---|---|---|
-| 5 | [**GROUP** — Design Thinking Sprint](labs/lab-05-group-activity-run-a-design-thinking-sprint-in-design-thinking-studio.md) | [Design Thinking Studio](https://alfredang.github.io/designthinking/) |
-| 6 | [**GROUP** — Business Model Canvas](labs/lab-06-group-activity-build-a-business-model-canvas-in-bmc-studio.md) | [BMC Studio](https://alfredang.github.io/bcm/) |
-| 7 | [Design the Digital Architecture](labs/lab-07-design-the-digital-architecture-for-your-solution.md) | Draw.io · Canva |
-| 8 | [Script a Marketing Video](labs/lab-08-script-a-marketing-video-for-your-business-idea.md) | ChatGPT · Gemini · Copilot 365 |
-| 9 | [Create the AI Voiceover](labs/lab-09-create-the-ai-voiceover.md) | ElevenLabs |
-| 10 | [Generate the Background Soundtrack](labs/lab-10-generate-the-background-soundtrack-with-suno.md) | Suno |
-| 11 | [Produce the Video](labs/lab-11-produce-the-video-with-kling-and-an-ai-video-editor.md) | Kling AI · CapCut |
-| 12 | [Build the Business Presentation](labs/lab-12-build-the-business-presentation-with-your-video.md) | Gamma |
+## Provider
 
-### Topic 3 — Implementing and Managing Business Innovation  (K5, K6, A5, A6)
-| # | Lab | Tools |
-|---|---|---|
-| 13 | [Risk-Assess Your GenAI Pipeline](labs/lab-13-risk-assess-your-generative-ai-pipeline.md) | IMDA MAGF · PDPA |
-| 14 | [Security Guardrails and AI Ethics Principles](labs/lab-14-define-security-guardrails-and-ai-ethics-principles.md) | AI Verify |
-| 15 | [Develop the Implementation Action Plan](labs/lab-15-develop-the-implementation-action-plan.md) | Sheets |
-| 16 | [Measure and Review Innovation Success](labs/lab-16-measure-and-review-innovation-success.md) | Sheets |
-| 17 | [Stakeholder Communication and Idea-Sharing](labs/lab-17-build-the-stakeholder-communication-and-idea-sharing-plan.md) | Gamma · Teams |
-| 18 | [**CAPSTONE** — Agentic AI Workflow with Human Review](labs/lab-18-capstone-automate-the-pipeline-with-an-agentic-ai-workflow-and-human-review.md) | n8n |
-
-## Repository contents
-
-```
-courseware/     slide deck (PPTX + PDF), Lesson Plan and Learner Guide (DOCX + PDF)
-labs/           the 18 hands-on labs, one file each, plus an index
-LG-*.md         the Learner Guide as Markdown (mirrors the DOCX)
-.claude/skills/courseware-build/
-                the single source — course_data.py + data_domain1..3.py drive
-                EVERY artifact, so the deck, LP, LG and labs can never drift apart
-```
-
-### Rebuilding the courseware
-
-All artifacts are generated from one content module. Edit `course_data.py` or
-`data_domainN.py`, then:
-
-```bash
-bash .claude/skills/courseware-build/build/build_courseware.sh
-```
-
-This regenerates the deck, Lesson Plan, Learner Guide (DOCX + Markdown), the labs and
-all PDFs, with page-numbered tables of contents.
-
-Requires `python-pptx`, `python-docx`, `pypdf` and LibreOffice (`soffice`) for PDF export.
-
-## Responsible use
-
-Every lab runs on free-tier generative AI tools with the learner's own account.
-Do not enter confidential, personal or client-identifying data into any public
-generative AI tool. Treat every AI output as a draft and verify it before relying on it —
-Labs 13 and 14 cover the risk assessment, guardrails and AI ethics principles in full.
-
-## Not in this repository
-
-The assessment papers and answer keys are trainer-only and are distributed through
-Google Drive and the LMS, never here.
-
----
-
-© 2026 Tertiary Infotech Academy Pte Ltd. All rights reserved. · [tertiarycourses.com.sg](https://www.tertiarycourses.com.sg)
+Developed and delivered by **Tertiary Infotech Academy Pte Ltd** (UEN 201200696W) · [www.tertiarycourses.com.sg](https://www.tertiarycourses.com.sg/)

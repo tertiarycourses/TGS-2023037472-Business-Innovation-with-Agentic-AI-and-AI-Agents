@@ -57,3 +57,11 @@ __pycache__/
 **/FG-*
 **/Assessment_Plan_*
 **/AP-*
+# FG/AP course data file holds the marking rubric (assessment content)
+.claude/skills/courseware-build/fgap/
+
+# Not courseware: QA renders, superseded build engine, browser-tool scratch
+courseware/qa/
+.claude/skills/courseware-build/build/archive-v40/
+/.playwright-mcp/
+**/~$*
