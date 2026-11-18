@@ -215,7 +215,7 @@ def board(D, kicker, canvas, title=None, sub=None, example=True):
             for sep in ("; ", ": ", ", "):
                 if sep in d and len(t) + d.index(sep) <= lim: d = d[:d.index(sep)].rstrip(".") + "."; break
         return f"{t}: {d}"
-    pt = min(K.fit(body(b), w - 0.34, h - 0.6, 18, 9, lh=1.05, cw=0.55) for b, x, y, w, h, hi in cells)
+    pt = min(K.fit(body(b), w - 0.34, h - (0.78 if example else 0.6), 18, 9, lh=1.05, cw=0.55) for b, x, y, w, h, hi in cells)
     tpt = min(K.fit(b["title"], w - 0.2, 0.34, 14, 8, cw=0.62) for b, x, y, w, h, hi in cells)
     for b, x, y, w, h, hi in cells:
         card(s, x, y, w, h, fill=CHAR if hi else WHITE, shadow=False, line=K.RULE)
@@ -345,6 +345,13 @@ def board_steps(D, L):
 def topic1(D, C, mark):
     tp = C.TOPICS[0]; K1 = "Topic 1 · Identify and evaluate"
     mark("t1"); topic_open(D, C, tp)
+    meridian_scene(D, K1 + " · Meridian scenario", "Meet Meridian: 80 Requests a Day, Every One Re-Keyed by Hand",
+        "A fictitious Singapore firm you will follow through all three activities. Watch what it does; then do it for your own business.", [
+        ("building", "Meridian Services Pte Ltd", "140 staff keep 30 commercial buildings running across Singapore."),
+        ("inbox", "The pain", "80 emails and WhatsApps a day. Coordinators spend 38% of their time re-keying them into tickets."),
+        ("clock", "The cost", "18 minutes per request; an urgent leak at 2 am waits until morning."),
+        ("rocket", "The new business", "Meridian Assist: an always-on agent it runs in-house first, then sells.")],
+        "Where on our business model would AI agents pay off first, and which idea do we park?", "Meridian's Topic 1 question")
     big_statement(D, K1, "AI stopped talking.\nIt started working.", "Agents read your inbox, run your workflows and wait for your yes.")
     # --- history
     eras(D, "Topic 1 · History of AI", "Seventy Years: From Rules to Action", [
@@ -371,6 +378,7 @@ def topic1(D, C, mark):
         ("280+", "SMEs piloted agentic AI", "Marketing, sales and customer service")],
         source="IMDA (Jan; v1.5 20 May 2026) · Enterprise Singapore media release, 27 Oct 2026 · The Straits Times",
         url="https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/artificial-intelligence")
+    sg_health(D)
     # --- always-on agents
     mark("t1always")
     s = D.new(); header(D, s, "Topic 1 · Always-on AI agents", "Always-On Agents Work While You Sleep",
@@ -385,6 +393,9 @@ def topic1(D, C, mark):
         text(s, x + 1.4, y + 0.3, 3.0, 0.55, t, 23, INK, bold=True, font=SERIF)
         text(s, x + 1.4, y + 0.9, 3.0, 0.95, d, 15, MUTED, minpt=11)
     src(D, s, "Meta Muse app (Singapore, Nov 2026) · Meta Newsroom: Muse in Singapore, 27 Oct 2026", V.NEWS)
+    agent_evolution(D)
+    big_five(D)
+    for a_ in APPS: app_page(D, a_)
     # --- five collaboration scenarios
     mark("t1scen")
     icons(D, "Topic 1 · Five scenarios", "Five Ways Humans and Agents Team Up", [
@@ -458,16 +469,304 @@ def topic1(D, C, mark):
     step_slide(D, L1, 3)
     board_steps(D, L1)
     muse_board(D, "Topic 1 · Activity 1 · Step 6 · Meta Muse", c1)
+    meridian_shot(D, "Topic 1 · Activity 1 · Meridian's demo board", "Meridian's Canvas: All Nine Blocks, Filled In",
+        "A finished Activity 1 board for the fictitious Meridian. Open it on your phone and compare it with yours.", "meridian-bmc.png", 1, [
+        ("Value first.", "Same-day answers, 24/7: the block every other block serves."),
+        ("Scored, not guessed.", "Triage 80, reports 75, predictor 24: park it."),
+        ("A human stays.", "Complaints, refunds and premium clients keep a person.")])
+    board(D, "Topic 1 · Activity 1 · Meridian's demo board", c1, "Meridian's Canvas, Block by Block",
+          "The first note of each block, readable. The live board holds three per block.", example=True)
     board(D, "Topic 1 · Activity 1 · Your board", c1, "Your Canvas: The Question Each Block Answers",
           "Answer every block for your own organisation. Screenshot your group board for PP Task 1.", example=False)
     big_statement(D, "Next · Topic 2 · Action Plan to Get Started", "You found the opportunity.\nNow plan how to get started.",
                   "Give the agents what they lack, your data, your language and safe access, then write the 90-day plan.")
     mark("t1end")
 
+
+# ------------------------------------------------------------------ v45: slides copied from C690 Human-AI Collaboration
+# (owner request, 18 Nov 2026): Singapore healthcare 12,000+ agents, OpenClaw -> self-hosted -> hosted agents, one page per
+# always-on agent (Meta Muse, OpenAI Dots, Claude Duet, Grok Bot) with its YouTube Short. Facts and sources as in C690 v2.0.
+def links_row(s, items, y=6.86):
+    """Several clickable source links on one line: [(label, url)]."""
+    n = len(items); w = 12.1 / max(n, 1)
+    for i, (lab, url) in enumerate(items):
+        t = text(s, 0.6 + i * w, y, w - 0.1, 0.24, lab + " · click", 9.5, TEAL, autofit=False)
+        t.click_action.hyperlink.address = url
+
+def sg_health(D):
+    s = D.new(); header(D, s, "Topic 1 · Singapore in the news", "Singapore Healthcare: 12,000+ AI Agents in Three Months",
+                        "AgentSea, Synapxe's agentic AI platform built with AWS, lets public healthcare staff build their own agents in plain language.")
+    for i, (big, lab, d) in enumerate([("12,000+", "AI agents created", "By healthcare professionals, from the end-May 2026 launch to 24 Aug 2026."),
+                                       ("80,000+", "healthcare professionals", "Everyone in Singapore's public health sector can create agents, with little or no coding."),
+                                       ("300+", "agents shared", "Published for colleagues to reuse and adapt for their own work.")]):
+        x = 0.6 + i * 4.1; dk = i == 0
+        card(s, x, 2.3, 3.9, 1.95, fill=CHAR if dk else WHITE)
+        text(s, x + 0.25, 2.4, 3.4, 0.8, big, 36, ACC, bold=True, font=SERIF, autofit=False)
+        text(s, x + 0.25, 3.15, 3.4, 0.35, lab, 15, WHITE if dk else INK, bold=True, autofit=False)
+        text(s, x + 0.25, 3.5, 3.4, 0.7, d, 11.5, SOFT if dk else MUTED, minpt=9)
+    for i, (ic, t, d) in enumerate([("hospital", "Cardiologist, National Heart Centre", "An agent summarises patient histories before clinic, halving 40+ minutes of daily pre-clerking. He still verifies and makes the clinical assessment."),
+                                    ("calendar", "KK Women's and Children's Hospital", "An agent generates daily staff rosters, cutting manual data entry and transcription errors."),
+                                    ("shield", "Guardrails and governance", "Rejects requests for card or ID numbers; MOH's updated AI in Healthcare Guidelines keep professional judgment with people.")]):
+        x = 0.6 + i * 4.1
+        card(s, x, 4.45, 3.9, 1.8); icon(s, ic, x + 0.25, 4.6, 0.45)
+        text(s, x + 0.82, 4.6, 2.95, 0.45, t, 13, INK, bold=True, font=SERIF, minpt=10)
+        text(s, x + 0.25, 5.15, 3.45, 1.05, d, 11.5, MUTED, minpt=9)
+    tip(D, s, "Agents prepare the work; clinicians verify and decide. The same pattern works in your business.", y=6.35)
+    links_row(s, [("The Straits Times, 24 Aug 2026: New platform to create AI agents available to all public healthcare professionals",
+                   "https://www.straitstimes.com/tech/new-platform-to-create-ai-agents-available-to-all-public-healthcare-professionals")])
+
+def agent_evolution(D):
+    s = D.new(dark=True); header(D, s, "Topic 1 · Deployment evolution", "OpenClaw → Self-Hosted Agents → Hosted Personal Agents",
+                                 "From a harness you run yourself to an always-on agent someone else hosts for you.")
+    for i, (top, mid, d) in enumerate([("OpenClaw", "Configurable harness", "Local or server tools and channels you wire up yourself."),
+                                       ("Self-hosted agents", "Desktop + skills", "On your own machine, e.g. Hermes Agent: local workflow, memory and reusable skills."),
+                                       ("Hosted agents", "Managed cloud", "Meta Muse, OpenAI Dots, Claude Duet, Grok Bot and Manus Cue."),
+                                       ("Your choice", "Work + control", "Access, oversight, cost and data boundaries decide the fit.")]):
+        x = 0.6 + i * 3.05
+        text(s, x, 2.45, 2.85, 0.4, top, 17, ACC, bold=True, font=SERIF, align="c", autofit=False)
+        circle(s, x + 0.43, 2.95, 2.0, ACC)
+        text(s, x + 0.43, 3.45, 2.0, 1.0, mid, 17, WHITE, bold=True, font=SERIF, align="c", anchor="m", minpt=12)
+        text(s, x, 5.1, 2.85, 0.9, d, 13, SOFT, align="c", minpt=10)
+        if i < 3: text(s, x + 2.6, 3.65, 0.5, 0.6, "→", 28, ACC, bold=True, align="c", autofit=False)
+    tip(D, s, "A progression in deployment choices, not a product lineage: pick the level of control your business needs.", y=6.35)
+
+APPS = [
+ dict(key="muse", kicker="Topic 1 · Always-on agent · Meta Muse", title="Meta Muse: What It Does and How to Set It Up",
+      sub="Meta · in Singapore since 27 Oct 2026 · core use free, optional subscriptions · used in every activity of this course",
+      can=[("sparkles", "Does the work", "Manages email, coordinates schedules and turns long-term goals into action plans."),
+           ("plug", "Connected apps", "Gmail, Google Calendar and Instagram; Grab, Shopee and Singapore Airlines are rolling out."),
+           ("shield", "Asks before acting", "Checks with you before sending an email or making a purchase; retrieve-only connectors."),
+           ("lock", "Secure and mostly free", "Muse Secure VM keeps passwords and payment methods out of the agent's view.")],
+      steps=[("Install", "Muse from Meta (iOS / Android) or muse.ai."), ("Sign in", "Complete onboarding; link your Meta accounts."),
+             ("Connect Gmail", "Settings → Connectors → Connect beside Gmail → Continue."), ("Authorise", "Finish the Google login; repeat for Google Calendar."),
+             ("Approvals", "Keep retrieve-only where offered; approve every send or invite.")],
+      tip="Shortcut: ask \u201cConnect my Gmail\u201d. Partner features roll out progressively; no bookings or purchases in class.",
+      video="https://www.youtube.com/shorts/zuAAjV5dNMA",
+      links=[("Meta Newsroom: Muse in SG", "https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/"),
+             ("Meta Help: Connectors", "https://www.meta.com/help/superintelligence/1687253048996149/"),
+             ("Muse iOS (SG)", "https://apps.apple.com/sg/app/muse-from-meta/id6760173601"),
+             ("Muse Android (SG)", "https://play.google.com/store/apps/details?gl=sg&id=com.facebook.aura")]),
+ dict(key="dots", kicker="Topic 1 · Always-on agent · OpenAI Dots", title="OpenAI Dots: What It Does and How to Set It Up",
+      sub="OpenAI · rolling out to ChatGPT Pro and Business Premium · check whether your plan has it",
+      can=[("target", "Ongoing responsibilities", "Give one dot several long-running jobs instead of one-off chats."),
+           ("server", "Its own cloud computer", "Works in its own browser; optionally on your computer while the ChatGPT app is open."),
+           ("plug", "Plugins and channels", "Email, calendar and files through plugins; Slack and other contact methods for messages."),
+           ("clock", "Delegates and schedules", "Hands parts to ChatGPT Work or Codex; fixed schedules, event triggers, an Activity view.")],
+      steps=[("Open dots", "ChatGPT app or desktop browser; not mobile web."), ("Create a dot", "Follow the intro; name it and pick its look."),
+             ("Plugins", "Connect email, calendar and files plugins; authorise each one."), ("Channels", "Optional: profile → Add a contact method such as Slack."),
+             ("Assign work", "Describe an ongoing responsibility, its sources and your decisions.")],
+      tip="A messaging channel does not grant inbox access. Ending a chat does not stop assigned work: check Activity.",
+      video="https://www.youtube.com/shorts/gdHwOn2kvT8",
+      links=[("ChatGPT Learn: Get started with your dot", "https://learn.chatgpt.com/docs/dots/getting-started")]),
+ dict(key="duet", kicker="Topic 1 · Always-on agent · Claude Duet", title="Claude Duet: What It Does and How to Set It Up",
+      sub="Anthropic research preview · 21 Oct 2026 · US Pro/Max via waitlist · reference route",
+      can=[("calendar", "Morning brief, then watching", "A daily brief, then checks every few hours; messages you only when something needs you."),
+           ("server", "Works while you are away", "Its own virtual machine and browser: meetings, dashboards, forecasts and prototypes."),
+           ("plug", "6,000+ connectors", "Gmail, Slack, QuickBooks, Stripe, HubSpot, Docusign, Canva, Shopify and more."),
+           ("shield", "You approve actions", "Shows exactly what it will send, pay, sign or delete and waits; some actions stay off-limits.")],
+      steps=[("Get access", "Pro or Max plan; join the Claude Duet waitlist on claude.com."), ("Install", "Open the Claude Duet app (iOS / Android) or claude.ai once invited."),
+             ("Carry context", "Memory, skills and apps carry over from your Claude account."), ("Connect apps", "Add Gmail, Calendar, Slack or others from the Claude Marketplace."),
+             ("Set the brief", "Tell it what to watch and how often; approve every send or payment.")],
+      tip="Reference route only. Background checks use your plan limits; some actions stay off-limits even with approval.",
+      video="https://www.youtube.com/shorts/7G5hOD6oF4M",
+      links=[("Anthropic: Introducing Claude Duet", "https://claude.com/resources/articles/claude-duet")]),
+ dict(key="grok", kicker="Topic 1 · Always-on agent · Grok Bot", title="Grok Bot: What It Does and How to Set It Up",
+      sub="xAI · Grok Bot documentation, updated 28 Oct 2026 · check your plan's access",
+      can=[("server", "Persistent cloud computer", "Browser, command line and files; keeps working while your laptop is closed."),
+           ("robot", "Several bots, one computer", "Each bot has its own screen; sessions, files and logins are shared across your bots."),
+           ("mail", "Apps, MCP and its own email", "Gmail, Calendar, Sheets, Slack and Notion; mail to its @mail.grokbot.com address starts routines."),
+           ("eye", "Watch, take over, review", "Live computer view; take control for a sign-in or CAPTCHA; Auto Review gates sends.")],
+      steps=[("Install", "Start at x.ai/bot; get the desktop or mobile app and sign in."), ("Create a bot", "Sidebar + → Create a Bot → name it → Create."),
+             ("Connect apps", "Open Connect apps (mobile: avatar → Connect apps); add Gmail."), ("Authorise", "Finish the Google login; repeat for Google Calendar."),
+             ("Verify", "Both show under Installed; \u201cAdded\u201d is not signed in, so fix \u201cNeeds auth\u201d.")],
+      tip="All bots on one account share a cloud computer and logins. The bot's @mail.grokbot.com inbox is not your Gmail.",
+      video="https://www.youtube.com/shorts/Gm_dlNAVOGI",
+      links=[("xAI docs: Grok Bot computer and apps", "https://docs.x.ai/grok-bot/computer-and-apps")]),
+]
+
+
+BIG5 = [  # C690 v2.0 slide 33 (models checked 31 Oct, pricing 1 Nov 2026)
+ ("muse", "Meta Muse", "Meta", ("Muse Spark", "Muse Wonder coming soon, subscribers first"), "Personal email, schedules and goals; errands with Grab, Shopee and SIA as partners roll out", ("Single agent only", "one assistant works for you"), ("Free", "core use, Singapore")),
+ ("dots", "OpenAI Dots", "OpenAI", ("GPT-6 Astra", "its own cloud computer, 24/7"), "Ongoing goals inside ChatGPT, Slack and Teams; hands code to Codex", ("Single agent only", "one agent per goal"), ("Paid", "ChatGPT Pro · Business Premium")),
+ ("grok", "Grok Bot", "xAI", ("Grok 4.6 → 4.7", "4.7 is trained for the Grok Bot harness"), "A team of named bots (Research, Sales, Ops) on one shared cloud computer", ("Multi-agent", "named bots work as a team"), ("Paid", "Premium from US$30/mo")),
+ ("duet", "Claude Duet", "Anthropic", ("Claude Opus 5.5", "chosen for judgement: what needs you"), "A morning brief, business inbox, invoices and follow-ups; asks before it sends, pays or signs", ("Unknown", "Anthropic has not said"), ("Paid", "US Pro/Max · waitlist")),
+ ("cue", "Manus Cue", "Manus", ("Manus 2.0 harness", "model not published by Manus"), "Agents with their own email, phone and wallet: calls, bookings, capped payments", ("Multi-agent", "agents share a group chat and a goal"), ("Free for now", "early access · invite code")),
+]
+
+def big_five(D):
+    s = D.new(); header(D, s, "Topic 1 · The big five always-on agents", "Same Always-On Idea, Five Different Brains",
+                        "The model decides how it thinks; the use case decides whether it fits your job. Pick by the job, then check who can get it.")
+    w = 12.1 / 5
+    for i, (k, name, vendor, model, use, multi, price) in enumerate(BIG5):
+        x = 0.6 + i * w; cw = w - 0.12
+        card(s, x, 2.25, cw, 4.35)
+        picture(s, asset("apps", f"{k}-logo.png"), x + 0.15, 2.38, maxw=0.5, maxh=0.5, frame=False)
+        text(s, x + 0.75, 2.36, cw - 0.85, 0.32, name, 14, INK, bold=True, font=SERIF, autofit=False)
+        text(s, x + 0.75, 2.66, cw - 0.85, 0.26, vendor, 10.5, MUTED, autofit=False)
+        y = 3.05
+        for lab, big_, small in (("MODEL INSIDE", model[0], model[1]), ("USE IT FOR", use, None), ("SINGLE OR MULTI-AGENT", multi[0], multi[1]), ("PRICING", price[0], price[1])):
+            text(s, x + 0.15, y, cw - 0.3, 0.2, lab, 8.5, ACC, bold=True, autofit=False)
+            if small is None:
+                text(s, x + 0.15, y + 0.22, cw - 0.3, 0.72, big_, 10.5, INK, minpt=8.5); y += 1.0
+            else:
+                text(s, x + 0.15, y + 0.21, cw - 0.3, 0.26, big_, 12, INK, bold=True, minpt=9)
+                text(s, x + 0.15, y + 0.47, cw - 0.3, 0.3, small, 9.5, MUTED, minpt=8); y += 0.86
+    t = text(s, 0.6, 6.76, 12.1, 0.24, "Models checked 31 Oct, pricing 1 Nov 2026, from Meta, OpenAI, xAI, Anthropic and Manus; vendors change both "
+             "without notice. Comparison: BULDRR, 22 Oct 2026 · click", 9, TEAL, autofit=False)
+    t.click_action.hyperlink.address = "https://buldrr.com/claude-duet-vs-muse-vs-grokbot-vs-dots"
+
+APPS.append(dict(key="cue", kicker="Topic 1 · Always-on agent · Manus Cue", title="Manus Cue: What It Does and How to Set It Up",
+      sub="Manus · early access since 28 Sep 2026 · free with an invite code · reference route",
+      can=[("user", "Agent identity", "Each agent has its own email address, phone number, wallet and computer."),
+           ("phone", "Calls, messages, payments", "Takes forwarded calls, emails from its own address and pays within the budget you set."),
+           ("users", "Agent teams", "Agents share a group chat and a goal; you make the final call."),
+           ("plug", "Connectors and routines", "Gmail, Trip.com, Oura and more; routines repeat your steps; scan a QR code to create an agent.")],
+      steps=[("Get Cue", "cue.im on the web, desktop or Android; iOS pending."), ("Invite code", "Sign up with an invite code from your trainer or a user."),
+             ("Create an agent", "Give it one responsibility and the context it needs."), ("Identity + limits", "Choose its email, phone, wallet; set budgets and approvals."),
+             ("Connect + routines", "Connect Gmail or other services, then define routines for repeat steps.")],
+      tip="Reference route only. Keep wallet budgets small; require approval for payments, calls and messages.",
+      video="https://www.youtube.com/shorts/ZW7gCKTLtpo",
+      links=[("Cue by Manus: cue.im", "https://cue.im/")]))
+
+def app_page(D, a):
+    from pptx_online_video import add_online_video
+    s = D.new(); header(D, s, a["kicker"], a["title"], a["sub"])
+    picture(s, asset("apps", f"{a['key']}-logo.png"), 11.55, 0.4, maxw=1.15, maxh=1.15, frame=False)
+    card(s, 0.6, 2.3, 4.85, 3.95); text(s, 0.85, 2.42, 4.4, 0.35, "What it can do", 14, ACC, bold=True, font=SERIF, autofit=False)
+    for i, (ic, t, d) in enumerate(a["can"]):
+        y = 2.85 + i * 0.84; icon(s, ic, 0.85, y + 0.04, 0.38)
+        text(s, 1.35, y, 3.95, 0.3, t, 12.5, INK, bold=True, autofit=False)
+        text(s, 1.35, y + 0.3, 3.95, 0.52, d, 10.5, MUTED, minpt=8.5)
+    card(s, 5.6, 2.3, 4.45, 3.95, fill=CHAR, shadow=False); text(s, 5.85, 2.42, 4.0, 0.35, "How to set it up", 14, ACC, bold=True, font=SERIF, autofit=False)
+    for i, (t, d) in enumerate(a["steps"]):
+        y = 2.82 + i * 0.65; circle(s, 5.85, y + 0.04, 0.36, ACC)
+        text(s, 5.85, y + 0.04, 0.36, 0.36, str(i + 1), 12, WHITE, bold=True, align="c", anchor="m", autofit=False)
+        text(s, 6.35, y, 3.55, 0.28, t, 12.5, WHITE, bold=True, autofit=False)
+        text(s, 6.35, y + 0.27, 3.55, 0.36, d, 10, SOFT, minpt=8)
+    # 9:16 frame for a YouTube Short; the poster carries a play button and "Click to play"; fallback link under it
+    add_online_video(s, a["video"], 10.5, 2.3, 2.0, 3.55, poster=asset("apps", f"{a['key']}-poster-play.jpg"), name=a["title"].split(":")[0] + " (YouTube Short)")
+    tip(D, s, a["tip"], y=6.35)
+    links_row(s, a["links"])
+
+# ------------------------------------------------------------------ v47: Meridian worked demo (fictitious) and the bonus topic
+# Owner request, 18 Nov 2026: a Meridian scenario per topic, a screenshot of Meridian's filled demo board per activity
+# (live, read-only reference boards meridian-activity-1/2/3 on the Activity Studio), and a self-paced bonus topic:
+# ChatGPT Plus (free AI subscription, if eligible) -> Codex in the ChatGPT desktop app builds Meridian's website -> deploy with Sites.
+MERIDIAN_SITE = "https://alfredang.github.io/bcm/meridian/"
+SITES_DOC = "https://learn.chatgpt.com/docs/sites"
+def demo_url(n): return f"{B.BCM_URL}?join=meridian-activity-{n}"
+
+def meridian_scene(D, kicker, title, sub, facts, ask, ask_label):
+    """Meridian scenario: four facts on the left, this topic's question for Meridian on the right."""
+    s = D.new(); header(D, s, kicker, title, sub)
+    top, bot = 2.45, 6.55; rh = (bot - top) / len(facts)
+    card(s, 0.6, top, 7.4, bot - top)
+    for i, (ic, t, d) in enumerate(facts):
+        y = top + 0.2 + i * rh; icon(s, ic, 0.9, y + 0.02, 0.55)
+        text(s, 1.65, y - 0.02, 6.1, 0.36, t, 16, INK, bold=True, font=SERIF, autofit=False)
+        text(s, 1.65, y + 0.36, 6.1, rh - 0.45, d, 14, MUTED, minpt=10)
+    card(s, 8.25, top, 4.45, bot - top, fill=CHAR)
+    text(s, 8.55, top + 0.25, 3.9, 0.35, ask_label.upper(), 12, ACC, bold=True, autofit=False)
+    text(s, 8.55, top + 0.7, 3.9, 2.5, ask, 22, WHITE, bold=True, font=SERIF, minpt=14, lh=1.08)
+    text(s, 8.55, bot - 0.95, 3.9, 0.8, "Meridian is fictitious; all figures are synthetic. Your board and your PP are about your own organisation.",
+         11.5, SOFT, minpt=9)
+    return s
+
+def meridian_shot(D, kicker, title, sub, img, n, notes):
+    """Meridian's filled demo board as a real Activity Studio screenshot, with a QR to the live board."""
+    s = D.new(); header(D, s, kicker, title, sub)
+    x, y, w, h = picture(s, asset("screenshots", img), 0.6, 2.3, maxw=6.6, maxh=4.5)
+    url = demo_url(n); rx = 7.65
+    card(s, rx, 2.3, 5.05, 2.2, fill=CHAR)
+    qr(s, url, rx + 0.25, 2.5, 1.8, dark=True)
+    text(s, rx + 2.25, 2.5, 2.65, 0.75, "Open Meridian's live board", 17, WHITE, bold=True, font=SERIF, minpt=12, lh=1.0)
+    t = text(s, rx + 2.25, 3.3, 2.65, 0.5, f"alfredang.github.io/bcm\n?join=meridian-activity-{n}", 10.5, "7FB8B6", autofit=False)
+    t.click_action.hyperlink.address = url
+    text(s, rx + 2.25, 3.85, 2.65, 0.55, "Read it, zoom in, copy the structure. Do not edit it.", 10.5, SOFT, minpt=8.5)
+    for i, (t_, d) in enumerate(notes):
+        yy = 4.75 + i * 0.68
+        circle(s, rx, yy + 0.03, 0.4, ACC)
+        text(s, rx, yy + 0.03, 0.4, 0.4, str(i + 1), 13, WHITE, bold=True, align="c", anchor="m", autofit=False)
+        rich(s, rx + 0.55, yy - 0.02, 4.5, 0.66, [[(t_ + "  ", dict(color=INK, bold=True, size=13.5, font=SERIF)),
+                                                (d, dict(color=MUTED, size=12))]])
+    return s
+
+def bonus_open(D):
+    s = D.new(dark=True)
+    circle(s, -1.7, 5.2, 4.2, ACC)
+    text(s, 0.9, 0.9, 7.6, 0.45, "BONUS TOPIC  ·  SELF-PACED  ·  OPTIONAL", 12.5, ACC, bold=True, autofit=False)
+    text(s, 0.85, 1.45, 7.9, 2.0, "Put Your Business Online: Build a Website with Codex, Ship It with Sites", 34, WHITE, bold=True, font=SERIF, cw=0.52, lh=1.04)
+    text(s, 0.9, 3.75, 7.7, 0.9, "ChatGPT Plus includes Codex, and Plus hosting covers Sites. Describe the site, check it, deploy it.", 19, SOFT, font=SERIF, lh=1.1)
+    card(s, 0.9, 4.95, 7.6, 1.6, fill=PANEL, shadow=False)
+    text(s, 1.15, 5.08, 7.1, 0.32, "OUTSIDE THE 16 CONTACT HOURS  ·  NOT ASSESSED", 11.5, ACC, bold=True, autofit=False)
+    text(s, 1.15, 5.42, 7.1, 1.05, "Do it after class with your Activity 1 to 3 boards as the content. The worked example is Meridian Assist.", 15, WHITE, minpt=11, lh=1.1)
+    items = ["Claim ChatGPT Plus", "Brief Codex like a web designer", "Build and preview with Codex", "Deploy with Sites and share", "Meridian Assist: the finished site"]
+    rowh = 0.62; ph = 0.4 + len(items) * rowh; py = max(0.55, (7.5 - ph) / 2 - 0.1)
+    card(s, 8.95, py, 3.85, ph, fill=PANEL, shadow=False)
+    for i, it in enumerate(items):
+        yy = py + 0.22 + i * rowh
+        text(s, 9.15, yy, 0.45, 0.42, str(i + 1), 17, ACC, bold=True, font=SERIF, autofit=False)
+        text(s, 9.6, yy, 3.05, rowh, it, 13, LIGHT, minpt=9.5)
+    text(s, 6.4, 7.08, 6.4, 0.3, f"© Tertiary Infotech Academy Pte Ltd  ·  {D.code}", 9, K.FOOT, align="r", autofit=False)
+    return s
+
+SITE_PROMPT = ("Build a one-page business website for Meridian Assist, the always-on AI maintenance agent from "
+               "Meridian Services Pte Ltd, a fictitious Singapore facilities firm.\n"
+               "Audience: building managers who want same-day answers.\n"
+               "Sections: hero with a one-line promise and a 'Book a demo' button; what it does (3 cards); "
+               "how it works (connect, triage, monitor, decide at day 90); plans; trust (human approval, PDPA, audit trail); contact.\n"
+               "Content: use only the facts in my Activity 1-3 boards (pasted below). Mark anything else (assumption).\n"
+               "Style: ivory background, charcoal text, terracotta #D97757 accents, serif headings; mobile-first; one index.html; no tracking.\n"
+               "Then show me a preview and list every claim on the page so I can check it.")
+
+def bonus(D, C, mark):
+    """Self-paced bonus topic (v47): ChatGPT Plus -> Codex -> Sites. Outside the CP contact hours, not assessed."""
+    from ccdeck import flow as _flow
+    KB = "Bonus · Build your business website"
+    mark("bonus"); bonus_open(D)
+    s = _flow(D, KB + " · Step 1", "Eligible? Your Free AI Subscription Can Cover ChatGPT Plus, with Codex.", [
+        ("medal", "Redeem", "Singapore Citizens 18+: the SkillsFuture free AI subscription (admin slide at the start)."),
+        ("check", "Choose ChatGPT Plus", "One of the plans offered; six months, one per person. After that, Plus is paid."),
+        ("download", "Get the desktop app", "Install the ChatGPT desktop app (formerly the Codex app), sign in, open Codex."),
+        ("globe", "Sites is in your plan", "Plus includes Sites: 125 hosting credits a month.")],
+        tipt="Sites hosting comes with Plus, Pro, Business and Enterprise. Free for now; from 1 Jan 2027, use above the monthly allowance is paid.")
+    links_row(s, [("OpenAI: Sites (official docs)", SITES_DOC),
+                  ("SkillsFuture: redeem your AI subscription", "https://www.myskillsfuture.gov.sg/content/portal/en/career-resources/career-resources/education-career-personal-development/redeem-ai-subscription.html")])
+    s = prompt(D, KB + " · Step 2", "Brief Codex Like You Would Brief a Web Designer", SITE_PROMPT,
+               sub="Your three activity boards already hold the content: customers, value, plan, proof. Paste them in.",
+               side=[("target", "One page, one goal", "Every section pushes to 'Book a demo'."),
+                     ("eyecheck", "Claims you can prove", "Numbers come from your boards, or are marked (assumption)."),
+                     ("lock", "No personal data", "No names, phones or NRIC numbers on a public page.")],
+               label="PROMPT  ·  the Meridian version; swap in your own business")
+    flow(D, KB + " · Step 3", "Build, Preview, Deploy: Four Moves with Codex", [
+        ("folder", "New project", "Open Codex in the desktop app; make a folder such as meridian-site."),
+        ("chat", "Paste the brief", "Codex writes the page. Ask for changes in plain words."),
+        ("eye", "Preview and check", "Read every claim; try the phone view and every button."),
+        ("rocket", "Deploy with Sites", "Ask Codex to publish it with Sites, review the preview, deploy, get the URL.")],
+        sub="You describe and decide. Codex writes the code; Sites hosts it.",
+        tipt="Check who can open the site under Share before you send the link.")
+    s = D.new(); header(D, s, KB + " · Step 4", "Meridian Assist: One Website, Built from Three Boards",
+                        "The demo site for the fictitious Meridian. Every section traces back to a note on Activity 1, 2 or 3.")
+    picture(s, asset("screenshots", "meridian-website.png"), 0.6, 2.35, maxw=7.6, maxh=4.4)
+    card(s, 8.55, 2.35, 4.15, 4.4, fill=CHAR)
+    qr(s, MERIDIAN_SITE, 9.6, 2.6, 2.05, dark=True)
+    t = text(s, 8.7, 4.85, 3.85, 0.4, "alfredang.github.io/bcm/meridian", 13, "7FB8B6", bold=True, align="c", autofit=False)
+    t.click_action.hyperlink.address = MERIDIAN_SITE
+    text(s, 8.75, 5.3, 3.75, 1.35, "Hero = Activity 1 value proposition\nHow it works = Activity 2 pilot\nTrust = Activity 3 guardrails\n(course copy on GitHub Pages)",
+         12.5, SOFT, align="c", minpt=9.5, lh=1.15)
+    return s
+
 # ================================================================== TOPIC 2
 def topic2(D, C, mark):
     tp = C.TOPICS[1]; K2 = "Topic 2 · Action plan"
     mark("t2"); topic_open(D, C, tp)
+    meridian_scene(D, K2 + " · Meridian scenario", "Meridian Picked Triage. Now It Needs a Plan the CEO Will Fund.",
+        "Same fictitious firm, Topic 2: turn the winning idea into a 90-day plan with one owner and a kill switch.", [
+        ("target", "The goal", "Same-day response for every client: handling time from 18 to 11 minutes by day 90."),
+        ("route", "The process", "Six steps and three handoffs today, from email to coordinator to ticket to technician."),
+        ("coins", "The budget", "SGD 39,000 in year 1: licences, integration, training and change."),
+        ("shield", "The worry", "A misrouted urgent job. One leak sent to the wrong team costs a contract.")],
+        "Which steps go to the agent, who owns the result, and what stops the pilot?", "Meridian's Topic 2 question")
     framework(D, "Topic 2 · The 90-day action plan", "PLAN", "Five Steps to Get Started with AI Agents", B.PLAN,
               "Every slide in this topic serves one step. Activity 2 is the 90-day plan for your business.",
               tipt="Steps 1 and 2 first: no agent before a goal and a real process.")
@@ -530,6 +829,13 @@ def topic2(D, C, mark):
     step_slide(D, L2, 2)
     board_steps(D, L2)
     muse_board(D, "Topic 2 · Activity 2 · Step 5 · Meta Muse", c2)
+    meridian_shot(D, "Topic 2 · Activity 2 · Meridian's demo board", "Meridian's 90-Day Plan: Five Steps, Nine Blocks, One Owner",
+        "A finished Activity 2 board for the fictitious Meridian. Every step has a number, a name or a date.", "meridian-plan.png", 2, [
+        ("Mined first.", "Six steps, three handoffs, 38% re-keying: then agents."),
+        ("One DRI.", "Head of Service Desk owns it, with a SGD 39,000 budget."),
+        ("A kill switch.", "Stop if rework tops 20% for two weeks.")])
+    board(D, "Topic 2 · Activity 2 · Meridian's demo board", c2, "Meridian's 90-Day Plan, Block by Block",
+          "The first note of each block, readable. The live board holds the full plan.", example=True)
     board(D, "Topic 2 · Activity 2 · Your board", c2, "Your 90-Day Plan: The Question Each Block Answers",
           "Steps 1 to 5, for your own organisation. Screenshot your group board for PP Task 2.", example=False)
     big_statement(D, "Next · Topic 3 · Sustain and Operate", "The plan is live.\nNow keep it running.",
@@ -540,6 +846,13 @@ def topic2(D, C, mark):
 def topic3(D, C, mark):
     tp = C.TOPICS[2]; K3 = "Topic 3 · Sustain and operate"
     mark("t3"); topic_open(D, C, tp)
+    meridian_scene(D, K3 + " · Meridian scenario", "Day 90 at Meridian: the Numbers Say Scale. The People Are Nervous.",
+        "Same fictitious firm, Topic 3: keep the agents running, the coordinators judging and the ideas coming.", [
+        ("chart", "The result", "Handling time 10.7 minutes, quality 95.1%, complaints 1.7%, adoption 77.5%."),
+        ("users", "The mood", "Coordinators fear replacement; clients want faster answers, not a chatbot wall."),
+        ("org", "The next step", "Scale from 10 sites to all 30 with the same approval rules."),
+        ("lightbulb", "The opening", "Meridian Assist could become a product for other building managers.")],
+        "How do we scale it without losing our people, our judgement or our clients' trust?", "Meridian's Topic 3 question")
     framework(D, "Topic 3 · The SCALE framework", "SCALE", "SCALE: Five Moves to Sustain and Operate with AI Agents", B.SCALE,
               "Run the business on agents without losing your people or your judgement. Activity 3 is your SCALE board.",
               tipt="Story before structure: people hear what changes for them before any role changes.")
@@ -597,6 +910,13 @@ def topic3(D, C, mark):
     for i in range(2): step_slide(D, L3, i)
     board_steps(D, L3)
     muse_board(D, "Topic 3 · Activity 3 · Step 4 · Meta Muse", c4)
+    meridian_shot(D, "Topic 3 · Activity 3 · Meridian's demo board", "Meridian's SCALE Board: Story to Evaluation, Filled In",
+        "A finished Activity 3 board for the fictitious Meridian. Notice how often a person still decides.", "meridian-scale.png", 3, [
+        ("Story first.", "No one loses their job in the pilot; every client reaches a person."),
+        ("DRIs, not layers.", "One DRI per outcome, each with its own agent team."),
+        ("Judged by numbers.", "Day-90 review, then scale to all 30 sites.")])
+    board(D, "Topic 3 · Activity 3 · Meridian's demo board", c4, "Meridian's SCALE Board, Block by Block",
+          "The first note of each block, readable. The live board holds the full version.", example=True)
     board(D, "Topic 3 · Activity 3 · Your board", c4, "Your SCALE Board: The Question Each Block Answers",
           "Story, Commanders, Augment people, Loop information, Evaluate, for your own organisation. Screenshot your group board for PP Task 3.", example=False)
     mark("lab13")

@@ -25,11 +25,12 @@ A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day act
 | Funding | Up to 70% WSQ course fee funding; SkillsFuture Credit claimable. Eligibility and terms apply; see the [course page](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html). |
 | Activity Studio (live boards) | [alfredang.github.io/bcm](https://alfredang.github.io/bcm/): create a board in one click; everyone joins by QR code or Board ID, no login |
 | Meta Muse prompt templates | [alfredang.github.io/bcm/prompts.html](https://alfredang.github.io/bcm/prompts.html) |
-| Courseware version | v44 · 18 November 2026 |
+| Meridian demo boards (read-only) | [Activity 1](https://alfredang.github.io/bcm/?join=meridian-activity-1) · [Activity 2](https://alfredang.github.io/bcm/?join=meridian-activity-2) · [Activity 3](https://alfredang.github.io/bcm/?join=meridian-activity-3): a finished board for the fictitious Meridian Services |
+| Courseware version | v47 · 18 November 2026 |
 
 ## About the course
 
-Turn agentic AI from a demo into a business advantage: find the opportunity, plan the build, lead the change. Learners work in groups on one shared online board per activity (no login), let Meta Muse draft the inputs, and judge, refine and own the result. Each board is the evidence for one Practical Performance task.
+Turn agentic AI from a demo into a business advantage: find the opportunity, plan the build, lead the change. Learners work in groups on one shared online board per activity (no login), let Meta Muse draft the inputs, and judge, refine and own the result. Each board is the evidence for one Practical Performance task. A fictitious company, Meridian Services, runs through every topic as a worked demo: its scenario, and its finished board for each activity, which learners compare with their own.
 
 ## Learning outcomes
 
@@ -41,12 +42,14 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 
 | Topic | Framework | What you learn |
 |---|---|---|
-| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents | **BMC** | History of AI, the Agent Stairway and the 2023-2026 engineering lenses; Agentic AI vs AI agent; Singapore government news; Always-on AI agents (Meta Muse); Five scenarios of human-AI agent collaboration; Five capability gaps and evaluating opportunities; Activity 1 · Business Model Canvas for AI Agents (identify and evaluate) |
+| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents | **BMC** | History of AI, the Agent Stairway and the 2023-2026 engineering lenses; Agentic AI vs AI agent; Singapore government news; Always-on AI agents compared: Meta Muse, OpenAI Dots, Claude Duet, Grok Bot, Manus Cue; Five scenarios of human-AI agent collaboration; Five capability gaps and evaluating opportunities; Activity 1 · Business Model Canvas for AI Agents (identify and evaluate) |
 | 2. Designing Digital Architectures and AI Agent Implementation Plans | **90-Day Plan** | Dormant data and the enterprise AI decision layer; The company map and how agents act safely; The five-step 90-day action plan: goal, process, where agents plug in, owner, pilot; Patterns, custom/buy/hybrid and TCO; Activity 2 · AI Agent 90-Day Action Plan |
 | 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | **SCALE** | The SCALE framework, the flattened org chart and the DRI; Where work moves: a new workforce and tomorrow's managers; Training for adoption and the atrophy trap; Reviewing success: metrics, ROI, governance, PDPA; Activity 3 · Sustain and Operate (SCALE) |
 
 **90-Day Action Plan**: 1 Set the goal · 2 Mine the process · 3 Plug in the agents · 4 Name the owner · 5 Run a 90-day pilot.
 **SCALE** (sustain and operate): Story · Commanders · Augment people · Loop information · Evaluate.
+
+**Bonus topic (self-paced, not assessed):** build a business website with Codex (in the ChatGPT desktop app) and deploy it with Sites, using ChatGPT Plus (one of the SkillsFuture free AI subscription plans for eligible learners). Worked example: the [Meridian Assist sample site](https://alfredang.github.io/bcm/meridian/).
 
 ## Activities
 
@@ -64,7 +67,7 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 
 | File | What it is |
 |---|---|
-| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v44.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v44.pdf>) | Trainer slides |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v47.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v47.pdf>) | Trainer slides |
 | [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
 | [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
 | [activities/](activities/) | One folder per activity with its Instructions PDF |

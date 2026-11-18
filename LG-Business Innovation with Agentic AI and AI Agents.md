@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 44 · 18 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 47 · 18 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -15,6 +15,7 @@ Business Innovation with Agentic AI and AI Agents (TGS-2023037472) is a two-day 
 | Provider | Tertiary Infotech Academy Pte Ltd (UEN: 201200696W) |
 | Activity Studio | https://alfredang.github.io/bcm/ (no login) |
 | Your case | Your own organisation, in every activity and in the PP |
+| Worked demo | Meridian Services Pte Ltd (fictitious): one scenario per topic and a filled demo board per activity |
 
 ## Learning Outcomes
 
@@ -45,9 +46,11 @@ Business Innovation with Agentic AI and AI Agents (TGS-2023037472) is a two-day 
 | 2 · Designing Digital Architectures and AI Agent Implementation Plans | LO2 · K3, K4, A3, A4 | Activity 2 · AI Agent 90-Day Action Plan (PP Task 2) | activities/activity-02 |
 | 3 · Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | LO3 · K5, K6, A5, A6 | Activity 3 · Sustain and Operate, SCALE (PP Task 3) | activities/activity-03 |
 
-Every activity is done in groups of 3-5 on one shared online board in the Activity Studio: one member (or the trainer) creates it and everyone joins with the Board ID or QR code; edits sync live. Your group types its answers into each block, can view a short example from a fictional sample company, and can copy a ready-made Meta Muse prompt that drafts the whole board. At the end each member screenshots the group board or downloads it as PNG or PDF, pastes it into the Practical Performance assessment and answers the questions individually.
+Every activity is done in groups of 3-5 on one shared online board in the Activity Studio: one member (or the trainer) creates it and everyone joins with the Board ID or QR code; edits sync live. Your group types its answers into each block, can view a short example from Meridian Services, a fictitious worked-demo company, or open Meridian's full demo board, and can copy a ready-made Meta Muse prompt that drafts the whole board. At the end each member screenshots the group board or downloads it as PNG or PDF, pastes it into the Practical Performance assessment and answers the questions individually.
 
 > Work on your own organisation. Never put personal data (NRIC, phone numbers, customer names) or confidential figures on a board: boards are shared by link.
+
+> SkillsFuture free AI subscription: Singapore Citizens aged 18+ who attend an eligible course (look for the official “Free AI sub” label) receive a notification to redeem one free six-month AI subscription. The eligible course end date is 16 Sep 2026 or later; submit within 60 days of the notification. Official guide: https://www.myskillsfuture.gov.sg/content/portal/en/career-resources/career-resources/education-career-personal-development/redeem-ai-subscription.html
 
 # Topic 1 — Identifying Business Innovation Opportunities with Agentic AI and AI Agents
 
@@ -89,15 +92,29 @@ An always-on agent is an agent deployed to keep running between your messages: i
 
 - IMDA published the world's first Model AI Governance Framework for Agentic AI at Davos on 22 January 2026; version 1.5 (20 May 2026) folded in feedback from more than 60 organisations. Four dimensions: assess and bound the risks upfront; make humans meaningfully accountable; implement technical controls and processes; enable end-user responsibility.
 - Enterprise Singapore's Champions of AI programme (27 October 2026) starts with 24 companies including DBS, OCBC, UOB, ST Engineering, Singapore Airlines and PSA, each building an enterprise-wide AI transformation roadmap. In its pilot, more than 280 small businesses applied agentic AI tools in marketing, sales and customer service.
-- Synapxe's AgentSea platform (built with AWS) let public healthcare staff create more than 12,000 AI agents within three months of its May 2026 launch; over 80,000 healthcare professionals can build agents in plain language.
+- Synapxe's AgentSea platform (built with AWS) let public healthcare staff create more than 12,000 AI agents within three months of its May 2026 launch; over 80,000 healthcare professionals can build agents in plain language, and 300+ agents are shared for colleagues to reuse. A National Heart Centre cardiologist's agent summarises patient histories before clinic, halving 40+ minutes of daily pre-clerking; KK Women's and Children's Hospital uses an agent to generate daily staff rosters. Guardrails reject requests for card or ID numbers, and MOH's AI in Healthcare Guidelines keep professional judgment with people: agents prepare the work, clinicians decide.
 
 *Source: IMDA, Artificial Intelligence in Singapore (imda.gov.sg); Enterprise Singapore media release, 27 Oct 2026; The Straits Times, 24 Aug 2026.*
 
-## 1.4 Always-On AI Agents: Meta Muse
+## 1.4 Always-On AI Agents: Meta Muse, OpenAI Dots, Claude Duet, Grok Bot, Manus Cue
 
 Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in all three activities. It connects to Gmail and Google Calendar, keeps watch on your inbox, nudges you before deadlines, builds small apps called Spaces from one prompt, and asks before sending or buying anything. Use read-only connector access where offered and approve every send yourself.
 
 *[Figure: Meta Muse productivity prompts (Muse app, Singapore, November 2026)]*
+
+Deployment has moved from a harness you run yourself (OpenClaw: local or server tools and channels you wire up), to self-hosted agents on your own machine (for example Hermes Agent: local workflow, memory and reusable skills), to hosted personal agents that a provider runs for you in the cloud. This is a progression in deployment choices, not a product lineage: pick the level of control your business needs.
+
+| Agent | What it does | How to get it |
+|---|---|---|
+| Meta Muse (Meta) | Manages email, schedules and goals; asks before sending or buying; Gmail, Google Calendar and Instagram connectors. | In Singapore since 27 Oct 2026; core use is free, with optional subscriptions: Muse app (iOS / Android) or muse.ai. |
+| OpenAI Dots (OpenAI) | Ongoing responsibilities on its own cloud computer; plugins for email, calendar and files; schedules and an Activity view. | Rolling out to ChatGPT Pro and Business Premium. |
+| Claude Duet (Anthropic) | A morning brief, then checks every few hours; 6,000+ connectors; shows exactly what it will send, pay or sign and waits. | Research preview (21 Oct 2026): US Pro/Max via waitlist. |
+| Grok Bot (xAI) | A persistent cloud computer shared by your bots; apps, MCP and its own @mail.grokbot.com inbox; Auto Review gates sends. | x.ai/bot desktop or mobile app; check your plan's access. |
+| Manus Cue (Manus) | Agents with their own email, phone number, wallet and computer; calls, bookings and capped payments; agent teams in a group chat. | Early access since 28 Sep 2026: free with an invite code at cue.im (web, desktop, Android). |
+
+Compared side by side: Meta Muse and OpenAI Dots run a single agent; Grok Bot and Manus Cue run teams of agents; Anthropic has not said for Claude Duet. Muse's core use is free in Singapore and Cue is free for now with an invite code; Dots, Grok Bot and Duet need paid plans. Models and prices were checked on 31 Oct and 1 Nov 2026, and vendors change both without notice.
+
+*Source: Meta Newsroom, 27 Oct 2026; ChatGPT Learn: Get started with your dot; Anthropic: Introducing Claude Duet; xAI docs: Grok Bot computer and apps; cue.im; BULDRR comparison, 22 Oct 2026.*
 
 ## 1.5 Five Scenarios of Human-AI Agent Collaboration
 
@@ -226,7 +243,7 @@ Reply ONLY in this format, so I can paste it into our board:
 **Step 7 — Refine it together**
 
 - Check every note: is it specific, owned and true? Delete guesses; type better answers into each block.
-- Click View example to see what a finished board looks like; then make every note about your own organisation.
+- Click View example, or open Meridian's demo board, to see a finished board; then make every note about your own organisation.
 - Score your top three opportunities in Value & Objectives Fit.
 
 **Step 8 — Capture your evidence**
@@ -251,6 +268,14 @@ Discuss: Which block of your business model would an AI agent change the most? W
 | Customer Segments | Which customer segments gain most from AI agents, and which still want a person? | Building managers (clients): Want same-day answers; happy with an agent for status updates; Premium contracts: Expect a named human: agent supports, person serves; Small offices (new): Low-cost, agent-led service tier becomes viable. |
 | Cost Structure | What will the agents cost, and which costs will they remove or add? | Year-1 cost SGD 39,000: Licences 14k, integration 15k, training and change 10k; Cost removed: 38% of coordinator time spent re-keying; Risk cost: Human approval for 90 days to avoid misrouted urgent jobs. |
 | Revenue Streams | How will the agents grow revenue or protect it, and which objective do they serve? | Premium '2-hour response' tier: Agent makes the SLA affordable: +SGD 6k a month (assumption); Fewer lost contracts: Faster answers protect renewals; objective: same-day response; Scores: Triage agent 5x4x4 = 80; report agent 75; predictor 24 (park it). |
+
+## Meridian Demo: Business Model Canvas (fictitious company)
+
+Meridian Services Pte Ltd is a fictitious Singapore facilities firm: 140 staff keep 30 commercial buildings running. It receives about 80 emails and WhatsApps a day and its coordinators spend 38% of their time re-keying them into tickets; each request takes 18 minutes to handle. Its Topic 1 question: where on our business model would AI agents pay off first, and which idea do we park? Its canvas scores request triage 80, monthly client reports 75 and a repeat-fault predictor 24 (parked), and keeps a person on complaints, refunds and premium clients.
+
+Meridian's filled Activity 1 board (read-only): https://alfredang.github.io/bcm/?join=meridian-activity-1. Open it, compare it with your own, then make every note about your own organisation. Meridian is fictitious and all its figures are synthetic.
+
+*[Figure: Meridian Services (fictitious): filled Activity 1 board in the Activity Studio]*
 
 # Topic 2 — Designing Digital Architectures and AI Agent Implementation Plans
 
@@ -410,7 +435,7 @@ Reply ONLY in this format, so I can paste it into our board:
 **Step 6 — Refine it together**
 
 - Go block by block, 1 to 5: check step 2 against what you mined, name one DRI, make every milestone measurable.
-- Compare with View example.
+- Compare with View example or Meridian's demo board (link on the activity card).
 
 **Step 7 — Capture your evidence**
 
@@ -433,6 +458,14 @@ Discuss: Which step of the mined process gives the fastest visible win? What mus
 | 5 · Pilot: 30 / 60 / 90 Days | What ships when? | Day 30: Agent drafts tickets for 2 sites; coordinators approve 100%; Day 60: 10 sites; measure handling time and rework weekly; Day 90: Board review: scale, redesign or stop. |
 | 5 · Risks & Controls | What could go wrong and what stops it? | Misrouted urgent job: Human approval for urgent tickets; daily sample audit; Kill criterion: Stop if rework rises above 20% for 2 weeks. |
 | 5 · Success Measures | Which numbers decide scale, redesign or stop? | KPIs: Handling time, first-pass accuracy, complaints, coordinator adoption; Rhythm: Weekly DRI review; day-90 board decision. |
+
+## Meridian Demo: 90-Day Action Plan (fictitious company)
+
+Meridian picked request triage. Its 90-day plan sets the goal (same-day response; handling time from 18 to 11 minutes by day 90), mines the six-step process with three handoffs, plugs the agent into drafting and monitoring while a coordinator approves urgent jobs, names the Head of Service Desk as DRI with a SGD 39,000 budget, and runs a pilot (day 30: 2 sites; day 60: 10 sites; day 90: board decision) with a kill criterion: stop if rework tops 20% for two weeks.
+
+Meridian's filled Activity 2 board (read-only): https://alfredang.github.io/bcm/?join=meridian-activity-2. Open it, compare it with your own, then make every note about your own organisation. Meridian is fictitious and all its figures are synthetic.
+
+*[Figure: Meridian Services (fictitious): filled Activity 2 board in the Activity Studio]*
 
 # Topic 3 — Managing AI-Driven Innovation, Governance and Stakeholder Collaboration
 
@@ -578,7 +611,7 @@ Reply ONLY in this format, so I can paste it into our board:
 **Step 5 — Refine it together**
 
 - Go block by block, S to E: is every message honest, every DRI named, every guardrail real, every review metric measurable?
-- Compare with View example.
+- Compare with View example or Meridian's demo board (link on the activity card).
 
 **Step 6 — E · Evaluate: judge before you ask**
 
@@ -612,6 +645,38 @@ Discuss: Which group hears about the change last today, and should hear first? W
 | L · Idea Pipeline | How do staff share and develop the next innovation? | Idea board: Any staff posts an idea; the agent clusters them weekly; Monthly pitch: Top 3 ideas pitched to leadership; winner gets a DRI and 30 days. |
 | E · Evaluate: Review Success | How will you judge whether the innovation worked? | Day-90 review: Handling time 10.7 min, quality 95.1%, complaints 1.7%, adoption 77.5%; Decision: Scale to all 30 sites with the same approval rules. |
 
+## Meridian Demo: SCALE Board (fictitious company)
+
+At day 90 Meridian's numbers say scale: handling time 10.7 minutes, quality 95.1%, complaints 1.7%, adoption 77.5%. But coordinators fear replacement. Its SCALE board tells the story first (no one loses their job in the pilot), gives each outcome one DRI with an agent team, moves coordinators to client calls and exceptions, keeps people judging through weekly sample audits, sets a daily, weekly and monthly information rhythm, and decides to scale to all 30 sites with the same approval rules.
+
+Meridian's filled Activity 3 board (read-only): https://alfredang.github.io/bcm/?join=meridian-activity-3. Open it, compare it with your own, then make every note about your own organisation. Meridian is fictitious and all its figures are synthetic.
+
+*[Figure: Meridian Services (fictitious): filled Activity 3 board in the Activity Studio]*
+
+# Bonus Topic — Build Your Business Website with Codex and Deploy It with Sites
+
+> Self-paced and optional: outside the 16 contact hours and not assessed.
+
+If you are eligible for the SkillsFuture free AI subscription (Singapore Citizens aged 18+), you can choose ChatGPT Plus. ChatGPT Plus includes Codex, OpenAI's coding agent, and Sites, which builds, hosts and shares a website you describe. Use your three activity boards as the content: they already hold your customers, value proposition, plan and proof.
+
+| Step | What you do |
+|---|---|
+| 1 · Claim ChatGPT Plus | Redeem the free AI subscription and choose ChatGPT Plus (six months, one per person; after that, Plus is paid). Sites hosting comes with Plus, Pro, Business and Enterprise plans. |
+| 2 · Get the desktop app | Install the ChatGPT desktop app (formerly the Codex app), sign in with your ChatGPT account and open Codex. |
+| 3 · Brief Codex | Paste a brief: audience, one goal (for example 'Book a demo'), the sections, the facts from your boards, the style. Ask it to mark anything it invents (assumption). |
+| 4 · Preview and check | Read every claim, try the phone view and every button. No personal data on a public page. |
+| 5 · Deploy with Sites | Ask Codex to publish the site with Sites, review the preview, deploy and copy the URL. Check who can open it under Share before you send the link. |
+
+Hosting: ChatGPT Plus includes 125 Sites hosting credits a month, shared by all your sites. Hosting is currently free; OpenAI states that from 1 January 2027 Plus, Pro and Business customers pay for hosting use above the monthly allowance. Check the current terms in OpenAI's Sites documentation before you publish: https://learn.chatgpt.com/docs/sites
+
+## Worked Example: Meridian Assist
+
+Meridian Assist is the sample website for the fictitious Meridian Services, built from its three boards: the hero is the Activity 1 value proposition (same-day answers, 24/7), 'How it works' is the Activity 2 pilot, and 'Trust' is the Activity 3 guardrails. The course copy is at https://alfredang.github.io/bcm/meridian/ .
+
+*[Figure: Meridian Assist sample website (fictitious company)]*
+
+The brief used for Meridian (swap in your own business): Build a one-page business website for Meridian Assist, the always-on AI maintenance agent from Meridian Services Pte Ltd, a fictitious Singapore facilities firm. Audience: building managers who want same-day answers. Sections: hero with a one-line promise and a 'Book a demo' button; what it does (3 cards); how it works (connect, triage, monitor, decide at day 90); plans; trust (human approval, PDPA, audit trail); contact. Use only the facts in my Activity 1-3 boards; mark anything else (assumption). Ivory background, charcoal text, terracotta accents, serif headings; mobile-first; one index.html; no tracking. Then show me a preview and list every claim on the page so I can check it.
+
 # Assessment Preparation
 
 - Written Assessment (WA) - Short-Answer Questions (SAQ), 1 hour, open book. Five questions (K1-K6).
@@ -634,6 +699,8 @@ Discuss: Which group hears about the change last today, and should hear first? W
 | Outcome contract | Population, baseline, target, owner, counter-metric |
 | TCO | Total cost of ownership over three years |
 | Atrophy trap | Losing judgement by always deferring to AI |
+| Codex | OpenAI's coding agent; it writes and runs code from a plain-language brief |
+| Sites | OpenAI's service in ChatGPT and Codex that builds, hosts and shares a website |
 
 # References
 
@@ -642,3 +709,4 @@ Discuss: Which group hears about the change last today, and should hear first? W
 - The Straits Times, 24 Aug 2026: New platform to create AI agents available to all public healthcare professionals.
 - Meta Newsroom, Muse in Singapore (27 Oct 2026); Meta Help, Connectors.
 - Klarna press release, Feb 2024: AI assistant handles two-thirds of customer service chats.
+- OpenAI, Sites documentation (learn.chatgpt.com/docs/sites), accessed 18 Nov 2026.

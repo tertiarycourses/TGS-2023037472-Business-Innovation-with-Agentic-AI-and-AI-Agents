@@ -11,7 +11,7 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v44"
+VERSION      = "v47"
 VERSION_DATE = "18 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
@@ -58,7 +58,7 @@ TOPICS = [
       short="Identify and evaluate opportunities",
       pitch="Agents now do real work. Find where they pay off in your business.",
       items=["History of AI, the Agent Stairway and the 2023-2026 engineering lenses", "Agentic AI vs AI agent", "Singapore government news",
-             "Always-on AI agents (Meta Muse)", "Five scenarios of human-AI agent collaboration",
+             "Always-on AI agents compared: Meta Muse, OpenAI Dots, Claude Duet, Grok Bot, Manus Cue", "Five scenarios of human-AI agent collaboration",
              "Five capability gaps and evaluating opportunities", "Activity 1 · Business Model Canvas for AI Agents (identify and evaluate)"]),
  dict(num=2, code="02", lo=1, codes="K3, K4, A3, A4", day="Day 1 PM - Day 2 AM",
       title="Designing Digital Architectures and AI Agent Implementation Plans",

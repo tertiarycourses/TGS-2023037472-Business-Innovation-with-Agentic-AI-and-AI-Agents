@@ -1,5 +1,19 @@
 # Courseware Changelog
 
+## v47 - 18 November 2026
+
+- Meridian Services (fictitious) returns as a worked demo, not the learners' case: a Meridian scenario slide opens each topic, and each activity shows Meridian's filled board (Activity Studio screenshot with a QR to the read-only live board, then block by block). Demo boards: `?join=meridian-activity-1`, `-2`, `-3`.
+- New self-paced bonus topic after Topic 3 (outside the contact hours, not assessed): claim ChatGPT Plus with the SkillsFuture free AI subscription, build a business website with Codex in the ChatGPT desktop app, deploy it with Sites. Sample site: https://alfredang.github.io/bcm/meridian/
+- 126 slides. Learner Guide (Meridian demo per activity, bonus section), Lesson Plan (bonus note) and activity instructions aligned. Assessment unchanged.
+
+## v46 - 18 November 2026
+
+- The big five always-on agents compared (Meta Muse, OpenAI Dots, Grok Bot, Claude Duet, Manus Cue) and a Manus Cue set-up page.
+
+## v45 - 18 November 2026
+
+- Singapore healthcare (12,000+ AgentSea agents), the OpenClaw to self-hosted to hosted evolution, set-up pages for Meta Muse, OpenAI Dots, Claude Duet and Grok Bot with their YouTube Shorts, and the SkillsFuture free AI subscription.
+
 ## v44 - 18 November 2026
 
 - Learners work on their own organisation throughout: the named example company is removed. Board slides show the question each block answers; sample figures are labelled "Example".

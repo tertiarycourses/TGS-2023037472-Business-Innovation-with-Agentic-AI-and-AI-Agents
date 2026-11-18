@@ -16,10 +16,15 @@ sample the trainer inserted in PowerPoint for Mac and confirmed playing (30 Oct 
 
 The poster image is what PDF exports, LibreOffice and offline viewers show; playback needs PowerPoint + internet.
 
+ENABLE CONTENT: PowerPoint blocks online media in any deck it did not create itself ("Security Warning: References to
+external media objects have been blocked"). Click Enable Content on that yellow bar, then click the video in Slide Show.
+Verified on PowerPoint for Mac, 30 Oct 2026. Always add a fallback "Open in YouTube" link (link_text=, on by default).
+
 Usage
     from pptx_online_video import add_online_video
     add_online_video(slide, "https://www.youtube.com/shorts/gdHwOn2kvT8", x=10.5, y=2.2, w=2.2, h=3.9,
                      poster=None, name="How to set up your first OpenAI Dot")  # poster=None -> YouTube thumbnail
+    # leaves a 0.34in "▶ Open in YouTube" link under the video; pass link_text=None to omit it
 
 Upgrade an existing deck whose videos only show a poster:
     python3 pptx_online_video.py fix deck.pptx [out.pptx]
@@ -129,6 +134,34 @@ def set_video_timing(slide):
         anchor.addprevious(timing)
     else:
         sld.append(timing)
+    # A p:transition AFTER p:timing makes PowerPoint discard the timing (videos show only the poster).
+    for tr in sld.findall(f'{P}transition'):
+        sld.remove(tr)
+        timing.addprevious(tr)
+
+
+def check_deck(path):
+    """QA gate: every video slide has playFrom + togglePause and its transition BEFORE p:timing. -> list of faults."""
+    from pptx import Presentation
+    faults = []
+    for i, slide in enumerate(Presentation(path).slides, 1):
+        if not _video_spids(slide):
+            continue
+        sld = slide._element
+        kids = [k.tag for k in sld]
+        xml = etree.tostring(sld).decode()
+        if 'playFrom(0.0)' not in xml:
+            faults.append(f'slide {i}: no playFrom click trigger')
+        if 'togglePause' not in xml:
+            faults.append(f'slide {i}: no togglePause trigger')
+        if f'{P}timing' in kids and f'{P}transition' in kids and kids.index(f'{P}transition') > kids.index(f'{P}timing'):
+            faults.append(f'slide {i}: p:transition after p:timing (PowerPoint drops the timing)')
+        # Fallback link: PowerPoint blocks online media until Enable Content, PDFs never play. Every video slide
+        # needs a clickable YouTube link (a stale course copy of this helper silently dropped it: TGS-2023037472 v45).
+        links = [r.target_ref for r in slide.part.rels.values() if r.is_external and 'hyperlink' in r.reltype]
+        if not any(('youtube.com' in u or 'youtu.be' in u) and '/embed/' not in u for u in links):
+            faults.append(f'slide {i}: no "Open in YouTube" fallback link (use add_online_video(..., link_text=...) from the user-level helper)')
+    return faults
 
 
 def _clean_nvPr(nvPr):
@@ -136,14 +169,34 @@ def _clean_nvPr(nvPr):
         nvPr.remove(e)
 
 
-def add_online_video(slide, url, x, y, w, h, poster=None, name='Online video'):
-    """Add a click-to-play YouTube video (inches). poster: path or file-like; None downloads the thumbnail."""
+def add_fallback_link(slide, url, x, y, w, text='▶ Open in YouTube', size=10.5, color='3A7D7B'):
+    """A small centred hyperlink (inches) so the video can still be watched if PowerPoint blocks or cannot stream it."""
+    from pptx.util import Pt
+    from pptx.dml.color import RGBColor
+    from pptx.enum.text import PP_ALIGN
+    tb = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(0.28))
+    tf = tb.text_frame
+    tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0
+    p = tf.paragraphs[0]
+    p.alignment = PP_ALIGN.CENTER
+    r = p.add_run()
+    r.text = text
+    r.font.size, r.font.bold = Pt(size), True
+    r.font.color.rgb = RGBColor.from_string(color)
+    r.hyperlink.address = url
+    return tb
+
+
+def add_online_video(slide, url, x, y, w, h, poster=None, name='Online video', link_text='▶ Open in YouTube'):
+    """Add a click-to-play YouTube video (inches). poster: path or file-like; None downloads the thumbnail.
+    link_text adds a fallback YouTube link 0.06in below the frame (reserve ~0.34in); None omits it."""
     from pptx.oxml.shapes.picture import CT_Picture
     embed = embed_url(url)
     part = slide.part
     v_rId = part.relate_to(embed, RT.VIDEO, is_external=True)
     _, p_rId = part.get_or_add_image_part(poster if poster is not None else io.BytesIO(thumbnail(url)))
-    pic = CT_Picture.new_video_pic(slide.shapes._next_shape_id, name, v_rId, 'rIdUnused', p_rId,
+    from xml.sax.saxutils import escape as _esc   # titles with & or quotes break the XML otherwise
+    pic = CT_Picture.new_video_pic(slide.shapes._next_shape_id, _esc(name, {'"': '&quot;'}), v_rId, 'rIdUnused', p_rId,
                                    Inches(x), Inches(y), Inches(w), Inches(h))
     cNvPr = pic.find(f'{P}nvPicPr/{P}cNvPr')
     cNvPr.set('descr', name)
@@ -153,6 +206,8 @@ def add_online_video(slide, url, x, y, w, h, poster=None, name='Online video'):
     _clean_nvPr(pic.find(f'{P}nvPicPr/{P}nvPr'))
     slide.shapes._spTree.append(pic)
     set_video_timing(slide)
+    if link_text:
+        add_fallback_link(slide, url, x - 0.1, y + h + 0.06, w + 0.2, link_text)
     return pic
 
 
@@ -181,6 +236,10 @@ def fix_deck(src, dst=None):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) >= 3 and sys.argv[1] == 'check':
+        f = check_deck(sys.argv[2])
+        print('\n'.join(f) if f else 'all video slides play on click (trigger + transition order OK)')
+        sys.exit(1 if f else 0)
     if len(sys.argv) >= 3 and sys.argv[1] == 'fix':
         print(f'{fix_deck(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None)} YouTube video(s) made playable')
     else:

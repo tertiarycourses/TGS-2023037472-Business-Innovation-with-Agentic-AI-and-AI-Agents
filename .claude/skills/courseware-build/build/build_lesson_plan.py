@@ -56,7 +56,7 @@ for k, v in [("Course Title", C.TITLE), ("WSQ Course Reference", C.COURSE_CODE),
              ("Training Provider", f"{C.ORG} ({C.UEN.replace('UEN: ', 'UEN ')})"),
              ("Skills Framework TSC", f"{C.TSC_TITLE} ({C.TSC_CODE})"), ("Duration", C.CONTACT_TIME_NOTE),
              ("Mode", "Instructor-led; three step-by-step activities with the Meta Muse always-on agent (phone app or muse.ai website) on shared group boards (no login); learner laptop or phone"),
-             ("Learner case", "Each group works on its own organisation (one member's company); no named example company"),
+             ("Learner case", "Each group works on its own organisation (one member's company). Meridian Services (fictitious) is the worked demo: one scenario slide per topic and a filled demo board per activity"),
              ("Activity Studio", B.BCM_URL), ("Slide deck", f"{C.SHORT_TITLE}-{C.VERSION}.pptx ({MAP['end'] - 1} slides)"),
              ("Trainer", C.TRAINER)]:
     c = t.add_row().cells; cell(c[0], k, bold=True, size=10, fill=TOPIC_FILL); cell(c[1], v, size=10)
@@ -68,7 +68,7 @@ for lo in C.LEARNING_OUTCOMES: doc.add_paragraph(style="List Bullet").add_run(lo
 
 H("Topics, Outcomes and Slides")
 tt = doc.add_table(rows=0, cols=4); tt.style = "Table Grid"; head(tt, ["Topic", "Content", "LO · K & A", "Slides"])
-tslides = {1: rng("t1", "t2"), 2: rng("t2", "t3"), 3: rng("t3", "wrap")}
+tslides = {1: rng("t1", "t2"), 2: rng("t2", "t3"), 3: rng("t3", "bonus")}
 for tp in C.TOPICS:
     c = tt.add_row().cells
     cell(c[0], f"Topic {tp['num']}: {tp['title']}", bold=True, fill=TOPIC_FILL); cell(c[1], "; ".join(tp["items"]))
@@ -85,7 +85,7 @@ for tp in C.TOPICS:
     cell(c[2], tp["codes"]); cell(c[3], f"{B.LU_HOURS[n]} h")
 c = lt_.add_row().cells
 cell(c[0], "Assessment", bold=True, fill=ASSESS_FILL); cell(c[1], "WA-SAQ (1 h) + PP (1 h), Day 2 from 4:30 pm"); cell(c[2], "K1-K6, A1-A6"); cell(c[3], "2 h")
-prodoc.set_widths(lt_, [0.9, 3.9, 1.2, 0.8])
+prodoc.set_widths(lt_, [1.15, 3.65, 1.2, 0.8])   # 'Assessment' fits on one line
 r = doc.add_paragraph().add_run("LU durations include tea breaks and recaps, as scheduled; total 14 h training + 2 h assessment = 16 h.")
 r.italic = True; r.font.size = Pt(9.5)
 
@@ -123,6 +123,15 @@ prodoc.set_widths(at, [0.8, 2.7, 1.4, 1.0, 0.95])
 doc.add_paragraph("Materials: one folder per activity under activities/ with a step-by-step Instructions PDF; fill-in prompt templates at "
                   + B.BCM_URL + "prompts.html. Learners without Meta Muse may run the same prompts in any assistant connected to their own "
                   "email; never use another person's account.")
+
+H("Bonus Topic (self-paced, outside the contact hours)")
+doc.add_paragraph(f"Slides {rng('bonus', 'wrap')}: build a business website with Codex (ChatGPT desktop app) and deploy it with Sites, using ChatGPT Plus from "
+                  "the SkillsFuture free AI subscription; worked example Meridian Assist (" + B.BCM_URL + "meridian/). Learners do it after "
+                  "class. It is not timetabled, is not part of the 16 contact hours and is not assessed; the trainer may point to it during the "
+                  "course recap.")
+doc.add_paragraph("Worked demo: Meridian Services Pte Ltd (fictitious). Each topic opens its activity with a Meridian scenario slide, and each "
+                  "activity shows Meridian's filled board (read-only, " + B.BCM_URL + "?join=meridian-activity-1, -2, -3) before groups build "
+                  "their own board for their own organisation.")
 
 prodoc.add_page_numbers(doc); prodoc.enable_update_fields(doc)
 OUT = os.path.join(REPO, "courseware", f"LP-{C.SHORT_TITLE}.docx")

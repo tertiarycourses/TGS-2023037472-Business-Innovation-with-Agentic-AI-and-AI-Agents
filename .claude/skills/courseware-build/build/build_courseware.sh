@@ -15,4 +15,7 @@ for f in "$PPT" "$LP" "$LG"; do soffice --headless --convert-to pdf --outdir "$C
 python3 "$HERE/inject_toc.py" "$LP" "${LP%.docx}.pdf" 2
 python3 "$HERE/inject_toc.py" "$LG" "${LG%.docx}.pdf" 2
 for f in "$LP" "$LG"; do soffice --headless --convert-to pdf --outdir "$CW" "$f" >/dev/null 2>&1; done
+# inject_toc estimates multi-page TOC offsets; correct every typed TOC entry from the real render until stable (QA v45: LG TOC 1 page off)
+FIXTOC="$HOME/.claude/skills/wsq-courseware/scripts/fix_typed_toc.py"
+[ -f "$FIXTOC" ] && for f in "$LP" "$LG"; do python3 "$FIXTOC" "$f"; done
 echo "==> Done"; ls -1 "$CW"/*.pptx "$CW"/*.pdf "$CW"/*.docx

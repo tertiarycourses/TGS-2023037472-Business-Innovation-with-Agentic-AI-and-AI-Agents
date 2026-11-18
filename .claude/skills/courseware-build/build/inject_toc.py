@@ -86,6 +86,7 @@ def main():
     def _fld(run, kind):
         fc = OxmlElement("w:fldChar"); fc.set(qn("w:fldCharType"), kind); run._r.append(fc)
     paras = []
+    compact = len(entries) > 30   # long TOC: tighter rows so it stays on one page (TGS-2023037472 v46)
     for lvl, text, page in entries:
         new_p = anchor.makeelement(qn('w:p'), {})
         anchor.addprevious(new_p)
@@ -95,9 +96,9 @@ def main():
         pf.tab_stops.add_tab_stop(Inches(6.3), WD_TAB_ALIGNMENT.RIGHT, WD_TAB_LEADER.DOTS)
         if lvl >= 2:
             pf.left_indent = Inches(0.3)
-        pf.space_after = Pt(3)
+        pf.space_after = Pt(1 if compact else 3)
         r = para.add_run(text + "\t" + str(page))
-        r.font.size = Pt(11 if lvl == 1 else 10.5)
+        r.font.size = Pt((10 if lvl == 1 else 9.5) if compact else (11 if lvl == 1 else 10.5))
         r.font.name = "Arial"
         r.bold = (lvl == 1)
         r.font.color.rgb = GREY

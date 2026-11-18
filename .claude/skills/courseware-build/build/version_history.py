@@ -35,4 +35,18 @@ V44 = ("44", "18 November 2026",
        "The 'four futures' slide is replaced by a clearer before/after slide on where people's work moves. WA-SAQ questions and "
        "PP tasks rewritten to match the slides and Activities 1-3 (same five questions and K1-K6 mapping; same three tasks and A1-A6).",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43, V44]
+V45 = ("45", "18 November 2026",
+       "Seven slides added from the Human-AI collaboration courses: Singapore healthcare (12,000+ AgentSea agents in three months); "
+       "the evolution from OpenClaw to self-hosted and hosted personal agents; one set-up page each for Meta Muse, OpenAI Dots, "
+       "Claude Duet and Grok Bot, with its YouTube Short; and the SkillsFuture free AI subscription.",
+       "Dr. Alfred Ang")
+V46 = ("46", "18 November 2026",
+       "Two slides added: a side-by-side comparison of the big five always-on agents (Meta Muse, OpenAI Dots, Grok Bot, Claude Duet, "
+       "Manus Cue: model, use, single or multi-agent, pricing) and a set-up page for Manus Cue with its YouTube Short. Learner Guide, "
+       "Lesson Plan and Facilitator Guide aligned.",
+       "Dr. Alfred Ang")
+V47 = ("47", "18 November 2026",
+       "Meridian Services (fictitious) worked demo in each topic and activity board; self-paced bonus topic (website with Codex, "
+       "deployed with Sites), outside the contact hours. Assessment unchanged.",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47]

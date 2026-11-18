@@ -119,6 +119,14 @@ flow(D, "Learning Management System", "Download Course Material", [
     ("globe", "Open the LMS", "lms-tms.tertiaryinfotech.com"), ("mail", "Send OTP", "Your registered email"),
     ("lock", "Verify", "Key in the OTP"), ("folder", "Open the course", "Business Innovation with Agentic AI"),
     ("download", "Download", "Slides PDF + Learner Guide")])
+# Free AI subscription (copied from TGS-2024043854 v3.10 slide 19, owner request v45; step 4 adapted: this course runs on Meta Muse)
+s = flow(D, "Before we begin · SkillsFuture", "Free AI Subscription: Redeem Your Six Months", [
+    ("user", "Eligibility", "Singapore Citizen; age 18+."), ("search", "Course label", "Find the official \u201cFree AI sub\u201d label."),
+    ("mail", "Notification", "After attending an eligible course."),
+    ("check", "Choose your AI plan", "Pick the plan you will keep using at work. This course's activities run on Meta Muse: core use is free.")],
+    tipt="One free six-month subscription per person; eligible course end date 16 Sep 2026 or later; submit within 60 days of the notification.")
+T.src(D, s, "SkillsFuture: How to redeem your AI subscription (official guide)",
+      "https://www.myskillsfuture.gov.sg/content/portal/en/career-resources/career-resources/education-career-personal-development/redeem-ai-subscription.html")
 
 mark("briefing")
 cards(D, "Assessment", "Briefing for Assessment", [
@@ -141,6 +149,7 @@ flow(D, "Assessment", "Assessment Flow", ASSESS_FLOW, sub="On assessment day, fi
 T.topic1(D, C, mark)
 T.topic2(D, C, mark)
 T.topic3(D, C, mark)
+T.bonus(D, C, mark)   # v47: self-paced bonus topic (outside the contact hours)
 
 # ====================================================================== WRAP-UP
 mark("wrap")
