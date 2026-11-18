@@ -23,7 +23,7 @@ A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day act
 | Duration | 2 days, 16 hours (14 h training + 2 h assessment) |
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html) |
 | Funding | Up to 70% WSQ course fee funding; SkillsFuture Credit claimable. Eligibility and terms apply; see the [course page](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html). |
-| Activity Studio (group boards) | [alfredang.github.io/bcm](https://alfredang.github.io/bcm/): no login; one shared board per group for Activities 1-3 |
+| Activity Studio (live boards) | [alfredang.github.io/bcm](https://alfredang.github.io/bcm/): create a board in one click; everyone joins by QR code or Board ID, no login |
 | Meta Muse prompt templates | [alfredang.github.io/bcm/prompts.html](https://alfredang.github.io/bcm/prompts.html) |
 | Courseware version | v44 · 18 November 2026 |
 
@@ -52,11 +52,11 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 
 | # | Activity | Topic · LO | Materials | Assessment evidence |
 |---|---|---|---|---|
-| 1 | **Business Model Canvas for AI Agents** | Topic 1 · LO1 | [Instructions PDF](<activities/activity-01-business-model-canvas-for-ai-agents/ACTIVITY-01-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=opportunity) | PP Task 1 · screenshot of your BMC |
-| 2 | **AI Agent 90-Day Action Plan** | Topic 2 · LO2 | [Instructions PDF](<activities/activity-02-ai-agent-90-day-action-plan/ACTIVITY-02-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=actionplan) | PP Task 2 · screenshot of your action plan board |
-| 3 | **Sustain and Operate with AI Agents (SCALE)** | Topic 3 · LO3 | [Instructions PDF](<activities/activity-03-sustain-and-operate-with-ai-agents-scale/ACTIVITY-03-Instructions.pdf>) · [Group board](https://alfredang.github.io/bcm/?activity=change) | PP Task 3 · screenshot of your SCALE board |
+| 1 | **Business Model Canvas for AI Agents** | Topic 1 · LO1 | [Instructions PDF](<activities/activity-01-business-model-canvas-for-ai-agents/ACTIVITY-01-Instructions.pdf>) · [Open board](https://alfredang.github.io/bcm/?activity=opportunity) | PP Task 1 · screenshot of your BMC |
+| 2 | **AI Agent 90-Day Action Plan** | Topic 2 · LO2 | [Instructions PDF](<activities/activity-02-ai-agent-90-day-action-plan/ACTIVITY-02-Instructions.pdf>) · [Open board](https://alfredang.github.io/bcm/?activity=actionplan) | PP Task 2 · screenshot of your action plan board |
+| 3 | **Sustain and Operate with AI Agents (SCALE)** | Topic 3 · LO3 | [Instructions PDF](<activities/activity-03-sustain-and-operate-with-ai-agents-scale/ACTIVITY-03-Instructions.pdf>) · [Open board](https://alfredang.github.io/bcm/?activity=change) | PP Task 3 · screenshot of your SCALE board |
 
-- **Activity Studio** (group boards, no login): https://alfredang.github.io/bcm/
+- **Activity Studio** (live boards, no login: create a board, everyone joins by QR code or Board ID): https://alfredang.github.io/bcm/
 - **Meta Muse prompt templates** (fill in the blanks, copy, paste into Muse): https://alfredang.github.io/bcm/prompts.html · offline copy: [prompts/index.html](prompts/index.html)
 - **Meta Muse**: phone app (App Store / Google Play, "Muse from Meta") or the website [muse.ai](https://muse.ai/)
 
