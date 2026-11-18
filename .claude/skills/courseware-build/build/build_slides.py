@@ -98,14 +98,14 @@ for i, (ic, ti, de) in enumerate([("users", "Group boards", "Join with a Board I
     text(s, 5.75, y + 0.45, 6.9, 0.45, de, 15, MUTED)
 image(D, "Roadmap · Activities", "One Board per Outcome, One Screenshot per PP Task", asset("screenshots", "bcm-landing.png"),
       caption=f"{B.BCM_URL} · join your group board with the Board ID or QR · trainers create all group boards in one go")
-PURL = B.BCM_URL + "prompts.html"
+PURL = "https://drive.google.com/drive/folders/1A0P71IKdSMRUyAAwv0iNLsEo5bHWpbox"
 s = D.new(); header(D, s, "Roadmap · Meta Muse", "Fill in the Blanks. Copy. Paste into Muse.",
-                    "Every prompt is a template: type your organisation once, fill the [blanks], copy the finished prompt.")
+                    "Download activities/prompts.html from the LMS course materials. Open it in a browser, fill the [blanks], then copy.")
 K.picture(s, asset("screenshots", "prompts-page.png"), 0.6, 2.35, maxw=7.9, maxh=4.4)
 T.qr(s, PURL, 9.55, 2.4, 2.3)
-t = text(s, 8.8, 4.85, 3.9, 0.4, PURL.replace("https://", ""), 14, TEAL, bold=True, align="c", autofit=False)
+t = text(s, 8.8, 4.85, 3.9, 0.4, "Open the course Activities folder", 14, TEAL, bold=True, align="c", autofit=False)
 t.click_action.hyperlink.address = PURL
-text(s, 8.8, 5.35, 3.9, 1.3, "Every prompt for Activities 1-3, in order. Type your organisation once. Saved in your browser only.", 15, MUTED, align="c", minpt=11)
+text(s, 8.8, 5.35, 3.9, 1.3, "Download prompts.html here. Current mini activity and Activities 1-3. Open the downloaded file in a browser; fill, copy, paste.", 15, MUTED, align="c", minpt=11)
 image(D, "Roadmap · Activities", "From Group Board to PP Evidence in One Click", asset("screenshots", "bcm-screenshot-view.png"),
       side=[("camera", "Screenshot view", "Clean header: course, activity, group, your name, date"),
             ("download", "PNG or PDF", "One page, ready to paste into the PP"),

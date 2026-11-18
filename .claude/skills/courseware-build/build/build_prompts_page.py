@@ -28,14 +28,16 @@ def card(pid, kicker, title, prompt, note="", board=None):
             f'<div class="foot">{e(note)} {b}</div></article>')
 
 sec = []
-nav = []
+nav = [("mini-muse", "Mini Activity · Muse")]
+mini_cards = [card(f"mini{i + 1}", f"Mini Activity · Step {i + 1}", st["title"], st["prompt"], "Check: " + st.get("check", "")) for i, st in enumerate(B.MINI_MUSE["steps"])]
+sec.append('<section id="mini-muse"><div class="sk">Topic 1 · 20 minutes · Try Meta Muse</div><h2>Mini Activity · Try Meta Muse</h2><p class="pitch">Immediately after the agent introductions. Explore capabilities and approvals; the group BMC activity comes later.</p>' + ''.join(mini_cards) + '</section>')
 for L in B.LABS:
     cv = B.CANVAS[L["canvas"]]; sid = f"lab{L['n']}"; nav.append((sid, f"Activity {cv['num']}"))
     items = []
     for i, st in enumerate(L["steps"]):
         if not st.get("prompt"): continue
         board = st["prompt"] == "BOARD"
-        items.append(card(f"l{L['n']}s{i + 1}", f"Activity {L['n']} · Step {i + 1}" + (" · draft the whole board" if board else " · Meta Muse"), st["title"],
+        items.append(card(f"l{L['n']}s{i + 1}", f"Activity {L['n']} · {'Task' if L['n'] == 2 else 'Step'} {i + 1}" + (" · draft the whole board" if board else " · Meta Muse"), st["title"],
                           cv["muse_prompt"] if board else st["prompt"],
                           ("Copy Muse's reply, then on your group board click Paste Muse answer, tick the lines you agree with, Add. Verify every note."
                            if board else "Check: " + st.get("check", "")), board=cv["key"] if board else None))
@@ -85,8 +87,8 @@ page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name
 <main>{"".join(sec)}</main>
 <footer>Muse drafts; you decide. Never paste personal data (NRIC, phone numbers, customer names) into a shared board. © {e(C.ORG)} · {e(C.VERSION)} · {e(C.VERSION_DATE)}</footer>
 <script>{JS}</script></body></html>"""
-outs = [os.path.join(REPO, "prompts", "index.html")]
+outs = [os.path.join(REPO, "prompts", "index.html"), os.path.join(REPO, "activities", "prompts.html")]
 bcm = os.path.expanduser("~/projects/edtools/bcm")
-if os.path.isdir(bcm): outs.append(os.path.join(bcm, "prompts.html"))
+if "--local-only" not in sys.argv and os.path.isdir(bcm): outs.append(os.path.join(bcm, "prompts.html"))
 for o in outs:
     os.makedirs(os.path.dirname(o), exist_ok=True); open(o, "w", encoding="utf-8").write(page); print("wrote", o)

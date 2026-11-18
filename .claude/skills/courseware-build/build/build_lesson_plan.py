@@ -21,11 +21,12 @@ KIND_FILL = {"topic": TOPIC_FILL, "activity": TOPIC_FILL, "break": BREAK_FILL, "
 GREY = RGBColor(0x55, 0x5B, 0x66)
 
 def rng(a, b): return str(MAP[a]) if MAP[b] - 1 <= MAP[a] else f"{MAP[a]}–{MAP[b] - 1}"
-ROUTES = [("Welcome", ("admin", "t1")), ("Topic 1 (Part A)", ("t1", "labs1")), ("Activity 1 (Part A)", ("labs1", "t1gaps")),
-          ("Topic 1 (Part B)", ("t1gaps", "act1")), ("Activity 1 (Part B)", ("act1", "t1end")), ("Topic 2 (Part A)", ("t2", "t2map")),
-          ("Topic 2 (Part B)", ("t2map", "t2arch")), ("Topic 2 (Part C)", ("t2arch", "act2a")), ("Activity 2 (Part A)", ("act2a", "act2b")),
-          ("Activity 2 (Part B)", ("act2b", "t2end")), ("Topic 3 (Part A)", ("t3", "t3review")), ("Topic 3 (Part B)", ("t3review", "act3")),
-          ("Activity 3 (Part A)", ("act3", "lab13")), ("Activity 3 (Part B)", ("lab13", "t3end")), ("Course recap", ("wrap", "assess")),
+ROUTES = [("Welcome", ("admin", "t1")), ("Topic 1 (Part A)", ("t1", "mini_muse")), ("Mini Activity", ("mini_muse", "t1always")),
+          ("Topic 1 (Part B)", ("t1always", "t1gaps")), ("Topic 1 (Part C)", ("t1gaps", "labs1")),
+          ("Activity 1 (Part A)", ("labs1", "act1")), ("Activity 1 (Part B)", ("act1", "t1end")), ("Topic 2 (Part A)", ("t2", "t2step3")),
+          ("Topic 2 (Part B)", ("t2step3", "t2arch")), ("Topic 2 (Part C)", ("t2arch", "act2a")), ("Activity 2 (Part A)", ("act2a", "act2b")),
+          ("Activity 2 (Part B)", ("act2b", "t2end")), ("Topic 3 (Part A)", ("t3", "t3loop")), ("Topic 3 (Part B)", ("t3loop", "t3review")),
+          ("Activity 3 (Part A)", ("act3", "lab13")), ("Topic 3 (Part C)", ("t3review", "act3")), ("Activity 3 (Part B)", ("lab13", "t3end")), ("Course recap", ("wrap", "assess")),
           ("Written", ("assess", "end")), ("Practical", ("assess", "end"))]
 def slides_for(text):
     if text.startswith("Course recap"): return f"{rng('wrap', 'assess')}; briefing {MAP['briefing']}"
@@ -111,6 +112,14 @@ for day in (1, 2):
     r.italic = True; r.font.size = Pt(9.5); r.font.color.rgb = GREY
     assert total == 480, (day, total)
 
+# Each activity's stated minutes (deck hand-out, Instructions PDF) must equal its timetable rows (QA v48: 120 vs 75 + 25).
+for cv in B.CANVASES:
+    rows_ = [r for day_ in (B.SCHEDULE.values() if isinstance(B.SCHEDULE, dict) else [B.SCHEDULE]) for r in day_]
+    sched = sum(r[2] for r in rows_ if str(r[4]).startswith(f"Activity {cv['num']} "))
+    assert sched == cv["minutes"], f"Activity {cv['num']}: canvas says {cv['minutes']} min, schedule gives {sched} min"
+    lab_ = next(L for L in B.LABS if L["canvas"] == cv["key"])
+    assert lab_["minutes"] == sched, f"Activity {cv['num']}: lab says {lab_['minutes']} min, schedule gives {sched} min"
+doc.add_paragraph("Mini Activity (20 min): immediately after the agent introductions, learners try Meta Muse using the first section of Activity 1 Instructions. It is separate from the three PP group-board activities. A current offline prompts.html is included in activities/.")
 H("Activities (one per learning outcome)")
 at = doc.add_table(rows=0, cols=5); at.style = "Table Grid"; head(at, ["Activity", "What learners do", "Group board", "Topic · LO", "Assessment evidence"])
 for L in B.LABS:
@@ -120,18 +129,11 @@ for L in B.LABS:
     cell(c[2], f"{cv['title']}\n{B.BCM_URL}?activity={cv['key']}"); cell(c[3], f"Topic {cv['topic']} · {cv['lo']} ({cv['codes']})")
     cell(c[4], cv["evidence"])
 prodoc.set_widths(at, [0.8, 2.7, 1.4, 1.0, 0.95])
-doc.add_paragraph("Materials: one folder per activity under activities/ with a step-by-step Instructions PDF; fill-in prompt templates at "
-                  + B.BCM_URL + "prompts.html. Learners without Meta Muse may run the same prompts in any assistant connected to their own "
+doc.add_paragraph("Materials: one folder per activity under activities/ with a step-by-step Instructions PDF; current fill-in prompts in activities/prompts.html, downloaded from the LMS and opened in a browser. Learners without Meta Muse may run the same prompts in any assistant connected to their own "
                   "email; never use another person's account.")
 
 H("Bonus Topic (self-paced, outside the contact hours)")
-doc.add_paragraph(f"Slides {rng('bonus', 'wrap')}: build a business website with Codex (ChatGPT desktop app) and deploy it with Sites, using ChatGPT Plus from "
-                  "the SkillsFuture free AI subscription; worked example Meridian Assist (" + B.BCM_URL + "meridian/). Learners do it after "
-                  "class. It is not timetabled, is not part of the 16 contact hours and is not assessed; the trainer may point to it during the "
-                  "course recap.")
-doc.add_paragraph("Worked demo: Meridian Services Pte Ltd (fictitious). Each topic opens its activity with a Meridian scenario slide, and each "
-                  "activity shows Meridian's filled board (read-only, " + B.BCM_URL + "?join=meridian-activity-1, -2, -3) before groups build "
-                  "their own board for their own organisation.")
+doc.add_paragraph(f"Slides {rng('bonus', 'wrap')}: self-paced stakeholder landing page from Topic 3’s SCALE board. The Meridian AI transition example is in activities/meridian-ai-transition.html. Use Codex and Sites after class.")
 
 prodoc.add_page_numbers(doc); prodoc.enable_update_fields(doc)
 OUT = os.path.join(REPO, "courseware", f"LP-{C.SHORT_TITLE}.docx")

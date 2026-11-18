@@ -2,7 +2,11 @@
 
 Three activities, one per learning outcome: Meta Muse supplies the inputs, your group refines the board in the Activity Studio (https://alfredang.github.io/bcm/), and every member screenshots it for the PP.
 
-Prompt templates: https://alfredang.github.io/bcm/prompts.html
+Current prompt templates: download prompts.html from this activities folder (LMS course materials) and open the downloaded file in your browser. All prompt text is also printed in the Instructions PDFs.
+
+The first section of Activity 1 Instructions is the earlier 20-minute Meta Muse mini activity; the BMC group task takes 80 minutes at the end of Topic 1.
+
+Bonus sample: download [meridian-ai-transition.html](meridian-ai-transition.html) and open it in your browser. It continues Topic 3 with Meridian’s stakeholder pitch, rollout and feedback routes.
 
 | Activity | Title | Topic | Group board | Instructions |
 |---|---|---|---|---|

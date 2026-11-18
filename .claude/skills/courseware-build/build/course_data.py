@@ -11,8 +11,8 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v47"
-VERSION_DATE = "18 November 2026"
+VERSION      = "v51"
+VERSION_DATE = "19 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
 TRAINER      = "Dr. Alfred Ang"
@@ -57,23 +57,27 @@ TOPICS = [
       title="Identifying Business Innovation Opportunities with Agentic AI and AI Agents",
       short="Identify and evaluate opportunities",
       pitch="Agents now do real work. Find where they pay off in your business.",
-      items=["History of AI, the Agent Stairway and the 2023-2026 engineering lenses", "Agentic AI vs AI agent", "Singapore government news",
-             "Always-on AI agents compared: Meta Muse, OpenAI Dots, Claude Duet, Grok Bot, Manus Cue", "Five scenarios of human-AI agent collaboration",
-             "Five capability gaps and evaluating opportunities", "Activity 1 · Business Model Canvas for AI Agents (identify and evaluate)"]),
+      items=["AI history: Rules, Machine Learning, Deep Learning, LLM", "2023-2026 lenses, then the Agent Stairway",
+             "AI agents introduction, then the Meta Muse mini activity", "Science/math, OPC evidence and business use cases",
+             "Meridian and the BMC: benefits across nine blocks", "Meridian's completed BMC",
+             "Activity 1 · groups of 3-5 build their company's BMC"]),
  dict(num=2, code="02", lo=1, codes="K3, K4, A3, A4", day="Day 1 PM - Day 2 AM",
       title="Designing Digital Architectures and AI Agent Implementation Plans",
       short="Action Plan to Get Started",
       pitch="Five steps: set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot. A plan you can start on Monday.",
-      items=["Dormant data and the enterprise AI decision layer", "The company map and how agents act safely",
-             "The five-step 90-day action plan: goal, process, where agents plug in, owner, pilot", "Patterns, custom/buy/hybrid and TCO",
-             "Activity 2 · AI Agent 90-Day Action Plan"]),
+      items=["Step 1 · Set the goal and outcome metrics", "Step 2 · Mine the process from dormant data and logs",
+             "Step 3 · Plug in agents, policies and controls", "Step 4 · Name the owner and give them decision rights",
+             "Step 5 · Run and evaluate the 90-day pilot", "Meridian’s filled plan, then Activity 2 in groups of 3–5"]),
  dict(num=3, code="03", lo=2, codes="K5, K6, A5, A6", day="Day 2 PM",
       title="Managing AI-Driven Innovation, Governance and Stakeholder Collaboration",
       short="Sustain and Operate",
       pitch="SCALE: story, commanders, augment people, loop information, evaluate. Keep it running and growing.",
-      items=["The SCALE framework, the flattened org chart and the DRI", "Where work moves: a new workforce and tomorrow's managers", "Training for adoption and the atrophy trap",
-             "Reviewing success: metrics, ROI, governance, PDPA",
-             "Activity 3 · Sustain and Operate (SCALE)"]),
+      items=["AI transition challenges and verified job-market evidence",
+             "S · Story: communication and staff participation",
+             "C · Commanders: ownership and progressive rollout",
+             "A · Augment people: human ownership, job redesign and AI Coaching",
+             "L · Loop information: feedback and follow-through",
+             "E · Evaluate, then Activity 3 using the completed SCALE example"]),
 ]
 DAY_THEMES = {1: "Identify and evaluate AI agent opportunities (BMC), then start the 90-day action plan",
               2: "Finish the 90-day action plan, then sustain and operate with SCALE; assessment"}

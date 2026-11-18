@@ -24,9 +24,10 @@ A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day act
 | Registration | [View course details and register](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html) |
 | Funding | Up to 70% WSQ course fee funding; SkillsFuture Credit claimable. Eligibility and terms apply; see the [course page](https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html). |
 | Activity Studio (live boards) | [alfredang.github.io/bcm](https://alfredang.github.io/bcm/): create a board in one click; everyone joins by QR code or Board ID, no login |
-| Meta Muse prompt templates | [alfredang.github.io/bcm/prompts.html](https://alfredang.github.io/bcm/prompts.html) |
+| Current Meta Muse prompt templates | Download [activities/prompts.html](activities/prompts.html) from the course materials and open it in a browser |
 | Meridian demo boards (read-only) | [Activity 1](https://alfredang.github.io/bcm/?join=meridian-activity-1) · [Activity 2](https://alfredang.github.io/bcm/?join=meridian-activity-2) · [Activity 3](https://alfredang.github.io/bcm/?join=meridian-activity-3): a finished board for the fictitious Meridian Services |
-| Courseware version | v47 · 18 November 2026 |
+| AI Coaching simulator (Topic 3 demo) | [alfredang.github.io/AICoaching](https://alfredang.github.io/AICoaching/): practise coaching a worried employee; demo mode or your own OpenAI / MiniMax / Anthropic (Claude Haiku 5.5) key |
+| Courseware version | v51 · 19 November 2026 · 175 slides |
 
 ## About the course
 
@@ -42,16 +43,18 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 
 | Topic | Framework | What you learn |
 |---|---|---|
-| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents | **BMC** | History of AI, the Agent Stairway and the 2023-2026 engineering lenses; Agentic AI vs AI agent; Singapore government news; Always-on AI agents compared: Meta Muse, OpenAI Dots, Claude Duet, Grok Bot, Manus Cue; Five scenarios of human-AI agent collaboration; Five capability gaps and evaluating opportunities; Activity 1 · Business Model Canvas for AI Agents (identify and evaluate) |
-| 2. Designing Digital Architectures and AI Agent Implementation Plans | **90-Day Plan** | Dormant data and the enterprise AI decision layer; The company map and how agents act safely; The five-step 90-day action plan: goal, process, where agents plug in, owner, pilot; Patterns, custom/buy/hybrid and TCO; Activity 2 · AI Agent 90-Day Action Plan |
-| 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | **SCALE** | The SCALE framework, the flattened org chart and the DRI; Where work moves: a new workforce and tomorrow's managers; Training for adoption and the atrophy trap; Reviewing success: metrics, ROI, governance, PDPA; Activity 3 · Sustain and Operate (SCALE) |
+| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents | **BMC** | Rules → Machine Learning → Deep Learning → LLM; 2023–2026 lenses; Agent Stairway; always-on AI agents as a specialised form of agentic AI; introduction to agents; 20-minute Meta Muse mini activity; recent science/mathematics breakthroughs (reported Navier–Stokes result, Google research); innovation use cases (software/SaaS through API/MCP, 24/7 knowledge-and-action service agents, multi-agent video, paper-trading and scientific teams); OPC observed data and policy targets; Meridian scenario and the nine-block BMC; benefits across every BMC dimension; opportunity evaluation; completed Meridian canvas; Activity 1: groups of 3–5 join one board and build their own company BMC |
+| 2. Designing Digital Architectures and AI Agent Implementation Plans | **90-Day Plan** | Set the goal, mine the process, plug in the agents, name the owner and run the pilot. Worked Meridian event logs, nine completed plan boxes, evaluation measures and a scale, redesign or stop rubric precede group Activity 2. |
+| 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | **SCALE** | Transformation challenges, then communication, staged rollout, human-centred coaching and training, feedback and evaluation. The AI Coaching simulator illustrates coaching. Meridian’s completed nine-box SCALE example leads into group Activity 3. |
 
 **90-Day Action Plan**: 1 Set the goal · 2 Mine the process · 3 Plug in the agents · 4 Name the owner · 5 Run a 90-day pilot.
 **SCALE** (sustain and operate): Story · Commanders · Augment people · Loop information · Evaluate.
 
-**Bonus topic (self-paced, not assessed):** build a business website with Codex (in the ChatGPT desktop app) and deploy it with Sites, using ChatGPT Plus (one of the SkillsFuture free AI subscription plans for eligible learners). Worked example: the [Meridian Assist sample site](https://alfredang.github.io/bcm/meridian/).
+**Bonus topic (self-paced):** turn the Topic 3 SCALE board into a stakeholder landing page with Codex and Sites. Open the [Meridian AI transition example](activities/meridian-ai-transition.html) for the pitch, rollout and feedback routes.
 
 ## Activities
+
+The 20-minute Meta Muse mini activity follows the agent introductions; its instructions are the first section of Activity 1 Instructions. The later BMC group task takes 80 minutes. Three group boards remain the PP evidence.
 
 | # | Activity | Topic · LO | Materials | Assessment evidence |
 |---|---|---|---|---|
@@ -60,14 +63,14 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 | 3 | **Sustain and Operate with AI Agents (SCALE)** | Topic 3 · LO3 | [Instructions PDF](<activities/activity-03-sustain-and-operate-with-ai-agents-scale/ACTIVITY-03-Instructions.pdf>) · [Open board](https://alfredang.github.io/bcm/?activity=change) | PP Task 3 · screenshot of your SCALE board |
 
 - **Activity Studio** (live boards, no login: create a board, everyone joins by QR code or Board ID): https://alfredang.github.io/bcm/
-- **Meta Muse prompt templates** (fill in the blanks, copy, paste into Muse): https://alfredang.github.io/bcm/prompts.html · offline copy: [prompts/index.html](prompts/index.html)
+- **Current Meta Muse prompt templates**: download [activities/prompts.html](activities/prompts.html), open it in a browser, fill the blanks and copy into Muse. The public website may contain an earlier revision.
 - **Meta Muse**: phone app (App Store / Google Play, "Muse from Meta") or the website [muse.ai](https://muse.ai/)
 
 ## Public package
 
 | File | What it is |
 |---|---|
-| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v47.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v47.pdf>) | Trainer slides |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v51.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v51.pdf>) | Trainer slides |
 | [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
 | [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
 | [activities/](activities/) | One folder per activity with its Instructions PDF |

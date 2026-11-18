@@ -43,9 +43,28 @@ def lab_html(L):
          '<div class="meta">'
          f'<div><b>Time</b>{L["minutes"]} min</div><div><b>Tools</b>Meta Muse app or muse.ai website + your group board</div>'
          f'<div><b>Group board</b>{e(url.replace("https://", ""))}</div><div><b>Evidence</b>{e(cv["evidence"])}</div></div>',
-         f'<div class="note"><b>Before you start.</b> Prompt templates with fill-in blanks: <b>{e(B.BCM_URL)}prompts.html</b>. '
-         'Type your organisation once there; it fills every prompt. Replace every <span class="b">[blank]</span> before you paste into Meta Muse. '
+         '<div class="note"><b>Before you start.</b> Use the current fill-in prompts for this edition. '
+         'Download <b>activities/prompts.html</b> from the LMS course materials or the course Activities folder and open it in a browser. Type your organisation once; it fills every prompt. Replace every <span class="b">[blank]</span> before you paste into Meta Muse. '
          'Muse drafts; your group decides. Never put personal data (NRIC, phone numbers, customer names) on a shared board.</div>']
+    if L["n"] == 1:
+        h.append('<h2>Earlier in Topic 1: Mini Activity — Try Meta Muse (20 min)</h2><p>Do this just after the agent introductions. No PP screenshot is required for this mini activity.</p>')
+        for i, step in enumerate(B.MINI_MUSE["steps"]):
+            h.append(f'<div class="step"><h2>Mini step {i + 1} · {e(step["title"])}</h2><ol>' + ''.join(f'<li>{e(x)}</li>' for x in step["body"]) + '</ol>')
+            if step.get("links") == "MUSE": h.append(qr_html(B.MUSE_LINKS))
+            h.append(f'<pre>{blanks(step["prompt"])}</pre><p><b>Check:</b> {e(step["check"])}</p></div>')
+        h.append('<h2>At the end of Topic 1: Activity 1 — Your Company BMC (80 min)</h2>')
+        h.append('<div class="note"><b>Group task.</b> Form a group of <b>3-5 learners</b> and choose one member\'s company. '
+                 'The leader opens <b>alfredang.github.io/bcm/?activity=opportunity</b>, creates ONE Activity 1 board and names the company. '
+                 'Everyone joins with its Board ID or QR code and their own name. Create your company\'s BMC across all nine blocks, '
+                 'show where AI agents help, and label assumptions. Keep this company for Activities 2 and 3.</div>')
+    if L["n"] == 2:
+        h.append('<div class="note"><b>Group task.</b> Use one shared board and the company you chose in Activity 1. '
+                 'Follow the completed Meridian example in the slides. The tasks below help you fill all nine boxes in the five plan steps. '
+                 'For each evaluation metric, write the baseline, target, data source, owner and review cadence. '
+                 'Agree when to scale, redesign or stop.</div>')
+    if L["n"] == 3:
+        h.append('<div class="note"><b>Group task.</b> Stay in groups of 3–5. Review Meridian’s completed SCALE board first. '
+                 'Continue with your own company and pilot from Activity 2. Use one shared board and fill every SCALE box.</div>')
     for i, st in enumerate(L["steps"]):
         studio = st.get("studio")
         prompt = cv["muse_prompt"] if st.get("prompt") == "BOARD" else st.get("prompt")
@@ -81,7 +100,7 @@ def main():
     root = os.path.join(REPO, "activities"); os.makedirs(root, exist_ok=True)
     idx = [f"# Activities — {C.TITLE}", "", "Three activities, one per learning outcome: Meta Muse supplies the inputs, your group "
            f"refines the board in the Activity Studio ({B.BCM_URL}), and every member screenshots it for the PP.", "",
-           f"Prompt templates: {B.BCM_URL}prompts.html", "", "| Activity | Title | Topic | Group board | Instructions |", "|---|---|---|---|---|"]
+           "Current prompt templates: download prompts.html from this activities folder (LMS course materials) and open the downloaded file in your browser. All prompt text is also printed in the Instructions PDFs.", "", "The first section of Activity 1 Instructions is the earlier 20-minute Meta Muse mini activity; the BMC group task takes 80 minutes at the end of Topic 1.", "", 'Bonus sample: download [meridian-ai-transition.html](meridian-ai-transition.html) and open it in your browser. It continues Topic 3 with Meridian’s stakeholder pitch, rollout and feedback routes.', "", "| Activity | Title | Topic | Group board | Instructions |", "|---|---|---|---|---|"]
     for L in B.LABS:
         cv = B.CANVAS[L["canvas"]]; f = f"activity-{L['n']:02d}-{slug(cv['title'])}"; d = os.path.join(root, f); os.makedirs(d, exist_ok=True)
         to_pdf(lab_html(L), os.path.join(d, f"ACTIVITY-{L['n']:02d}-Instructions.pdf"))

@@ -1,0 +1,24 @@
+{
+  "provider": "OpenAI built-in ImageGen",
+  "model_version": "Not exposed by tool",
+  "assets": [
+    {
+      "path": "generated/meridian-triage.jpg",
+      "brief": "Service desk coordinator and technician tracing a maintenance request",
+      "purpose_slide": 87,
+      "sha256": "abdc3d7e67cc9684f34ef04eb47b4146fc4ff72570bcbd8994a151e768b91fc0"
+    },
+    {
+      "path": "generated/meridian-human-owner.jpg",
+      "brief": "Service desk lead listening to a colleague and deciding next action",
+      "purpose_slide": 131,
+      "sha256": "83a692d45463dda69fd235fe0ed57b45d9e305651e58c064bac395d9a3a6e32b"
+    },
+    {
+      "path": "generated/meridian-transition-campus.jpg",
+      "brief": "Singapore office campus used as the stakeholder page's hero",
+      "purpose_slide": 168,
+      "sha256": "a573520c2f3df58425c91af3d144984cb2689c2e5470b5400a8828f09e96170b"
+    }
+  ]
+}

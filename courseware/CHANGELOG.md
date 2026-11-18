@@ -1,4 +1,34 @@
+## v51 · 19 November 2026
+
+- Released the 175-slide edition with updated version labels across the deck, guides and activities.
+- Includes the five-step Meridian action plan, worked SCALE transformation, and stakeholder landing page.
+
+## v50 · 19 November 2026
+
+- Bonus: the Meridian AI transition landing page carries the Topic 3 SCALE story into staff, client and leadership communications.
+- Topic 3 adds the jobs outlook and the human owner role from the work redesign talk. Two distinct ImageGen case illustrations and the landing-page visual support the new teaching sequence.
+
+- Topic 1 adds the seven-component agent diagram. The Muse mini activity follows it on slides 30–34.
+- Topic 2 teaches all five plan steps in order, using Meridian process mining, pilot measures and a decision rubric. The scenario and completed nine-box plan come before Activity 2.
+- Topic 3 opens with transformation challenges and teaches SCALE in order. AI Coaching illustrates the coaching method. Two walkthrough slides and a completed nine-box board show how Meridian fills every block before Activity 3.
+- All three group activities use groups of 3–5, one learner company and one shared board.
+
+- Latest refinements: 160 slides; Meta Muse mini activity after the agent introductions; OPC evidence and 2028 policy targets; multi-agent video, paper-trading and scientific research examples; Topic 2 dormant-data gold mine, business briefing, policies, tool permissions and validation.
+
+- Earlier refinements: Rules → Machine Learning → Deep Learning → LLM, then 2023–2026 lenses and Agent Stairway; always-on agents as a specialised form of agentic AI; two science/math showcase slides after Singapore healthcare, with attributed results and validation status.
+
+- Reordered Topic 1: AI history → Agentic AI vs AI agents → agent introduction → innovation use cases → Meridian scenario → BMC → benefits across all nine blocks → completed Meridian canvas → Activity 1.
+- Added concrete API/MCP software-interface examples (CRM, HR, finance), a 24/7 knowledge-and-action customer-service agent, a multi-agent video production team, and three Meridian BMC benefit tables.
+- Activity 1 starts with groups of 3–5 choosing a company and joining one shared board; every member creates evidence for individual PP answers.
+- Updated learner/lesson/facilitator guides, slide ranges and activity instructions. Assessment instruments remain v44.
+
 # Courseware Changelog
+
+## v48 - 18 November 2026
+
+- Topic 3: "Five Ways an Agent Can Hurt You" adds jailbreak (not the same as shadow AI), and each risk (prompt injection, jailbreak, data leakage, shadow AI, bias and blame) gets its own page with a Meridian example and three controls.
+- Topic 3 ends with a new Part C, the challenges of AI transformation: the 5 principles of AI security (from the Human-AI Collaboration course), six moves to lead it (coach the staff on fear and resistance, job redesign, management support, the CEO leads by example, staff training, staged rollout) and an AI Coaching simulator demo (now with an Anthropic Claude Haiku 5.5 option).
+- Day 2 15:30–16:15 split into Activity 3 Part B (25 min) and Topic 3 Part C (20 min). Bonus topic shows the whole sample website. 142 slides. Assessment unchanged.
 
 ## v47 - 18 November 2026
 

@@ -8,13 +8,8 @@ PRIOR = [('30.0', '1 July 2025', 'Previous release — Learner Guide for Digital
  ('40', '9 September 2026', 'Replaced the tool-production labs with 12 connected, vendor-neutral business activities. Added three recurring case studies, business-needs analysis, requirements traceability, custom-buy-hybrid sourcing, human decision boundaries, evaluation and ROI, risk/security/governance with human oversight, stakeholder and management buy-in, quick wins, role-based training and a coherent board-review capstone. Every activity has a checklist, metric sheet, mock data, editable Markdown and printable PDF copies; aligned PPT, Learner Guide, Lesson Plan and WA/PP case tasks.', 'Dr. Alfred Ang')]
 
 V41 = ("41", "18 November 2026",
-       "Complete overhaul: visual, big-type business-pitch deck in the agentic-AI house design, with the LO on every topic divider and topics "
-       "renamed to the live course record. Topic 1: AI history, Agent Stairway, engineering lenses, agentic AI vs AI agent, Singapore news, "
-       "always-on agents, five collaboration scenarios, capability gaps, opportunity scoring. Topic 2: AI Native concepts (dormant data, "
-       "decision layer, company map, live navigation, AI flywheel), Step 1 mine the process, Step 2 where agents integrate, patterns, "
-       "build/buy and the outcome contract. Topic 3: Boss AI, DRIs, smart flattening, the new workforce, atrophy trap, reviewing success, "
-       "governance and information flow. Three Meta Muse activities on shared group boards (alfredang.github.io/bcm) replace the 12 v40 "
-       "activities; schedule re-timed to the CP LUs (4 h / 6 h / 4 h). PP v41: screenshots of the three group boards, individual answers.",
+       "Complete overhaul: big-type business-pitch deck, LO on every divider, topics renamed to the live course record; three Meta Muse "
+       "activities on shared group boards replace the 12 v40 activities; schedule re-timed to the CP LUs; PP v41 uses the board screenshots.",
        "Dr. Alfred Ang")
 V42 = ("42", "18 November 2026",
        "QA fixes and AI Native concepts: eleven key-concept slides (Agent Stairway, five capability gaps, dormant data, decision layer, "
@@ -29,11 +24,8 @@ V43 = ("43", "18 November 2026",
        "repeated or abstract slides removed (AI Native map, duplicate decision-layer, flywheel, Boss AI, work landscape and others).",
        "Dr. Alfred Ang")
 V44 = ("44", "18 November 2026",
-       "Learners work on their own organisation throughout: the named example company is removed from the slides, Learner Guide, "
-       "activities, prompts and assessment (board examples stay unnamed). Topic 2 framework is now a plain five-step 90-day action plan "
-       "(set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot) instead of the AGENT acronym. "
-       "The 'four futures' slide is replaced by a clearer before/after slide on where people's work moves. WA-SAQ questions and "
-       "PP tasks rewritten to match the slides and Activities 1-3 (same five questions and K1-K6 mapping; same three tasks and A1-A6).",
+       "Learners use their own organisation (named example removed); Topic 2 becomes a plain five-step 90-day plan; WA-SAQ and PP "
+       "rewritten to match the slides and activities (same K1-K6 and A1-A6 mapping).",
        "Dr. Alfred Ang")
 V45 = ("45", "18 November 2026",
        "Seven slides added from the Human-AI collaboration courses: Singapore healthcare (12,000+ AgentSea agents in three months); "
@@ -49,4 +41,18 @@ V47 = ("47", "18 November 2026",
        "Meridian Services (fictitious) worked demo in each topic and activity board; self-paced bonus topic (website with Codex, "
        "deployed with Sites), outside the contact hours. Assessment unchanged.",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47]
+V48 = ("48", "18 November 2026",
+       "Topic 3: five agent risks incl. jailbreak, one page each; challenges of AI transformation (AI security, coaching, job "
+       "redesign, leadership, training, staged rollout); AI Coaching demo; larger sample website.",
+       "Dr. Alfred Ang")
+V49 = ("49", "18 November 2026",
+       "Every topic now ends with its PP activity: Topic 1 Part B moves before Activity 1 and the challenges of AI "
+       "transformation move before Activity 3; schedule, slide ranges and guides re-ordered to match.",
+       "Dr. Alfred Ang")
+V50 = ("50", "19 November 2026",
+       "Muse after the seven agent components. Topic 2 follows five steps with Meridian process mining, pilot metrics and decision rules. Topic 3 starts with transition challenges, then SCALE with AI Coaching. Completed Meridian boards lead into group activities.",
+       "Dr. Alfred Ang")
+V51 = ("51", "19 November 2026",
+       "Release of the 175-slide edition with Meridian worked examples, job redesign and the stakeholder landing page.",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51]
