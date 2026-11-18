@@ -55,4 +55,7 @@ V50 = ("50", "19 November 2026",
 V51 = ("51", "19 November 2026",
        "Release of the 175-slide edition with Meridian worked examples, job redesign and the stakeholder landing page.",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51]
+V52 = ("52", "19 November 2026",
+       "Added Claude Code examples to the seven AI agent components in Topic 1.",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52]

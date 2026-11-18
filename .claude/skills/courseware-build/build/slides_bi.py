@@ -3,7 +3,7 @@ One claim per slide (assertion-evidence). Facts carry their source on the slide.
 Background reading informed the concepts; no book is cited on the slides."""
 import os, io
 import ccdeck as K
-from ccdeck import (section, cards, rows, timeline, compare, table, image, statement, prompt, flow, hub, tip, header,
+from ccdeck import (section, cards, rows, timeline, compare, table, image, statement, prompt, flow, tip, header,
                     card, text, rich, icon, line, circle, box, picture, footer, ACC, ACC_D, TEAL, PLUM, OLIVE, CHAR,
                     PANEL, WHITE, INK, MUTED, SOFT, LIGHT, IVORY, SERIF, MONO, DIM)
 from pptx.enum.shapes import MSO_SHAPE
@@ -118,6 +118,48 @@ def hubbig(D, kicker, title, center, spokes, foot=None):
         text(s, px - w / 2 + 0.95, py - h / 2 + 0.52, w - 1.05, 0.55, d, 13, MUTED, minpt=9.5)
     if foot: tip(D, s, foot, y=6.45)
     return s
+
+def agent_components_in_practice(D):
+    """Editable hub and a companion column with one example per component."""
+    s = D.new()
+    header(D, s, "Topic 1 · What is an agent",
+           "What Makes an AI Agent: A Model Inside a Working System",
+           "The model proposes the next move. Six other components give it context, ways to act and operating limits.")
+    positions = [(5.14, 2.83), (7.77, 3.42), (8.25, 4.68),
+                 (6.71, 5.68), (3.57, 5.68), (2.03, 4.68), (2.51, 3.42)]
+    cx, cy = 5.14, 4.38
+    for x, y in positions:
+        line(s, cx, cy, x, y, SOFT, 1.5, dash=True)
+    card(s, cx - 1.18, cy - 0.40, 2.36, 0.80, fill=ACC)
+    text(s, cx - 1.18, cy - 0.40, 2.36, 0.80, "AI agent", 18, WHITE,
+         bold=True, font=SERIF, align="c", anchor="m")
+    for (x, y), (glyph, name, role) in zip(positions, B.AGENT_COMPONENTS):
+        x, y = x - 1.27, y - 0.46
+        card(s, x, y, 2.54, 0.92)
+        icon(s, glyph, x + 0.12, y + 0.12, 0.34, fill=TEAL)
+        text(s, x + 0.53, y + 0.12, 1.91, 0.31, name, 12.5, INK,
+             bold=True, font=SERIF, minpt=11)
+        text(s, x + 0.13, y + 0.50, 2.27, 0.35, role, 10.5, MUTED, minpt=9.5)
+
+    card(s, 9.77, 2.33, 2.96, 3.83, fill=WHITE, shadow=False, line=SOFT)
+    text(s, 9.92, 2.44, 2.64, 0.32, "Spot them in Claude Code", 15, ACC_D,
+         bold=True, font=SERIF, minpt=13)
+    for i, (_, name, _) in enumerate(B.AGENT_COMPONENTS):
+        y = 2.88 + i * 0.445
+        text(s, 9.92, y, 2.66, 0.23, name, 11.5, INK, bold=True, font=SERIF, autofit=False)
+        text(s, 9.92, y + 0.22, 2.66, 0.23, B.CLAUDE_CODE_COMPONENT_EXAMPLES[name],
+             10, MUTED, minpt=9)
+    tip(D, s, "Before delegating work, check the agent’s access, sources and action controls.", y=6.43)
+    src(D, s, "Anthropic · Claude Code documentation", B.CLAUDE_CODE_COMPONENT_SOURCE)
+    s.notes_slide.notes_text_frame.text = (
+        "First name the function of each component, then spot its Claude Code example. "
+        "Point out that CLAUDE.md supplies standing instructions and auto memory stores notes across sessions. "
+        "Project documentation is a source of evidence. Permission modes and hooks can enforce rules about tool use. "
+        "Include only authorised data in a demo. Use Meta Muse next to spot examples of the same seven components. "
+        "References: https://code.claude.com/docs/en/model-config, https://code.claude.com/docs/en/memory, "
+        "https://code.claude.com/docs/en/skills, https://code.claude.com/docs/en/settings.")
+    return s
+
 
 def scen(D, n, title, hook, ex, img, tipt):
     """Collaboration scenario, big type: hook + three named examples left, illustration right."""
@@ -558,11 +600,7 @@ def topic1(D, C, mark):
         ("tool", "Tools", "Read, draft or act with permission"),
         ("check", "Check", "Review results; escalate exceptions")], cols=4,
         tipt="Service example: read a request, draft a ticket, check required fields, ask a person to approve routing.")
-    s = hub(D, "Topic 1 · Introduction to AI agents",
-            "What Makes an AI Agent: A Model Inside a Working System", "AI agent", B.AGENT_COMPONENTS,
-            foot="Check every component before assigning work, especially data access, source quality and action controls.")
-    s.notes_slide.notes_text_frame.text = (
-        "Use Meta Muse next to identify concrete examples of the seven components.")
+    agent_components_in_practice(D)
     mark("mini_muse")
     muse_get(D)
     V.muse_invite(D, "Topic 1 · Mini Activity · Try Meta Muse")

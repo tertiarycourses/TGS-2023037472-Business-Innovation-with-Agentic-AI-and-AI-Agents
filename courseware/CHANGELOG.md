@@ -1,3 +1,8 @@
+## v52 · 19 November 2026
+
+- Updated the seven-component AI agent diagram in Topic 1 with Claude Code examples before the Meta Muse mini activity.
+- Added the examples to the Learner Guide and Lesson Plan.
+
 ## v51 · 19 November 2026
 
 - Released the 175-slide edition with updated version labels across the deck, guides and activities.

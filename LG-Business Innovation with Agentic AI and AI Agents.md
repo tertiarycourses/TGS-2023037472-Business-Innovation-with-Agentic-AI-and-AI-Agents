@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 51 · 19 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 52 · 19 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -109,15 +109,17 @@ Give an agent a goal and boundaries. It uses relevant context and memory, select
 
 ### Seven Components of an AI Agent
 
-| Component | What it does |
-|---|---|
-| Model | Reasons and proposes the next action. |
-| Tools | Read records, calculate and act. |
-| Skills | Reusable procedures and checks. |
-| Memory | Approved facts carried across tasks. |
-| Knowledge base | Curated documents and evidence. |
-| Instructions | Goal, policy and expected output. |
-| Runtime controls | Loop, permissions, limits and logs. |
+| Component | What it does | Example in Claude Code |
+|---|---|---|
+| Model | Reasons and proposes the next action. | Opus, Sonnet, Haiku via /model |
+| Tools | Read records, calculate and act. | Read, Edit, Bash and MCP tools |
+| Skills | Reusable procedures and checks. | .claude/skills/<name>/SKILL.md |
+| Memory | Approved facts carried across tasks. | Auto memory (MEMORY.md) |
+| Knowledge base | Curated documents and evidence. | Repo, docs and @-mentioned files |
+| Instructions | Goal, policy and expected output. | Your prompt and CLAUDE.md |
+| Runtime controls | Loop, permissions, limits and logs. | Permissions, hooks and settings.json |
+
+*Source: Anthropic, Claude Code documentation: https://code.claude.com/docs/en/features-overview*
 
 ### Mini Activity: Try Meta Muse (20 minutes)
 

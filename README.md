@@ -27,7 +27,7 @@ A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day act
 | Current Meta Muse prompt templates | Download [activities/prompts.html](activities/prompts.html) from the course materials and open it in a browser |
 | Meridian demo boards (read-only) | [Activity 1](https://alfredang.github.io/bcm/?join=meridian-activity-1) · [Activity 2](https://alfredang.github.io/bcm/?join=meridian-activity-2) · [Activity 3](https://alfredang.github.io/bcm/?join=meridian-activity-3): a finished board for the fictitious Meridian Services |
 | AI Coaching simulator (Topic 3 demo) | [alfredang.github.io/AICoaching](https://alfredang.github.io/AICoaching/): practise coaching a worried employee; demo mode or your own OpenAI / MiniMax / Anthropic (Claude Haiku 5.5) key |
-| Courseware version | v51 · 19 November 2026 · 175 slides |
+| Courseware version | v52 · 19 November 2026 · 175 slides |
 
 ## About the course
 
@@ -43,7 +43,7 @@ Turn agentic AI from a demo into a business advantage: find the opportunity, pla
 
 | Topic | Framework | What you learn |
 |---|---|---|
-| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents | **BMC** | Rules → Machine Learning → Deep Learning → LLM; 2023–2026 lenses; Agent Stairway; always-on AI agents as a specialised form of agentic AI; introduction to agents; 20-minute Meta Muse mini activity; recent science/mathematics breakthroughs (reported Navier–Stokes result, Google research); innovation use cases (software/SaaS through API/MCP, 24/7 knowledge-and-action service agents, multi-agent video, paper-trading and scientific teams); OPC observed data and policy targets; Meridian scenario and the nine-block BMC; benefits across every BMC dimension; opportunity evaluation; completed Meridian canvas; Activity 1: groups of 3–5 join one board and build their own company BMC |
+| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents | **BMC** | Rules → Machine Learning → Deep Learning → LLM; 2023–2026 lenses; Agent Stairway; always-on AI agents as a specialised form of agentic AI; seven agent components with Claude Code examples; 20-minute Meta Muse mini activity; recent science/mathematics breakthroughs (reported Navier–Stokes result, Google research); innovation use cases (software/SaaS through API/MCP, 24/7 knowledge-and-action service agents, multi-agent video, paper-trading and scientific teams); OPC observed data and policy targets; Meridian scenario and the nine-block BMC; benefits across every BMC dimension; opportunity evaluation; completed Meridian canvas; Activity 1: groups of 3–5 join one board and build their own company BMC |
 | 2. Designing Digital Architectures and AI Agent Implementation Plans | **90-Day Plan** | Set the goal, mine the process, plug in the agents, name the owner and run the pilot. Worked Meridian event logs, nine completed plan boxes, evaluation measures and a scale, redesign or stop rubric precede group Activity 2. |
 | 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration | **SCALE** | Transformation challenges, then communication, staged rollout, human-centred coaching and training, feedback and evaluation. The AI Coaching simulator illustrates coaching. Meridian’s completed nine-box SCALE example leads into group Activity 3. |
 
@@ -70,7 +70,7 @@ The 20-minute Meta Muse mini activity follows the agent introductions; its instr
 
 | File | What it is |
 |---|---|
-| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v51.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v51.pdf>) | Trainer slides |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v52.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v52.pdf>) | Trainer slides |
 | [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
 | [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
 | [activities/](activities/) | One folder per activity with its Instructions PDF |
@@ -85,8 +85,6 @@ prompts/         offline copy of the Meta Muse prompt templates page
 LG-*.md          Markdown mirror of the Learner Guide
 .claude/skills/courseware-build/   single-source build scripts
 ```
-
-The confidential `assessment/` folder (question papers and answer keys), the Facilitator Guide and the Assessment Plan are **not** in this repository.
 
 ## Course details
 
@@ -113,7 +111,7 @@ One source (`course_data.py` + `data_bi.py`) builds the deck, Lesson Plan, Learn
 
 ## Distribution boundary
 
-This repository holds the learner-facing courseware only. Assessment papers, answer keys, the Facilitator Guide and the Assessment Plan are trainer-only and are not published here.
+This public package includes the trainer slides, Lesson Plan, Learner Guide and activity materials. The LMS distributes the assessment question papers. The separate trainer materials include the Facilitator Guide, Assessment Plan and answer keys. Source references are kept in the private `reference/` folder.
 
 ## Contact
 

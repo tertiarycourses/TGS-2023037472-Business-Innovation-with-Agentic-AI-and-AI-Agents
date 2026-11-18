@@ -115,6 +115,16 @@ AGENT_COMPONENTS = [
     ("file", "Instructions", "Goal, policy and expected output."),
     ("shield", "Runtime controls", "Loop, permissions, limits and logs."),
 ]
+CLAUDE_CODE_COMPONENT_EXAMPLES = {
+    "Model": "Opus, Sonnet, Haiku via /model",
+    "Tools": "Read, Edit, Bash and MCP tools",
+    "Skills": ".claude/skills/<name>/SKILL.md",
+    "Memory": "Auto memory (MEMORY.md)",
+    "Knowledge base": "Repo, docs and @-mentioned files",
+    "Instructions": "Your prompt and CLAUDE.md",
+    "Runtime controls": "Permissions, hooks and settings.json",
+}
+CLAUDE_CODE_COMPONENT_SOURCE = "https://code.claude.com/docs/en/features-overview"
 
 # Concise worked answers for all nine boxes on the learner-facing plan.
 MERIDIAN_PLAN_BOXES = {
@@ -207,7 +217,7 @@ LU_HOURS = {1: 4, 2: 6, 3: 4}
 SCHEDULE = {
  1: [
   ('9:30', '9:50', 20, 'admin', 'Welcome, digital attendance, trainer, learning outcomes, ground rules, course materials and the SkillsFuture free AI subscription', 1),
-  ('9:50', '10:25', 35, 'topic', 'Topic 1 (Part A) - AI history; 2023-2026 lenses; Agent Stairway; agentic AI and always-on agents; how agents work and their seven components', 1),
+  ('9:50', '10:25', 35, 'topic', 'Topic 1 (Part A) - AI history; 2023-2026 lenses; Agent Stairway; agentic AI and always-on agents; seven components with Claude Code examples', 1),
   ('10:25', '10:45', 20, 'lab', 'Mini Activity - Try Meta Muse: sign in, connect permitted apps and try a read-only inbox brief; discuss ongoing monitoring and approvals', 1),
   ('10:45', '11:00', 15, 'break', 'Tea break', 1),
   ('11:00', '11:35', 35, 'topic', 'Topic 1 (Part B) - always-on agents, deployment and product comparison, Singapore news; science and mathematics; five collaboration scenarios; OPC evidence and policy targets; software/SaaS interface, service, video, paper-trading and scientific agent teams', 1),

@@ -85,7 +85,10 @@ src("Anthropic, Building effective agents: https://www.anthropic.com/research/bu
 h3("How an AI Agent Works")
 p("Give an agent a goal and boundaries. It uses relevant context and memory, selects a permitted tool, checks the result and decides the next step or escalates. For a service request it can extract the site and fault, draft a ticket and check required fields; a coordinator approves urgent routing. Autonomy depends on granted permissions and controls.")
 h3("Seven Components of an AI Agent")
-tbl(["Component", "What it does"], [(name, role) for _, name, role in B.AGENT_COMPONENTS], [2.0, 4.7])
+tbl(["Component", "What it does", "Example in Claude Code"],
+    [(name, role, B.CLAUDE_CODE_COMPONENT_EXAMPLES[name]) for _, name, role in B.AGENT_COMPONENTS],
+    [1.45, 2.55, 2.7])
+src(f"Anthropic, Claude Code documentation: {B.CLAUDE_CODE_COMPONENT_SOURCE}")
 h3("Mini Activity: Try Meta Muse (20 minutes)")
 p("Try Meta Muse right after learning how an AI agent works. Spend 20 minutes on setup, access and a read-only inbox brief.")
 for i, step in enumerate(B.MINI_MUSE["steps"]):

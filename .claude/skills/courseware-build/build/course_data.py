@@ -11,7 +11,7 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v51"
+VERSION      = "v52"
 VERSION_DATE = "19 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
