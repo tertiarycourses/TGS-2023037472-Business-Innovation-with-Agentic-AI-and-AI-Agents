@@ -8,7 +8,7 @@ The first section of Activity 1 Instructions is the earlier 20-minute Meta Muse 
 
 Topic 3 interactive tools (download and open in a browser): activity-03-sustain-and-operate-with-ai-agents-scale/ai-readiness-scorecard.html (Activity 3 Part A) and token-cost-calculator.html (Topic 3 token budget drill).
 
-Bonus sample: download [meridian-ai-transition.html](meridian-ai-transition.html) and open it in your browser. It continues Topic 3 with Meridian’s stakeholder pitch, rollout and feedback routes.
+Bonus sample: download [meridian-ai-dashboard.html](meridian-ai-dashboard.html) and open it in your browser. It is the dashboard the bonus topic asks you to vibe code: Meridian’s results against targets, SCALE progress, rollout, guardrails and decisions (fictitious company, synthetic figures).
 
 | Activity | Title | Topic | Group board | Instructions |
 |---|---|---|---|---|

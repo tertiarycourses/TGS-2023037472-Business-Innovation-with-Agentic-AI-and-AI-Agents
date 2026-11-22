@@ -58,8 +58,9 @@ cards(D, "Housekeeping", "Ground Rules", [
     ("75% attendance", "Required for funding.", "check"), ("Hands-on", "Do every activity yourself.", "tool")], cols=3, bottom=5.9, desc_pt=16)
 
 T.big_statement(D, "Why you are here", "Stop piloting AI.\nStart running the business on it.", C.PITCH, dark=True)
-N.quote(D, "The best way to predict the future is to invent it.", "Alan Kay", kicker="Before we start",
-        note="Quote Investigator credits Alan Kay (a 1971 PARC meeting, from Kay's own recollection): https://quoteinvestigator.com/2012/09/27/invent-the-future/")
+N.quote(D, "In 2025, we may see the first AI agents “join the workforce” and materially change the output of companies.",
+        "Sam Altman, OpenAI CEO, “Reflections”, January 2025", kicker="Before we start",
+        note="Source: https://blog.samaltman.com/reflections (checked 23 Nov 2026; the original opens 'We believe that, in 2025, ...'). Ask: has it happened in your company yet? This course is how you make it happen on purpose.")
 # v53: the learner plays the AI consultant inside their own company
 s = D.new(); header(D, s, "Your role in this course", "You Are the AI Consultant Inside Your Company",
                     "Three questions your CEO will ask. Three phases. One company: yours, carried through all three activities.")
@@ -76,6 +77,28 @@ for i, (ph, q, do_, out, ic) in enumerate([
     text(s, x + 0.3, 4.7, 3.3, 1.0, do_, 14.5, SOFT if dk else MUTED, minpt=10.5)
     text(s, x + 0.3, 5.85, 3.3, 0.5, out, 13, WHITE if dk else INK, bold=True, minpt=10)
     if i < 2: K.box(s, x + 3.93, 4.3, 0.14, 0.4, fill=ACC, shape=K.MSO_SHAPE.CHEVRON)
+# v54 (owner): introduce the worked example once, up front, with its plan for AI agents, so Meridian never "pops up"
+s = D.new(); header(D, s, "Our worked example · fictitious", "Meet Meridian: Its Plan to Put AI Agents to Work",
+                    "Each topic, you watch Meridian take one phase first. Then your group does the same for your own company.")
+card(s, 0.6, 2.3, 3.85, 4.3, fill=CHAR)
+icon(s, "building", 0.85, 2.5, 0.6)
+text(s, 1.6, 2.5, 2.75, 0.62, "Meridian Services Pte Ltd", 17, WHITE, bold=True, font=SERIF, minpt=12, lh=1.0)
+for j, (big, lab) in enumerate([("140 staff", "keep 30 commercial buildings running in Singapore"),
+                                ("80 a day", "emails and WhatsApps, each re-keyed into a ticket by hand"),
+                                ("18 min", "per request; an urgent 2 am leak waits until morning")]):
+    y = 3.35 + j * 1.0
+    text(s, 0.85, y, 3.4, 0.42, big, 21, ACC, bold=True, font=SERIF, autofit=False)
+    text(s, 0.85, y + 0.42, 3.4, 0.55, lab, 12, SOFT, minpt=9.5)
+for i, (ph, tp_, plan, ic) in enumerate([
+        ("Discover", "Topic 1", "Maps its business model, scores the agent ideas and picks one: a triage agent that reads every request and opens the ticket.", "search"),
+        ("Prove", "Topic 2", "Pilots triage at 10 sites for 90 days: 18 to 11 minutes per request, SGD 39,000, one owner, a stop rule.", "flask"),
+        ("Transform", "Topic 3", "The day-90 numbers say scale. Rolls out to all 30 sites, redesigns roles, trains staff, governs agents and budgets tokens.", "org")]):
+    y = 2.3 + i * 1.47
+    card(s, 4.7, y, 8.0, 1.32)
+    icon(s, ic, 4.95, y + 0.3, 0.72)
+    text(s, 5.9, y + 0.14, 2.6, 0.36, f"{tp_} · {ph}".upper(), 12, ACC, bold=True, autofit=False)
+    text(s, 5.9, y + 0.48, 6.6, 0.8, plan, 14.5, INK, minpt=10.5)
+text(s, 0.6, 6.68, 12.1, 0.25, "Meridian is fictitious and every figure is synthetic. Your boards and your PP are about your own organisation.", 10, MUTED, autofit=False)
 
 # --- learning outcomes, then LO -> topic map (user request: LOs and topics on the deck)
 cards(D, "What you'll achieve", "Learning Outcomes", [
@@ -96,7 +119,13 @@ for i, tp in enumerate(C.TOPICS):
     text(s, x + 0.25, 4.2, 3.45, 0.8, C.LO_SHORT[tp["lo"]], 17, WHITE if dark else INK, bold=True, font=SERIF, minpt=12)
     text(s, x + 0.25, 5.05, 3.45, 1.0, "\n".join("•  " + it for it in tp["items"][-2:]), 12, SOFT if dark else MUTED, lh=1.1, minpt=9)
 for day in (1, 2):
-    rows_ = [(f"{a}–{b}", t, "Assess" if tpn == -1 else ("—" if tpn == 0 else f"LU{tpn}")) for a, b, m, k, t, tpn in B.SCHEDULE[day]]
+    def short(x, lim=112):   # v54 QA: one line per row on the slide (cut at the last clause that fits); the LP keeps the full text
+        if len(x) <= lim: return x
+        for sep in ("; ", ", "):
+            k = x.rfind(sep, 0, lim)
+            if k > 40: return x[:k]
+        return x[:x.rfind(" ", 0, lim)]
+    rows_ = [(f"{a}–{b}", short(t), "Assess" if tpn == -1 else ("—" if tpn == 0 else f"LU{tpn}")) for a, b, m, k, t, tpn in B.SCHEDULE[day]]
     table(D, "Roadmap", f"Lesson Plan · Day {day} (9:30 AM – 6:30 PM)", ["Time", "Session", "LU"], rows_, colw=[1.5, 9.7, 0.9], size=11)
 
 # --- activities, the online board and the labs
@@ -108,29 +137,7 @@ for i, c in enumerate(sorted(B.CANVASES, key=lambda c: c["num"])):
     text(s, x + 0.2, 3.6, 3.5, 1.1, c["title"], 22, WHITE, bold=True, font=SERIF, minpt=12)
     text(s, x + 0.2, 4.75, 3.5, 0.35, f"Topic {c['topic']} · {c['lo']}", 14, ACC, bold=True, autofit=False)
     text(s, x + 0.2, 5.15, 3.5, 1.4, c["evidence"], 16, SOFT, minpt=9.5)
-s = D.new(); header(D, s, "Roadmap · Activities", "Your Online Activity Studio", "Join your group board, let Meta Muse draft, type the best answers in, download PNG or PDF.")
-T.qr(s, B.BCM_URL, 0.9, 2.55, 3.0)
-t = text(s, 0.6, 5.85, 3.6, 0.4, B.BCM_URL.replace("https://", ""), 15, TEAL, bold=True, align="c", autofit=False)
-t.click_action.hyperlink.address = B.BCM_URL
-for i, (ic, ti, de) in enumerate([("users", "Group boards", "Join with a Board ID or QR; edits sync live"), ("pen", "Type your answers", "Straight into each block"),
-                                  ("sparkles", "Meta Muse drafts", "Copy the Muse prompt from the board"), ("download", "Screenshot or PDF", "Paste into the PP tasks")]):
-    y = 2.45 + i * 1.05; icon(s, ic, 4.8, y, 0.75)
-    text(s, 5.75, y - 0.02, 6.9, 0.45, ti, 22, INK, bold=True, font=SERIF)
-    text(s, 5.75, y + 0.45, 6.9, 0.45, de, 15, MUTED)
-image(D, "Roadmap · Activities", "One Board per Outcome, One Screenshot per PP Task", asset("screenshots", "bcm-landing.png"),
-      caption=f"{B.BCM_URL} · join your group board with the Board ID or QR · trainers create all group boards in one go")
-PURL = "https://drive.google.com/drive/folders/1A0P71IKdSMRUyAAwv0iNLsEo5bHWpbox"
-s = D.new(); header(D, s, "Roadmap · Meta Muse", "Fill in the Blanks. Copy. Paste into Muse.",
-                    "Download activities/prompts.html from the LMS course materials. Open it in a browser, fill the [blanks], then copy.")
-K.picture(s, asset("screenshots", "prompts-page.png"), 0.6, 2.35, maxw=7.9, maxh=4.4)
-T.qr(s, PURL, 9.55, 2.4, 2.3)
-t = text(s, 8.8, 4.85, 3.9, 0.4, "Open the course Activities folder", 14, TEAL, bold=True, align="c", autofit=False)
-t.click_action.hyperlink.address = PURL
-text(s, 8.8, 5.35, 3.9, 1.3, "Download prompts.html here. Current mini activity and Activities 1-3. Open the downloaded file in a browser; fill, copy, paste.", 15, MUTED, align="c", minpt=11)
-image(D, "Roadmap · Activities", "From Group Board to PP Evidence in One Click", asset("screenshots", "bcm-screenshot-view.png"),
-      side=[("camera", "Screenshot view", "Clean header: course, activity, group, your name, date"),
-            ("download", "PNG or PDF", "One page, ready to paste into the PP"),
-            ("pen", "Your own answers", "Each member writes the PP analysis individually")])
+# v54: the Activity Studio slides moved into Topic 1, Activity 1 Part A (owner: odd to show them at the start)
 
 s = D.new()   # wsq-slides rule 7: title + LMS screenshot only (no kicker, no caption)
 text(s, 0.6, 0.55, 12.1, 0.8, "Login to LMS and Download Course Material", 30, INK, bold=True, font=SERIF, cw=0.52)

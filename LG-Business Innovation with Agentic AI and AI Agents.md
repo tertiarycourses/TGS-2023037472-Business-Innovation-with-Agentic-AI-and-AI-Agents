@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 53 · 22 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 54 · 23 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -60,7 +60,17 @@ Throughout the course you act as the AI consultant who leads your own company fr
 | 2 · Prove | Does it actually work here, and is it worth it? | Set a baseline, test on real cases, plan a 90-day pilot with one owner. | Activity 2 · 90-day plan · PP Task 2 |
 | 3 · Transform | How do we make it stick across the company? | Stakeholders, org chart, roles, training, process, cost and governance. | Activity 3 · SCALE · PP Task 3 |
 
-The slides are interactive: the course map, the SCALE navigator and each topic's knowledge check are clickable in slide-show mode. Each topic opens with a room poll and a one-line quote, and names the pain points companies hit before it teaches the method.
+### Meet Meridian: The Worked Example and Its Plan for AI Agents
+
+Meridian Services Pte Ltd is fictitious and every figure is synthetic. Its 140 staff keep 30 commercial buildings running in Singapore. About 80 emails and WhatsApps arrive a day, each re-keyed into a ticket by hand at 18 minutes per request. In each topic you first watch Meridian take one phase, then your group does the same for your own company.
+
+| Topic | Meridian's plan for AI agents |
+|---|---|
+| 1 · Discover | Map the business model, score the agent ideas and pick one: a triage agent that reads every request and opens the ticket. |
+| 2 · Prove | Pilot triage at 10 sites for 90 days: 18 to 11 minutes per request, SGD 39,000 in year 1, one owner and a stop rule. |
+| 3 · Transform | The day-90 numbers say scale: roll out to all 30 sites, redesign roles, train staff, govern the agents and budget the tokens. |
+
+The slides are interactive: the course map, the SCALE navigator and each topic's knowledge check are clickable in slide-show mode. Each topic has a room poll and a one-line quote, and names the pain points companies hit before it teaches the method.
 
 > Work on your own organisation. Never put personal data (NRIC, phone numbers, customer names) or confidential figures on a board: boards are shared by link.
 
@@ -194,7 +204,7 @@ Check: Up to five ranked emails with reasons, no mailbox changes; the agent expl
 
 Debrief: what did the agent know, which access did it need, and which decision stayed with you? Use your own authorised account or the trainer's non-confidential demonstration; do not use another learner's login.
 
-## 1.3 Always-On AI Agents: Meta Muse, OpenAI Dots, Claude Duet, Grok Bot, Manus Cue
+## 1.3 Always-On AI Agents: Muse, Dots, Duet, Grok Bot, Cue and Gemini Spark
 
 Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in all three activities. It connects to Gmail and Google Calendar, keeps watch on your inbox, nudges you before deadlines, builds small apps called Spaces from one prompt, and asks before sending or buying anything. Use read-only connector access where offered and approve every send yourself.
 
@@ -207,10 +217,11 @@ Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in al
 | Claude Duet (Anthropic) | A morning brief, then checks every few hours; 6,000+ connectors; shows exactly what it will send, pay or sign and waits. | Research preview (21 Oct 2026): US Pro/Max via waitlist. |
 | Grok Bot (xAI) | A persistent cloud computer shared by your bots; apps, MCP and its own @mail.grokbot.com inbox; Auto Review gates sends. | x.ai/bot desktop or mobile app; check your plan's access. |
 | Manus Cue (Manus) | Agents with their own email, phone number, wallet and computer; calls, bookings and capped payments; agent teams in a group chat. | Early access since 28 Sep 2026: free with an invite code at cue.im (web, desktop, Android). |
+| Gemini Spark (Google) | Now called Task in the Gemini app: runs work on a schedule or after an event across Gmail, Docs and Drive; up to 15 tasks at once; asks before it sends, buys or deletes. | Launched 19 May 2026. In Singapore: Google AI Pro or Ultra, a personal Google account, age 18+; Gemini web, mobile or Mac app. |
 
-Compared side by side: Meta Muse and OpenAI Dots run a single agent; Grok Bot and Manus Cue run teams of agents; Anthropic has not said for Claude Duet. Muse's core use is free in Singapore and Cue is free for now with an invite code; Dots, Grok Bot and Duet need paid plans. Models and prices were checked on 31 Oct and 1 Nov 2026, and vendors change both without notice.
+Compared side by side: Meta Muse and OpenAI Dots run a single agent; Grok Bot and Manus Cue run teams of agents; Anthropic has not said for Claude Duet; Gemini Spark runs up to 15 tasks in parallel. Muse's core use is free in Singapore and Cue is free for now with an invite code; Dots, Grok Bot, Duet and Gemini Spark need paid plans. Models and prices were checked on 31 Oct and 1 Nov 2026 (Google on 23 Nov 2026), and vendors change both without notice.
 
-*Source: Meta Newsroom, 27 Oct 2026; ChatGPT Learn: Get started with your dot; Anthropic: Introducing Claude Duet; xAI docs: Grok Bot computer and apps; cue.im; BULDRR comparison, 22 Oct 2026.*
+*Source: Meta Newsroom, 27 Oct 2026; ChatGPT Learn: Get started with your dot; Anthropic: Introducing Claude Duet; xAI docs: Grok Bot computer and apps; cue.im; Google: The Gemini app becomes more agentic, 19 May 2026; Gemini Apps Help: Manage your tasks; BULDRR comparison, 22 Oct 2026.*
 
 ## 1.4 Singapore Government News
 
@@ -544,7 +555,7 @@ A company map is a one-page, plain-English glossary of the key business terms (w
 
 In Activity 2 you ask Meta Muse to draft a company map for one of your own processes; your action plan builds on it.
 
-### Empower the Agent with a Business Briefing
+### Give the Agent a Business Briefing
 
 Teach the agent how your business works before asking it to run a process. Assemble an approved briefing pack and retrieve the relevant parts for each task: a business overview, process map, glossary, current SOPs and policies, worked examples and live system facts. Uploading documents alone does not ensure correct behaviour; the process owner must check understanding and outcomes.
 
@@ -563,7 +574,7 @@ Meridian pilot example: the agent may read permitted request and contract record
 1. Brief: give the task, process, definitions and current policy sources.
 2. Test: use routine, urgent, incomplete and conflicting examples with expected outcomes.
 3. Correct: the process owner checks source citations, proposed actions and escalation; revise the pack and rerun failures.
-4. Empower: start read-only, grant the smallest useful task permissions after agreed tests pass, log actions and provide a stop control.
+4. Grant scope: start read-only, grant the smallest useful task permissions after agreed tests pass, log actions and provide a stop control.
 5. Maintain: assign an owner to update the briefing and retest when a process, policy or connector changes.
 
 Activity 2 output: add the approved policy sources, permissions and exception route to your company map, then carry them into the architecture and pilot controls of your 90-day plan.
@@ -945,11 +956,13 @@ Prosci reports that user proficiency is the largest AI adoption challenge (38% o
 
 *Source: Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value*
 
-### Coaching Example: Use the AI Coaching Simulator
+### AI Coaching Mini Activity (10 Minutes, in Pairs)
 
 Ask the employee what concerns them, explore their strengths and workload, co-create a role that uses their judgment, and agree one small trial and a review date. At Meridian, the coordinator keeps urgent dispatch decisions and spends more time on customer follow-up. Give employees practice on their own work, builders training on testing and controls, and managers time for coaching.
 
-Open https://alfredang.github.io/AICoaching/ and select a worried employee in demo mode. Coach the employee, request feedback, then convert one suggestion into an action and a date. Debrief how you acknowledged the concern and agreed a supported next step.
+Worked example: Sarah produced campaign copy and decks most of the day and worried about her role and who gets blamed. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.
+
+In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.
 
 ## L · Loop Information: Build AI Into the Process (A6)
 
@@ -1023,6 +1036,13 @@ Manage cost per outcome, not cost per token. In the token-cost-calculator.html d
 - 3 Data leakage: personal or confidential data flows where it should not, with or without an attacker; it can breach the PDPA. Example: a coordinator pastes a tenant's name, unit and phone number into a free chatbot. Classify data, mask personal data, have the DPO check each agent.
 - 4 Shadow AI: staff use AI tools the company has not approved and cannot see; no attack, usually good intent, but no control. Example: technicians transcribe voice notes holding tenant names with a free app. Ask what staff use without blame, offer an easier approved tool, publish one page of AI rules.
 - 5 Bias and blame: the agent learns unfair patterns and nobody owns the decision. Example: premium-contract faults get marked urgent faster than small-office faults. Name a DRI for every agent decision, compare outcomes across groups, keep an appeal route.
+- Six principles of AI security (one slide each; incidents as cited in the Agentic AI Applications with Claude Code course):
+- 1 Data control: label data public, internal, confidential or restricted and connect only what the job needs; restricted data (NRIC, passwords, health records) is never connected. Samsung restricted generative AI in May 2023 after engineers pasted internal source code into ChatGPT.
+- 2 Permission control: authorise the verb, not just the agent: read, write, edit, delete, send, pay. Give each agent its own account; start read-only. In July 2025 Replit's agent deleted SaaStr's production database during a code freeze.
+- 3 Guardrails: rules checked outside the model before every action, which hold even when the agent is fooled: screen the input (prompt injection), check the output (personal data, made-up policy), hard limits (spend caps, allowed recipients, forbidden actions) and a kill switch.
+- 4 Human in the loop: route each action by risk: auto-run, a human gate, or escalate the whole case. In Moffatt v. Air Canada (2024) a tribunal held the airline liable for its chatbot's wrong refund advice.
+- 5 Traceability: log every request, tool call and result so you can answer who asked, what it touched, where it went and how to contain it. Under the PDPA, assess a suspected breach within 30 days and, if notifiable, tell PDPC within 3 calendar days.
+- 6 Right-sized models: control effort climbs with capability. Start with the smallest model that passes your own test and step up only when it fails; Anthropic keeps Claude Mythos Preview out of general release until better safeguards exist.
 - Accountability: the organisation stays responsible for its agents' actions; keep an audit trail of who asked what and when.
 - Ethics: transparency, fairness, explainability, human oversight; tell customers when they are dealing with an agent.
 
@@ -1161,21 +1181,27 @@ Discuss: Which group hears about the change last today, and should hear first? W
 | L · Idea Pipeline | How do staff share and develop the next innovation? | Idea board: Any staff posts an idea; the agent clusters them weekly; Monthly pitch: Top 3 ideas pitched to leadership; winner gets a DRI and 30 days. |
 | E · Evaluate: Review Success | How will you judge whether the innovation worked? | Day-90 review: Handling time 10.7 min, quality 95.1%, complaints 1.7%, adoption 77.5%; Decision: Scale to all 30 sites with the same approval rules. |
 
-# Bonus Topic — Communicate Your AI Transition
+# Bonus Topic — Vibe Code Your AI Transformation Dashboard
 
-Continue from Topic 3. Build a one-page stakeholder update from your SCALE board. Include a clear pitch, what changes for people and how they can respond. This project is self-paced after class.
+Continue from Topic 3. Turn the numbers in your Activity 2 plan and the progress on your SCALE board into one live page your CEO opens every Monday. Vibe coding means you describe the dashboard in plain English and a coding agent (Codex in the ChatGPT desktop app, or Claude Code) writes the code. Checking every number is still your job. This project is self-paced, outside the contact hours and not assessed.
 
-## Worked Example: Meridian’s AI Transition
+| Panel | The CEO's question | Where the numbers come from |
+|---|---|---|
+| Results vs targets | Are we hitting targets? | Activity 2: baseline, target and current value of each metric |
+| Trend | Is it getting better? | Weekly values of the main metric, with the target line |
+| SCALE progress | Is the change sticking? | Activity 3: one percentage and one line of evidence per letter |
+| Rollout | How far have we rolled out? | Teams or sites live vs planned |
+| Guardrails | Is it safe? | Actions blocked, escalations and incidents this month |
+| Decisions | What do we decide? | Decision, owner, due date and go / hold / stop |
 
-Meridian’s headline is ‘Faster service. People in charge.’ The page explains who reviews AI drafts, what happens to roles, how the pilot expands, and where to take questions. Download meridian-ai-transition.html from the course Activities folder and open it in a browser.
+## Worked Example: Meridian’s Dashboard
 
-*[Figure: Meridian AI transition landing page]*
+Meridian’s dashboard shows the day-90 proof on one page: 10.7 minutes per request against a target of 11, quality 95.1%, complaints 1.7%, adoption 77.5%, 10 of 30 buildings live, 14 actions blocked by guardrails and this week’s decisions with their owners. Meridian is fictitious and every figure is synthetic. Download meridian-ai-dashboard.html from the course Activities folder and open it in a browser.
 
-| Audience | Message and next action |
-|---|---|
-| Staff | Agents draft tickets. Coordinators retain approval, handle exceptions and get coaching. Bring an issue to the team huddle. |
-| Clients | Expect clearer updates and a human contact. Use the existing service desk or account manager. |
-| Leaders | Review service, quality, adoption and safeguards at each gate. Approve the next wave when the evidence supports it. |
+*[Figure: Meridian AI transformation dashboard (fictitious example)]*
+
+- Before you share: every number has a source and a date; targets match the plan; no personal data, only totals and rates; every decision has an owner.
+- Share with Sites (or your company's approved tool) only after the accountable owner approves who can see it.
 
 ## Create Your Stakeholder Page With Codex
 

@@ -254,9 +254,13 @@ MCK_ORG26 = "https://www.mckinsey.com/~/media/mckinsey/business%20functions/peop
 KPMG = "https://kpmg.com/au/en/insights/artificial-intelligence-ai/trust-in-ai-global-insights-2025.html"
 
 # ---------------------------------------------------------------- Topic 1 · Discover
+def t1_agents_quote(D):
+    """v54 (owner): the Topic 1 quote opens the always-on agents section, before the agents are introduced."""
+    quote(D, "AI agentic workflows will drive massive AI progress this year, perhaps even more than the next generation of foundation models.",
+          "Andrew Ng, DeepLearning.AI, March 2024", kicker="Topic 1 · Always-on AI agents",
+          note="Source: Andrew Ng on X, 21 Mar 2024, https://x.com/AndrewYNg/status/1770897666702233815 (opens 'I think ...'; checked 23 Nov 2026). Point: the gain comes from the workflow wrapped around the model, not from waiting for a better model. That is where your company's opportunity sits.")
+
 def t1_open(D):
-    quote(D, "AI is the new electricity.", "Andrew Ng, Stanford Graduate School of Business, 2017", kicker="Topic 1 · Discover",
-          note="Source: https://www.gsb.stanford.edu/insights/andrew-ng-why-ai-new-electricity . Point: electricity paid off when factories were redesigned around it, not when a motor replaced the steam engine. The same is true of agents.")
     poll(D, "Topic 1 · Discover", "How Much of Your Team's Week Could an AI Agent Take On Today?",
          ["Under 10%: our work is mostly judgement and relationships", "10-30%: some drafting, sorting and chasing",
           "30-50%: a lot of re-keying, reports and status updates", "Over 50%: most of our week is rule-based paperwork"],
@@ -305,8 +309,9 @@ def t1_hunt(D):
 
 # ---------------------------------------------------------------- Topic 2 · Prove
 def t2_open(D):
-    quote(D, "Plans are worthless, but planning is everything.", "Dwight D. Eisenhower, 1957", kicker="Topic 2 · Prove",
-          note="Eisenhower used the line in a November 1957 speech and said he learned it in the Army (Quote Investigator, https://quoteinvestigator.com/2017/11/18/planning/). Point: the 90-day plan will change; the discipline of a goal, a baseline and a stop rule will not.")
+    quote(D, "Success isn’t about building the most sophisticated system. It’s about building the right system for your needs.",
+          "Anthropic, “Building Effective Agents”, December 2024", kicker="Topic 2 · Prove",
+          note="Source: https://www.anthropic.com/research/building-effective-agents (19 Dec 2024; original: 'Success in the LLM space isn't about ...'; checked 23 Nov 2026). Point: prove the simplest agent that fixes one process against a baseline before anyone buys a platform.")
     poll(D, "Topic 2 · Prove", "AI Promises Greater Efficiency. Has It Delivered That for You?",
          ["Yes, and we measured it", "Yes, it feels faster", "Not yet", "It created more work to check"],
          note="B is the trap: feeling faster is not being faster. The next slide shows experts who felt 20% faster and measured 19% slower.")
@@ -379,9 +384,9 @@ T2_QUIZ = [
 # ---------------------------------------------------------------- Topic 3 · Transform
 def t3_open(D, mark):
     from slides_bi import full_image, icons, bignums
-    quote(D, "Change is the law of life. And those who look only to the past or present are certain to miss the future.",
-          "John F. Kennedy, Frankfurt, 25 June 1963", kicker="Topic 3 · Transform",
-          note="Address in the Assembly Hall at the Paulskirche, Frankfurt: https://www.presidency.ucsb.edu/documents/address-the-assembly-hall-the-paulskirche-frankfurt")
+    quote(D, "From the boardroom to the frontline, every worker will need to think like the CEO of an agent-powered startup.",
+          "Microsoft 2025 Work Trend Index, April 2025", kicker="Topic 3 · Transform",
+          note="Source: https://blogs.microsoft.com/blog/2025/04/23/the-2025-annual-work-trend-index-the-frontier-firm-is-born/ (checked 23 Nov 2026). Point: when everyone manages agents, the org chart, job descriptions, training and governance all have to change. That is Topic 3.")
     full_image(D, "Topic 3 · Transform", "AI Made Work Generation Almost Free. Owning the Work Is Still Expensive.",
                asset("v53", "office-baby-generator.png"),
                "Making the output is easy. Checking, approving and owning 500 of them a day is the real job.")

@@ -59,4 +59,7 @@ V53 = ("53", "22 November 2026",
        "Consultant flow (Discover, Prove, Transform); polls, quizzes, pain points; agent testing; Topic 3 adds AI in process, "
        "token cost and governance.",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53]
+V54 = ("54", "23 November 2026",
+       "AI-agent quotes; Gemini Spark and agent pages; Meridian intro; coaching mini activity; six security principles; dashboard bonus.",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54]

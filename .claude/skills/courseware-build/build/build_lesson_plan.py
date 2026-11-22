@@ -26,7 +26,7 @@ ROUTES = [("Welcome", ("admin", "t1")), ("Topic 1 (Part A)", ("t1", "mini_muse")
           ("Activity 1 (Part A)", ("labs1", "act1")), ("Activity 1 (Part B)", ("act1", "t1end")), ("Topic 2 (Part A)", ("t2", "t2step3")),
           ("Topic 2 (Part B)", ("t2step3", "t2test")), ("Topic 2 (Part C)", ("t2test", "act2a")), ("Activity 2 (Part A)", ("act2a", "act2b")),
           ("Activity 2 (Part B)", ("act2b", "t2end")), ("Topic 3 (Part A)", ("t3", "act3a")), ("Activity 3 (Part A)", ("act3a", "t3scale")),
-          ("Topic 3 (Part B)", ("t3scale", "t3work")), ("Topic 3 (Part C)", ("t3work", "t3gov")), ("Topic 3 (Part D)", ("t3gov", "act3")),
+          ("Topic 3 (Part B)", ("t3scale", "t3work")), ("Topic 3 (Part C)", ("t3work", "coachmini")), ("AI Coaching Mini Activity", ("coachmini", "t3judge")), ("Topic 3 (Part D)", ("t3judge", "act3")),
           ("Activity 3 (Part B)", ("act3", "t3end")), ("Course recap", ("wrap", "assess")),
           ("Written", ("assess", "end")), ("Practical", ("assess", "end"))]
 def slides_for(text):
@@ -120,6 +120,7 @@ for cv in B.CANVASES:
     assert sched == cv["minutes"], f"Activity {cv['num']}: canvas says {cv['minutes']} min, schedule gives {sched} min"
     lab_ = next(L for L in B.LABS if L["canvas"] == cv["key"])
     assert lab_["minutes"] == sched, f"Activity {cv['num']}: lab says {lab_['minutes']} min, schedule gives {sched} min"
+doc.add_paragraph("AI Coaching Mini Activity (10 min, Day 2): in pairs, learners coach a worried employee on the AI Coaching simulator (https://alfredang.github.io/AICoaching/), read its feedback, swap and debrief. It is practice for SCALE A (Augment people), not a PP activity.")
 doc.add_paragraph("Mini Activity (20 min): immediately after the agent introductions, learners try Meta Muse using the first section of Activity 1 Instructions. It is separate from the three PP group-board activities. A current offline prompts.html is included in activities/.")
 H("Activities (one per learning outcome)")
 at = doc.add_table(rows=0, cols=5); at.style = "Table Grid"; head(at, ["Activity", "What learners do", "Group board", "Topic · LO", "Assessment evidence"])
@@ -134,7 +135,7 @@ doc.add_paragraph("Materials: one folder per activity under activities/ with a s
                   "email; never use another person's account.")
 
 H("Bonus Topic (self-paced, outside the contact hours)")
-doc.add_paragraph(f"Slides {rng('bonus', 'wrap')}: self-paced stakeholder landing page from Topic 3’s SCALE board. The Meridian AI transition example is in activities/meridian-ai-transition.html. Use Codex and Sites after class.")
+doc.add_paragraph(f"Slides {rng('bonus', 'wrap')}: self-paced: vibe code an AI transformation dashboard from the Activity 2 plan and the SCALE board with a coding agent (Codex or Claude Code). The Meridian example is activities/meridian-ai-dashboard.html. Share with Sites after class.")
 
 prodoc.add_page_numbers(doc); prodoc.enable_update_fields(doc)
 OUT = os.path.join(REPO, "courseware", f"LP-{C.SHORT_TITLE}.docx")

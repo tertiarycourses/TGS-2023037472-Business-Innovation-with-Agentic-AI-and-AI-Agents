@@ -27,7 +27,7 @@ A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day act
 | Current Meta Muse prompt templates | Download [activities/prompts.html](activities/prompts.html) from the course materials and open it in a browser |
 | Meridian demo boards (read-only) | [Activity 1](https://alfredang.github.io/bcm/?join=meridian-activity-1) · [Activity 2](https://alfredang.github.io/bcm/?join=meridian-activity-2) · [Activity 3](https://alfredang.github.io/bcm/?join=meridian-activity-3): a finished board for the fictitious Meridian Services |
 | AI Coaching simulator (Topic 3 demo) | [alfredang.github.io/AICoaching](https://alfredang.github.io/AICoaching/): practise coaching a worried employee; demo mode or your own OpenAI / MiniMax / Anthropic (Claude Haiku 5.5) key |
-| Courseware version | v53 · 22 November 2026 · 220 slides |
+| Courseware version | v54 · 23 November 2026 · 235 slides |
 
 ## About the course
 
@@ -45,12 +45,12 @@ You act as the AI consultant inside your own company, through three phases: **Di
 |---|---|---|
 | 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents (**Discover**) | **BMC** | Where companies get stuck; Rules → ML → Deep Learning → LLM; 2023–2026 lenses; the Agent Stairway; always-on agents (Meta Muse mini activity); Singapore and AgentSea; five ways humans and agents team up; use cases by function; five capability gaps, value levers and scoring; pain-point hunt. |
 | 2. Designing Digital Architectures and AI Agent Implementation Plans (**Prove**) | **90-Day Plan** | Pilot purgatory and measured vs felt gains; set the goal and baseline; mine the process from dormant data; the decision layer and the company map in plain English; test before you trust (test set, four checks, replay → shadow → assist); owner, pilot and stop rule. |
-| 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration (**Transform**) | **SCALE** | Why transformations stall; outputs to outcomes; AI readiness diagnostic; stakeholder map and sponsors; outcome-tree org chart and DRIs; job redesign, training that builds ability and coaching (AI Coaching simulator); AI built into the process so it survives staff turnover; governance stack, access models, token cost, AI security and measuring real results. |
+| 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration (**Transform**) | **SCALE** | Why transformations stall; outputs to outcomes; AI readiness diagnostic; stakeholder map and sponsors; outcome-tree org chart and DRIs; job redesign, training that builds ability and coaching (AI Coaching mini activity); AI built into the process so it survives staff turnover; governance stack, access models, token cost, six AI security principles including guardrails, and measuring real results. |
 
 **90-Day Action Plan**: 1 Set the goal · 2 Mine the process · 3 Plug in the agents · 4 Name the owner · 5 Run a 90-day pilot.
 **SCALE** (transform): Story · Commanders · Augment people · Loop information into the process · Evaluate and govern.
 
-**Bonus topic (self-paced):** turn the Topic 3 SCALE board into a stakeholder landing page with Codex and Sites. Open the [Meridian AI transition example](activities/meridian-ai-transition.html) for the pitch, rollout and feedback routes.
+**Bonus topic (self-paced):** vibe code an AI transformation dashboard from your Activity 2 plan and SCALE board with a coding agent (Codex or Claude Code), then share it with Sites. Open the [Meridian dashboard example](activities/meridian-ai-dashboard.html).
 
 ## Activities
 
@@ -71,7 +71,7 @@ The 20-minute Meta Muse mini activity follows the agent introductions; its instr
 
 | File | What it is |
 |---|---|
-| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v53.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v53.pdf>) | Trainer slides |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v54.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v54.pdf>) | Trainer slides |
 | [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
 | [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
 | [activities/](activities/) | One folder per activity with its Instructions PDF |

@@ -51,7 +51,15 @@ tbl(["Phase", "The CEO's question", "What you do", "Evidence"], [
     ("1 · Discover", "Where should we use AI agents first?", "Hunt the pain points, read the business model, score the ideas.", "Activity 1 · BMC · PP Task 1"),
     ("2 · Prove", "Does it actually work here, and is it worth it?", "Set a baseline, test on real cases, plan a 90-day pilot with one owner.", "Activity 2 · 90-day plan · PP Task 2"),
     ("3 · Transform", "How do we make it stick across the company?", "Stakeholders, org chart, roles, training, process, cost and governance.", "Activity 3 · SCALE · PP Task 3")], [1.1, 1.9, 2.4, 1.3])
-p("The slides are interactive: the course map, the SCALE navigator and each topic's knowledge check are clickable in slide-show mode. Each topic opens with a room poll and a one-line quote, and names the pain points companies hit before it teaches the method.")
+h3("Meet Meridian: The Worked Example and Its Plan for AI Agents")
+p("Meridian Services Pte Ltd is fictitious and every figure is synthetic. Its 140 staff keep 30 commercial buildings running in Singapore. About 80 emails "
+  "and WhatsApps arrive a day, each re-keyed into a ticket by hand at 18 minutes per request. In each topic you first watch Meridian take one phase, "
+  "then your group does the same for your own company.")
+tbl(["Topic", "Meridian's plan for AI agents"], [
+    ("1 · Discover", "Map the business model, score the agent ideas and pick one: a triage agent that reads every request and opens the ticket."),
+    ("2 · Prove", "Pilot triage at 10 sites for 90 days: 18 to 11 minutes per request, SGD 39,000 in year 1, one owner and a stop rule."),
+    ("3 · Transform", "The day-90 numbers say scale: roll out to all 30 sites, redesign roles, train staff, govern the agents and budget the tokens.")], [1.3, 5.4])
+p("The slides are interactive: the course map, the SCALE navigator and each topic's knowledge check are clickable in slide-show mode. Each topic has a room poll and a one-line quote, and names the pain points companies hit before it teaches the method.")
 note("Work on your own organisation. Never put personal data (NRIC, phone numbers, "
      "customer names) or confidential figures on a board: boards are shared by link.")
 note("SkillsFuture free AI subscription: Singapore Citizens aged 18+ who attend an eligible course (look for the official \u201cFree AI sub\u201d "
@@ -114,7 +122,7 @@ for i, step in enumerate(B.MINI_MUSE["steps"]):
     prompt(step["prompt"])
     p("Check: " + step["check"])
 p("Debrief: what did the agent know, which access did it need, and which decision stayed with you? Use your own authorised account or the trainer's non-confidential demonstration; do not use another learner's login.")
-h2("1.3 Always-On AI Agents: Meta Muse, OpenAI Dots, Claude Duet, Grok Bot, Manus Cue")
+h2("1.3 Always-On AI Agents: Muse, Dots, Duet, Grok Bot, Cue and Gemini Spark")
 p("Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in all three activities. It connects to Gmail and Google Calendar, "
   "keeps watch on your inbox, nudges you before deadlines, builds small apps called Spaces from one prompt, and asks before sending "
   "or buying anything. Use read-only connector access where offered and approve every send yourself.")
@@ -129,11 +137,14 @@ tbl(["Agent", "What it does", "How to get it"], [
     ("Grok Bot (xAI)", "A persistent cloud computer shared by your bots; apps, MCP and its own @mail.grokbot.com inbox; Auto Review gates sends.",
      "x.ai/bot desktop or mobile app; check your plan's access."),
     ("Manus Cue (Manus)", "Agents with their own email, phone number, wallet and computer; calls, bookings and capped payments; agent teams in a group chat.",
-     "Early access since 28 Sep 2026: free with an invite code at cue.im (web, desktop, Android).")], [1.4, 3.3, 2.0])
+     "Early access since 28 Sep 2026: free with an invite code at cue.im (web, desktop, Android)."),
+    ("Gemini Spark (Google)", "Now called Task in the Gemini app: runs work on a schedule or after an event across Gmail, Docs and Drive; up to 15 tasks at once; asks before it sends, buys or deletes.",
+     "Launched 19 May 2026. In Singapore: Google AI Pro or Ultra, a personal Google account, age 18+; Gemini web, mobile or Mac app.")], [1.4, 3.3, 2.0])
 p("Compared side by side: Meta Muse and OpenAI Dots run a single agent; Grok Bot and Manus Cue run teams of agents; Anthropic has not said "
-  "for Claude Duet. Muse's core use is free in Singapore and Cue is free for now with an invite code; Dots, Grok Bot and Duet need paid "
-  "plans. Models and prices were checked on 31 Oct and 1 Nov 2026, and vendors change both without notice.")
-src("Meta Newsroom, 27 Oct 2026; ChatGPT Learn: Get started with your dot; Anthropic: Introducing Claude Duet; xAI docs: Grok Bot computer and apps; cue.im; BULDRR comparison, 22 Oct 2026.")
+  "for Claude Duet; Gemini Spark runs up to 15 tasks in parallel. Muse's core use is free in Singapore and Cue is free for now with an invite code; "
+  "Dots, Grok Bot, Duet and Gemini Spark need paid plans. Models and prices were checked on 31 Oct and 1 Nov 2026 (Google on 23 Nov 2026), "
+  "and vendors change both without notice.")
+src("Meta Newsroom, 27 Oct 2026; ChatGPT Learn: Get started with your dot; Anthropic: Introducing Claude Duet; xAI docs: Grok Bot computer and apps; cue.im; Google: The Gemini app becomes more agentic, 19 May 2026; Gemini Apps Help: Manage your tasks; BULDRR comparison, 22 Oct 2026.")
 h2("1.4 Singapore Government News")
 bl(["IMDA published the world's first Model AI Governance Framework for Agentic AI at Davos on 22 January 2026; version 1.5 (20 May 2026) "
     "folded in feedback from more than 60 organisations. Four dimensions: assess and bound the risks upfront; make humans meaningfully "
@@ -289,12 +300,12 @@ p("A company map is a one-page, plain-English glossary of the key business terms
   "layers: data sources, data models, business rules, relationships. Today it can be drawn and revised in plain language by the people "
   "who run the business, instead of taking months of specialist work.")
 p("In Activity 2 you ask Meta Muse to draft a company map for one of your own processes; your action plan builds on it.")
-h3("Empower the Agent with a Business Briefing")
+h3("Give the Agent a Business Briefing")
 p("Teach the agent how your business works before asking it to run a process. Assemble an approved briefing pack and retrieve the relevant parts for each task: a business overview, process map, glossary, current SOPs and policies, worked examples and live system facts. Uploading documents alone does not ensure correct behaviour; the process owner must check understanding and outcomes.")
 tbl(["Briefing component", "What to provide", "Meridian example"], B.AGENT_BRIEFING, [1.35, 2.6, 2.75])
 p("For each policy record its owner, version, effective date, applicable roles, thresholds, prohibited actions and exception route. Distinguish approved instructions from historical emails and customer messages. If sources conflict or a rule is missing, the agent must ask the owner instead of inventing an answer.")
 p("Meridian pilot example: the agent may read permitted request and contract records, classify requests and draft tickets. An urgent leak triggers an alert to the duty coordinator. Dispatch, external replies, purchases and refunds need human approval. These are fictitious pilot rules, not claims about a real firm's policies. Tool access and workflow gates enforce the limits; a prompt alone cannot enforce authorisation.")
-ol(["Brief: give the task, process, definitions and current policy sources.", "Test: use routine, urgent, incomplete and conflicting examples with expected outcomes.", "Correct: the process owner checks source citations, proposed actions and escalation; revise the pack and rerun failures.", "Empower: start read-only, grant the smallest useful task permissions after agreed tests pass, log actions and provide a stop control.", "Maintain: assign an owner to update the briefing and retest when a process, policy or connector changes."])
+ol(["Brief: give the task, process, definitions and current policy sources.", "Test: use routine, urgent, incomplete and conflicting examples with expected outcomes.", "Correct: the process owner checks source citations, proposed actions and escalation; revise the pack and rerun failures.", "Grant scope: start read-only, grant the smallest useful task permissions after agreed tests pass, log actions and provide a stop control.", "Maintain: assign an owner to update the briefing and retest when a process, policy or connector changes."])
 p("Activity 2 output: add the approved policy sources, permissions and exception route to your company map, then carry them into the architecture and pilot controls of your 90-day plan.")
 h3("Digital Architecture: Custom, Buy or Hybrid (K4, A3)")
 tbl(["Layer", "What it holds"], [("Data", "Sources, quality, permissions, dormant data"), ("Model", "The chosen model(s) and their limits"),
@@ -440,9 +451,10 @@ src("Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, pp. 3,
 h3("Training That Builds Ability")
 p("Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.")
 src("Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value")
-h3("Coaching Example: Use the AI Coaching Simulator")
+h3("AI Coaching Mini Activity (10 Minutes, in Pairs)")
 p("Ask the employee what concerns them, explore their strengths and workload, co-create a role that uses their judgment, and agree one small trial and a review date. At Meridian, the coordinator keeps urgent dispatch decisions and spends more time on customer follow-up. Give employees practice on their own work, builders training on testing and controls, and managers time for coaching.")
-p("Open https://alfredang.github.io/AICoaching/ and select a worried employee in demo mode. Coach the employee, request feedback, then convert one suggestion into an action and a date. Debrief how you acknowledged the concern and agreed a supported next step.")
+p("Worked example: Sarah produced campaign copy and decks most of the day and worried about her role and who gets blamed. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.")
+p("In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.")
 h2("L · Loop Information: Build AI Into the Process (A6)")
 p("If the AI skill lives in one person, it leaves with them. Personal skill (prompts in one person's chat history, know-how in one enthusiast's head) does not add up to company capability. Build AI into the process so it survives turnover: new staff inherit it on day one.")
 ol(["Map the process (Step 2 of your plan).", "Write the playbook (instructions, examples and checks) into the SOP, not a personal chat.",
@@ -484,6 +496,13 @@ bl(["PDPA: collect and use personal data only for notified purposes; mask person
     "3 Data leakage: personal or confidential data flows where it should not, with or without an attacker; it can breach the PDPA. Example: a coordinator pastes a tenant's name, unit and phone number into a free chatbot. Classify data, mask personal data, have the DPO check each agent.",
     "4 Shadow AI: staff use AI tools the company has not approved and cannot see; no attack, usually good intent, but no control. Example: technicians transcribe voice notes holding tenant names with a free app. Ask what staff use without blame, offer an easier approved tool, publish one page of AI rules.",
     "5 Bias and blame: the agent learns unfair patterns and nobody owns the decision. Example: premium-contract faults get marked urgent faster than small-office faults. Name a DRI for every agent decision, compare outcomes across groups, keep an appeal route.",
+    "Six principles of AI security (one slide each; incidents as cited in the Agentic AI Applications with Claude Code course):",
+    "1 Data control: label data public, internal, confidential or restricted and connect only what the job needs; restricted data (NRIC, passwords, health records) is never connected. Samsung restricted generative AI in May 2023 after engineers pasted internal source code into ChatGPT.",
+    "2 Permission control: authorise the verb, not just the agent: read, write, edit, delete, send, pay. Give each agent its own account; start read-only. In July 2025 Replit's agent deleted SaaStr's production database during a code freeze.",
+    "3 Guardrails: rules checked outside the model before every action, which hold even when the agent is fooled: screen the input (prompt injection), check the output (personal data, made-up policy), hard limits (spend caps, allowed recipients, forbidden actions) and a kill switch.",
+    "4 Human in the loop: route each action by risk: auto-run, a human gate, or escalate the whole case. In Moffatt v. Air Canada (2024) a tribunal held the airline liable for its chatbot's wrong refund advice.",
+    "5 Traceability: log every request, tool call and result so you can answer who asked, what it touched, where it went and how to contain it. Under the PDPA, assess a suspected breach within 30 days and, if notifiable, tell PDPC within 3 calendar days.",
+    "6 Right-sized models: control effort climbs with capability. Start with the smallest model that passes your own test and step up only when it fails; Anthropic keeps Claude Mythos Preview out of general release until better safeguards exist.",
     "Accountability: the organisation stays responsible for its agents' actions; keep an audit trail of who asked what and when.",
     "Ethics: transparency, fairness, explainability, human oversight; tell customers when they are dealing with an agent."])
 h3("Review Meridian’s Pilot Results (K5, A5)")
@@ -510,17 +529,25 @@ h2("Activity 3 — Sustain and Operate with AI Agents (SCALE) with Meta Muse (PP
 p("Part A is the readiness diagnostic above. In Part B (55 minutes) form groups of 3–5 and continue with the same company and pilot. Join one shared board and fill every SCALE box with your own actions, owners and review measures. Add one AI-policy rule and a monthly token budget to Guardrails & Judgement, and name where each agent's playbook lives and its backup owner.")
 X.append(("canvas", "change"))
 
-# ------------------------------------------------------------------ v47 bonus topic (self-paced, outside the contact hours)
-h1("Bonus Topic — Communicate Your AI Transition")
-p("Continue from Topic 3. Build a one-page stakeholder update from your SCALE board. Include a clear pitch, what changes for people and how they can respond. This project is self-paced after class.")
-h2("Worked Example: Meridian’s AI Transition")
-p("Meridian’s headline is ‘Faster service. People in charge.’ The page explains who reviews AI drafts, what happens to roles, how the pilot expands, and where to take questions. Download meridian-ai-transition.html from the course Activities folder and open it in a browser.")
-img(os.path.join(IMG, "screenshots", "meridian-ai-transition.png"), "Meridian AI transition landing page", 5.8)
-tbl(["Audience", "Message and next action"], [
-    ("Staff", "Agents draft tickets. Coordinators retain approval, handle exceptions and get coaching. Bring an issue to the team huddle."),
-    ("Clients", "Expect clearer updates and a human contact. Use the existing service desk or account manager."),
-    ("Leaders", "Review service, quality, adoption and safeguards at each gate. Approve the next wave when the evidence supports it."),
-], [1.5, 5.2])
+# ------------------------------------------------------------------ v54 bonus topic (owner): vibe code an AI transformation dashboard
+h1("Bonus Topic — Vibe Code Your AI Transformation Dashboard")
+p("Continue from Topic 3. Turn the numbers in your Activity 2 plan and the progress on your SCALE board into one live page your CEO opens every Monday. "
+  "Vibe coding means you describe the dashboard in plain English and a coding agent (Codex in the ChatGPT desktop app, or Claude Code) writes the code. "
+  "Checking every number is still your job. This project is self-paced, outside the contact hours and not assessed.")
+tbl(["Panel", "The CEO's question", "Where the numbers come from"], [
+    ("Results vs targets", "Are we hitting targets?", "Activity 2: baseline, target and current value of each metric"),
+    ("Trend", "Is it getting better?", "Weekly values of the main metric, with the target line"),
+    ("SCALE progress", "Is the change sticking?", "Activity 3: one percentage and one line of evidence per letter"),
+    ("Rollout", "How far have we rolled out?", "Teams or sites live vs planned"),
+    ("Guardrails", "Is it safe?", "Actions blocked, escalations and incidents this month"),
+    ("Decisions", "What do we decide?", "Decision, owner, due date and go / hold / stop")], [1.4, 1.7, 3.6])
+h2("Worked Example: Meridian’s Dashboard")
+p("Meridian’s dashboard shows the day-90 proof on one page: 10.7 minutes per request against a target of 11, quality 95.1%, complaints 1.7%, adoption 77.5%, "
+  "10 of 30 buildings live, 14 actions blocked by guardrails and this week’s decisions with their owners. Meridian is fictitious and every figure is synthetic. "
+  "Download meridian-ai-dashboard.html from the course Activities folder and open it in a browser.")
+img(os.path.join(IMG, "screenshots", "meridian-ai-dashboard.png"), "Meridian AI transformation dashboard (fictitious example)", 6.0)
+bl(["Before you share: every number has a source and a date; targets match the plan; no personal data, only totals and rates; every decision has an owner.",
+    "Share with Sites (or your company's approved tool) only after the accountable owner approves who can see it."])
 h2("Create Your Stakeholder Page With Codex")
 ol(["Bring in the change story, stakeholder map, messages, approvals and feedback routes from your SCALE board. Add evidence, owners and milestones from the Activity 2 plan.",
     "Give Codex one promise, each audience’s questions and its next action. Ask for a mobile-friendly page with the rollout timeline, human approval gates, results and feedback routes.",

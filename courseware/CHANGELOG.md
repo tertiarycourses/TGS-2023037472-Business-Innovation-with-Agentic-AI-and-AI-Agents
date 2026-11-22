@@ -1,3 +1,12 @@
+## v54 · 23 November 2026
+
+- Quotes: the five old quotes (Kay 1971, Ng 2017, Eisenhower 1957, Kennedy 1963, Skinner 1969) replaced with verified 2024-2025 quotes on AI agents: Sam Altman (Reflections, Jan 2025), Andrew Ng (agentic workflows, Mar 2024), Anthropic (Building Effective Agents, Dec 2024), Microsoft Work Trend Index (Apr 2025), Ethan Mollick (Co-Intelligence, 2024). The Topic 1 quote now opens the always-on agents section.
+- Topic 1: one introduction and set-up page per always-on agent is back (Meta Muse, OpenAI Dots, Claude Duet, Grok Bot, Manus Cue), plus Gemini Spark (now called Task in the Gemini app; checked on Google's blog and help centre, 23 Nov 2026). The comparison is now the big six.
+- Flow: a new course-intro slide introduces Meridian (fictitious) and its three-phase plan for AI agents; each topic's Meridian scenario now opens that topic's Meridian thread instead of arriving after it. The Activity Studio tour moved from the roadmap into Activity 1 Part A.
+- Topic 3: the coordinator-role redesign slide and the Sarah worked coaching example are restored from v52; the AI Coaching simulator is now a 10-minute paired mini activity (Day 2, 14:25-14:35; Part C 25 min, Part D 30 min; LU3 still 240 min). AI security is now six principles, Guardrails added, with one page each, taken from the Agentic AI Applications with Claude Code course (Samsung, Replit/SaaStr, Air Canada, PDPA breach timeline, Claude Mythos Preview).
+- Bonus topic: vibe code an AI transformation dashboard (Codex or Claude Code) from the Activity 2 plan and the SCALE board; worked example activities/meridian-ai-dashboard.html replaces the stakeholder landing page.
+- 235 slides. LP, LG, FG v16 and AP v18 aligned. Assessment papers v44 unchanged.
+
 ## v53 · 22 November 2026
 
 - Rebuilt the course around one through-line: the learner is the AI consultant inside their own company. Topic 1 Discover, Topic 2 Prove, Topic 3 Transform (CP topic titles, LOs, K&A and LU hours unchanged).

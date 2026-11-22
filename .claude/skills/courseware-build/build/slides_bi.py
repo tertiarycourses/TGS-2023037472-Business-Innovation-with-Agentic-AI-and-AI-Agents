@@ -564,6 +564,34 @@ def scientific_agent_team_case(D):
     return s
 
 
+
+def activity_studio(D):
+    """v54: the Activity Studio tour, shown when groups first create their board (Activity 1 Part A)."""
+    k = "Topic 1 · Activity 1 · Your tools"
+    s = D.new(); header(D, s, k, "Your Online Activity Studio", "Join your group board, let Meta Muse draft, type the best answers in, download PNG or PDF.")
+    qr(s, B.BCM_URL, 0.9, 2.55, 3.0)
+    t = text(s, 0.6, 5.85, 3.6, 0.4, B.BCM_URL.replace("https://", ""), 15, TEAL, bold=True, align="c", autofit=False)
+    t.click_action.hyperlink.address = B.BCM_URL
+    for i, (ic, ti, de) in enumerate([("users", "Group boards", "Join with a Board ID or QR; edits sync live"), ("pen", "Type your answers", "Straight into each block"),
+                                      ("sparkles", "Meta Muse drafts", "Copy the Muse prompt from the board"), ("download", "Screenshot or PDF", "Paste into the PP tasks")]):
+        y = 2.45 + i * 1.05; icon(s, ic, 4.8, y, 0.75)
+        text(s, 5.75, y - 0.02, 6.9, 0.45, ti, 22, INK, bold=True, font=SERIF)
+        text(s, 5.75, y + 0.45, 6.9, 0.45, de, 15, MUTED)
+    image(D, k, "One Board per Outcome, One Screenshot per PP Task", asset("screenshots", "bcm-landing.png"),
+          caption=f"{B.BCM_URL} · join your group board with the Board ID or QR · trainers create all group boards in one go")
+    PURL = "https://drive.google.com/drive/folders/1A0P71IKdSMRUyAAwv0iNLsEo5bHWpbox"
+    s = D.new(); header(D, s, k, "Fill in the Blanks. Copy. Paste into Muse.",
+                        "Download activities/prompts.html from the LMS course materials. Open it in a browser, fill the [blanks], then copy.")
+    K.picture(s, asset("screenshots", "prompts-page.png"), 0.6, 2.35, maxw=7.9, maxh=4.4)
+    qr(s, PURL, 9.55, 2.4, 2.3)
+    t = text(s, 8.8, 4.85, 3.9, 0.4, "Open the course Activities folder", 14, TEAL, bold=True, align="c", autofit=False)
+    t.click_action.hyperlink.address = PURL
+    text(s, 8.8, 5.35, 3.9, 1.3, "Download prompts.html here: the prompts for Activities 1-3. Open the downloaded file in a browser; fill, copy, paste.", 15, MUTED, align="c", minpt=11)
+    image(D, k, "From Group Board to PP Evidence in One Click", asset("screenshots", "bcm-screenshot-view.png"),
+          side=[("camera", "Screenshot view", "Clean header: course, activity, group, your name, date"),
+                ("download", "PNG or PDF", "One page, ready to paste into the PP"),
+                ("pen", "Your own answers", "Each member writes the PP analysis individually")])
+
 def topic1(D, C, mark):
     tp = C.TOPICS[0]; K1 = "Topic 1 · Identify and evaluate"
     mark("t1"); topic_open(D, C, tp)
@@ -612,6 +640,7 @@ def topic1(D, C, mark):
     for i in (1, 2): step_slide(D, B.MINI_MUSE, i)
     # --- always-on agents
     mark("t1always")
+    N.t1_agents_quote(D)   # v54: quote moved here, right before the agents are introduced
     s = D.new(); header(D, s, "Topic 1 · Always-on AI agents", "Always-On Agents Work While You Sleep",
                         "Meta Muse keeps watch on your inbox, calendar and goals, then asks before it acts.")
     picture(s, asset("ainative", "muse-productivity.png"), 0.7, 2.3, maxw=2.1, maxh=4.4)
@@ -624,7 +653,8 @@ def topic1(D, C, mark):
         text(s, x + 1.4, y + 0.3, 3.0, 0.55, t, 23, INK, bold=True, font=SERIF)
         text(s, x + 1.4, y + 0.9, 3.0, 0.95, d, 15, MUTED, minpt=11)
     src(D, s, "Meta Muse app (Singapore, Nov 2026) · Meta Newsroom: Muse in Singapore, 27 Oct 2026", V.NEWS)
-    big_five(D)   # v53: OpenClaw evolution and the five single-product pages cut (vendor detail that ages in weeks)
+    big_five(D)
+    for a_ in APPS: app_page(D, a_)   # v54 (owner): one introduction + set-up page per always-on agent, back in; Gemini Spark added
     # --- Singapore government news
     mark("t1sg")
     bignums(D, "Topic 1 · Singapore government news", "Singapore Is Betting the Country on Agents", [
@@ -675,8 +705,8 @@ def topic1(D, C, mark):
     N.t1_functions(D)   # v53: replaces the trading and scientific agent teams
     # Meridian and the BMC follow the general innovation use cases.
     mark("t1gaps")
-    meridian_scene(D, K1 + " · Meridian scenario", "Meet Meridian: 80 Requests a Day, Every One Re-Keyed by Hand",
-        "A fictitious Singapore firm you will follow through all three activities. Watch what it does; then do it for your own business.", [
+    meridian_scene(D, K1 + " · Meridian scenario", "Meridian Today: 80 Requests a Day, Every One Re-Keyed by Hand",
+        "Back to the firm from the course intro. Watch Meridian find where agents pay off; then do the same for your company in Activity 1.", [
         ("building", "Meridian Services Pte Ltd", "140 staff keep 30 commercial buildings running across Singapore."),
         ("inbox", "The pain", "80 emails and WhatsApps a day. Coordinators spend 38% of their time re-keying them into tickets."),
         ("clock", "The cost", "18 minutes per request; an urgent leak at 2 am waits until morning."),
@@ -736,6 +766,7 @@ def topic1(D, C, mark):
         ("pen", "Create your BMC", "Fill all nine blocks; assess where agents help")], cols=4,
         sub="Open alfredang.github.io/bcm/?activity=opportunity. Use your company throughout all three activities.",
         tipt="Choose a company you know; use non-confidential facts. Each member keeps the board screenshot and writes PP answers individually.")
+    activity_studio(D)   # v54: tools shown when groups first need them
     lab_overview(D, L1)
     step_slide(D, L1, 0)
     board_steps(D, L1)
@@ -859,18 +890,19 @@ BIG5 = [  # C690 v2.0 slide 33 (models checked 31 Oct, pricing 1 Nov 2026)
  ("grok", "Grok Bot", "xAI", ("Grok 4.6 → 4.7", "4.7 is trained for the Grok Bot harness"), "A team of named bots (Research, Sales, Ops) on one shared cloud computer", ("Multi-agent", "named bots work as a team"), ("Paid", "Premium from US$30/mo")),
  ("duet", "Claude Duet", "Anthropic", ("Claude Opus 5.5", "chosen for judgement: what needs you"), "A morning brief, business inbox, invoices and follow-ups; asks before it sends, pays or signs", ("Unknown", "Anthropic has not said"), ("Paid", "US Pro/Max · waitlist")),
  ("cue", "Manus Cue", "Manus", ("Manus 2.0 harness", "model not published by Manus"), "Agents with their own email, phone and wallet: calls, bookings, capped payments", ("Multi-agent", "agents share a group chat and a goal"), ("Free for now", "early access · invite code")),
+ ("gemini", "Gemini Spark", "Google · now Task", ("Gemini 3.5", "at launch; Antigravity harness"), "Gmail, Docs and Drive work on a schedule or a trigger, e.g. a delayed flight", ("Parallel tasks", "up to 15 running at once"), ("Paid in SG", "Google AI Pro or Ultra")),
 ]
 
 def big_five(D):
-    s = D.new(); header(D, s, "Topic 1 · The big five always-on agents", "Same Always-On Idea, Five Different Brains",
+    s = D.new(); header(D, s, "Topic 1 · The big six always-on agents", "Same Always-On Idea, Six Different Brains",
                         "The model decides how it thinks; the use case decides whether it fits your job. Pick by the job, then check who can get it.")
-    w = 12.1 / 5
+    w = 12.1 / len(BIG5)
     for i, (k, name, vendor, model, use, multi, price) in enumerate(BIG5):
         x = 0.6 + i * w; cw = w - 0.12
         card(s, x, 2.25, cw, 4.35)
-        picture(s, asset("apps", f"{k}-logo.png"), x + 0.15, 2.38, maxw=0.5, maxh=0.5, frame=False)
-        text(s, x + 0.75, 2.36, cw - 0.85, 0.32, name, 14, INK, bold=True, font=SERIF, autofit=False)
-        text(s, x + 0.75, 2.66, cw - 0.85, 0.26, vendor, 10.5, MUTED, autofit=False)
+        picture(s, asset("apps", f"{k}-logo.png"), x + 0.12, 2.4, maxw=0.42, maxh=0.42, frame=False)
+        text(s, x + 0.6, 2.36, cw - 0.66, 0.32, name, 12.5, INK, bold=True, font=SERIF, minpt=10)
+        text(s, x + 0.6, 2.66, cw - 0.66, 0.26, vendor, 9.5, MUTED, minpt=8)
         y = 3.05
         for lab, big_, small in (("MODEL INSIDE", model[0], model[1]), ("USE IT FOR", use, None), ("SINGLE OR MULTI-AGENT", multi[0], multi[1]), ("PRICING", price[0], price[1])):
             text(s, x + 0.15, y, cw - 0.3, 0.2, lab, 8.5, ACC, bold=True, autofit=False)
@@ -879,7 +911,7 @@ def big_five(D):
             else:
                 text(s, x + 0.15, y + 0.21, cw - 0.3, 0.26, big_, 12, INK, bold=True, minpt=9)
                 text(s, x + 0.15, y + 0.47, cw - 0.3, 0.3, small, 9.5, MUTED, minpt=8); y += 0.86
-    t = text(s, 0.6, 6.76, 12.1, 0.24, "Models checked 31 Oct, pricing 1 Nov 2026, from Meta, OpenAI, xAI, Anthropic and Manus; vendors change both "
+    t = text(s, 0.6, 6.76, 12.1, 0.24, "Models checked 31 Oct, pricing 1 Nov 2026 (Google: 23 Nov 2026), from Meta, OpenAI, xAI, Anthropic, Manus and Google; vendors change both "
              "without notice. Comparison: BULDRR, 22 Oct 2026 · click", 9, TEAL, autofit=False)
     t.click_action.hyperlink.address = "https://buldrr.com/claude-duet-vs-muse-vs-grokbot-vs-dots"
 
@@ -895,6 +927,22 @@ APPS.append(dict(key="cue", kicker="Topic 1 · Always-on agent · Manus Cue", ti
       tip="Reference route only. Keep wallet budgets small; require approval for payments, calls and messages.",
       video="https://www.youtube.com/shorts/ZW7gCKTLtpo",
       links=[("Cue by Manus: cue.im", "https://cue.im/")]))
+# v54 (owner): Gemini Spark, checked 23 Nov 2026 on Google's blog (19 May 2026) and Gemini Apps Help 17094507
+APPS.append(dict(key="gemini", kicker="Topic 1 · Always-on agent · Gemini Spark", title="Gemini Spark: What It Does and How to Set It Up",
+      sub="Google · launched 19 May 2026 · now called Task in the Gemini app · Google AI Pro or Ultra in Singapore",
+      can=[("clock", "Works in the background", "Runs on a schedule or after an event: \u201cevery day at 8 am\u201d, \u201cwhen my flight is delayed\u201d."),
+           ("plug", "Google Workspace inside", "Gmail, Docs, Slides and Drive; MCP connectors such as Canva, OpenTable and Instacart."),
+           ("shield", "Asks before acting", "Confirms before it sends, deletes, shares sensitive info, buys or submits a form."),
+           ("kanban", "Up to 15 tasks at once", "Hand over whole workflows; usage limits rise with your Google AI plan.")],
+      steps=[("Check access", "Personal Google account, 18+, Google AI Pro or Ultra; History on."),
+             ("Open Gemini", "gemini.google.com, the Gemini mobile app or the Gemini app on Mac."),
+             ("Click Task", "Below the text box, choose Task instead of Chat."),
+             ("Describe the job", "Say what to do and when: a time, a schedule or a trigger event."),
+             ("Add files, submit", "Upload & tools: files, Drive or a Notebook; then Submit.")],
+      tip="Not on work or school Google accounts yet. Approve every send, purchase and form it fills in.",
+      video="https://www.youtube.com/shorts/zzWqflMLMrg",
+      links=[("Google: The Gemini app becomes more agentic (Spark)", "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/"),
+             ("Gemini Apps Help: Manage your tasks", "https://support.google.com/gemini/answer/17094507?hl=en")]))
 
 def app_page(D, a):
     from pptx_online_video import add_online_video
@@ -960,71 +1008,78 @@ def meridian_shot(D, kicker, title, sub, img, n, notes):
     return s
 
 def bonus_open(D):
+    """v54 (owner): the bonus is to vibe code a dashboard that shows the AI transformation's progress."""
     s = D.new(dark=True)
     circle(s, -1.7, 5.2, 4.2, ACC)
     text(s, 0.9, 0.9, 7.6, 0.45, "BONUS TOPIC  ·  SELF-PACED  ·  OPTIONAL", 12.5, ACC, bold=True, autofit=False)
-    text(s, 0.85, 1.45, 7.9, 2.0, "Make the Case for Your AI Transition", 34, WHITE, bold=True, font=SERIF, cw=0.52, lh=1.04)
-    text(s, 0.9, 3.75, 7.7, 0.9, "Turn your Topic 3 SCALE board into a landing page that staff, clients and leaders can act on.", 19, SOFT, font=SERIF, lh=1.1)
+    text(s, 0.85, 1.45, 7.9, 2.0, "Vibe Code Your AI Transformation Dashboard", 34, WHITE, bold=True, font=SERIF, cw=0.52, lh=1.04)
+    text(s, 0.9, 3.75, 7.7, 0.9, "Turn your 90-day plan and SCALE board into one live page your CEO opens every Monday.", 19, SOFT, font=SERIF, lh=1.1)
     card(s, 0.9, 4.95, 7.6, 1.6, fill=PANEL, shadow=False)
     text(s, 1.15, 5.08, 7.1, 0.32, "OUTSIDE THE 16 CONTACT HOURS  ·  NOT ASSESSED", 11.5, ACC, bold=True, autofit=False)
-    text(s, 1.15, 5.42, 7.1, 1.05, "Start with Activity 3. Use the change story, stakeholder messages, safeguards and feedback routes. Add targets and evidence from your Activity 2 plan.", 15, WHITE, minpt=11, lh=1.1)
-    items = ["Pick the pitch and audiences", "Brief Codex from the SCALE board", "Build and check the landing page", "Review the Meridian example", "Publish and share with the right people"]
+    text(s, 1.15, 5.42, 7.1, 1.05, "No coding needed: you describe the dashboard in plain English and a coding agent builds it. Use the numbers from Activity 2 and the SCALE board from Activity 3.", 15, WHITE, minpt=11, lh=1.1)
+    items = ["Pick the panels that prove progress", "Brief the coding agent like a product manager", "Build, check every number, refine", "Review Meridian's dashboard", "Share it with the people who decide"]
     rowh = 0.62; ph = 0.4 + len(items) * rowh; py = max(0.55, (7.5 - ph) / 2 - 0.1)
     card(s, 8.95, py, 3.85, ph, fill=PANEL, shadow=False)
     for i, it in enumerate(items):
         yy = py + 0.22 + i * rowh
         text(s, 9.15, yy, 0.45, 0.42, str(i + 1), 17, ACC, bold=True, font=SERIF, autofit=False)
         text(s, 9.6, yy, 3.05, rowh, it, 13, LIGHT, minpt=9.5)
-    text(s, 6.4, 7.08, 6.4, 0.3, f"© Tertiary Infotech Academy Pte Ltd  ·  {D.code}", 9, K.FOOT, align="r", autofit=False)
+    footer(D, s)   # v54 QA: the standard footer (course title, code, page number), not a custom line
     return s
 
-SITE_PROMPT = (
-    "Create a one-page stakeholder update for the fictional Meridian Services AI transition. "
-    "Headline: Faster service. People in charge. Use the Topic 3 SCALE board and Topic 2 pilot results.\n"
-    "Give staff, clients and leaders one message and one next step each. Explain what the agent does, who approves dispatch, "
-    "how coaching works and when the rollout moves from two to ten sites. Show the day-90 decision, safeguards and feedback routes.\n"
-    "Use accessible, responsive HTML. Label case-study figures and check every claim against the supplied boards. "
-    "Use channel names and roles instead of inventing contact details. Show the page on desktop and mobile."
+DASH_PROMPT = (
+    "Build a one-page AI transformation dashboard for [company] as a single HTML file that works offline. "
+    "Headline: [one promise, e.g. Faster service. People in charge.]\n"
+    "Panels: (1) results against targets: [metric, baseline, now, target] from our 90-day plan; "
+    "(2) a weekly trend of the main metric with the target line; (3) SCALE progress: Story, Commanders, Augment, Loop, Evaluate, "
+    "each with a percentage and one line of evidence; (4) rollout: [sites or teams] live vs planned; "
+    "(5) guardrails: actions blocked and escalations this month; (6) decisions this week with owner, due date and go / hold / stop.\n"
+    "Use only the numbers I paste below. Label anything estimated. No personal data. Make it readable on a phone. "
+    "Then list every number you used and where it came from, so I can check it."
 )
 
 def bonus(D, C, mark):
-    """Continue Topic 3 with a self-paced stakeholder landing page."""
-    KB = "Bonus · Communicate the AI transition"
+    """v54 (owner): continue Topic 3 by vibe coding a dashboard that shows the AI transformation's progress."""
+    KB = "Bonus · Vibe code the dashboard"
     mark("bonus")
     bonus_open(D)
-    table(D, KB + " · Write the pitch", "Give Each Audience a Reason to Care and a Next Step",
-          ["Audience", "What they need to hear", "What they do next"], [
-              ("Coordinators", "The agent drafts tickets. People approve dispatch and spend more time on exceptions and follow-up.", "Bring concerns to the huddle and book coaching."),
-              ("Clients", "Requests get clearer updates, with a human contact for urgent issues.", "Use the existing service desk or account manager."),
-              ("Leaders", "Expand in waves when targets and safeguards hold. The Head of Service Desk owns the outcome.", "Review the scorecard, approve the next wave and follow up on feedback."),
-          ], colw=[2.0, 5.3, 4.8], sub="Meridian’s pitch is ‘Faster service. People in charge.’ Use SCALE Story and Loop Information to make it actionable.")
-    prompt(D, KB + " · Write the brief", "Brief Codex With the Completed SCALE Board", SITE_PROMPT,
-           sub="Paste your change story, stakeholder messages and feedback rhythm. Include the 90-day plan for rollout and evidence.",
-           side=[("target", "One clear promise", "Use plain words the reader can repeat."),
-                 ("eyecheck", "Evidence", "Label pilot figures, targets and assumptions."),
-                 ("chat", "Next step", "Show a real route for feedback or help.")],
-           label="PROMPT TEMPLATE · adapt the company, audiences and channels")
-    flow(D, KB + " · Build and check", "Build the Page, Check It, Then Share", [
-        ("folder", "Open Codex", "Start a folder for the stakeholder page."),
-        ("chat", "Paste the brief", "Give Codex the approved board content and tone."),
-        ("eye", "Test the page", "Read on phone and desktop. Test links and check staff and client wording."),
-        ("rocket", "Share with Sites", "Get the owner’s approval. Select the audience and share the link.")],
-        sub="The accountable human approves the pitch and decides who can see it.")
+    icons(D, KB + " · Plan the panels", "Six Panels, Each One Answers a Question the CEO Asks", [
+        ("gauge", "Are we hitting targets?", "Results vs baseline and target, from Activity 2"),
+        ("trend", "Is it getting better?", "Weekly trend of the main metric"),
+        ("layers", "Is the change sticking?", "SCALE progress, from Activity 3"),
+        ("map", "How far have we rolled out?", "Teams or sites live vs planned"),
+        ("shield", "Is it safe?", "Guardrail blocks, escalations, incidents"),
+        ("gavel", "What do we decide?", "Decisions, owners, go / hold / stop")], cols=3,
+        sub="A dashboard is not decoration. If a panel does not change a decision, cut it.",
+        tipt="Same numbers as your Activity 2 plan; same letters as your SCALE board. Nothing new to invent.")
+    prompt(D, KB + " · Brief the agent", "Brief the Coding Agent Like a Product Manager", DASH_PROMPT,
+           sub="Vibe coding: you describe what you want in plain English; the agent writes the code. Paste your real, approved numbers under the brief.",
+           side=[("target", "Say who it is for", "The CEO, every Monday, in two minutes."),
+                 ("eyecheck", "Only your numbers", "Ask it to list every number and its source."),
+                 ("lock", "No personal data", "Totals and rates, never names or NRIC.")],
+           label="PROMPT TEMPLATE · replace the [brackets]")
+    flow(D, KB + " · Build and check", "Describe, Generate, Check, Refine, Share", [
+        ("folder", "Open a coding agent", "Codex in the ChatGPT desktop app, or Claude Code; start a new folder."),
+        ("chat", "Paste the brief", "Brief plus your approved numbers."),
+        ("eye", "Check every number", "Open the page; compare each figure with its source."),
+        ("wand", "Refine in plain English", "\u201cMake the trend bigger\u201d, \u201cadd a phone layout\u201d."),
+        ("rocket", "Share with Sites", "The owner approves who can see it, then share the link.")],
+        sub="Vibe coding is fast. Checking is your job: a wrong number on a CEO dashboard costs more than no dashboard.")
     s = D.new()
-    header(D, s, KB + " · Worked example", "Meridian’s AI Transition Landing Page",
-           "The page explains the benefit, who decides, the rollout gates and how stakeholders can respond.")
-    picture(s, asset("screenshots", "meridian-ai-transition.png"), 0.6, 2.3, maxw=8.9, maxh=4.5)
+    header(D, s, KB + " · Worked example", "Meridian's Dashboard: Day-90 Proof on One Page",
+           "Results vs targets, the 13-week trend, SCALE progress, rollout, guardrails, readiness and this week's decisions.")
+    picture(s, asset("screenshots", "meridian-ai-dashboard.png"), 0.6, 2.3, maxw=8.9, maxh=4.5)
     card(s, 9.8, 2.3, 2.9, 4.5, fill=CHAR)
     qr(s, MERIDIAN_DOWNLOADS, 10.4, 2.55, 1.7, dark=True)
     t = text(s, 9.95, 4.45, 2.6, 0.55, "Open course Activities", 13, "7FB8B6", bold=True, align="c", autofit=False)
     t.click_action.hyperlink.address = MERIDIAN_DOWNLOADS
-    text(s, 9.95, 5.08, 2.6, 1.45, "Download meridian-ai-transition.html and open it in a browser. All sections work offline.", 13, SOFT, align="c", minpt=9.5)
-    icons(D, KB + " · Review before sharing", "Check the Page Against Your SCALE Plan", [
-        ("megaphone", "Story", "One promise and one action for each audience"),
-        ("user", "Ownership", "Human approval and a named accountable role"),
-        ("chat", "Feedback", "A clear channel, review owner and follow-up"),
-        ("chart", "Evidence", "Explain pilot numbers and the next rollout gate")], cols=4,
-        sub="Replace Meridian’s example with approved information for your own company.")
+    text(s, 9.95, 5.08, 2.6, 1.45, "Download meridian-ai-dashboard.html and open it in a browser. Fictitious company, synthetic figures.", 13, SOFT, align="c", minpt=9.5)
+    icons(D, KB + " · Review before sharing", "Check the Dashboard Before the CEO Sees It", [
+        ("file", "Every number has a source", "Plan, board or system, with a date"),
+        ("target", "Targets match the plan", "No target quietly moved"),
+        ("lock", "No personal data", "Totals and rates only"),
+        ("user", "Every decision has an owner", "A name, a date and go / hold / stop")], cols=4,
+        sub="Replace Meridian's example with approved figures from your own company.")
     return s
 
 # ================================================================== TOPIC 2
@@ -1036,6 +1091,14 @@ def topic2(D, C, mark):
     framework(D, "Topic 2 · The 90-day action plan", "PLAN", "Five Steps to Test an Agent Before You Bet the Business on It", B.PLAN,
               "Every slide in this topic serves one step. Activity 2 is the 90-day plan for your business, with a real test inside it.",
               tipt="Steps 1 and 2 first: no agent before a goal and a real process.")
+    # v54 (owner): the Meridian scenario opens the topic's Meridian thread, before Step 1 uses it
+    meridian_scene(D, K2 + " · Meridian scenario", "Meridian Picked Triage. Now It Needs a Plan the CEO Will Fund.",
+        "Topic 1 found the idea. Watch Meridian prove it with the five steps; then do the same for your company in Activity 2.", [
+        ("target", "The goal", "Same-day response for every client: handling time from 18 to 11 minutes by day 90."),
+        ("route", "The process", "Six steps and three handoffs today, from email to coordinator to ticket to technician."),
+        ("coins", "The budget", "SGD 39,000 in year 1: licences, integration, training and change."),
+        ("shield", "The worry", "A misrouted urgent job. One leak sent to the wrong team costs a contract.")],
+        "Which steps go to the agent, who owns the result, and what stops the pilot?", "Meridian's Topic 2 question")
     mark("t2step1")
     icons(D, "Topic 2 · Step 1 of 5 · Set the goal", "Set Meridian's Goal Before Choosing an Agent", [
         ("inbox", "Scope", "10,000 eligible requests out of 28,800 per year"),
@@ -1097,7 +1160,7 @@ def topic2(D, C, mark):
         ("user", "People", "Who decides what"), ("users", "Customers", "What 'active' means here"), ("box", "Products", "SKU = product code?"),
         ("cart", "Orders", "Life cycle and states"), ("file", "Contracts", "Linked to obligations"), ("check", "Approvals", "Three more after signing")],
         foot="A one-page glossary of terms, records, rules and approvals, written by the people who run the work and updated any day.")
-    table(D, "Topic 2 · Step 3 · Empower the agent", "Give Your Agent a Business Briefing", ["What it needs", "What you provide", "Meridian example"],
+    table(D, "Topic 2 · Step 3 · Brief the agent", "Give Your Agent a Business Briefing", ["What it needs", "What you provide", "Meridian example"],
           [list(row) for row in B.AGENT_BRIEFING[:3]], colw=[2.4, 4.65, 5.05],
           sub="A capable model still needs your business context. Retrieve relevant, permitted documents and live facts for each task.")
     table(D, "Topic 2 · Step 3 · Policies become operating rules", "Turn Policies into Clear Permissions and Decisions", ["Policy / rule", "Agent may do", "Human / system control"], [
@@ -1110,7 +1173,7 @@ def topic2(D, C, mark):
         ("book", "Brief", "Goal, process map, glossary, SOPs and policy sources"),
         ("flask", "Test", "Routine, urgent, incomplete and conflicting cases"),
         ("check", "Correct", "Owner checks evidence, decisions and escalations"),
-        ("shield", "Empower", "Grant the smallest useful tool scope; log and review")], cols=4,
+        ("shield", "Grant scope", "Grant the smallest useful tool scope; log and review")], cols=4,
         tipt="Start read-only. Pass agreed tests before enabling actions; retest whenever a process or policy changes.")
     ladder(D, "Topic 2 · Step 3 · Plug in the agents", "Step 3: Where Agents Plug In", [
         ("Inform", "Summarise, alert"), ("Recommend", "Rank, suggest"), ("Prepare", "Draft the ticket"),
@@ -1150,13 +1213,6 @@ def topic2(D, C, mark):
           sub="Review weekly. At day 90, evaluate handling time (18 to ≤11 min), complaints (≤2%) and the rework stop rule.")
     # --- Meridian case briefing and Activity 2
     mark("t2scenario")
-    meridian_scene(D, K2 + " · Meridian scenario", "Meridian Picked Triage. Now It Needs a Plan the CEO Will Fund.",
-        "Same fictitious firm, Topic 2: turn the winning idea into a 90-day plan with one owner and a kill switch.", [
-        ("target", "The goal", "Same-day response for every client: handling time from 18 to 11 minutes by day 90."),
-        ("route", "The process", "Six steps and three handoffs today, from email to coordinator to ticket to technician."),
-        ("coins", "The budget", "SGD 39,000 in year 1: licences, integration, training and change."),
-        ("shield", "The worry", "A misrouted urgent job. One leak sent to the wrong team costs a contract.")],
-        "Which steps go to the agent, who owns the result, and what stops the pilot?", "Meridian's Topic 2 question")
     c2 = B.CANVAS["actionplan"]
     meridian_shot(D, "Topic 2 · Meridian's completed plan", "Meridian's 90-Day Plan: Five Steps, Nine Blocks, One Owner",
         "A finished Activity 2 board for the fictitious Meridian. Every step has a number, a name or a date.", "meridian-plan.png", 2, [
@@ -1263,8 +1319,8 @@ def security5(D, kicker):
     return s
 
 def coach_demo(D, kicker):
-    s = D.new(); header(D, s, kicker, "Practise the Hard Conversation Before You Have It",
-                        "Use the simulator to practise listening, redesigning the job together and agreeing a small trial.")
+    s = D.new(); header(D, s, kicker, "Mini Activity: Coach a Worried Employee Before You Do It for Real",
+                        "In pairs, 10 minutes. Practise the four moves on the AI Coaching simulator: listen, redesign the job together, agree a small trial.")
     card(s, 0.6, 2.45, 4.0, 4.15, fill=CHAR)
     qr(s, COACH_URL, 1.5, 2.7, 2.2, dark=True)
     t = text(s, 0.75, 5.1, 3.7, 0.4, "alfredang.github.io/AICoaching", 13, "7FB8B6", bold=True, align="c", autofit=False)
@@ -1292,6 +1348,14 @@ def topic3(D, C, mark):
     # --- Part A: why transformations stall, outputs to outcomes, who owns AI
     mark("t3chal")
     N.t3_open(D, mark)
+    # v54 (owner): the Meridian scenario opens the topic's Meridian thread
+    meridian_scene(D, K3 + " · Meridian scenario", "Day 90 at Meridian: the Numbers Say Scale. The People Are Nervous.",
+        "The Topic 2 pilot worked. Watch Meridian take it company-wide with SCALE; then do the same for your company in Activity 3.", [
+        ("chart", "The result", "Handling time 10.7 minutes, quality 95.1%, complaints 1.7%, adoption 77.5%."),
+        ("users", "The mood", "Coordinators fear replacement; clients want faster answers, not a chatbot wall."),
+        ("org", "The next step", "Scale from 10 sites to all 30 with the same approval rules."),
+        ("lightbulb", "The opening", "Meridian Assist could become a product for other building managers.")],
+        "How do we make this how Meridian works, without losing our people, our judgement or our clients' trust?", "Meridian's Topic 3 question")
     icons(D, "Topic 3 · What your people feel", "Six Worries to Answer Before Any Role Changes", [
         ("users", "Resistance to change", "People trust their current workflow and may have had little say in the redesign."),
         ("user", "Worry about job loss", "Staff ask which tasks will change and what happens to their roles."),
@@ -1353,6 +1417,12 @@ def topic3(D, C, mark):
     icons(D, "Topic 3 · A · Augment people", "Managers Move from Relay to Judgement", [
         ("gavel", "Judge at scale", "Owns outcomes for agents + people"), ("users", "Coach", "Teaches teams to work with agents"),
         ("network", "Translate", "Moves tacit know-how into the system"), ("stop", "Relay", "Only passes messages: most exposed")], cols=4)
+    image(D, "Topic 3 · A · Job redesign · human ownership",   # v54 (owner): restored from v52
+          "Redesign the Coordinator’s Role Around Decisions", asset("generated", "meridian-human-owner.jpg"),
+          caption="Illustrative Meridian coaching scene · OpenAI ImageGen",
+          side=[("robot", "Agent drafts", "Extract location, fault, contact and urgency."),
+                ("check", "Coordinator decides", "Review context and approve or return the draft."),
+                ("user", "Owner is accountable", "The Head of Service Desk sets rules, reviews results and can pause the agent.")])
     s = icons(D, "Topic 3 · A · Redesign the job", "The Human Owns the Outcome. The Agent Does the Delegated Work.", B.HUMAN_OWNER_RIGHTS, cols=5,
         sub="The owner’s job shifts from producing every output to directing work, checking results and making decisions.",
         tipt="At Meridian, the Head of Service Desk owns the service outcome. The agent extracts details, drafts tickets and monitors deadlines.")
@@ -1383,10 +1453,17 @@ def topic3(D, C, mark):
         ("flag", "Agree a safe experiment", "Small, time-bound, supported, with a review date.")],
         sub="Four moves built on GROW coaching. The employee opens up only when they feel heard.",
         tipt="Meridian: coordinators feared replacement; the change story promised no job losses in the pilot before any role changed.")
-    coach_demo(D, "Topic 3 · A · Coaching example")
-    N.quote(D, "The real question is not whether machines think but whether men do.", "B. F. Skinner, Contingencies of Reinforcement, 1969",
+    s = vs(D, "Topic 3 · A · AI coaching · worked example", "From Campaign Producer to Marketing Owner",   # v54: restored from v52
+        ("Sarah’s concern", "user", ["Campaign copy and decks were most of her day.", "She worries about her role and who gets blamed."]),
+        ("Sarah’s redesigned role", "flag", ["Set the campaign goal and brand voice.", "Agent drafts copy and decks. Sarah checks facts, approves release and improves the workflow."]),
+        sub="Agree a two-week trial with Sarah. Review draft time, corrections and whether she had enough control.")
+    s.notes_slide.notes_text_frame.text = "Fictional coaching example adapted from Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, page 9."
+    mark("coachmini")
+    coach_demo(D, "Topic 3 · A · AI Coaching Mini Activity · 10 min · pairs")
+    mark("t3judge")
+    N.quote(D, "Be the human in the loop.", "Ethan Mollick, Co-Intelligence: Living and Working with AI, 2024",
             kicker="Topic 3 · A · Keep people judging",
-            note="Wording from the 1969 original (Quote Investigator, https://quoteinvestigator.com/2025/09/04/machines-think/). Later quote books changed 'question' to 'problem'.")
+            note="Principle 2 of the four rules in Mollick's Co-Intelligence (Portfolio, 2024); see https://www.gsb.stanford.edu/insights/co-intelligence-ai-masterclass-ethan-mollick (checked 23 Nov 2026). Point: an agent's output is a draft until a person who knows the work checks it.")
     s = bignums(D, "Topic 3 · A · Augment people", "Judgement Is a Muscle. Use It or Lose It.", [
         ("−6 pts", "adenoma detection", "28.4% → 22.4% in colonoscopies without AI, after routine AI use"),
         ("~80%", "followed the wrong AI", "When people asked the AI and it was planted wrong (Wharton, Study 1)"),
@@ -1419,19 +1496,13 @@ def topic3(D, C, mark):
     icons(D, "Topic 3 · E · AI security", "Five Ways an Agent Can Hurt You", [(r["ic"], r["name"], r["short"]) for r in RISKS], cols=5,
           tipt="Jailbreak is not shadow AI: a jailbreak attacks the agent's rules; shadow AI is staff using tools nobody approved.")
     for i_, r_ in enumerate(RISKS): risk_page(D, i_, r_)
-    security5(D, "Topic 3 · E · AI security controls")
+    import slides_v54 as S6
+    S6.security6(D)   # v54 (owner): six principles (Guardrails added), one page each, from the Claude Code course
     mark("t3review")
     bignums(D, "Topic 3 · E · Evaluate", "Day 90: The Numbers Decide", [
         ("10.7", "minutes per request", "from 18 · target ≤ 11"), ("95.1%", "quality", "target ≥ 94%"),
         ("1.7%", "complaints", "limit 2%"), ("77.5%", "staff adoption", "target ≥ 70%")],
         tipt="Example pilot: modelled benefit SGD 39,200 (at 60% realisation) vs year-1 cost SGD 39,000. Scale, redesign, hold or stop?")
-    meridian_scene(D, K3 + " · Meridian scenario", "Day 90 at Meridian: the Numbers Say Scale. The People Are Nervous.",
-        "Same fictitious firm, Topic 3: take one team's pilot to the whole company without losing people, judgement or trust.", [
-        ("chart", "The result", "Handling time 10.7 minutes, quality 95.1%, complaints 1.7%, adoption 77.5%."),
-        ("users", "The mood", "Coordinators fear replacement; clients want faster answers, not a chatbot wall."),
-        ("org", "The next step", "Scale from 10 sites to all 30 with the same approval rules."),
-        ("lightbulb", "The opening", "Meridian Assist could become a product for other building managers.")],
-        "How do we make this how Meridian works, without losing our people, our judgement or our clients' trust?", "Meridian's Topic 3 question")
     c4 = B.CANVAS["change"]
     scale_blocks = c4["blocks"]
     for title_part, blocks in [
