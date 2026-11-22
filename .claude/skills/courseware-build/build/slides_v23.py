@@ -128,7 +128,7 @@ MUSE_WEB='https://muse.ai/';MUSE_CODE='H1KWDZ'
 def muse_invite(D,kick):
  """Activity 1A: everyone joins Muse on the web and redeems the trainer's invite code."""
  s=D.new();header(D,s,kick,'Redeem the Invite Code: You and Your Trainer Get 1 Billion Tokens',
-  'Sign in with Facebook, key in your trainer’s code within 48 hours, and you both get 1 billion Muse tokens.')
+  'Key in your trainer’s code within 48 hours: you both get 1 billion Muse tokens (in-app offer, Nov 2026).')
  picture(s,t1a('muse-invite.png'),.6,2.2,maxw=3.45,maxh=4.0)
  rx,rw=4.45,8.25
  for i,(ti,de) in enumerate([('Open muse.ai','Sign in with Facebook. It works much like ChatGPT. On your phone? Install Muse from Meta.'),

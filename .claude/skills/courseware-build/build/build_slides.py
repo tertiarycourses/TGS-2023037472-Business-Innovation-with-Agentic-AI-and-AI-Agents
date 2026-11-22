@@ -10,6 +10,7 @@ import ccdeck as K
 from ccdeck import (cover, cards, rows, table, image, flow, trainer, header, card, text, icon, circle, tip, statement,
                     ACC, TEAL, CHAR, PANEL, WHITE, INK, MUTED, SOFT, SERIF)
 import slides_bi as T
+import slides_v53 as N
 
 REPO = os.path.normpath(os.path.join(HERE, "..", "..", "..", ".."))
 def asset(*p): return os.path.join(REPO, "courseware", "assets", *p)
@@ -57,6 +58,24 @@ cards(D, "Housekeeping", "Ground Rules", [
     ("75% attendance", "Required for funding.", "check"), ("Hands-on", "Do every activity yourself.", "tool")], cols=3, bottom=5.9, desc_pt=16)
 
 T.big_statement(D, "Why you are here", "Stop piloting AI.\nStart running the business on it.", C.PITCH, dark=True)
+N.quote(D, "The best way to predict the future is to invent it.", "Alan Kay", kicker="Before we start",
+        note="Quote Investigator credits Alan Kay (a 1971 PARC meeting, from Kay's own recollection): https://quoteinvestigator.com/2012/09/27/invent-the-future/")
+# v53: the learner plays the AI consultant inside their own company
+s = D.new(); header(D, s, "Your role in this course", "You Are the AI Consultant Inside Your Company",
+                    "Three questions your CEO will ask. Three phases. One company: yours, carried through all three activities.")
+for i, (ph, q, do_, out, ic) in enumerate([
+        ("Discover", "\u201CWhere should we use AI agents first?\u201D", "Hunt the pain points, read the business model, score the ideas.", "Activity 1 · BMC → PP Task 1", "search"),
+        ("Prove", "\u201CDoes it actually work here, and is it worth it?\u201D", "Set a baseline, test on real cases, plan a 90-day pilot with one owner.", "Activity 2 · 90-day plan → PP Task 2", "flask"),
+        ("Transform", "\u201CHow do we make it stick across the company?\u201D", "Stakeholders, org chart, roles, training, process, cost and governance.", "Activity 3 · SCALE → PP Task 3", "org")]):
+    x = 0.6 + i * 4.1; dk = i == 1
+    card(s, x, 2.4, 3.9, 4.2, fill=CHAR if dk else WHITE)
+    icon(s, ic, x + 0.3, 2.65, 0.75)
+    text(s, x + 1.2, 2.62, 2.55, 0.42, f"PHASE {i + 1}", 12, ACC, bold=True, autofit=False)
+    text(s, x + 1.2, 2.95, 2.55, 0.55, ph, 26, WHITE if dk else INK, bold=True, font=SERIF, autofit=False)
+    text(s, x + 0.3, 3.65, 3.3, 1.0, q, 17, ACC if not dk else "F2B49B", font=SERIF, italic=True, minpt=12)
+    text(s, x + 0.3, 4.7, 3.3, 1.0, do_, 14.5, SOFT if dk else MUTED, minpt=10.5)
+    text(s, x + 0.3, 5.85, 3.3, 0.5, out, 13, WHITE if dk else INK, bold=True, minpt=10)
+    if i < 2: K.box(s, x + 3.93, 4.3, 0.14, 0.4, fill=ACC, shape=K.MSO_SHAPE.CHEVRON)
 
 # --- learning outcomes, then LO -> topic map (user request: LOs and topics on the deck)
 cards(D, "What you'll achieve", "Learning Outcomes", [
@@ -64,16 +83,18 @@ cards(D, "What you'll achieve", "Learning Outcomes", [
     (f"LO2 · {C.LO_SHORT[1]}", C.LEARNING_OUTCOMES[1].split(": ", 1)[1], "map"),
     (f"LO3 · {C.LO_SHORT[2]}", C.LEARNING_OUTCOMES[2].split(": ", 1)[1], "org")],
     cols=3, sub=f"Mapped to the TSC {C.TSC_TITLE} ({C.TSC_CODE}).", desc_pt=16)
-s = D.new(); header(D, s, "Roadmap", "BMC → 90-Day Plan → SCALE: One Business, Three Moves", "Identify and evaluate the opportunity, plan how to start, then sustain and operate. Each ends with a group board for the PP.")
+s = D.new(); header(D, s, "Course map · click a topic to jump", "Discover → Prove → Transform: One Company, Three Phases", "BMC finds the opportunity, the 90-day plan proves it, SCALE makes it how the company works. Each ends with a group board for the PP.")
+N.anchor("map", s)
 for i, tp in enumerate(C.TOPICS):
     x = 0.6 + i * 4.1; dark = i == 1
     card(s, x, 2.4, 3.9, 4.3, fill=CHAR if dark else WHITE)
+    N.button(s, x + 0.25, 6.12, 3.4, 0.42, f"Open Topic {tp['num']} · {C.PHASES[i]}  ▶", f"t{tp['num']}", size=12)
     circle(s, x + 0.25, 2.6, 0.75, ACC); text(s, x + 0.25, 2.6, 0.75, 0.75, str(tp["num"]), 26, WHITE, bold=True, font=SERIF, align="c", anchor="m", autofit=False)
     text(s, x + 1.15, 2.62, 2.6, 0.32, f"TOPIC {tp['num']}  ·  LO{tp['lo']+1}", 12, ACC, bold=True, autofit=False)
     text(s, x + 1.15, 2.92, 2.6, 0.5, tp["codes"], 11, SOFT if dark else MUTED, autofit=False)
     text(s, x + 0.25, 3.45, 3.4, 0.75, C.FRAME[i], 34, ACC, bold=True, font=SERIF, autofit=False)
     text(s, x + 0.25, 4.2, 3.45, 0.8, C.LO_SHORT[tp["lo"]], 17, WHITE if dark else INK, bold=True, font=SERIF, minpt=12)
-    text(s, x + 0.25, 5.05, 3.45, 1.55, "\n".join("•  " + it for it in tp["items"][-2:]), 12.5, SOFT if dark else MUTED, lh=1.15, minpt=9)
+    text(s, x + 0.25, 5.05, 3.45, 1.0, "\n".join("•  " + it for it in tp["items"][-2:]), 12, SOFT if dark else MUTED, lh=1.1, minpt=9)
 for day in (1, 2):
     rows_ = [(f"{a}–{b}", t, "Assess" if tpn == -1 else ("—" if tpn == 0 else f"LU{tpn}")) for a, b, m, k, t, tpn in B.SCHEDULE[day]]
     table(D, "Roadmap", f"Lesson Plan · Day {day} (9:30 AM – 6:30 PM)", ["Time", "Session", "LU"], rows_, colw=[1.5, 9.7, 0.9], size=11)
@@ -155,13 +176,14 @@ T.bonus(D, C, mark)   # v47: self-paced bonus topic (outside the contact hours)
 mark("wrap")
 s = D.new(dark=True); header(D, s, "Wrap-up", "Three Outcomes. One Business Ready to Move.")
 for i, (tp, ic, line) in enumerate(zip(C.TOPICS, ["search", "map", "org"],
-        ["BMC: you identified and evaluated where AI agents pay off.", "90-day plan: you planned how to get started in five steps.", "SCALE: you know how to sustain, review and grow it."])):
+        ["Discover: you found and scored where AI agents pay off.", "Prove: you set a baseline, tested on real cases and planned a 90-day pilot.", "Transform: you know how to make it how the whole company works."])):
     x = 0.6 + i * 4.1; card(s, x, 2.0, 3.9, 4.4, fill=PANEL, shadow=False)
     icon(s, ic, x + 1.45, 2.3, 1.0)
     text(s, x + 0.2, 3.5, 3.5, 0.5, f"LO{i+1}", 16, ACC, bold=True, align="c", autofit=False)
-    text(s, x + 0.2, 3.95, 3.5, 0.9, C.LO_SHORT[i], 24, WHITE, bold=True, font=SERIF, align="c", minpt=15)
+    text(s, x + 0.2, 3.95, 3.5, 0.9, C.PHASES[i], 28, WHITE, bold=True, font=SERIF, align="c", minpt=15)
     text(s, x + 0.25, 4.95, 3.4, 1.3, line, 16, SOFT, align="c", minpt=11)
-T.big_statement(D, "Your next move", "Pick one process.\nName one DRI.\nShip in 90 days.", "Then let the numbers decide.", dark=True)
+N.quote(D, "Pick one process. Name one owner. Prove it in 90 days.", kicker="Your next move as the AI consultant",
+        note="Close: ask each learner to say aloud the one process they will start with on Monday and who will own it.")
 mark("assess")
 s = D.new(); header(D, s, "Assessment", "Final Assessment")
 for i, (ic, t, d, dark) in enumerate([
@@ -188,6 +210,7 @@ text(s, 0.9, 6.6, 11, 0.4, "enquiry@tertiaryinfotech.com   |   +65 6100 0613   |
 K.footer(D, s)
 
 OUT = os.path.join(REPO, "courseware", f"{C.SHORT_TITLE}-{C.VERSION}.pptx")
+N.resolve()   # v53: course map, SCALE navigator and quiz answers are internal slide links
 D.save(OUT)
 mark("end")
 json.dump(MARK, open(os.path.join(HERE, "slide_map.json"), "w"), indent=1)

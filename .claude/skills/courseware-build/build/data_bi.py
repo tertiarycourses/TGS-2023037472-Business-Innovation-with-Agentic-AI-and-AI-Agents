@@ -276,7 +276,7 @@ AI_NATIVE = [
       definition="The second, unofficial record of a company: meeting audio, chats, edit history, tickets, code logs, photos and system logs. Messy but truthful. Digitising the business starts here: AI agents can now read this record and turn it into evidence for decisions.",
       example="A ticket closed as 'resolved' that the same customer reopens the next day."),
  dict(term="Enterprise AI decision layer", gist="Brain + map + navigation + OS", ch=6, icon="layers",
-      definition="The system that lets AI agents work safely across the company: a model (brain), a company map (ontology), live events (navigation) and an operating system that schedules, tests, connects and controls every agent.",
+      definition="The system that lets AI agents work safely across the company: a model (brain), a company map (your business glossary and rules), live events (navigation) and an operating system that schedules, tests, connects and controls every agent.",
       example="A better model moves you from D to D+; the other three parts take you to A."),
  dict(term="Company map (ontology)", gist="Your business, defined for AI", ch=6, icon="map",
       definition="The definitions an AI agent needs before it can act: your business terms, entities, relationships and approval rules (customer, contract, approval). Written in plain language by the people who run the business.",
@@ -301,3 +301,108 @@ AI_NATIVE = [
       example="Doctors' detection rate fell from 28.4% to 22.4% after their AI tool was taken away."),
 ]
 AI_NATIVE_BY = {c["term"]: c for c in AI_NATIVE}
+
+
+# =========================================================================== v53 (22 Nov 2026): consultant flow
+# Discover (T1) -> Prove (T2) -> Transform (T3). Owner brief: test and evaluate agents in Topic 2; a deep, company-wide AI
+# transformation in Topic 3 (stakeholders, org chart, job redesign, training, coaching, AI built into processes so it survives
+# staff turnover, token cost, security, governance and policies). Board block titles are unchanged (PP evidence, v44 papers).
+SCHEDULE = {
+ 1: [
+  ('9:30', '9:50', 20, 'admin', "Welcome, digital attendance, trainer, learning outcomes, your role as your company's AI consultant, ground rules, course materials and the SkillsFuture free AI subscription", 1),
+  ('9:50', '10:25', 35, 'topic', 'Topic 1 (Part A) - room poll; where companies get stuck; AI history and the 2023-2026 lenses; Agent Stairway; agentic AI and always-on agents; the seven components of an agent', 1),
+  ('10:25', '10:45', 20, 'lab', 'Mini Activity - Try Meta Muse: sign in, connect permitted apps and try a read-only inbox brief; discuss ongoing monitoring and approvals', 1),
+  ('10:45', '11:00', 15, 'break', 'Tea break', 1),
+  ('11:00', '11:35', 35, 'topic', 'Topic 1 (Part B) - always-on agents compared; Singapore and AgentSea; five ways humans and agents team up; business use cases by function', 1),
+  ('11:35', '12:10', 35, 'topic', 'Topic 1 (Part C) - Meridian scenario; nine-block BMC; five capability gaps; value levers and opportunity scoring; completed Meridian BMC; knowledge check', 1),
+  ('12:10', '12:40', 30, 'activity', 'Activity 1 (Part A) - pain-point hunt, then groups of 3-5 choose one company, join one board and draft its BMC', 1),
+  ('12:40', '13:40', 60, 'lunch', 'Lunch break', 0),
+  ('13:40', '14:30', 50, 'activity', 'Activity 1 (Part B) - verify and refine all nine BMC blocks, score opportunities and capture individual PP Task 1 evidence', 1),
+  ('14:30', '14:55', 25, 'topic', 'Topic 2 (Part A) - room poll; pilot purgatory; Step 1 set the goal and baseline; Step 2 mine the process from dormant data and event logs', 2),
+  ('14:55', '15:55', 60, 'topic', 'Topic 2 (Part B) - Step 3 plug in the agents: the decision layer and company map in plain English, business briefing, policies into permissions, patterns, build or buy', 2),
+  ('15:55', '16:10', 15, 'break', 'Tea break', 2),
+  ('16:10', '17:10', 60, 'topic', 'Topic 2 (Part C) - test before you trust: test set, four checks, shadow to autonomy; Step 4 name the owner; Step 5 run and evaluate the pilot; Meridian plan; knowledge check', 2),
+  ('17:10', '18:15', 65, 'activity', 'Activity 2 (Part A) - groups of 3-5 choose a company, mine its process and write the company map the agent needs', 2),
+  ('18:15', '18:30', 15, 'recap', 'Day 1 recap, Q&A and PM digital attendance', 2),
+ ],
+ 2: [
+  ('9:30', '9:45', 15, 'recap', 'Day 1 recap and AM digital attendance', 2),
+  ('9:45', '11:15', 90, 'activity', 'Activity 2 (Part B) - Muse drafts the 90-day plan; the group tests the agent on 10 real cases, then completes the group board (PP Task 2 evidence)', 2),
+  ('11:15', '11:30', 15, 'break', 'Tea break', 2),
+  ('11:30', '12:05', 35, 'topic', 'Topic 3 (Part A) - room poll; why AI transformations stall; from outputs to outcomes; adoption vs transformation; who owns AI', 3),
+  ('12:05', '12:20', 15, 'activity', 'Activity 3 (Part A) - AI readiness diagnostic: score six dimensions, then share the shape with your group', 3),
+  ('12:20', '13:00', 40, 'topic', 'Topic 3 (Part B) - SCALE: S Story, stakeholders and sponsors; C Commanders, outcome-tree org chart, DRIs, outcome managers and staged rollout', 3),
+  ('13:00', '14:00', 60, 'lunch', 'Lunch break', 0),
+  ('14:00', '14:30', 30, 'topic', 'Topic 3 (Part C) - A Augment people: job redesign, training that builds ability, coaching; L Loop AI into the process: playbooks, capability register, feedback', 3),
+  ('14:30', '15:05', 35, 'topic', 'Topic 3 (Part D) - E Evaluate and govern: policy stack, access models, token cost and budget drill, AI security, measuring real results; Meridian SCALE board; knowledge check', 3),
+  ('15:05', '15:20', 15, 'break', 'Tea break', 3),
+  ('15:20', '16:15', 55, 'activity', "Activity 3 (Part B) - Muse drafts the change messages and the SCALE board; the group refines it and judges the decision (PP Task 3 evidence)", 3),
+  ('16:15', '16:30', 15, 'assess', 'Course recap and Briefing for Assessment', 3),
+  ('16:30', '17:30', 60, 'assess', 'Written Assessment (WA-SAQ) - 1 hour, open book; TRAQOM survey and assessment attendance first', -1),
+  ('17:30', '18:30', 60, 'assess', 'Practical Performance (PP) - 1 hour, open book; paste the group board screenshots; upload on the LMS or hand in a printed copy', -1),
+ ],
+}
+
+# --- Activity 1: open with a five-minute pain-point hunt (inside Part A; minutes unchanged)
+PAIN_HUNT = dict(title="Pain-point hunt: three time-sinks, one vote", minutes=5,
+                 body=["Alone, 3 minutes: write the three tasks that waste the most hours in your team each week, with a rough number of hours.",
+                       "As a group, 2 minutes: read them out, cluster the repeats and vote. The winner is your first BMC question."],
+                 prompt="My team: [team and role]. Our three biggest weekly time-sinks: [1, hours], [2, hours], [3, hours]. For each, tell me whether an AI agent could take it on today (yes, partly or no), what data it would need, and who would have to approve its work. Rank the three by hours saved. Mark guesses as (assumption).",
+                 check="Three time-sinks with hours; one ranked first; the data and the approver named for each.")
+
+# --- Activity 2: the company map in plain English, then test before you trust
+_L2 = LABS[1]
+_L2["steps"][1].update(
+    title="Write the company map your agent needs",
+    body=["In plain English: the words, records, rules and approvals an agent must know. Correct every definition that differs from how your company really works."],
+    prompt="For the process [process name], write a one-page company map for an AI agent, in plain English: (1) five terms the way my company uses them (ask me when unsure; do not guess), (2) the key records and how they link (customer, request, contract, approval), (3) the approval rules and thresholds, with the policy owner and version, (4) what the agent may and may not do, (5) the live events that should update the map.",
+    check="Plain-English definitions you corrected; two approval rules with the policy owner; what the agent may and may not do; one live event.")
+_L2["steps"].insert(3, dict(
+    title="Test before you trust: score 10 real cases", part="B",
+    body=["Pick 10 anonymised cases from your mined process: 6 routine, 2 urgent, 1 incomplete, 1 conflicting. Your group re-scores every row: the agent's self-score is a claim, not a result."],
+    prompt="Act as the agent in our pilot for [process]. Here are 10 anonymised cases [paste them]. For each case, give your output, then check it against our four tests: Correct (facts right), Complete (all required fields), Compliant (follows our approval rules), Cost (a person can approve it in under 2 minutes). Return a table: case, your output, the four tests (pass or fail), what a person must fix. Do not send or change anything.",
+    check="Your group's own pass rate (for example 7 of 10), the failed cases named, and a go/no-go bar written into Success Measures (for example 9 of 10 correct before assist mode)."))
+_L2["goal"] = "In groups of 3-5, use one member’s company: mine the process, write the company map, test the agent on 10 real cases and complete all nine boxes of its 90-day plan on one shared board."
+
+# --- Activity 3: Part A readiness diagnostic (15 min) + Part B SCALE board (55 min)
+_L3 = LABS[2]
+_steps = _L3["steps"]
+_story, _join, _muse, _refine, _judge, _capture = _steps[0], _steps[2], _steps[3], _steps[4], _steps[5], _steps[6]
+READINESS_TOOL = "activities/activity-03-sustain-and-operate-with-ai-agents-scale/ai-readiness-scorecard.html"
+TOKEN_TOOL = "activities/activity-03-sustain-and-operate-with-ai-agents-scale/token-cost-calculator.html"
+_diag = dict(title="Score your AI readiness: six dimensions", part="A",
+             body=["Open ai-readiness-scorecard.html from the Activity 3 folder (LMS download). Alone, 5 minutes: score your company on six dimensions, then copy the result.",
+                   "In your group, 10 minutes: share the shape, not the score. Which dimension came out lowest, and does it surprise you?"],
+             prompt="Here are my company's AI readiness scores out of 20 [paste the six scores from the scorecard]. Our company: [two sentences]. Name our lowest dimension, what it looks like day to day, who would have to act differently for it to move, and one change we can make in the next 30 days without new budget. 120 words at most.",
+             check="Six scores and a radar chart; your group names its lowest dimension and one 30-day change that needs no new budget.")
+for st in (_story, _join, _muse, _refine, _judge, _capture): st["part"] = "B"
+_refine["body"] = ["Go block by block, S to E: is every message honest, every DRI named (with a backup owner), every guardrail real, every review metric measurable?",
+                   "Add one AI-policy rule and a monthly token budget to Guardrails & Judgement, and name where each agent's playbook lives so it survives staff turnover.",
+                   "Compare with View example or Meridian's demo board (link on the activity card)."]
+_L3["steps"] = [_diag, _story, _join, _muse, _refine, _judge, _capture]
+_L3["minutes"] = 70
+CANVAS["change"]["minutes"] = 70
+_L3["goal"] = "Score your company's AI readiness, then use SCALE (Story, Commanders, Augment people, Loop information, Evaluate) to plan the company-wide change; Meta Muse drafts, your group decides."
+LAB = {L['n']: L for L in LABS}
+
+# --- Topic 3 evidence (owner's attachment, v53). Each figure is re-checked before the slide ships; see notes on each slide.
+READINESS_DIMS = [  # (name, what a high score looks like), each scored /20 (four statements x 1-5)
+    ("Leadership and AI vision", "Leaders explain AI's value, back a roadmap of quick wins and long-term goals, and use it themselves"),
+    ("Change management", "A formal approach, adjusted from feedback; experiments encouraged; training and coaching on time"),
+    ("Transparency and trust", "AI decisions are explained; ethics, privacy and data policies understood; concerns acted on"),
+    ("Organisational capability", "Training is open to all, expertise is on hand, AI outcomes sit in KPIs, good practice is shared"),
+    ("People and roles", "AI is seen as an opportunity, resistance is low and each role's needs are met"),
+    ("Data and infrastructure", "Data is good enough and reachable, tools support AI, technical barriers rarely block experiments"),
+]
+TOKEN_PRICES = [  # Anthropic API list prices, USD per million tokens (input, output); checked 22 Nov 2026
+    ("Claude Haiku 5.5", 0.10, 0.50, "Triage, tagging, routing"),
+    ("Claude Sonnet 5.5", 2.00, 10.00, "Everyday drafting and agents"),
+    ("Claude Opus 5.5", 4.00, 20.00, "Hard reasoning, long agent runs"),
+    ("Claude Fable 5.2", 8.00, 40.00, "The most demanding work"),
+]
+TOKEN_PRICE_SOURCE = "https://platform.claude.com/docs/en/about-claude/pricing"
+CAPABILITY_REGISTER = [  # Meridian (fictitious): where each agent capability lives, so it survives staff turnover
+    ("Request triage", "Triage agent (draft only)", "Head of Service Desk", "Senior coordinator", "Playbook v1.3 in ServiceNow", "Read Gmail + tickets; coordinator approves dispatch", "Minutes per request; rework"),
+    ("Monthly client report", "Report agent", "Account Director", "Account manager", "Report skill v2.0 in shared drive", "Masked tenant data; manager signs off", "Hours per report; errors found"),
+    ("Technician job notes", "Voice-to-report agent", "Operations Manager", "Team lead, East", "Approved app + template v1.1", "No tenant names in audio; 30-day deletion", "Reports filed same day"),
+]

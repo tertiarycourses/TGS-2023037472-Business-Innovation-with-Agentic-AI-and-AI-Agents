@@ -6,6 +6,8 @@ Current prompt templates: download prompts.html from this activities folder (LMS
 
 The first section of Activity 1 Instructions is the earlier 20-minute Meta Muse mini activity; the BMC group task takes 80 minutes at the end of Topic 1.
 
+Topic 3 interactive tools (download and open in a browser): activity-03-sustain-and-operate-with-ai-agents-scale/ai-readiness-scorecard.html (Activity 3 Part A) and token-cost-calculator.html (Topic 3 token budget drill).
+
 Bonus sample: download [meridian-ai-transition.html](meridian-ai-transition.html) and open it in your browser. It continues Topic 3 with Meridian’s stakeholder pitch, rollout and feedback routes.
 
 | Activity | Title | Topic | Group board | Instructions |

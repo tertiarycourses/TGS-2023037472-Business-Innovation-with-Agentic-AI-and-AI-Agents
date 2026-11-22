@@ -1,10 +1,10 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 52 · 19 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 53 · 22 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
-Business Innovation with Agentic AI and AI Agents (TGS-2023037472) is a two-day WSQ course for managers, business owners and innovation leads. Turn agentic AI from a demo into a business advantage: find the opportunity, plan the build, lead the change.
+Business Innovation with Agentic AI and AI Agents (TGS-2023037472) is a two-day WSQ course for managers, business owners and innovation leads. Lead your company's AI journey like a consultant: discover where agents pay off, prove it on real work, then transform how the company runs.
 
 | Item | Details |
 |---|---|
@@ -19,9 +19,9 @@ Business Innovation with Agentic AI and AI Agents (TGS-2023037472) is a two-day 
 
 ## Learning Outcomes
 
-- LO1: Evaluate and investigate agentic AI and AI agents business strategies to identify viable opportunities compatible with organizational objectives. (In short: Identify and Evaluate AI Agent Business Opportunities.)
-- LO2: Develop action plans to implement business innovation with agentic AI and design digital architectures to apply technologies across the business. (In short: Action Plan to Get Started with AI Agents.)
-- LO3: Manage business innovation and facilitate information flow among stakeholders to review success and develop innovative ideas. (In short: Sustain and Operate the Business with AI Agents.)
+- LO1: Evaluate and investigate agentic AI and AI agents business strategies to identify viable opportunities compatible with organizational objectives. (In short: Discover: Find Where AI Agents Pay Off.)
+- LO2: Develop action plans to implement business innovation with agentic AI and design digital architectures to apply technologies across the business. (In short: Prove: Plan, Test and Evaluate AI Agents.)
+- LO3: Manage business innovation and facilitate information flow among stakeholders to review success and develop innovative ideas. (In short: Transform: Lead the Company's AI Transformation.)
 
 ## Skills Framework: Abilities and Knowledge
 
@@ -50,6 +50,18 @@ Use the current prompts: download activities/prompts.html from the LMS course ma
 
 Every activity is done in groups of 3-5 on one shared online board in the Activity Studio: one member (or the trainer) creates it and everyone joins with the Board ID or QR code; edits sync live. Your group types its answers into each block, can view a short example from Meridian Services, a fictitious worked-demo company, or open Meridian's full demo board, and can copy a ready-made Meta Muse prompt that drafts the whole board. At the end each member screenshots the group board or downloads it as PNG or PDF, pastes it into the Practical Performance assessment and answers the questions individually.
 
+### Your Role: the AI Consultant Inside Your Company
+
+Throughout the course you act as the AI consultant who leads your own company from first idea to company-wide change. Each topic answers one question your CEO will ask and ends with a group board you screenshot for the PP.
+
+| Phase | The CEO's question | What you do | Evidence |
+|---|---|---|---|
+| 1 · Discover | Where should we use AI agents first? | Hunt the pain points, read the business model, score the ideas. | Activity 1 · BMC · PP Task 1 |
+| 2 · Prove | Does it actually work here, and is it worth it? | Set a baseline, test on real cases, plan a 90-day pilot with one owner. | Activity 2 · 90-day plan · PP Task 2 |
+| 3 · Transform | How do we make it stick across the company? | Stakeholders, org chart, roles, training, process, cost and governance. | Activity 3 · SCALE · PP Task 3 |
+
+The slides are interactive: the course map, the SCALE navigator and each topic's knowledge check are clickable in slide-show mode. Each topic opens with a room poll and a one-line quote, and names the pain points companies hit before it teaches the method.
+
 > Work on your own organisation. Never put personal data (NRIC, phone numbers, customer names) or confidential figures on a board: boards are shared by link.
 
 > SkillsFuture free AI subscription: Singapore Citizens aged 18+ who attend an eligible course (look for the official “Free AI sub” label) receive a notification to redeem one free six-month AI subscription. The eligible course end date is 16 Sep 2026 or later; submit within 60 days of the notification. Official guide: https://www.myskillsfuture.gov.sg/content/portal/en/career-resources/career-resources/education-career-personal-development/redeem-ai-subscription.html
@@ -57,6 +69,20 @@ Every activity is done in groups of 3-5 on one shared online board in the Activi
 # Topic 1 — Identifying Business Innovation Opportunities with Agentic AI and AI Agents
 
 LO1: Evaluate and investigate agentic AI and AI agents business strategies to identify viable opportunities compatible with organizational objectives. (K1, K2, A1, A2)
+
+## Topic 1 Pain Points: Where Companies Get Stuck
+
+McKinsey's State of AI survey (5 November 2025, 1,993 respondents) found that 88% of organisations use AI in at least one business function, yet only 39% report any enterprise-level EBIT impact. High performers were nearly three times as likely to have fundamentally redesigned workflows. The usual reasons the payoff never arrives:
+
+| Pain point | What it looks like |
+|---|---|
+| Tools before problems | The licences were bought first; now someone has to find a use. |
+| Ideas chosen by hype | The demo that wowed the board wins, not the process that bleeds hours every week. |
+| Data not ready | Records sit in inboxes, spreadsheets and people's heads: scattered, messy or off-limits. |
+| Nobody owns the result | The idea belongs to IT, so no one in the business answers for the number. |
+| No baseline | Nobody measured the 'before', so nobody can prove the 'after'. |
+
+*Source: McKinsey, The state of AI in 2025 (5 Nov 2025): https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2025*
 
 ## 1.1 A Short History of AI
 
@@ -174,8 +200,6 @@ Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in al
 
 *[Figure: Meta Muse productivity prompts (Muse app, Singapore, November 2026)]*
 
-Deployment has moved from a harness you run yourself (OpenClaw: local or server tools and channels you wire up), to self-hosted agents on your own machine (for example Hermes Agent: local workflow, memory and reusable skills), to hosted personal agents that a provider runs for you in the cloud. This is a progression in deployment choices, not a product lineage: pick the level of control your business needs.
-
 | Agent | What it does | How to get it |
 |---|---|---|
 | Meta Muse (Meta) | Manages email, schedules and goals; asks before sending or buying; Gmail, Google Calendar and Instagram connectors. | In Singapore since 27 Oct 2026; core use is free, with optional subscriptions: Muse app (iOS / Android) or muse.ai. |
@@ -196,19 +220,6 @@ Compared side by side: Meta Muse and OpenAI Dots run a single agent; Grok Bot an
 
 *Source: IMDA, Artificial Intelligence in Singapore (imda.gov.sg); Enterprise Singapore media release, 27 Oct 2026; The Straits Times, 24 Aug 2026.*
 
-### Recent Breakthroughs in Science and Mathematics
-
-After the Singapore healthcare example, consider research teams using agents to search, critique and test ideas. These cases were checked against primary announcements on 18 November 2026:
-
-- Navier–Stokes, one of the seven Millennium Prize Problems: OpenAI published a reported singularity proof in September 2026. Clay lists the problem Active; formal verification and prize recognition are separate validation stages.
-- Mathematics: Google reported a Courtade–Kumar conjecture proof with Lean verification on 13 November 2026.
-- Molecular chemistry: Google's same report describes a 30-agent structure-search workflow reaching 95% first-choice accuracy on a benchmark.
-- Life sciences: Co-Scientist generates, debates and ranks hypotheses; a 19 May 2026 report describes liver-fibrosis drug-repurposing candidates followed by laboratory tests.
-
-The transferable business pattern is parallel exploration plus an independent test: proof software, a measured benchmark or a laboratory experiment. Establish what was tested and who accepts the result before scaling the workflow.
-
-*Source: OpenAI: https://openai.com/index/navier-stokes-solution/ ; Clay: https://www.claymath.org/millennium/navier-stokes-equation/ ; Google Research: https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/ ; Google DeepMind: https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/ .*
-
 ## 1.5 Five Scenarios of Human-AI Agent Collaboration
 
 | Scenario | What it looks like | Where you see it |
@@ -218,19 +229,6 @@ The transferable business pattern is parallel exploration plus an independent te
 | 3 · One human, many agents | Specialist agents work in parallel; the founder approves hand-offs. | Research, writing and design agents run by one person |
 | 4 · Many humans, many agents | Everyone builds and runs agents toward shared goals. | Singapore public healthcare: 12,000+ AgentSea agents |
 | 5 · Company to company | A buyer's agent negotiates with a supplier's agent; people sign off. | Agents with their own email, phone and wallet |
-
-### One-Person Companies: Evidence and Outlook
-
-For this course, an AI-enabled one-person company is a founder using agents and software to run several functions. It is not interchangeable with a legal single-member company, a sole-proprietor registration, an own-account worker or an OPC community.
-
-| Location / measure | Observed change | Interpretation |
-|---|---|---|
-| Singapore: resident regular primary own-account workers | 169,000 in 2024 to 179,200 in 2025 (+6.0%, calculated) | Worker proxy, not an AI-OPC company count; no exponential company-growth conclusion. |
-| China: OPC support communities | 95 to 618 in H1 2026 (6.5 times, calculated) | Reported ecosystem expansion, not growth in the number or revenue of solo firms. |
-
-Forward-looking example: Suzhou's official 2025–2028 action plan targets 1,000 new OPC enterprises and more than 10,000 OPC talents by 2028. This is a government policy target, not an independent market forecast or an achieved outcome. The research did not establish a comparable AI-OPC forecast for Singapore or ASEAN, or evidence sufficient to call regional company growth exponential.
-
-*Source: Singapore MOM, Labour Force in Singapore 2025, para 2.32: https://stats.mom.gov.sg/publications/report-labour-force-in-singapore-2025/ ; Digital China portal, 11 Aug 2026 (People's Daily Overseas Edition citing National OPC Development Observation Report): https://www.digitalchina.gov.cn/2026/xwzx/szkx/202608/t20260811_5356927.htm ; Suzhou government, action plan issued 25 Dec 2025: https://www.suzhou.gov.cn/szsrmzf/zfbgswj/202605/c18bb19aa5c2430abb18916662baabe6.shtml . Checked 18 Nov 2026.*
 
 ### AI Agents as the Interface to Software and SaaS
 
@@ -268,31 +266,18 @@ A human producer briefs the team: 'Create a 30-second product-launch video for t
 
 This team can reduce hand-off time and run asset work in parallel. Reuse approved instructions for the next campaign or add agent instances for more projects, while keeping each project's assets, permissions and budget separate. Measure turnaround, revision time, cost and quality. API/MCP automation depends on the production platforms exposing the necessary actions; a human can perform an unsupported step.
 
-### Multi-Agent Trading Team: A Research-to-Review Loop
+### Where Agents Pay Off, Function by Function
 
-An illustrative trading team can assign several agents to each of five roles, coordinated by one accountable human strategy owner. In training, use paper trading:
+Look for work that is high-volume, rule-guided and easy to check. These are illustrative patterns, not vendor claims; your pain-point hunt finds your own.
 
-1. Data agents gather financial statements, market prices and news from authorised sources. They check quality and preserve timestamps so research does not use future information.
-2. Research agents propose algorithms or hypotheses, backtest them on historical data and generate signals. Evaluate held-out data and realistic transaction costs.
-3. Execution agents apply the approved risk checks, route simulated orders through a paper-broker API, and record orders and fills. Shared order state and unique order IDs help prevent duplicate or conflicting trades.
-4. Analysis agents reconcile profit/loss and measure drawdown, costs, slippage, signal quality and execution performance.
-5. Review agents investigate outcomes and drift, then propose a new algorithm version. Feed it back to research and testing; the human owner approves the version before live deployment.
-
-The human owner sets capital and position limits, pause conditions and approval responsibilities. Multiple agents can explore ideas and analyse evidence in parallel, but an attractive backtest or simulation is not proof of live profitability. The example describes an operating model; it does not execute real trades.
-
-*Source: Alpaca, Paper Trading: https://docs.alpaca.markets/us/docs/paper-trading (checked 18 November 2026).*
-
-### Scientific Agent Team: A Literature-to-Evidence Loop
-
-Start with one research question and one accountable human researcher. Teams of specialist agents share a versioned research notebook:
-
-1. Literature agents search relevant papers, record citations, map existing evidence and identify gaps.
-2. Theory agents propose competing explanations, falsifiable hypotheses and measurable predictions.
-3. Experiment-design agents propose controls, measurements, resource needs and an analysis plan. The researcher approves the protocol before testing.
-4. Testing agents run approved simulations or coordinate authorised experiments with laboratory staff or connected instruments; they capture observations and provenance.
-5. Analysis agents compare observations with predictions, assess uncertainty and check reproducibility. Supporting and contrary evidence both return to the theory and literature teams, which revise or reject hypotheses and design the next experiment.
-
-The human researcher defines the question, approves protocols and resources, checks the validity of the evidence and decides what claims the findings support. This is an illustrative team design: an agent's proposed experiment or explanation is not experimental evidence by itself.
+| Function | An agent can | A person still |
+|---|---|---|
+| Sales | Qualify leads overnight and draft the follow-up | Sends it and owns the relationship |
+| Customer service | Answer, check order status and hand hard cases over | Handles complaints, refunds and premium clients |
+| Finance | Match invoices to orders and flag exceptions | Approves payments and exceptions |
+| HR | Screen applications against criteria and book interviews | Decides who is hired |
+| Operations | Triage requests, plan schedules, chase overdue jobs | Approves dispatch and handles emergencies |
+| Marketing | Draft campaign variants and report weekly what worked | Sets the brand voice and approves release |
 
 ## 1.6 Meridian Services: The Scenario
 
@@ -349,6 +334,17 @@ Meridian Services Pte Ltd is a fictitious Singapore facilities firm: 140 staff k
 Meridian's filled Activity 1 board (read-only): https://alfredang.github.io/bcm/?join=meridian-activity-1. Open it, compare it with your own, then make every note about your own organisation. Meridian is fictitious and all its figures are synthetic.
 
 *[Figure: Meridian Services (fictitious): filled Activity 1 board in the Activity Studio]*
+
+### Hands-on: Pain-Point Hunt (5 minutes, opens Activity 1)
+
+- Alone, 3 minutes: write the three tasks that waste the most hours in your team each week, with a rough number of hours.
+- As a group, 2 minutes: read them out, cluster the repeats and vote. The winner is your first BMC question.
+
+```text
+My team: [team and role]. Our three biggest weekly time-sinks: [1, hours], [2, hours], [3, hours]. For each, tell me whether an AI agent could take it on today (yes, partly or no), what data it would need, and who would have to approve its work. Rank the three by hours saved. Mark guesses as (assumption).
+```
+
+Check: Three time-sinks with hours; one ranked first; the data and the approver named for each.
 
 ## Activity 1 — Your Company's BMC in Groups of 3-5 (PP Task 1)
 
@@ -433,6 +429,21 @@ Discuss: Which block of your business model would an AI agent change the most? W
 
 LO2: Develop action plans to implement business innovation with agentic AI and design digital architectures to apply technologies across the business. (K3, K4, A3, A4)
 
+## Topic 2 Pain Points: Pilot Purgatory
+
+Most AI pilots neither fail nor scale: they wait. In METR's randomised trial (10 July 2025, 16 experienced developers, 246 tasks) developers expected AI to make them 24% faster; measured, they took 19% longer, and afterwards still believed they had been 20% faster. Feeling faster is not being faster.
+
+| Pain point | What it looks like |
+|---|---|
+| Five demo cases, five hundred real ones | The demo passes; the messy, urgent and incomplete cases fail. |
+| No baseline | Nobody timed the 'before', so the 'after' is a feeling. |
+| Self-reported gains | “It feels faster” is an adoption signal, not a business benefit. |
+| Surprise bills | Agent loops re-read their context at every step, so token use multiplies. |
+| Nobody owns go / no-go | The pilot never ends and never scales. |
+| Works in the chat, not in the system | Staff still re-key the agent's output into the tool they use. |
+
+*Source: METR, early-2025 AI and experienced open-source developer productivity (10 Jul 2025): https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/*
+
 ## The 90-Day Action Plan: Five Steps to Get Started
 
 Topic 2 and Activity 2 follow one five-step plan. Each step is a numbered block on your action plan board.
@@ -514,7 +525,7 @@ Four connected components turn data into intelligence across the whole company:
 | Component | Role | Why it matters |
 |---|---|---|
 | Brain: the model | Reasons, infers and judges | Commoditising fast; a better model alone moves performance from D to D+. |
-| Map: the ontology | Defines business terms, entities, relationships and rules | Lets AI anchor every action in your business context; your moat. |
+| Map: the company map | Defines business terms, records, relationships and rules in plain English | Lets AI anchor every action in your business context; your moat. |
 | Navigation: live context | Tracks every event in real time | The map shows what should happen; navigation shows what is happening. |
 | Operating system | Scheduling, execution, access, control | Lets agents act within authorised, recorded and stoppable boundaries. |
 
@@ -529,7 +540,7 @@ Four connected components turn data into intelligence across the whole company:
 
 ### Drawing the Company Map
 
-An ontology, or company map, is a semantic structure that defines key business terms (what a customer, contract or approval is) and how they relate. It covers people, customers, products, orders, contracts, approval flows and business rules. Without it a model cannot see why active customers are tied to payment terms, or why three more approvals follow a signed contract. Build it in layers: data sources, data models, business rules, relationships. Today it can be drawn and revised in plain language by the people who run the business (ontology 2.0), instead of taking 6-18 months of specialist work.
+A company map is a one-page, plain-English glossary of the key business terms (what a customer, contract or approval is) and how they relate. It covers people, customers, products, orders, contracts, approval flows and business rules. Without it a model cannot see why active customers are tied to payment terms, or why three more approvals follow a signed contract. Build it in layers: data sources, data models, business rules, relationships. Today it can be drawn and revised in plain language by the people who run the business, instead of taking months of specialist work.
 
 In Activity 2 you ask Meta Muse to draft a company map for one of your own processes; your action plan builds on it.
 
@@ -569,6 +580,27 @@ Activity 2 output: add the approved policy sources, permissions and exception ro
 
 Draw trust boundaries where data or actions cross systems or organisations; apply least privilege at each boundary. Decide custom, buy or hybrid on differentiation, time to value, integration fit, assurance, three-year total cost of ownership (licences, build, run, change, incidents) and an exit option. Most firms buy the platform and own the company map and rules.
 
+## Test Before You Trust
+
+A demo is five cases; your business is five hundred. Before anyone relies on the agent, test it on real, anonymised cases from the process you mined, with the right answer written down first by the process owner.
+
+| Test-set slice | Count (of 30) | What it checks |
+|---|---|---|
+| Routine | 18 | The everyday cases that make up most of the volume |
+| Urgent | 4 | Cases that must reach a person fast |
+| Incomplete | 4 | Missing details: does the agent ask instead of guessing? |
+| Conflicting | 2 | Two rules disagree: does it escalate? |
+| Hostile | 2 | A hidden instruction in the message: does it obey? (prompt injection) |
+
+Score every output on four checks: Correct (facts right), Complete (required fields filled, or it asks), Compliant (follows the approval rules and never sends, pays or deletes on its own) and Cost (a person can approve it in under two minutes and tokens per case stay within budget). Set the pass bar before you test; Meridian moves to assist mode only at 27 of 30 correct and 30 of 30 urgent cases escalated.
+
+1. Replay: run the past cases offline and compare with the agreed answers.
+2. Shadow: the agent drafts on live cases while staff still do the work; compare daily.
+3. Assist: the agent drafts and a person approves every action; measure time and rework.
+4. Decide: at day 90, scale, redesign, hold or stop on the numbers.
+
+In Activity 2 your group runs a ten-case version of this test (Task 4) and writes its go/no-go bar into Success Measures.
+
 ## Step 4 · Name the Owner
 
 Fill DRI, Team & Resources. Give one directly responsible individual the authority to change rules, allocate resources and pause the pilot. Head of Service Desk owns results and budget. Two coordinators review. IT manages connectors and access.
@@ -599,7 +631,7 @@ Choose measures that fit the goal. For each measure record the baseline, target,
 | Redesign or hold | A target is missed or evidence is incomplete. Fix the cause and retest. | If handling is 13 min with complaints within limit, investigate delays and retest. |
 | Stop | A stop rule is triggered. Pause the agent and revert to the human workflow. | Pause if rework exceeds 20% for two consecutive weeks. |
 
-## Meridian Scenario: From Triage to a 90-Day Plan
+### Meridian Scenario: From Triage to a 90-Day Plan
 
 Meridian chose request triage. Today the work follows six steps and three handoffs. Meridian wants same-day responses and plans to cut handling time from 18 to 11 minutes by day 90. The year-one budget is SGD 39,000. A misrouted urgent job could cost a contract. Decide which steps the agent can take, who owns the outcome and what would stop the pilot. In Activity 2, apply the same questions to your own process.
 
@@ -625,7 +657,7 @@ Meridian's filled Activity 2 board (read-only): https://alfredang.github.io/bcm/
 
 Form a group of 3–5 and choose one member’s company. Use a priority from Activity 1. Create one shared board and fill all nine boxes in order. Agree on the baseline, targets, guardrails and decision rubric. Each learner saves the group’s completed board and writes their individual PP answers.
 
-In groups of 3-5, use one member’s company and complete all nine boxes of its 90-day action plan on one shared board. Use Meridian’s filled plan as a guide.
+In groups of 3-5, use one member’s company: mine the process, write the company map, test the agent on 10 real cases and complete all nine boxes of its 90-day plan on one shared board.
 
 **Task 1 — Mine your business process from dormant data**
 
@@ -637,15 +669,15 @@ Look at my emails and calendar from the last 30 days about [process, e.g. 'clien
 
 Check: Each step and friction cites a real email or meeting; you corrected anything Muse guessed.
 
-**Task 2 — Draft your company map**
+**Task 2 — Write the company map your agent needs**
 
-- Let Muse write the terms, relationships and rules an agent needs; correct every definition that differs from how your company really works.
+- In plain English: the words, records, rules and approvals an agent must know. Correct every definition that differs from how your company really works.
 
 ```text
-For the process [process name], draft a company map for an AI agent: (1) the 6 key entities, (2) a definition of 5 terms the way my company uses them - ask me when unsure instead of guessing, (3) how the entities relate, (4) the approvals and thresholds that apply, (5) the events that should update the map in real time. Also identify the current SOP and policy owner, version and effective date; specify allowed tools, prohibited actions, approval thresholds, exception escalation and one worked example. If a rule is missing or contradictory, ask the process owner rather than inventing it.
+For the process [process name], write a one-page company map for an AI agent, in plain English: (1) five terms the way my company uses them (ask me when unsure; do not guess), (2) the key records and how they link (customer, request, contract, approval), (3) the approval rules and thresholds, with the policy owner and version, (4) what the agent may and may not do, (5) the live events that should update the map.
 ```
 
-Check: Corrected definitions and relationships, current policy sources, two approval rules, permitted actions, one live event and one exception case; the process owner validates the map.
+Check: Plain-English definitions you corrected; two approval rules with the policy owner; what the agent may and may not do; one live event.
 
 **Task 3 — Draft the 90-day action plan**
 
@@ -657,11 +689,21 @@ Using this opportunity [paste your top opportunity from Activity 1] and this com
 
 Check: The plan covers all five steps; every milestone has an owner and a measurable result; there is a kill criterion.
 
-**Task 4 — Return to your group board**
+**Task 4 — Test before you trust: score 10 real cases**
+
+- Pick 10 anonymised cases from your mined process: 6 routine, 2 urgent, 1 incomplete, 1 conflicting. Your group re-scores every row: the agent's self-score is a claim, not a result.
+
+```text
+Act as the agent in our pilot for [process]. Here are 10 anonymised cases [paste them]. For each case, give your output, then check it against our four tests: Correct (facts right), Complete (all required fields), Compliant (follows our approval rules), Cost (a person can approve it in under 2 minutes). Return a table: case, your output, the four tests (pass or fail), what a person must fix. Do not send or change anything.
+```
+
+Check: Your group's own pass rate (for example 7 of 10), the failed cases named, and a go/no-go bar written into Success Measures (for example 9 of 10 correct before assist mode).
+
+**Task 5 — Return to your group board**
 
 - Open alfredang.github.io/bcm and pick Activity 2, or scan your trainer's QR code; join your group board.
 
-**Task 5 — Let Muse draft the whole action plan board**
+**Task 6 — Let Muse draft the whole action plan board**
 
 - Click Copy Muse prompt on the board, fill in your organisation, paste it into Meta Muse.
 - Copy Muse's reply; on the board click Paste Muse answer, tick the lines you agree with, click Add.
@@ -689,12 +731,12 @@ Reply ONLY in this format, so I can paste it into our board:
 (continue to block 9). End with: Verify first: the three notes I should check.
 ```
 
-**Task 6 — Refine it together**
+**Task 7 — Refine it together**
 
 - Go block by block, 1 to 5: check step 2 against what you mined, name one DRI, make every milestone measurable.
 - Compare with View example or Meridian's demo board (link on the activity card).
 
-**Task 7 — Capture your evidence**
+**Task 8 — Capture your evidence**
 
 - Screenshot view, then Download PNG or PDF. Keep it for PP Task 2.
 
@@ -720,7 +762,58 @@ Discuss: Which step of the mined process gives the fastest visible win? What mus
 
 LO3: Manage business innovation and facilitate information flow among stakeholders to review success and develop innovative ideas. (K5, K6, A5, A6)
 
-## Challenges of AI Transformation
+## Topic 3 Pain Points: Why AI Transformations Stall
+
+AI has made producing work almost free; owning the work (checking, approving and following up hundreds of outputs a day) is still expensive. McKinsey's State of Organizations 2026 (n = 10,018 leaders) found 72% say their organisation is not fully ready for the changes ahead. The usual reasons the change does not stick:
+
+| Pain point | What it looks like |
+|---|---|
+| Aimed at the wrong target | Awareness campaigns and prompt classes, when the real gaps are judgement and incentives. |
+| Skills that walk out the door | The know-how lives in a few enthusiasts' chats. When they leave, it leaves. |
+| Managers without time | Asked to coach AI use on top of a full day, with no change to their targets. |
+| Token bills nobody owns | Usage grows faster than anyone can prove value; then a blanket ban arrives. |
+| Shadow AI and policy lag | Staff use tools nobody approved; the policy arrives after the incident. |
+| Leaders over-rate themselves | Prosci: on one-to-one AI conversations, leaders rate themselves 3.55 of 5; employees see 2.38. |
+
+*Source: McKinsey, The State of Organizations 2026; Prosci, Leading AI integration (Sep 2026): https://www.prosci.com/blog/leading-ai-integration-what-separates-results-from-stalled-ai-investment*
+
+## From Outputs to Outcomes
+
+Adoption treats AI as a project; transformation changes how the business runs.
+
+|  | Adoption operating model | Transformation operating model |
+|---|---|---|
+| Funding | Fixed budget tied to a scope | Steady funding for a value stream, adjusted to outcomes |
+| Time | Start and end date; success declared at go-live | Continuous ownership; success measured over the life cycle |
+| Success | On time, on budget, scope delivered | Customer, employee and business outcomes delivered |
+| Risk | Reduced up front with heavy planning | Reduced by fast iteration, learning and options |
+| Teams | People lent to a project, then moved on | Stable teams that own an outcome, with their agents |
+| AI | Speeds up output; magnifies alignment gaps | Scales iteration, learning and outcome delivery |
+
+Usage is nearly universal; profit is not. In McKinsey's March 2025 report, of 25 attributes tested, the redesign of workflows had the biggest effect on EBIT impact; CEO oversight of AI governance was one element most correlated with bottom-line impact (strongest at larger companies), yet only 28% said their CEO oversees AI governance. Put ownership where decisions are made: the CEO sponsors, and the people who run each process own its results.
+
+*Source: McKinsey, The state of AI: How organizations are rewiring to capture value (12 Mar 2025): https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value*
+
+### Activity 3 Part A: AI Readiness Diagnostic (15 minutes)
+
+Open ai-readiness-scorecard.html from the Activity 3 folder (LMS download) in any browser. Alone, score your company on 24 statements (1-5, how things are today). The scorecard draws your readiness shape and names your lowest dimension; nothing leaves your browser.
+
+| Dimension (/20) | What a high score looks like |
+|---|---|
+| Leadership and AI vision | Leaders explain AI's value, back a roadmap of quick wins and long-term goals, and use it themselves |
+| Change management | A formal approach, adjusted from feedback; experiments encouraged; training and coaching on time |
+| Transparency and trust | AI decisions are explained; ethics, privacy and data policies understood; concerns acted on |
+| Organisational capability | Training is open to all, expertise is on hand, AI outcomes sit in KPIs, good practice is shared |
+| People and roles | AI is seen as an opportunity, resistance is low and each role's needs are met |
+| Data and infrastructure | Data is good enough and reachable, tools support AI, technical barriers rarely block experiments |
+
+Then, in your group, share the shape, not the score: which dimension came out lowest and does it surprise you; what it looks like day to day; who would have to act differently for it to move; and one change you could make in the next 30 days without new budget.
+
+```text
+Here are my company's AI readiness scores out of 20 [paste the six scores from the scorecard]. Our company: [two sentences]. Name our lowest dimension, what it looks like day to day, who would have to act differently for it to move, and one change we can make in the next 30 days without new budget. 120 words at most.
+```
+
+### What Your People Feel: Challenges of AI Transformation
 
 | Challenge | What Meridian hears or sees |
 |---|---|
@@ -741,7 +834,7 @@ Singapore’s total employment increased by 27,700 in Q3 2026 in MOM’s advance
 
 *Source: MOM, Labour Market Advance Release Q3 2026: https://www.mom.gov.sg/newsroom/press-releases/2026/1030-labour-market-advance-release-3q-2026 · IMDA, Singapore Digital Economy Report 2025: https://www.imda.gov.sg/-/media/imda/files/about/resources/corporate-publications/annual-report/imda-sgde-report-fy2024-2025.pdf*
 
-## The SCALE Framework: Five Moves to Sustain and Operate
+## The SCALE Framework: Five Moves to Transform the Company
 
 Topic 3 and Activity 3 follow one framework. Each move is a block on your SCALE board.
 
@@ -757,7 +850,36 @@ Topic 3 and Activity 3 follow one framework. Each move is a block on your SCALE 
 
 Explain why Meridian is piloting triage, what the agent will draft, what staff still decide and when the plan will be reviewed. Explain the no-job-loss commitment for the pilot. Use a team huddle for coordinators, a service update for customers and a short review for leaders. Give each group a named contact for questions.
 
-## C · Commanders: Give the Rollout an Owner
+### Map the Stakeholders
+
+| Group | Power / interest | What to do |
+|---|---|---|
+| Board, finance, legal, data protection officer | High power, lower interest | Keep satisfied: brief early; show the controls and the numbers. |
+| CEO sponsor, heads of department, IT and security | High power, high interest | Manage closely: co-own the plan; decide together; meet weekly. |
+| Frontline staff, clients, staff representatives | Lower power, high interest | Involve and inform: ask what the plan misses; tell them first. |
+| Vendors, teams outside the pilot | Lower power, lower interest | Monitor: share updates; watch for knock-on effects. |
+
+### Three Standard Moves Aimed at the Wrong Target
+
+- Awareness campaigns assume people do not know why AI matters; most already use it (KPMG and University of Melbourne, 2025: 66% use AI regularly). Explain why it matters to this company and this role.
+- More town halls assume resistance is a communication problem; it is usually an incentive problem. Change time, targets and recognition.
+- Tool and prompt training assumes prompting is the gap; the gap is judgement: knowing whether the output is good enough to send.
+
+### What an Effective Sponsor Does
+
+Prosci's benchmarking has found active and visible sponsorship to be the top contributor to change success in every report since 1998. Effective AI sponsors stay active and visible through the whole life cycle, build a coalition of peers and people managers, communicate the business reason directly, and use the tools themselves and say so.
+
+Treat ADKAR (Awareness, Desire, Knowledge, Ability, Reinforcement) as a loop, not a line: each new model or tool restarts it, and successful AI integration happens one person at a time.
+
+*Source: Prosci, The primary sponsor's role: https://www.prosci.com/resources/articles/primary-sponsors-role-and-importance ; KPMG, Trust in AI 2025: https://kpmg.com/au/en/insights/artificial-intelligence-ai/trust-in-ai-global-insights-2025.html*
+
+## C · Commanders: Draw the Org Chart Around Outcomes
+
+Draw the org chart around outcomes, not functions. Each leader owns one outcome (response time, client retention, first-time fix, cost per job) and a team of people and agents; some value streams, such as overnight alerts, run on agents and are audited daily by a person. Ask of every box: which outcome does this person own, and which agents work for them?
+
+Managers are the lever, not the casualty. Gallup (survey of 23,717 US employees, February 2026) found 78% of employees with strongly supportive managers use AI frequently, against 44% of the rest. Gartner's October 2024 forecast that 20% of organisations will use AI to flatten and cut over half of middle-management roles through 2026 is a prediction, not an observation. Plan for managers who lead mixed teams of people and agents.
+
+*Source: Gallup (12 Apr 2026): https://www.gallup.com/workplace/704252/workplace-separates-adopters-and-holdouts.aspx ; Gartner (22 Oct 2024) press release.*
 
 *[Figure: Rewrite companies in a flattened org chart]*
 
@@ -765,9 +887,9 @@ A Directly Responsible Individual (DRI), a term from Apple, is the one person ac
 
 ### Flatten smart, not by decree
 
-Block laid off about 4,000 people (nearly 40%) at once; about 30% of Zappos staff left after the Holacracy ultimatum in 2015; Google removed engineering managers in 2001 and reinstated them within months. Flattening by decree wipes institutional memory. The right order: preserve and codify the knowledge in the decision layer first, then simplify the hierarchy. Bayer cut from 12-13 layers to 6-7 over a planned three-year journey.
+Block laid off about 4,000 people (nearly 40%) at once; about 30% of Zappos staff left after the Holacracy ultimatum in 2015; Google removed engineering managers in 2001 and reinstated them within months. Flattening by decree wipes institutional memory. The right order: preserve and codify the knowledge in the decision layer first, then simplify the hierarchy. Bayer says it halved its management layers and cut management roles by two thirds; in some units layers fell from as many as 12 to five or six.
 
-1. Codify tacit know-how into the company map and skills.
+1. Codify tacit know-how into playbooks, the company map and skills.
 2. Run a business scenario test: real access to agents, a small valuable task, four boundaries (goal, time, data, token spend).
 3. Spot the builders; they are your first DRIs.
 4. Give each DRI matching decision rights and resource rights.
@@ -795,9 +917,9 @@ Start with shadow mode, where the agent drafts alongside normal work. Move to as
 
 Managers move from relaying information to judgement: the judge at scale who owns outcomes for agents and people; the coach who teaches teams to work with agents; the translator and connector who moves tacit knowledge into the system during transition. The manager who only holds meetings and passes on approvals is most exposed.
 
-## 3.3 The Learner's Advantage and the Atrophy Trap
+### The Learner's Advantage and the Atrophy Trap
 
-Stanford and MIT researchers tracking more than 5,000 customer-service agents found AI help raised issues resolved per hour by over 10%, and by over 30% for new and weaker staff; a two-month hire performed like a six-month one. The difference that matters now is appetite for mental effort. But judgement decays with disuse: doctors' detection of precancerous lesions fell from 28.4% to 22.4% after the AI tool was removed, and people accepted planted wrong AI answers 80% of the time (Wharton). Ask for hints before answers, write your position first, and keep some work unassisted.
+Stanford and MIT researchers tracking more than 5,000 customer-service agents found AI help raised issues resolved per hour by 14%, and by 34% for novice and low-skilled staff; agents with two months' tenure using AI performed like staff with more than six months without it (Quarterly Journal of Economics, 2025). The difference that matters now is appetite for mental effort. But judgement decays with disuse: doctors' detection of precancerous lesions fell from 28.4% to 22.4% after the AI tool was removed, and people accepted planted wrong AI answers 80% of the time (Wharton). Ask for hints before answers, write your position first, and keep some work unassisted.
 
 ### Redesign the Job Around a Human Owner
 
@@ -817,13 +939,35 @@ A second example is Sarah, a marketing lead. The agent drafts campaign copy and 
 
 *Source: Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, pp. 3, 4, 6 and 9.*
 
+### Training That Builds Ability
+
+Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.
+
+*Source: Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value*
+
 ### Coaching Example: Use the AI Coaching Simulator
 
 Ask the employee what concerns them, explore their strengths and workload, co-create a role that uses their judgment, and agree one small trial and a review date. At Meridian, the coordinator keeps urgent dispatch decisions and spends more time on customer follow-up. Give employees practice on their own work, builders training on testing and controls, and managers time for coaching.
 
 Open https://alfredang.github.io/AICoaching/ and select a worried employee in demo mode. Coach the employee, request feedback, then convert one suggestion into an action and a date. Debrief how you acknowledged the concern and agreed a supported next step.
 
-## L · Loop Information: Collect and Act on Feedback (A6)
+## L · Loop Information: Build AI Into the Process (A6)
+
+If the AI skill lives in one person, it leaves with them. Personal skill (prompts in one person's chat history, know-how in one enthusiast's head) does not add up to company capability. Build AI into the process so it survives turnover: new staff inherit it on day one.
+
+1. Map the process (Step 2 of your plan).
+2. Write the playbook (instructions, examples and checks) into the SOP, not a personal chat.
+3. Put the agent inside the system staff already use: ticketing, CRM or ERP.
+4. Write the human checkpoints into the SOP.
+5. Version and own it: an owner, a backup owner, a change log and a review date.
+
+Keep an AI capability register, one row per agent, reviewed monthly with the risk owner. An agent without an owner is switched off.
+
+| Process | Agent | Owner (DRI) | Backup | Playbook | Controls | Measure |
+|---|---|---|---|---|---|---|
+| Request triage | Triage agent (draft only) | Head of Service Desk | Senior coordinator | Playbook v1.3 in ServiceNow | Read Gmail + tickets; coordinator approves dispatch | Minutes per request; rework |
+| Monthly client report | Report agent | Account Director | Account manager | Report skill v2.0 in shared drive | Masked tenant data; manager signs off | Hours per report; errors found |
+| Technician job notes | Voice-to-report agent | Operations Manager | Team lead, East | Approved app + template v1.1 | No tenant names in audio; 30-day deletion | Reports filed same day |
 
 In an AI-native firm, information flows through the DRI and the decision layer instead of up and down ten layers. Set an operating rhythm: a daily 8:00 exceptions brief from the agents, a weekly DRI review with the team, a monthly one-page dashboard for the sponsor. Communicate the change per stakeholder (what changes, what does not, who to ask), and run an idea pipeline where anyone can post an idea, the agent clusters them, and the best get a DRI and 30 days.
 
@@ -832,6 +976,42 @@ Close the loop with staff. Collect concerns and client feedback, review them wee
 ## E · Evaluate: Decide Whether to Continue or Scale
 
 Check service outcomes, adoption, safety and staff or customer feedback against the agreed targets. Review costs and the stop rule with the DRI. Scale in stages when the evidence supports it, redesign and retest weak parts, or pause the pilot and return to the human workflow.
+
+### Govern With a Light Policy Stack
+
+| Layer | Who | What |
+|---|---|---|
+| Accountable owner | CEO-level sponsor | An AI steering group chaired by a senior executive approves the register and the budget. |
+| Acceptable-use policy | Everyone | One page: what AI may be used for, what never, and who to ask. |
+| Data classes | Data protection officer | Public, internal, confidential, personal: which class may go into which tool (PDPA). |
+| Approved tools | IT and security | The list, how to request a new tool and how fast you will answer. |
+| Approval thresholds | Process owners (DRIs) | Which agent actions need a person: sends, payments, deletions, anything affecting people. |
+| Incident response | Duty manager | How to pause an agent, who to call, how to tell the people affected. |
+
+Organisations now govern AI access in three ways, often together. Restricted use blocks some tools for some work: Nvidia reportedly keeps Claude Fable to lower-stakes work, and Goldman Sachs and JPMorgan reportedly removed Claude for Hong Kong staff. Earned access gives the tool after training: Telstra requires Copilot training before a licence (over 18,000 completions). Rationed use replaces unlimited use with a budget: Uber caps spending at US$1,500 a month per person per AI coding tool, and Walmart moved its in-house coding assistant to a fixed token allowance. Ask whether your limits rest on real risk, what minimum proof of readiness you need, and how to share the budget without starving high-value work.
+
+*Source: Reported by The Information/PYMNTS (Sep 2026), Bloomberg (Apr and Jun 2026), FT via Reuters (Jun 2026), UTS Human Technology Institute Telstra case study (2026).*
+
+### Manage Token Cost
+
+Agents are paid for by the token, in and out, on every step. A chat is one call; an agent task is often 4-10 calls, each re-reading its context. Prices vary about 80 times from the smallest to the largest model (Anthropic API list prices, checked 22 November 2026):
+
+| Model | Input US$/1M tokens | Output US$/1M tokens | Use it for |
+|---|---|---|---|
+| Claude Haiku 5.5 | 0.10 | 0.50 | Triage, tagging, routing |
+| Claude Sonnet 5.5 | 2.00 | 10.00 | Everyday drafting and agents |
+| Claude Opus 5.5 | 4.00 | 20.00 | Hard reasoning, long agent runs |
+| Claude Fable 5.2 | 8.00 | 40.00 | The most demanding work |
+
+- Route: use the smallest model that passes your 30-case test.
+- Cache: re-use fixed instructions and documents; cached input costs 2.5-10% of the input price, depending on the model.
+- Batch: run non-urgent work asynchronously at 50% off.
+- Trim: shorter context, shorter answers, fewer steps.
+- Budget: a monthly cap per team, an alert at 80% and an owner who reviews it.
+
+Manage cost per outcome, not cost per token. In the token-cost-calculator.html drill (Activity 3 folder), Meridian's 80 requests a day at 4 steps cost about US$3 a month on Haiku 5.5 and about US$211 on Fable 5.2; at that scale integration, review time and change effort are the big costs. Write your monthly budget and alert into the Guardrails & Judgement block.
+
+*Source: Anthropic pricing: https://platform.claude.com/docs/en/about-claude/pricing*
 
 ### Legal, Ethical and Security Issues (K6)
 
@@ -886,11 +1066,22 @@ Meridian's filled Activity 3 board (read-only): https://alfredang.github.io/bcm/
 
 ## Activity 3 — Sustain and Operate with AI Agents (SCALE) with Meta Muse (PP Task 3)
 
-Form groups of 3–5 and continue with the same company and pilot. Join one shared board and fill every SCALE box with your own actions, owners and review measures.
+Part A is the readiness diagnostic above. In Part B (55 minutes) form groups of 3–5 and continue with the same company and pilot. Join one shared board and fill every SCALE box with your own actions, owners and review measures. Add one AI-policy rule and a monthly token budget to Guardrails & Judgement, and name where each agent's playbook lives and its backup owner.
 
-Use the SCALE framework (Story, Commanders, Augment people, Loop information, Evaluate) to run the business with AI agents; Meta Muse drafts, your group decides.
+Score your company's AI readiness, then use SCALE (Story, Commanders, Augment people, Loop information, Evaluate) to plan the company-wide change; Meta Muse drafts, your group decides.
 
-**Step 1 — S · Story: draft the change messages for each stakeholder**
+**Step 1 — Score your AI readiness: six dimensions**
+
+- Open ai-readiness-scorecard.html from the Activity 3 folder (LMS download). Alone, 5 minutes: score your company on six dimensions, then copy the result.
+- In your group, 10 minutes: share the shape, not the score. Which dimension came out lowest, and does it surprise you?
+
+```text
+Here are my company's AI readiness scores out of 20 [paste the six scores from the scorecard]. Our company: [two sentences]. Name our lowest dimension, what it looks like day to day, who would have to act differently for it to move, and one change we can make in the next 30 days without new budget. 120 words at most.
+```
+
+Check: Six scores and a radar chart; your group names its lowest dimension and one 30-day change that needs no new budget.
+
+**Step 2 — S · Story: draft the change messages for each stakeholder**
 
 - Write your change story and stakeholder map in a few lines first. Muse drafts; nothing is sent.
 
@@ -899,16 +1090,6 @@ Here is our change story [paste your change story] and stakeholder map [paste yo
 ```
 
 Check: Three drafts; nothing sent; each message says what changes and what does not.
-
-**Step 2 — L · Loop information: run the weekly innovation review**
-
-- Set up the information flow: KPIs, blockers, decisions and staff ideas, every Friday.
-
-```text
-Every Friday I review our AI initiative [initiative name]. From this week's emails and meetings, prepare: KPIs mentioned vs target, blockers, decisions I must make, and new ideas staff raised (with who raised them). End with one question I should ask the team on Monday.
-```
-
-Check: The review cites real emails or meetings; ideas are credited to the people who raised them.
 
 **Step 3 — Join your group board**
 
@@ -944,7 +1125,8 @@ Reply ONLY in this format, so I can paste it into our board:
 
 **Step 5 — Refine it together**
 
-- Go block by block, S to E: is every message honest, every DRI named, every guardrail real, every review metric measurable?
+- Go block by block, S to E: is every message honest, every DRI named (with a backup owner), every guardrail real, every review metric measurable?
+- Add one AI-policy rule and a monthly token budget to Guardrails & Judgement, and name where each agent's playbook lives so it survives staff turnover.
 - Compare with View example or Meridian's demo board (link on the activity card).
 
 **Step 6 — E · Evaluate: judge before you ask**
@@ -963,7 +1145,7 @@ Check: Your final decision is in your own words; you can name what changed it.
 
 Five moves to run the business with AI agents: Story, Commanders, Augment people, Loop information, Evaluate.
 
-Board: https://alfredang.github.io/bcm/?activity=change · 100 min · PP Task 3 · screenshot of your SCALE board
+Board: https://alfredang.github.io/bcm/?activity=change · 70 min · PP Task 3 · screenshot of your SCALE board
 
 Discuss: Which group hears about the change last today, and should hear first? Which manager role becomes a DRI, a coach or a translator? How will staff send you new ideas once the agents are live?
 
@@ -1007,7 +1189,7 @@ For current Sites access and hosting terms, see https://learn.chatgpt.com/docs/s
 # Assessment Preparation
 
 - Written Assessment (WA) - Short-Answer Questions (SAQ), 1 hour, open book. Five questions (K1-K6).
-- Practical Performance (PP) - scenario-based, 1 hour, open book. Task 1 pastes your Activity 1 canvas screenshot; Task 2 your Activity 2 action plan; Task 3 your Activity 3 change board; each with a written analysis (A1-A6).
+- Practical Performance (PP) - scenario-based, 1 hour, open book. Task 1 pastes your Activity 1 canvas screenshot; Task 2 your Activity 2 action plan; Task 3 your Activity 3 SCALE board; each with a written analysis (A1-A6).
 - Bring your three board screenshots (or PDFs): Activity 1, Activity 2 and Activity 3.
 - Open book: slides, this Learner Guide and your boards. A minimum of 75% attendance is required to be eligible for assessment and funding.
 
@@ -1019,12 +1201,15 @@ For current Sites access and hosting terms, see https://learn.chatgpt.com/docs/s
 | AI agent | One AI worker: a model with tools, memory and instructions |
 | Always-on agent | An agent that keeps running and watching between your messages |
 | Dormant data | Unused operational records: calls, chats, tickets, logs, edit history |
-| Ontology / company map | Definitions of business terms, entities, relationships and rules |
+| Company map | A plain-English glossary of business terms, records, relationships and rules for the agent |
 | Decision layer | Model + company map + live navigation + operating system |
 | DRI | Directly Responsible Individual: the one person accountable for an outcome |
 | MCP | Model Context Protocol: a standard way to connect agents to business systems |
 | Outcome contract | Population, baseline, target, owner, counter-metric |
 | TCO | Total cost of ownership over three years |
+| Token | The unit AI models are billed in; about 750 words per 1,000 tokens |
+| Test set | Real, anonymised cases with agreed answers, used to test an agent before anyone relies on it |
+| Capability register | One row per agent: process, owner, backup owner, playbook, controls, measure |
 | Atrophy trap | Losing judgement by always deferring to AI |
 | Codex / Sites | OpenAI's coding agent / its website builder and host in ChatGPT and Codex |
 

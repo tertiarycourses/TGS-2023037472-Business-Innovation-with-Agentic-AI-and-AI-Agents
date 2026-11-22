@@ -24,9 +24,10 @@ def rng(a, b): return str(MAP[a]) if MAP[b] - 1 <= MAP[a] else f"{MAP[a]}–{MAP
 ROUTES = [("Welcome", ("admin", "t1")), ("Topic 1 (Part A)", ("t1", "mini_muse")), ("Mini Activity", ("mini_muse", "t1always")),
           ("Topic 1 (Part B)", ("t1always", "t1gaps")), ("Topic 1 (Part C)", ("t1gaps", "labs1")),
           ("Activity 1 (Part A)", ("labs1", "act1")), ("Activity 1 (Part B)", ("act1", "t1end")), ("Topic 2 (Part A)", ("t2", "t2step3")),
-          ("Topic 2 (Part B)", ("t2step3", "t2arch")), ("Topic 2 (Part C)", ("t2arch", "act2a")), ("Activity 2 (Part A)", ("act2a", "act2b")),
-          ("Activity 2 (Part B)", ("act2b", "t2end")), ("Topic 3 (Part A)", ("t3", "t3loop")), ("Topic 3 (Part B)", ("t3loop", "t3review")),
-          ("Activity 3 (Part A)", ("act3", "lab13")), ("Topic 3 (Part C)", ("t3review", "act3")), ("Activity 3 (Part B)", ("lab13", "t3end")), ("Course recap", ("wrap", "assess")),
+          ("Topic 2 (Part B)", ("t2step3", "t2test")), ("Topic 2 (Part C)", ("t2test", "act2a")), ("Activity 2 (Part A)", ("act2a", "act2b")),
+          ("Activity 2 (Part B)", ("act2b", "t2end")), ("Topic 3 (Part A)", ("t3", "act3a")), ("Activity 3 (Part A)", ("act3a", "t3scale")),
+          ("Topic 3 (Part B)", ("t3scale", "t3work")), ("Topic 3 (Part C)", ("t3work", "t3gov")), ("Topic 3 (Part D)", ("t3gov", "act3")),
+          ("Activity 3 (Part B)", ("act3", "t3end")), ("Course recap", ("wrap", "assess")),
           ("Written", ("assess", "end")), ("Practical", ("assess", "end"))]
 def slides_for(text):
     if text.startswith("Course recap"): return f"{rng('wrap', 'assess')}; briefing {MAP['briefing']}"

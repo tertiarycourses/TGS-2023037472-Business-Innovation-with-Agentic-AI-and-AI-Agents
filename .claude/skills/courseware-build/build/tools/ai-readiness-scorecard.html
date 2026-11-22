@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Readiness Scorecard · Business Innovation with Agentic AI and AI Agents</title>
+<style>
+  :root { --ivory:#FAF9F5; --char:#21201C; --panel:#2E2C26; --acc:#D97757; --teal:#3A7D7B; --muted:#6B6862; --rule:#E3DFD6; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ivory); color:var(--char); font:16px/1.45 Calibri, "Segoe UI", system-ui, sans-serif; }
+  header { background:var(--char); color:#fff; padding:22px 28px; }
+  header small { color:var(--acc); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:12px; }
+  h1 { font-family:Cambria, Georgia, serif; margin:4px 0 4px; font-size:28px; }
+  header p { margin:0; color:#C9C4B9; }
+  main { max-width:1180px; margin:0 auto; padding:22px 20px 40px; display:grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap:22px; }
+  @media (max-width:900px) { main { grid-template-columns:1fr; } }
+  .dim { background:#fff; border:1px solid var(--rule); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .dim h2 { font-family:Cambria, Georgia, serif; font-size:19px; margin:0 0 2px; display:flex; justify-content:space-between; }
+  .dim h2 span { color:var(--acc); }
+  .dim .hint { color:var(--muted); font-size:13.5px; margin:0 0 8px; }
+  .row { display:grid; grid-template-columns: 1fr auto; gap:10px; align-items:center; padding:5px 0; border-top:1px dashed var(--rule); }
+  .row label { font-size:14.5px; }
+  .opts { display:flex; gap:4px; }
+  .opts button { width:30px; height:30px; border-radius:50%; border:1px solid #cfc9bd; background:#fff; cursor:pointer; font-weight:700; color:var(--muted); }
+  .opts button.on { background:var(--acc); border-color:var(--acc); color:#fff; }
+  aside { position:sticky; top:14px; align-self:start; }
+  .card { background:var(--char); color:#fff; border-radius:12px; padding:18px; }
+  .card h3 { font-family:Cambria, Georgia, serif; margin:0 0 6px; font-size:20px; }
+  .total { font-family:Cambria, Georgia, serif; font-size:44px; color:var(--acc); font-weight:700; line-height:1; }
+  .card p { color:#C9C4B9; margin:6px 0; font-size:14.5px; }
+  svg text { font-family:Calibri, sans-serif; }
+  .btns { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+  .btns button { border:0; border-radius:8px; padding:9px 14px; font-weight:700; cursor:pointer; background:var(--acc); color:#fff; }
+  .btns button.ghost { background:transparent; border:1px solid #6B6862; color:#E8E5DE; }
+  .low { background:#3A2A22; border-left:4px solid var(--acc); padding:10px 12px; border-radius:6px; margin-top:10px; }
+  footer { max-width:1180px; margin:0 auto; padding:0 20px 30px; color:var(--muted); font-size:13px; }
+  .toast { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); background:var(--teal); color:#fff; padding:10px 16px; border-radius:8px; display:none; }
+</style>
+</head>
+<body>
+<header>
+  <small>Topic 3 · Activity 3 Part A · 15 minutes</small>
+  <h1>AI Readiness Scorecard: Six Dimensions</h1>
+  <p>Alone, 5 minutes: rate each statement for your company today (1 = not at all, 5 = fully true). Score what is, not what you hope. Then share the shape, not the score.</p>
+</header>
+<main>
+  <section id="dims"></section>
+  <aside>
+    <div class="card">
+      <h3>Your readiness shape</h3>
+      <div><span class="total" id="total">0</span> <span style="color:#C9C4B9">/ 120</span></div>
+      <svg id="radar" viewBox="0 0 360 330" width="100%" role="img" aria-label="Radar chart of the six readiness scores"></svg>
+      <div class="low" id="low">Rate every statement to see your lowest dimension.</div>
+      <p><b style="color:#fff">Group talk (10 min):</b> Which dimension came out lowest, and does it surprise you? What does it look like day to day? Who would have to act differently? What one change could you make in 30 days without new budget?</p>
+      <div class="btns">
+        <button id="copy">Copy my scores</button>
+        <button class="ghost" id="reset">Reset</button>
+        <button class="ghost" onclick="window.print()">Print / PDF</button>
+      </div>
+    </div>
+  </aside>
+</main>
+<footer>Business Innovation with Agentic AI and AI Agents (TGS-2023037472) · Tertiary Infotech Academy Pte Ltd. Your answers stay in this browser; nothing is sent anywhere. Paste the copied scores into the Activity 3 Step 1 prompt.</footer>
+<div class="toast" id="toast">Scores copied: paste them into the Step 1 prompt in Meta Muse</div>
+<script>
+const DIMS = [
+  ["Leadership and AI vision", "Leaders give a clear reason and a roadmap, and use AI themselves.", [
+    "Leaders explain what AI is worth to our business, not just why AI matters.",
+    "Leaders keep repeating why AI matters to our strategy.",
+    "Our AI roadmap balances quick wins with long-term goals.",
+    "Our leaders use AI tools themselves, hands-on, and say so."]],
+  ["Change management", "Change is planned, adjusted and supported.", [
+    "We follow a formal, proactive approach to AI change.",
+    "We adjust the approach based on staff feedback.",
+    "Experimenting with AI is encouraged, and early mistakes are treated as learning.",
+    "Training, coaching and support arrive when people need them."]],
+  ["Transparency and trust", "People know how AI is used and trust it enough to use it.", [
+    "AI-supported decisions are explained clearly to the people they affect.",
+    "Staff understand our AI ethics, privacy and data policies.",
+    "Concerns about AI are heard and acted on.",
+    "People trust AI outputs enough to use them, after checking."]],
+  ["Organisational capability", "Skills, expertise and measures are in place.", [
+    "AI training is open to everyone who needs it.",
+    "We can reach internal or external AI expertise when we need it.",
+    "AI outcomes are written into our KPIs.",
+    "Good AI practice is shared and kept up to date."]],
+  ["People and roles", "Staff see AI as an opportunity and each role's needs are met.", [
+    "Most staff see AI as an opportunity, not a threat.",
+    "Resistance to AI is low across teams.",
+    "The different needs of each role and department are understood.",
+    "Data governance rules are clear to the people who use AI."]],
+  ["Data and infrastructure", "Data and tools let people experiment safely.", [
+    "Our data is good enough for AI to be useful.",
+    "People can reach the information they need, with permission.",
+    "Our systems and tools support AI use.",
+    "Technical barriers rarely stop an AI experiment."]]
+];
+const KEY = "bi-readiness-v1";
+let S = JSON.parse(localStorage.getItem(KEY) || "{}");
+const wrap = document.getElementById("dims");
+DIMS.forEach(([name, hint, items], d) => {
+  const box = document.createElement("div"); box.className = "dim";
+  box.innerHTML = `<h2>${d + 1}. ${name} <span id="sc${d}">0 / 20</span></h2><p class="hint">${hint}</p>`;
+  items.forEach((q, i) => {
+    const row = document.createElement("div"); row.className = "row";
+    row.innerHTML = `<label>${q}</label><div class="opts" role="group" aria-label="${q}"></div>`;
+    const opts = row.querySelector(".opts");
+    for (let v = 1; v <= 5; v++) {
+      const b = document.createElement("button"); b.textContent = v; b.type = "button"; b.title = ["Not at all","Rarely","Partly","Mostly","Fully true"][v-1];
+      b.onclick = () => { S[`${d}-${i}`] = v; save(); };
+      b.dataset.k = `${d}-${i}`; b.dataset.v = v; opts.appendChild(b);
+    }
+    box.appendChild(row);
+  });
+  wrap.appendChild(box);
+});
+function scores() { return DIMS.map((_, d) => [0,1,2,3].reduce((a, i) => a + (S[`${d}-${i}`] || 0), 0)); }
+function complete() { return Object.keys(S).length === 24; }
+function save() { localStorage.setItem(KEY, JSON.stringify(S)); draw(); }
+function draw() {
+  document.querySelectorAll(".opts button").forEach(b => b.classList.toggle("on", S[b.dataset.k] == b.dataset.v));
+  const sc = scores(); sc.forEach((v, d) => document.getElementById("sc" + d).textContent = `${v} / 20`);
+  document.getElementById("total").textContent = sc.reduce((a, b) => a + b, 0);
+  const cx = 180, cy = 160, R = 110, n = 6, pt = (i, r) => [cx + r * Math.sin(2 * Math.PI * i / n), cy - r * Math.cos(2 * Math.PI * i / n)];
+  let g = "";
+  [5, 10, 15, 20].forEach(l => { g += `<polygon points="${[...Array(n)].map((_, i) => pt(i, R * l / 20).join(",")).join(" ")}" fill="none" stroke="#4a4740" stroke-width="1"/>`; });
+  for (let i = 0; i < n; i++) { const [x, y] = pt(i, R); g += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#4a4740"/>`; }
+  g += `<polygon points="${sc.map((v, i) => pt(i, R * v / 20).join(",")).join(" ")}" fill="rgba(217,119,87,.35)" stroke="#D97757" stroke-width="2.5"/>`;
+  const short = ["Leadership", "Change", "Trust", "Capability", "People", "Data"];
+  short.forEach((t, i) => { const [x, y] = pt(i, R + 26); g += `<text x="${x}" y="${y}" fill="#E8E5DE" font-size="13" text-anchor="middle" dominant-baseline="middle">${t} ${sc[i]}</text>`; });
+  document.getElementById("radar").innerHTML = g;
+  const low = document.getElementById("low");
+  if (complete()) {
+    const m = Math.min(...sc), names = DIMS.filter((_, d) => sc[d] === m).map(x => x[0]);
+    low.innerHTML = `<b>Lowest: ${names.join(" and ")} (${m}/20).</b> Start your group talk here.`;
+  } else low.textContent = `Rate every statement to see your lowest dimension (${Object.keys(S).length} of 24 done).`;
+}
+document.getElementById("copy").onclick = () => {
+  const sc = scores();
+  const t = DIMS.map((x, d) => `${x[0]}: ${sc[d]}/20`).join("; ") + `. Total ${sc.reduce((a, b) => a + b, 0)}/120.`;
+  navigator.clipboard.writeText(t).then(() => { const el = document.getElementById("toast"); el.style.display = "block"; setTimeout(() => el.style.display = "none", 2600); });
+};
+document.getElementById("reset").onclick = () => { if (confirm("Clear all scores?")) { S = {}; save(); } };
+draw();
+</script>
+</body>
+</html>

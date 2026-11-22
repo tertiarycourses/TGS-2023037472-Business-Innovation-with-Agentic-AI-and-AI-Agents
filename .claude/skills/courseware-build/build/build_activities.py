@@ -100,10 +100,14 @@ def main():
     root = os.path.join(REPO, "activities"); os.makedirs(root, exist_ok=True)
     idx = [f"# Activities — {C.TITLE}", "", "Three activities, one per learning outcome: Meta Muse supplies the inputs, your group "
            f"refines the board in the Activity Studio ({B.BCM_URL}), and every member screenshots it for the PP.", "",
-           "Current prompt templates: download prompts.html from this activities folder (LMS course materials) and open the downloaded file in your browser. All prompt text is also printed in the Instructions PDFs.", "", "The first section of Activity 1 Instructions is the earlier 20-minute Meta Muse mini activity; the BMC group task takes 80 minutes at the end of Topic 1.", "", 'Bonus sample: download [meridian-ai-transition.html](meridian-ai-transition.html) and open it in your browser. It continues Topic 3 with Meridian’s stakeholder pitch, rollout and feedback routes.', "", "| Activity | Title | Topic | Group board | Instructions |", "|---|---|---|---|---|"]
+           "Current prompt templates: download prompts.html from this activities folder (LMS course materials) and open the downloaded file in your browser. All prompt text is also printed in the Instructions PDFs.", "", "The first section of Activity 1 Instructions is the earlier 20-minute Meta Muse mini activity; the BMC group task takes 80 minutes at the end of Topic 1.", "", 'Topic 3 interactive tools (download and open in a browser): activity-03-sustain-and-operate-with-ai-agents-scale/ai-readiness-scorecard.html (Activity 3 Part A) and token-cost-calculator.html (Topic 3 token budget drill).', "", 'Bonus sample: download [meridian-ai-transition.html](meridian-ai-transition.html) and open it in your browser. It continues Topic 3 with Meridian’s stakeholder pitch, rollout and feedback routes.', "", "| Activity | Title | Topic | Group board | Instructions |", "|---|---|---|---|---|"]
     for L in B.LABS:
         cv = B.CANVAS[L["canvas"]]; f = f"activity-{L['n']:02d}-{slug(cv['title'])}"; d = os.path.join(root, f); os.makedirs(d, exist_ok=True)
         to_pdf(lab_html(L), os.path.join(d, f"ACTIVITY-{L['n']:02d}-Instructions.pdf"))
+        if L["n"] == 3:   # v53: interactive Topic 3 tools (readiness scorecard, token cost calculator) ship in the Activity 3 folder
+            import shutil
+            for t in ("ai-readiness-scorecard.html", "token-cost-calculator.html"):
+                shutil.copy(os.path.join(HERE, "tools", t), os.path.join(d, t))
         idx.append(f"| {L['n']} | {L['title']} | {L['topic']} ({cv['lo']}) | {B.BCM_URL}?activity={cv['key']} | {f}/ACTIVITY-{L['n']:02d}-Instructions.pdf |")
     open(os.path.join(root, "README.md"), "w", encoding="utf-8").write("\n".join(idx) + "\n")
     print("activities written:", [L["n"] for L in B.LABS])

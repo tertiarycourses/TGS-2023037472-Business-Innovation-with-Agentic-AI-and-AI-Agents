@@ -45,6 +45,13 @@ tbl(["Topic", "Outcome", "Activity (Meta Muse + group board)", "Instructions"], 
 p("Every activity is done in groups of 3-5 on one shared online board in the Activity Studio: one member (or the trainer) creates it and everyone joins with the Board ID or QR code; edits sync live. Your group types its answers into each block, can view a short "
   "example from Meridian Services, a fictitious worked-demo company, or open Meridian's full demo board, and can copy a ready-made Meta Muse prompt that drafts the whole board. At the end each member screenshots the group board or "
   "downloads it as PNG or PDF, pastes it into the Practical Performance assessment and answers the questions individually.")
+h3("Your Role: the AI Consultant Inside Your Company")
+p("Throughout the course you act as the AI consultant who leads your own company from first idea to company-wide change. Each topic answers one question your CEO will ask and ends with a group board you screenshot for the PP.")
+tbl(["Phase", "The CEO's question", "What you do", "Evidence"], [
+    ("1 · Discover", "Where should we use AI agents first?", "Hunt the pain points, read the business model, score the ideas.", "Activity 1 · BMC · PP Task 1"),
+    ("2 · Prove", "Does it actually work here, and is it worth it?", "Set a baseline, test on real cases, plan a 90-day pilot with one owner.", "Activity 2 · 90-day plan · PP Task 2"),
+    ("3 · Transform", "How do we make it stick across the company?", "Stakeholders, org chart, roles, training, process, cost and governance.", "Activity 3 · SCALE · PP Task 3")], [1.1, 1.9, 2.4, 1.3])
+p("The slides are interactive: the course map, the SCALE navigator and each topic's knowledge check are clickable in slide-show mode. Each topic opens with a room poll and a one-line quote, and names the pain points companies hit before it teaches the method.")
 note("Work on your own organisation. Never put personal data (NRIC, phone numbers, "
      "customer names) or confidential figures on a board: boards are shared by link.")
 note("SkillsFuture free AI subscription: Singapore Citizens aged 18+ who attend an eligible course (look for the official \u201cFree AI sub\u201d "
@@ -55,6 +62,15 @@ note("SkillsFuture free AI subscription: Singapore Citizens aged 18+ who attend 
 # ------------------------------------------------------------------ Topic 1
 h1("Topic 1 — " + C.TOPICS[0]["title"])
 p(C.LEARNING_OUTCOMES[0] + " (K1, K2, A1, A2)")
+h2("Topic 1 Pain Points: Where Companies Get Stuck")
+p("McKinsey's State of AI survey (5 November 2025, 1,993 respondents) found that 88% of organisations use AI in at least one business function, yet only 39% report any enterprise-level EBIT impact. High performers were nearly three times as likely to have fundamentally redesigned workflows. The usual reasons the payoff never arrives:")
+tbl(["Pain point", "What it looks like"], [
+    ("Tools before problems", "The licences were bought first; now someone has to find a use."),
+    ("Ideas chosen by hype", "The demo that wowed the board wins, not the process that bleeds hours every week."),
+    ("Data not ready", "Records sit in inboxes, spreadsheets and people's heads: scattered, messy or off-limits."),
+    ("Nobody owns the result", "The idea belongs to IT, so no one in the business answers for the number."),
+    ("No baseline", "Nobody measured the 'before', so nobody can prove the 'after'.")], [1.8, 4.9])
+src("McKinsey, The state of AI in 2025 (5 Nov 2025): https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2025")
 h2("1.1 A Short History of AI")
 tbl(["Approach", "Wider adoption (illustrative)", "What changed"], [
     ("Rules", "1950s-1980s", "People write explicit if-then rules and expert systems."),
@@ -103,9 +119,6 @@ p("Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in
   "keeps watch on your inbox, nudges you before deadlines, builds small apps called Spaces from one prompt, and asks before sending "
   "or buying anything. Use read-only connector access where offered and approve every send yourself.")
 img(os.path.join(IMG, "ainative", "muse-productivity.png"), "Meta Muse productivity prompts (Muse app, Singapore, November 2026)", 2.4)
-p("Deployment has moved from a harness you run yourself (OpenClaw: local or server tools and channels you wire up), to self-hosted agents "
-  "on your own machine (for example Hermes Agent: local workflow, memory and reusable skills), to hosted personal agents that a provider runs for you in "
-  "the cloud. This is a progression in deployment choices, not a product lineage: pick the level of control your business needs.")
 tbl(["Agent", "What it does", "How to get it"], [
     ("Meta Muse (Meta)", "Manages email, schedules and goals; asks before sending or buying; Gmail, Google Calendar and Instagram connectors.",
      "In Singapore since 27 Oct 2026; core use is free, with optional subscriptions: Muse app (iOS / Android) or muse.ai."),
@@ -134,14 +147,6 @@ bl(["IMDA published the world's first Model AI Governance Framework for Agentic 
     "pre-clerking; KK Women's and Children's Hospital uses an agent to generate daily staff rosters. Guardrails reject requests for card or "
     "ID numbers, and MOH's AI in Healthcare Guidelines keep professional judgment with people: agents prepare the work, clinicians decide."])
 src("IMDA, Artificial Intelligence in Singapore (imda.gov.sg); Enterprise Singapore media release, 27 Oct 2026; The Straits Times, 24 Aug 2026.")
-h3("Recent Breakthroughs in Science and Mathematics")
-p("After the Singapore healthcare example, consider research teams using agents to search, critique and test ideas. These cases were checked against primary announcements on 18 November 2026:")
-bl(["Navier–Stokes, one of the seven Millennium Prize Problems: OpenAI published a reported singularity proof in September 2026. Clay lists the problem Active; formal verification and prize recognition are separate validation stages.",
-    "Mathematics: Google reported a Courtade–Kumar conjecture proof with Lean verification on 13 November 2026.",
-    "Molecular chemistry: Google's same report describes a 30-agent structure-search workflow reaching 95% first-choice accuracy on a benchmark.",
-    "Life sciences: Co-Scientist generates, debates and ranks hypotheses; a 19 May 2026 report describes liver-fibrosis drug-repurposing candidates followed by laboratory tests."])
-p("The transferable business pattern is parallel exploration plus an independent test: proof software, a measured benchmark or a laboratory experiment. Establish what was tested and who accepts the result before scaling the workflow.")
-src("OpenAI: https://openai.com/index/navier-stokes-solution/ ; Clay: https://www.claymath.org/millennium/navier-stokes-equation/ ; Google Research: https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/ ; Google DeepMind: https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/ .")
 h2("1.5 Five Scenarios of Human-AI Agent Collaboration")
 tbl(["Scenario", "What it looks like", "Where you see it"], [
     ("1 · One human, one agent", "A personal agent works your inbox and calendar overnight.", "Meta Muse, OpenAI Dots, Claude Duet"),
@@ -149,11 +154,6 @@ tbl(["Scenario", "What it looks like", "Where you see it"], [
     ("3 · One human, many agents", "Specialist agents work in parallel; the founder approves hand-offs.", "Research, writing and design agents run by one person"),
     ("4 · Many humans, many agents", "Everyone builds and runs agents toward shared goals.", "Singapore public healthcare: 12,000+ AgentSea agents"),
     ("5 · Company to company", "A buyer's agent negotiates with a supplier's agent; people sign off.", "Agents with their own email, phone and wallet")], [1.8, 2.7, 2.2])
-h3("One-Person Companies: Evidence and Outlook")
-p("For this course, an AI-enabled one-person company is a founder using agents and software to run several functions. It is not interchangeable with a legal single-member company, a sole-proprietor registration, an own-account worker or an OPC community.")
-tbl(["Location / measure", "Observed change", "Interpretation"], [("Singapore: resident regular primary own-account workers", "169,000 in 2024 to 179,200 in 2025 (+6.0%, calculated)", "Worker proxy, not an AI-OPC company count; no exponential company-growth conclusion."), ("China: OPC support communities", "95 to 618 in H1 2026 (6.5 times, calculated)", "Reported ecosystem expansion, not growth in the number or revenue of solo firms.")], [2.3, 2.0, 2.4])
-p("Forward-looking example: Suzhou's official 2025–2028 action plan targets 1,000 new OPC enterprises and more than 10,000 OPC talents by 2028. This is a government policy target, not an independent market forecast or an achieved outcome. The research did not establish a comparable AI-OPC forecast for Singapore or ASEAN, or evidence sufficient to call regional company growth exponential.")
-src("Singapore MOM, Labour Force in Singapore 2025, para 2.32: https://stats.mom.gov.sg/publications/report-labour-force-in-singapore-2025/ ; Digital China portal, 11 Aug 2026 (People's Daily Overseas Edition citing National OPC Development Observation Report): https://www.digitalchina.gov.cn/2026/xwzx/szkx/202608/t20260811_5356927.htm ; Suzhou government, action plan issued 25 Dec 2025: https://www.suzhou.gov.cn/szsrmzf/zfbgswj/202605/c18bb19aa5c2430abb18916662baabe6.shtml . Checked 18 Nov 2026.")
 h3("AI Agents as the Interface to Software and SaaS")
 p("Instead of navigating many software screens, a person describes a task to an AI agent. The agent selects configured tools, sends permitted requests to the relevant software and reports the result. An API exposes application functions; MCP standardises how tools are described and called, often with a server that wraps an existing API. MCP does not bypass authentication or the software's permissions.")
 tbl(["Example request", "What the agent does", "Business benefit"], [
@@ -176,23 +176,15 @@ ol(["The script agent drafts the story, script and shot list. The human producer
     "A separate review agent checks facts, brand consistency, captions, continuity and the media-rights checklist. It flags issues for correction; its review does not replace human judgement.",
     "The human producer reviews the final video and approves release before anything is published."])
 p("This team can reduce hand-off time and run asset work in parallel. Reuse approved instructions for the next campaign or add agent instances for more projects, while keeping each project's assets, permissions and budget separate. Measure turnaround, revision time, cost and quality. API/MCP automation depends on the production platforms exposing the necessary actions; a human can perform an unsupported step.")
-h3("Multi-Agent Trading Team: A Research-to-Review Loop")
-p("An illustrative trading team can assign several agents to each of five roles, coordinated by one accountable human strategy owner. In training, use paper trading:")
-ol(["Data agents gather financial statements, market prices and news from authorised sources. They check quality and preserve timestamps so research does not use future information.",
-    "Research agents propose algorithms or hypotheses, backtest them on historical data and generate signals. Evaluate held-out data and realistic transaction costs.",
-    "Execution agents apply the approved risk checks, route simulated orders through a paper-broker API, and record orders and fills. Shared order state and unique order IDs help prevent duplicate or conflicting trades.",
-    "Analysis agents reconcile profit/loss and measure drawdown, costs, slippage, signal quality and execution performance.",
-    "Review agents investigate outcomes and drift, then propose a new algorithm version. Feed it back to research and testing; the human owner approves the version before live deployment."])
-p("The human owner sets capital and position limits, pause conditions and approval responsibilities. Multiple agents can explore ideas and analyse evidence in parallel, but an attractive backtest or simulation is not proof of live profitability. The example describes an operating model; it does not execute real trades.")
-src("Alpaca, Paper Trading: https://docs.alpaca.markets/us/docs/paper-trading (checked 18 November 2026).")
-h3("Scientific Agent Team: A Literature-to-Evidence Loop")
-p("Start with one research question and one accountable human researcher. Teams of specialist agents share a versioned research notebook:")
-ol(["Literature agents search relevant papers, record citations, map existing evidence and identify gaps.",
-    "Theory agents propose competing explanations, falsifiable hypotheses and measurable predictions.",
-    "Experiment-design agents propose controls, measurements, resource needs and an analysis plan. The researcher approves the protocol before testing.",
-    "Testing agents run approved simulations or coordinate authorised experiments with laboratory staff or connected instruments; they capture observations and provenance.",
-    "Analysis agents compare observations with predictions, assess uncertainty and check reproducibility. Supporting and contrary evidence both return to the theory and literature teams, which revise or reject hypotheses and design the next experiment."])
-p("The human researcher defines the question, approves protocols and resources, checks the validity of the evidence and decides what claims the findings support. This is an illustrative team design: an agent's proposed experiment or explanation is not experimental evidence by itself.")
+h3("Where Agents Pay Off, Function by Function")
+p("Look for work that is high-volume, rule-guided and easy to check. These are illustrative patterns, not vendor claims; your pain-point hunt finds your own.")
+tbl(["Function", "An agent can", "A person still"], [
+    ("Sales", "Qualify leads overnight and draft the follow-up", "Sends it and owns the relationship"),
+    ("Customer service", "Answer, check order status and hand hard cases over", "Handles complaints, refunds and premium clients"),
+    ("Finance", "Match invoices to orders and flag exceptions", "Approves payments and exceptions"),
+    ("HR", "Screen applications against criteria and book interviews", "Decides who is hired"),
+    ("Operations", "Triage requests, plan schedules, chase overdue jobs", "Approves dispatch and handles emergencies"),
+    ("Marketing", "Draft campaign variants and report weekly what worked", "Sets the brand voice and approves release")], [1.4, 2.9, 2.4])
 h2("1.6 Meridian Services: The Scenario")
 p("Meridian Services Pte Ltd is a fictitious Singapore facilities firm: 140 staff support 30 commercial buildings. About 80 emails and WhatsApps arrive daily; coordinators spend 38% of their time re-keying requests, each taking 18 minutes to handle. Meridian wants faster service without losing human care. All figures are synthetic.")
 h2("1.7 What the Business Model Canvas Shows")
@@ -223,6 +215,10 @@ p("Meridian's filled Activity 1 board (read-only): https://alfredang.github.io/b
   "own organisation. Meridian is fictitious and all its figures are synthetic.")
 img(os.path.join(IMG, "screenshots", "meridian-bmc.png"), "Meridian Services (fictitious): filled Activity 1 board in the Activity Studio", 5.2)
 
+h3("Hands-on: Pain-Point Hunt (5 minutes, opens Activity 1)")
+bl(B.PAIN_HUNT["body"])
+prompt(B.PAIN_HUNT["prompt"])
+p("Check: " + B.PAIN_HUNT["check"])
 h2("Activity 1 — Your Company's BMC in Groups of 3-5 (PP Task 1)")
 p("Form a group of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.")
 X.append(("canvas", "opportunity"))
@@ -230,6 +226,16 @@ X.append(("canvas", "opportunity"))
 # ------------------------------------------------------------------ Topic 2
 h1("Topic 2 — " + C.TOPICS[1]["title"])
 p(C.LEARNING_OUTCOMES[1] + " (K3, K4, A3, A4)")
+h2("Topic 2 Pain Points: Pilot Purgatory")
+p("Most AI pilots neither fail nor scale: they wait. In METR's randomised trial (10 July 2025, 16 experienced developers, 246 tasks) developers expected AI to make them 24% faster; measured, they took 19% longer, and afterwards still believed they had been 20% faster. Feeling faster is not being faster.")
+tbl(["Pain point", "What it looks like"], [
+    ("Five demo cases, five hundred real ones", "The demo passes; the messy, urgent and incomplete cases fail."),
+    ("No baseline", "Nobody timed the 'before', so the 'after' is a feeling."),
+    ("Self-reported gains", "\u201CIt feels faster\u201D is an adoption signal, not a business benefit."),
+    ("Surprise bills", "Agent loops re-read their context at every step, so token use multiplies."),
+    ("Nobody owns go / no-go", "The pilot never ends and never scales."),
+    ("Works in the chat, not in the system", "Staff still re-key the agent's output into the tool they use.")], [2.4, 4.3])
+src("METR, early-2025 AI and experienced open-source developer productivity (10 Jul 2025): https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/")
 h2("The 90-Day Action Plan: Five Steps to Get Started")
 p("Topic 2 and Activity 2 follow one five-step plan. Each step is a numbered block on your action plan board.")
 tbl(["Step", "What you do", "What you decide"], [(l, w, d) for l, w, d, _ in B.PLAN], [0.5, 1.6, 4.6])
@@ -267,7 +273,7 @@ h3("The Enterprise AI Decision Layer")
 p("Four connected components turn data into intelligence across the whole company:")
 tbl(["Component", "Role", "Why it matters"], [
     ("Brain: the model", "Reasons, infers and judges", "Commoditising fast; a better model alone moves performance from D to D+."),
-    ("Map: the ontology", "Defines business terms, entities, relationships and rules", "Lets AI anchor every action in your business context; your moat."),
+    ("Map: the company map", "Defines business terms, records, relationships and rules in plain English", "Lets AI anchor every action in your business context; your moat."),
     ("Navigation: live context", "Tracks every event in real time", "The map shows what should happen; navigation shows what is happening."),
     ("Operating system", "Scheduling, execution, access, control", "Lets agents act within authorised, recorded and stoppable boundaries.")], [1.6, 2.2, 2.9])
 img(os.path.join(IMG, "ainative", "decision-layer.png"), "The four core components of enterprise AI decision-making", 5.4)
@@ -277,11 +283,11 @@ bl(["Scheduling: plans the order of work, divides it among agents and knows how 
     "Access: a universal keycard to CRM, ERP, email and documents; the Model Context Protocol (MCP) lowers the cost of each connection.",
     "Control: grant a task-specific identity only the required permissions, enforce approval gates in connected systems and log actions."])
 h3("Drawing the Company Map")
-p("An ontology, or company map, is a semantic structure that defines key business terms (what a customer, contract or approval is) and "
+p("A company map is a one-page, plain-English glossary of the key business terms (what a customer, contract or approval is) and "
   "how they relate. It covers people, customers, products, orders, contracts, approval flows and business rules. Without it a model "
   "cannot see why active customers are tied to payment terms, or why three more approvals follow a signed contract. Build it in "
   "layers: data sources, data models, business rules, relationships. Today it can be drawn and revised in plain language by the people "
-  "who run the business (ontology 2.0), instead of taking 6-18 months of specialist work.")
+  "who run the business, instead of taking months of specialist work.")
 p("In Activity 2 you ask Meta Muse to draft a company map for one of your own processes; your action plan builds on it.")
 h3("Empower the Agent with a Business Briefing")
 p("Teach the agent how your business works before asking it to run a process. Assemble an approved briefing pack and retrieve the relevant parts for each task: a business overview, process map, glossary, current SOPs and policies, worked examples and live system facts. Uploading documents alone does not ensure correct behaviour; the process owner must check understanding and outcomes.")
@@ -297,6 +303,16 @@ tbl(["Layer", "What it holds"], [("Data", "Sources, quality, permissions, dorman
 p("Draw trust boundaries where data or actions cross systems or organisations; apply least privilege at each boundary. Decide custom, "
   "buy or hybrid on differentiation, time to value, integration fit, assurance, three-year total cost of ownership (licences, build, run, "
   "change, incidents) and an exit option. Most firms buy the platform and own the company map and rules.")
+h2("Test Before You Trust")
+p("A demo is five cases; your business is five hundred. Before anyone relies on the agent, test it on real, anonymised cases from the process you mined, with the right answer written down first by the process owner.")
+tbl(["Test-set slice", "Count (of 30)", "What it checks"], [
+    ("Routine", "18", "The everyday cases that make up most of the volume"), ("Urgent", "4", "Cases that must reach a person fast"),
+    ("Incomplete", "4", "Missing details: does the agent ask instead of guessing?"), ("Conflicting", "2", "Two rules disagree: does it escalate?"),
+    ("Hostile", "2", "A hidden instruction in the message: does it obey? (prompt injection)")], [1.4, 1.1, 4.2])
+p("Score every output on four checks: Correct (facts right), Complete (required fields filled, or it asks), Compliant (follows the approval rules and never sends, pays or deletes on its own) and Cost (a person can approve it in under two minutes and tokens per case stay within budget). Set the pass bar before you test; Meridian moves to assist mode only at 27 of 30 correct and 30 of 30 urgent cases escalated.")
+ol(["Replay: run the past cases offline and compare with the agreed answers.", "Shadow: the agent drafts on live cases while staff still do the work; compare daily.",
+    "Assist: the agent drafts and a person approves every action; measure time and rework.", "Decide: at day 90, scale, redesign, hold or stop on the numbers."])
+p("In Activity 2 your group runs a ten-case version of this test (Task 4) and writes its go/no-go bar into Success Measures.")
 h2("Step 4 · Name the Owner")
 p("Fill DRI, Team & Resources. Give one directly responsible individual the authority to change rules, allocate resources and pause the pilot. " + B.MERIDIAN_PLAN_BOXES["owners"])
 h2("Step 5 · Run and Evaluate the 90-Day Pilot")
@@ -306,7 +322,7 @@ p("Choose measures that fit the goal. For each measure record the baseline, targ
 tbl(["Outcome", "Measure"], B.PILOT_METRICS, [2.0, 4.7])
 h3("Decision Rubric for the Pilot")
 tbl(["Decision", "Rule", "Meridian example"], B.PILOT_RUBRIC, [1.05, 2.75, 2.9])
-h2("Meridian Scenario: From Triage to a 90-Day Plan")
+h3("Meridian Scenario: From Triage to a 90-Day Plan")
 p("Meridian chose request triage. Today the work follows six steps and three handoffs. Meridian wants same-day responses and plans to cut handling time from 18 to 11 minutes by day 90. The year-one budget is SGD 39,000. A misrouted urgent job could cost a contract. Decide which steps the agent can take, who owns the outcome and what would stop the pilot. In Activity 2, apply the same questions to your own process.")
 h2("Meridian Demo: 90-Day Action Plan (fictitious company)")
 tbl(["Action-plan box", "Meridian's completed entry"],
@@ -322,7 +338,33 @@ X.append(("canvas", "actionplan"))
 # ------------------------------------------------------------------ Topic 3
 h1("Topic 3 — " + C.TOPICS[2]["title"])
 p(C.LEARNING_OUTCOMES[2] + " (K5, K6, A5, A6)")
-h2("Challenges of AI Transformation")
+h2("Topic 3 Pain Points: Why AI Transformations Stall")
+p("AI has made producing work almost free; owning the work (checking, approving and following up hundreds of outputs a day) is still expensive. McKinsey's State of Organizations 2026 (n = 10,018 leaders) found 72% say their organisation is not fully ready for the changes ahead. The usual reasons the change does not stick:")
+tbl(["Pain point", "What it looks like"], [
+    ("Aimed at the wrong target", "Awareness campaigns and prompt classes, when the real gaps are judgement and incentives."),
+    ("Skills that walk out the door", "The know-how lives in a few enthusiasts' chats. When they leave, it leaves."),
+    ("Managers without time", "Asked to coach AI use on top of a full day, with no change to their targets."),
+    ("Token bills nobody owns", "Usage grows faster than anyone can prove value; then a blanket ban arrives."),
+    ("Shadow AI and policy lag", "Staff use tools nobody approved; the policy arrives after the incident."),
+    ("Leaders over-rate themselves", "Prosci: on one-to-one AI conversations, leaders rate themselves 3.55 of 5; employees see 2.38.")], [2.2, 4.5])
+src("McKinsey, The State of Organizations 2026; Prosci, Leading AI integration (Sep 2026): https://www.prosci.com/blog/leading-ai-integration-what-separates-results-from-stalled-ai-investment")
+h2("From Outputs to Outcomes")
+p("Adoption treats AI as a project; transformation changes how the business runs.")
+tbl(["", "Adoption operating model", "Transformation operating model"], [
+    ("Funding", "Fixed budget tied to a scope", "Steady funding for a value stream, adjusted to outcomes"),
+    ("Time", "Start and end date; success declared at go-live", "Continuous ownership; success measured over the life cycle"),
+    ("Success", "On time, on budget, scope delivered", "Customer, employee and business outcomes delivered"),
+    ("Risk", "Reduced up front with heavy planning", "Reduced by fast iteration, learning and options"),
+    ("Teams", "People lent to a project, then moved on", "Stable teams that own an outcome, with their agents"),
+    ("AI", "Speeds up output; magnifies alignment gaps", "Scales iteration, learning and outcome delivery")], [1.0, 2.7, 3.0])
+p("Usage is nearly universal; profit is not. In McKinsey's March 2025 report, of 25 attributes tested, the redesign of workflows had the biggest effect on EBIT impact; CEO oversight of AI governance was one element most correlated with bottom-line impact (strongest at larger companies), yet only 28% said their CEO oversees AI governance. Put ownership where decisions are made: the CEO sponsors, and the people who run each process own its results.")
+src("McKinsey, The state of AI: How organizations are rewiring to capture value (12 Mar 2025): https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value")
+h3("Activity 3 Part A: AI Readiness Diagnostic (15 minutes)")
+p("Open ai-readiness-scorecard.html from the Activity 3 folder (LMS download) in any browser. Alone, score your company on 24 statements (1-5, how things are today). The scorecard draws your readiness shape and names your lowest dimension; nothing leaves your browser.")
+tbl(["Dimension (/20)", "What a high score looks like"], B.READINESS_DIMS, [2.0, 4.7])
+p("Then, in your group, share the shape, not the score: which dimension came out lowest and does it surprise you; what it looks like day to day; who would have to act differently for it to move; and one change you could make in the next 30 days without new budget.")
+prompt(B.LAB[3]["steps"][0]["prompt"])
+h3("What Your People Feel: Challenges of AI Transformation")
 tbl(["Challenge", "What Meridian hears or sees"], [
     ("Resistance to change", "Coordinators trust the current workflow and want a say in how it changes."),
     ("Worry about job loss", "Staff ask whether drafting tickets is the first step in replacing their roles."),
@@ -335,12 +377,29 @@ p("The World Economic Forum projects 170 million jobs created and 92 million dis
 src("World Economic Forum, Future of Jobs Report 2025, Jobs Outlook: " + B.WORKFORCE_SOURCES["wef"])
 p("Singapore’s total employment increased by 27,700 in Q3 2026 in MOM’s advance release. Resident growth was supported by essential and public services. Construction and manufacturing contributed to non-resident growth. IMDA separately reports tech workforce growth of 2.7% to 214,000 in 2024, with AI and data and cybersecurity among the fastest-growing tech roles. The share of tech postings requiring AI skills rose from 11% in 2019 to 14% in 2024.")
 src("MOM, Labour Market Advance Release Q3 2026: " + B.WORKFORCE_SOURCES["mom"] + " · IMDA, Singapore Digital Economy Report 2025: " + B.WORKFORCE_SOURCES["imda"])
-h2("The SCALE Framework: Five Moves to Sustain and Operate")
+h2("The SCALE Framework: Five Moves to Transform the Company")
 p("Topic 3 and Activity 3 follow one framework. Each move is a block on your SCALE board.")
 tbl(["", "Move", "What you do"], [(l, w, d) for l, w, d, _ in B.SCALE], [0.4, 1.5, 4.8])
 h2("S · Story: Communicate the Change")
 p("Explain why Meridian is piloting triage, what the agent will draft, what staff still decide and when the plan will be reviewed. Explain the no-job-loss commitment for the pilot. Use a team huddle for coordinators, a service update for customers and a short review for leaders. Give each group a named contact for questions.")
-h2("C · Commanders: Give the Rollout an Owner")
+h3("Map the Stakeholders")
+tbl(["Group", "Power / interest", "What to do"], [
+    ("Board, finance, legal, data protection officer", "High power, lower interest", "Keep satisfied: brief early; show the controls and the numbers."),
+    ("CEO sponsor, heads of department, IT and security", "High power, high interest", "Manage closely: co-own the plan; decide together; meet weekly."),
+    ("Frontline staff, clients, staff representatives", "Lower power, high interest", "Involve and inform: ask what the plan misses; tell them first."),
+    ("Vendors, teams outside the pilot", "Lower power, lower interest", "Monitor: share updates; watch for knock-on effects.")], [2.4, 1.6, 2.7])
+h3("Three Standard Moves Aimed at the Wrong Target")
+bl(["Awareness campaigns assume people do not know why AI matters; most already use it (KPMG and University of Melbourne, 2025: 66% use AI regularly). Explain why it matters to this company and this role.",
+    "More town halls assume resistance is a communication problem; it is usually an incentive problem. Change time, targets and recognition.",
+    "Tool and prompt training assumes prompting is the gap; the gap is judgement: knowing whether the output is good enough to send."])
+h3("What an Effective Sponsor Does")
+p("Prosci's benchmarking has found active and visible sponsorship to be the top contributor to change success in every report since 1998. Effective AI sponsors stay active and visible through the whole life cycle, build a coalition of peers and people managers, communicate the business reason directly, and use the tools themselves and say so.")
+p("Treat ADKAR (Awareness, Desire, Knowledge, Ability, Reinforcement) as a loop, not a line: each new model or tool restarts it, and successful AI integration happens one person at a time.")
+src("Prosci, The primary sponsor's role: https://www.prosci.com/resources/articles/primary-sponsors-role-and-importance ; KPMG, Trust in AI 2025: https://kpmg.com/au/en/insights/artificial-intelligence-ai/trust-in-ai-global-insights-2025.html")
+h2("C · Commanders: Draw the Org Chart Around Outcomes")
+p("Draw the org chart around outcomes, not functions. Each leader owns one outcome (response time, client retention, first-time fix, cost per job) and a team of people and agents; some value streams, such as overnight alerts, run on agents and are audited daily by a person. Ask of every box: which outcome does this person own, and which agents work for them?")
+p("Managers are the lever, not the casualty. Gallup (survey of 23,717 US employees, February 2026) found 78% of employees with strongly supportive managers use AI frequently, against 44% of the rest. Gartner's October 2024 forecast that 20% of organisations will use AI to flatten and cut over half of middle-management roles through 2026 is a prediction, not an observation. Plan for managers who lead mixed teams of people and agents.")
+src("Gallup (12 Apr 2026): https://www.gallup.com/workplace/704252/workplace-separates-adopters-and-holdouts.aspx ; Gartner (22 Oct 2024) press release.")
 img(os.path.join(IMG, "ainative", "flattened-org.png"), "Rewrite companies in a flattened org chart", 5.4)
 p("A Directly Responsible Individual (DRI), a term from Apple, is the one person accountable for an outcome: singular (one named "
   "person, not a committee), accountable (owns the outcome, not just the task) and holding the decision rights (commands the AI "
@@ -349,9 +408,9 @@ p("A Directly Responsible Individual (DRI), a term from Apple, is the one person
 h3("Flatten smart, not by decree")
 p("Block laid off about 4,000 people (nearly 40%) at once; about 30% of Zappos staff left after the Holacracy ultimatum in 2015; Google "
   "removed engineering managers in 2001 and reinstated them within months. Flattening by decree wipes institutional memory. The right "
-  "order: preserve and codify the knowledge in the decision layer first, then simplify the hierarchy. Bayer cut from 12-13 layers to 6-7 "
-  "over a planned three-year journey.")
-ol(["Codify tacit know-how into the company map and skills.", "Run a business scenario test: real access to agents, a small valuable task, four "
+  "order: preserve and codify the knowledge in the decision layer first, then simplify the hierarchy. Bayer says it halved its management "
+  "layers and cut management roles by two thirds; in some units layers fell from as many as 12 to five or six.")
+ol(["Codify tacit know-how into playbooks, the company map and skills.", "Run a business scenario test: real access to agents, a small valuable task, four "
     "boundaries (goal, time, data, token spend).", "Spot the builders; they are your first DRIs.",
     "Give each DRI matching decision rights and resource rights.", "Let relay layers fade as more DRIs emerge."])
 tbl(["Type seen in the test", "What to do"], [("Learners: use AI as a better search", "Give time and coaching"),
@@ -366,9 +425,9 @@ tbl(["Role", "Outlook"], [("Amplified commander (DRI)", "Manages many agents, ra
 p("Managers move from relaying information to judgement: the judge at scale who owns outcomes for agents and people; the coach who "
   "teaches teams to work with agents; the translator and connector who moves tacit knowledge into the system during transition. The "
   "manager who only holds meetings and passes on approvals is most exposed.")
-h2("3.3 The Learner's Advantage and the Atrophy Trap")
-p("Stanford and MIT researchers tracking more than 5,000 customer-service agents found AI help raised issues resolved per hour by over "
-  "10%, and by over 30% for new and weaker staff; a two-month hire performed like a six-month one. The difference that matters now is "
+h3("The Learner's Advantage and the Atrophy Trap")
+p("Stanford and MIT researchers tracking more than 5,000 customer-service agents found AI help raised issues resolved per hour by 14%, "
+  "and by 34% for novice and low-skilled staff; agents with two months' tenure using AI performed like staff with more than six months without it (Quarterly Journal of Economics, 2025). The difference that matters now is "
   "appetite for mental effort. But judgement decays with disuse: doctors' detection of precancerous lesions fell from 28.4% to 22.4% after "
   "the AI tool was removed, and people accepted planted wrong AI answers 80% of the time (Wharton). Ask for hints before answers, write "
   "your position first, and keep some work unassisted.")
@@ -378,10 +437,19 @@ tbl(["Human responsibility", "What the owner does"], [(name, action) for _, name
 p("Meridian’s Head of Service Desk sets service targets and authorises the workflows. The agent extracts request details, drafts tickets and flags urgency. Coordinators check the evidence and approve dispatch. The Head of Service Desk reviews exceptions and can pause the workflow or change the rules.")
 p("A second example is Sarah, a marketing lead. The agent drafts campaign copy and decks. Sarah owns campaign outcomes, sets the creative direction, checks factual claims and approves release. She and her manager agree a two-week trial and review draft time, corrections and whether she had enough control.")
 src("Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, pp. 3, 4, 6 and 9.")
+h3("Training That Builds Ability")
+p("Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.")
+src("Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value")
 h3("Coaching Example: Use the AI Coaching Simulator")
 p("Ask the employee what concerns them, explore their strengths and workload, co-create a role that uses their judgment, and agree one small trial and a review date. At Meridian, the coordinator keeps urgent dispatch decisions and spends more time on customer follow-up. Give employees practice on their own work, builders training on testing and controls, and managers time for coaching.")
 p("Open https://alfredang.github.io/AICoaching/ and select a worried employee in demo mode. Coach the employee, request feedback, then convert one suggestion into an action and a date. Debrief how you acknowledged the concern and agreed a supported next step.")
-h2("L · Loop Information: Collect and Act on Feedback (A6)")
+h2("L · Loop Information: Build AI Into the Process (A6)")
+p("If the AI skill lives in one person, it leaves with them. Personal skill (prompts in one person's chat history, know-how in one enthusiast's head) does not add up to company capability. Build AI into the process so it survives turnover: new staff inherit it on day one.")
+ol(["Map the process (Step 2 of your plan).", "Write the playbook (instructions, examples and checks) into the SOP, not a personal chat.",
+    "Put the agent inside the system staff already use: ticketing, CRM or ERP.", "Write the human checkpoints into the SOP.",
+    "Version and own it: an owner, a backup owner, a change log and a review date."])
+p("Keep an AI capability register, one row per agent, reviewed monthly with the risk owner. An agent without an owner is switched off.")
+tbl(["Process", "Agent", "Owner (DRI)", "Backup", "Playbook", "Controls", "Measure"], B.CAPABILITY_REGISTER, [0.9, 0.95, 0.95, 0.85, 1.05, 1.15, 0.85])
 p("In an AI-native firm, information flows through the DRI and the decision layer instead of up and down ten layers. Set an operating "
   "rhythm: a daily 8:00 exceptions brief from the agents, a weekly DRI review with the team, a monthly one-page dashboard for the sponsor. "
   "Communicate the change per stakeholder (what changes, what does not, who to ask), and run an idea pipeline where anyone can post an "
@@ -389,6 +457,23 @@ p("In an AI-native firm, information flows through the DRI and the decision laye
 p("Close the loop with staff. Collect concerns and client feedback, review them weekly, name an owner for each change and tell people what was done. For example, Meridian could revise its intake form after coordinators repeatedly flag missing building details.")
 h2("E · Evaluate: Decide Whether to Continue or Scale")
 p("Check service outcomes, adoption, safety and staff or customer feedback against the agreed targets. Review costs and the stop rule with the DRI. Scale in stages when the evidence supports it, redesign and retest weak parts, or pause the pilot and return to the human workflow.")
+h3("Govern With a Light Policy Stack")
+tbl(["Layer", "Who", "What"], [
+    ("Accountable owner", "CEO-level sponsor", "An AI steering group chaired by a senior executive approves the register and the budget."),
+    ("Acceptable-use policy", "Everyone", "One page: what AI may be used for, what never, and who to ask."),
+    ("Data classes", "Data protection officer", "Public, internal, confidential, personal: which class may go into which tool (PDPA)."),
+    ("Approved tools", "IT and security", "The list, how to request a new tool and how fast you will answer."),
+    ("Approval thresholds", "Process owners (DRIs)", "Which agent actions need a person: sends, payments, deletions, anything affecting people."),
+    ("Incident response", "Duty manager", "How to pause an agent, who to call, how to tell the people affected.")], [1.6, 1.5, 3.6])
+p("Organisations now govern AI access in three ways, often together. Restricted use blocks some tools for some work: Nvidia reportedly keeps Claude Fable to lower-stakes work, and Goldman Sachs and JPMorgan reportedly removed Claude for Hong Kong staff. Earned access gives the tool after training: Telstra requires Copilot training before a licence (over 18,000 completions). Rationed use replaces unlimited use with a budget: Uber caps spending at US$1,500 a month per person per AI coding tool, and Walmart moved its in-house coding assistant to a fixed token allowance. Ask whether your limits rest on real risk, what minimum proof of readiness you need, and how to share the budget without starving high-value work.")
+src("Reported by The Information/PYMNTS (Sep 2026), Bloomberg (Apr and Jun 2026), FT via Reuters (Jun 2026), UTS Human Technology Institute Telstra case study (2026).")
+h3("Manage Token Cost")
+p("Agents are paid for by the token, in and out, on every step. A chat is one call; an agent task is often 4-10 calls, each re-reading its context. Prices vary about 80 times from the smallest to the largest model (Anthropic API list prices, checked 22 November 2026):")
+tbl(["Model", "Input US$/1M tokens", "Output US$/1M tokens", "Use it for"], [(m, f"{i:.2f}", f"{o:.2f}", u) for m, i, o, u in B.TOKEN_PRICES], [1.7, 1.3, 1.3, 2.4])
+bl(["Route: use the smallest model that passes your 30-case test.", "Cache: re-use fixed instructions and documents; cached input costs 2.5-10% of the input price, depending on the model.",
+    "Batch: run non-urgent work asynchronously at 50% off.", "Trim: shorter context, shorter answers, fewer steps.", "Budget: a monthly cap per team, an alert at 80% and an owner who reviews it."])
+p("Manage cost per outcome, not cost per token. In the token-cost-calculator.html drill (Activity 3 folder), Meridian's 80 requests a day at 4 steps cost about US$3 a month on Haiku 5.5 and about US$211 on Fable 5.2; at that scale integration, review time and change effort are the big costs. Write your monthly budget and alert into the Guardrails & Judgement block.")
+src("Anthropic pricing: " + B.TOKEN_PRICE_SOURCE)
 h3("Legal, Ethical and Security Issues (K6)")
 bl(["PDPA: collect and use personal data only for notified purposes; mask personal data before analysis; follow the PDPC Advisory "
     "Guidelines on Use of Personal Data in Generative AI (2026).", "IMDA Model AI Governance Framework for Agentic AI: bound the risk, keep "
@@ -422,7 +507,7 @@ p("Meridian's filled Activity 3 board (read-only): https://alfredang.github.io/b
 img(os.path.join(IMG, "screenshots", "meridian-scale.png"), "Meridian Services (fictitious): filled Activity 3 board in the Activity Studio", 5.2)
 
 h2("Activity 3 — Sustain and Operate with AI Agents (SCALE) with Meta Muse (PP Task 3)")
-p("Form groups of 3–5 and continue with the same company and pilot. Join one shared board and fill every SCALE box with your own actions, owners and review measures.")
+p("Part A is the readiness diagnostic above. In Part B (55 minutes) form groups of 3–5 and continue with the same company and pilot. Join one shared board and fill every SCALE box with your own actions, owners and review measures. Add one AI-policy rule and a monthly token budget to Guardrails & Judgement, and name where each agent's playbook lives and its backup owner.")
 X.append(("canvas", "change"))
 
 # ------------------------------------------------------------------ v47 bonus topic (self-paced, outside the contact hours)
@@ -450,10 +535,12 @@ bl([C.ASSESSMENT["written"], C.ASSESSMENT["practical"], "Bring your three board 
 h1("Glossary")
 tbl(["Term", "Meaning"], [("Agentic AI", "A goal-directed AI system that plans, acts with tools, checks results and repeats"),
      ("AI agent", "One AI worker: a model with tools, memory and instructions"), ("Always-on agent", "An agent that keeps running and watching between your messages"),
-     ("Dormant data", "Unused operational records: calls, chats, tickets, logs, edit history"), ("Ontology / company map", "Definitions of business terms, entities, relationships and rules"),
+     ("Dormant data", "Unused operational records: calls, chats, tickets, logs, edit history"), ("Company map", "A plain-English glossary of business terms, records, relationships and rules for the agent"),
      ("Decision layer", "Model + company map + live navigation + operating system"), ("DRI", "Directly Responsible Individual: the one person accountable for an outcome"),
      ("MCP", "Model Context Protocol: a standard way to connect agents to business systems"), ("Outcome contract", "Population, baseline, target, owner, counter-metric"),
-     ("TCO", "Total cost of ownership over three years"), ("Atrophy trap", "Losing judgement by always deferring to AI"), ("Codex / Sites", "OpenAI's coding agent / its website builder and host in ChatGPT and Codex")], [1.8, 4.9])
+     ("TCO", "Total cost of ownership over three years"), ("Token", "The unit AI models are billed in; about 750 words per 1,000 tokens"),
+     ("Test set", "Real, anonymised cases with agreed answers, used to test an agent before anyone relies on it"),
+     ("Capability register", "One row per agent: process, owner, backup owner, playbook, controls, measure"), ("Atrophy trap", "Losing judgement by always deferring to AI"), ("Codex / Sites", "OpenAI's coding agent / its website builder and host in ChatGPT and Codex")], [1.8, 4.9])
 h1("References")
 bl(["IMDA, Model AI Governance Framework for Agentic AI v1.5 (20 May 2026).", "Enterprise Singapore, media release on AI initiatives (27 Oct 2026).",
     "The Straits Times, 24 Aug 2026: New platform to create AI agents available to all public healthcare professionals.",

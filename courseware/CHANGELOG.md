@@ -1,3 +1,12 @@
+## v53 · 22 November 2026
+
+- Rebuilt the course around one through-line: the learner is the AI consultant inside their own company. Topic 1 Discover, Topic 2 Prove, Topic 3 Transform (CP topic titles, LOs, K&A and LU hours unchanged).
+- Every topic now opens with a one-line quote and a room poll, names the pain points companies hit (evidenced), and ends with a clickable three-question knowledge check. Clickable course map and SCALE navigator (76 internal slide links).
+- Topic 1: pain-point hunt before Activity 1; use cases by function. Cut: OpenClaw evolution, five single-product pages (and their YouTube embeds), science/maths showcase, OPC/Suzhou, trading and scientific agent teams.
+- Topic 2: "Test before you trust" (30-case test set, four checks, replay → shadow → assist → decide, METR evidence); Activity 2 gains Task 4, a 10-case agent test; the company map is taught in plain English (ontology wording and two deep-dive slides removed).
+- Topic 3 rebuilt from the owner's AI-transformation deck, every figure re-checked: outputs to outcomes, adoption vs transformation, who owns AI, AI readiness diagnostic (Activity 3 Part A, ai-readiness-scorecard.html), stakeholder map, sponsors, ADKAR as a loop, outcome-tree org chart, managers as outcome managers, training that builds ability, AI built into the process (capability register), six-layer governance stack, three access models, token cost with token-cost-calculator.html.
+- Timetable: Activity 3 is 70 min (15 + 55); Topic 3 runs in Parts A-D. LP, LG, activities, prompts page, FG v15 and AP v17 aligned. Assessment papers v44 unchanged.
+
 ## v52 · 19 November 2026
 
 - Updated the seven-component AI agent diagram in Topic 1 with Claude Code examples before the Meta Muse mini activity.

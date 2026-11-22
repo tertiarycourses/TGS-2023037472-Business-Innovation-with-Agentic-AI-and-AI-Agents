@@ -11,15 +11,15 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v52"
-VERSION_DATE = "19 November 2026"
+VERSION      = "v53"
+VERSION_DATE = "22 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
 TRAINER      = "Dr. Alfred Ang"
 DAYS         = 2
 COURSE_URL   = "https://www.tertiarycourses.com.sg/wsq-business-innovation-with-agentic-ai-and-ai-agents.html"
 REPO_URL     = "https://github.com/tertiarycourses/TGS-2023037472-Digital-Transformation-and-Business-Innovation-with-Generative-AI-GenAI"
-PITCH        = "Turn agentic AI from a demo into a business advantage: find the opportunity, plan the build, lead the change."
+PITCH        = "Lead your company's AI journey like a consultant: discover where agents pay off, prove it on real work, then transform how the company runs."
 CONTACT_TIME_NOTE = "16 hours in total (14 hours training + 2 hours assessment) over 2 days, 9:30 am-6:30 pm; 1-hour lunch not counted; the assessment runs on Day 2 from 4:30 pm."
 
 # ------------------------------------------------------------------ Skills Framework TSC
@@ -49,43 +49,42 @@ LEARNING_OUTCOMES = [
     "LO3: Manage business innovation and facilitate information flow among stakeholders to review success and develop innovative ideas.",
 ]
 FRAME = ["BMC", "90-Day Plan", "SCALE"]   # the course spine: LO1 BMC -> LO2 five-step 90-day plan -> LO3 SCALE
-LO_SHORT = ["Identify and Evaluate AI Agent Business Opportunities", "Action Plan to Get Started with AI Agents", "Sustain and Operate the Business with AI Agents"]
+LO_SHORT = ["Discover: Find Where AI Agents Pay Off", "Prove: Plan, Test and Evaluate AI Agents", "Transform: Lead the Company's AI Transformation"]
+PHASES = ["Discover", "Prove", "Transform"]   # v53: the AI consultant's three-phase engagement
 
 # ------------------------------------------------------------------ topics
 TOPICS = [
  dict(num=1, code="01", lo=0, codes="K1, K2, A1, A2", day="Day 1 AM",
       title="Identifying Business Innovation Opportunities with Agentic AI and AI Agents",
-      short="Identify and evaluate opportunities",
-      pitch="Agents now do real work. Find where they pay off in your business.",
-      items=["AI history: Rules, Machine Learning, Deep Learning, LLM", "2023-2026 lenses, then the Agent Stairway",
-             "AI agents introduction, then the Meta Muse mini activity", "Science/math, OPC evidence and business use cases",
-             "Meridian and the BMC: benefits across nine blocks", "Meridian's completed BMC",
-             "Activity 1 · groups of 3-5 build their company's BMC"]),
+      short="Discover: explore AI agent opportunities",
+      pitch="Agents now do real work. As your company's AI consultant, find where they pay off first.",
+      items=["Where companies get stuck: adoption without impact", "From rules to LLMs, then the Agent Stairway",
+             "What an agent is, then the Meta Muse mini activity", "Always-on agents, Singapore and five ways to team up",
+             "Use cases by function; Meridian and the nine-block BMC", "Five capability gaps, value levers and scoring",
+             "Pain-point hunt, knowledge check, then Activity 1 (BMC)"]),
  dict(num=2, code="02", lo=1, codes="K3, K4, A3, A4", day="Day 1 PM - Day 2 AM",
       title="Designing Digital Architectures and AI Agent Implementation Plans",
-      short="Action Plan to Get Started",
-      pitch="Five steps: set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot. A plan you can start on Monday.",
-      items=["Step 1 · Set the goal and outcome metrics", "Step 2 · Mine the process from dormant data and logs",
-             "Step 3 · Plug in agents, policies and controls", "Step 4 · Name the owner and give them decision rights",
-             "Step 5 · Run and evaluate the 90-day pilot", "Meridian’s filled plan, then Activity 2 in groups of 3–5"]),
+      short="Prove: plan, test and evaluate",
+      pitch="Prove it works here before you bet on it: five steps, a real test set and a 90-day pilot the CEO will fund.",
+      items=["Pilot purgatory: why good ideas stall", "Step 1 · Set the goal and the baseline", "Step 2 · Mine the process from dormant data",
+             "Step 3 · Plug in agents: company map, rules, architecture", "Test before you trust: 30 cases, four checks",
+             "Steps 4-5 · Name the owner, run the 90-day pilot", "Knowledge check, then Activity 2 (90-day plan)"]),
  dict(num=3, code="03", lo=2, codes="K5, K6, A5, A6", day="Day 2 PM",
       title="Managing AI-Driven Innovation, Governance and Stakeholder Collaboration",
-      short="Sustain and Operate",
-      pitch="SCALE: story, commanders, augment people, loop information, evaluate. Keep it running and growing.",
-      items=["AI transition challenges and verified job-market evidence",
-             "S · Story: communication and staff participation",
-             "C · Commanders: ownership and progressive rollout",
-             "A · Augment people: human ownership, job redesign and AI Coaching",
-             "L · Loop information: feedback and follow-through",
-             "E · Evaluate, then Activity 3 using the completed SCALE example"]),
+      short="Transform: lead the company's AI transformation",
+      pitch="Make AI how the company works, not a tool a few people use. SCALE it across people, structure, process and governance.",
+      items=["Why transformations stall; outputs to outcomes", "AI readiness diagnostic (Activity 3 Part A)",
+             "S · Stakeholders, sponsors and the change story", "C · Outcome-tree org chart, DRIs, managers",
+             "A · Job redesign, training and coaching", "L · Build AI into the process, not the person",
+             "E · Policies, access, token cost, security, results"]),
 ]
-DAY_THEMES = {1: "Identify and evaluate AI agent opportunities (BMC), then start the 90-day action plan",
-              2: "Finish the 90-day action plan, then sustain and operate with SCALE; assessment"}
+DAY_THEMES = {1: "Discover AI agent opportunities (BMC), then prove them: the 90-day plan and its test",
+              2: "Finish and test the 90-day plan, then transform the company with SCALE; assessment"}
 
 # ------------------------------------------------------------------ assessment (methods fixed by the approved CP: WA-SAQ + PP)
 ASSESSMENT = dict(
     written="Written Assessment (WA) - Short-Answer Questions (SAQ), 1 hour, open book. Five questions (K1-K6).",
-    practical="Practical Performance (PP) - scenario-based, 1 hour, open book. Task 1 pastes your Activity 1 canvas screenshot; Task 2 your Activity 2 action plan; Task 3 your Activity 3 change board; each with a written analysis (A1-A6).",
+    practical="Practical Performance (PP) - scenario-based, 1 hour, open book. Task 1 pastes your Activity 1 canvas screenshot; Task 2 your Activity 2 action plan; Task 3 your Activity 3 SCALE board; each with a written analysis (A1-A6).",
     note="A minimum of 75% attendance is required to be eligible for assessment and funding.",
 )
 

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Cost Calculator · Business Innovation with Agentic AI and AI Agents</title>
+<style>
+  :root { --ivory:#FAF9F5; --char:#21201C; --acc:#D97757; --teal:#3A7D7B; --muted:#6B6862; --rule:#E3DFD6; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ivory); color:var(--char); font:16px/1.45 Calibri, "Segoe UI", system-ui, sans-serif; }
+  header { background:var(--char); color:#fff; padding:22px 28px; }
+  header small { color:var(--acc); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:12px; }
+  h1 { font-family:Cambria, Georgia, serif; margin:4px 0; font-size:28px; }
+  header p { margin:0; color:#C9C4B9; }
+  main { max-width:1180px; margin:0 auto; padding:22px 20px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:22px; }
+  @media (max-width:900px) { main { grid-template-columns:1fr; } }
+  .panel { background:#fff; border:1px solid var(--rule); border-radius:10px; padding:16px 18px; }
+  h2 { font-family:Cambria, Georgia, serif; font-size:20px; margin:0 0 10px; }
+  .f { display:grid; grid-template-columns:1fr 180px; gap:10px; align-items:center; padding:7px 0; border-top:1px dashed var(--rule); }
+  .f small { display:block; color:var(--muted); font-size:12.5px; }
+  input, select { width:100%; padding:7px 8px; border:1px solid #cfc9bd; border-radius:6px; font:inherit; background:#fff; }
+  .big { background:var(--char); color:#fff; border-radius:12px; padding:18px; margin-bottom:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .big div b { display:block; font-family:Cambria, Georgia, serif; font-size:30px; color:var(--acc); }
+  .big div span { color:#C9C4B9; font-size:13.5px; }
+  table { width:100%; border-collapse:collapse; font-size:14.5px; }
+  th, td { text-align:left; padding:7px 8px; border-bottom:1px solid var(--rule); }
+  th { background:var(--char); color:#fff; font-weight:700; }
+  tr.on td { background:#FBEFD9; font-weight:700; }
+  .bar { height:10px; background:var(--acc); border-radius:5px; }
+  .note { color:var(--muted); font-size:13px; margin-top:10px; }
+  .btns { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+  .btns button { border:0; border-radius:8px; padding:9px 14px; font-weight:700; cursor:pointer; background:var(--acc); color:#fff; }
+  .btns button.ghost { background:#fff; border:1px solid #cfc9bd; color:var(--char); }
+  .verdict { margin-top:12px; padding:12px 14px; border-left:4px solid var(--teal); background:#EAF3F2; border-radius:6px; }
+</style>
+</head>
+<body>
+<header>
+  <small>Topic 3 · E · Evaluate and govern · 5-minute drill</small>
+  <h1>Token Cost Calculator: What Will One Agent Cost a Month?</h1>
+  <p>Agents pay per token, in and out, on every step they take. Set one process, pick a model, then pull the five levers: route, cache, batch, trim, budget.</p>
+</header>
+<main>
+  <section class="panel">
+    <h2>1 · Your process</h2>
+    <div class="f"><label>Tasks per working day<small>e.g. requests triaged, reports drafted</small></label><input id="tasks" type="number" min="1" value="80"></div>
+    <div class="f"><label>Working days per month</label><input id="days" type="number" min="1" value="22"></div>
+    <div class="f"><label>Input tokens per step<small>instructions + context + the request (≈ 750 words = 1,000 tokens)</small></label><input id="tin" type="number" min="0" value="3000"></div>
+    <div class="f"><label>Output tokens per step</label><input id="tout" type="number" min="0" value="500"></div>
+    <div class="f"><label>Agent steps per task<small>a chat is 1; an agent that plans, calls tools and checks is often 3-10</small></label><input id="steps" type="number" min="1" value="4"></div>
+    <h2 style="margin-top:14px">2 · Your levers</h2>
+    <div class="f"><label>Model</label><select id="model"></select></div>
+    <div class="f"><label>Share of input served from cache (%)<small>repeated instructions and documents; cache reads cost 2.5-10% of the input price, by model</small></label><input id="cache" type="number" min="0" max="100" value="0"></div>
+    <div class="f"><label>Share of tasks run as a batch (%)<small>non-urgent work run asynchronously at 50% off</small></label><input id="batch" type="number" min="0" max="100" value="0"></div>
+    <h2 style="margin-top:14px">3 · The value side</h2>
+    <div class="f"><label>Staff minutes saved per task</label><input id="mins" type="number" min="0" value="7"></div>
+    <div class="f"><label>Loaded staff cost per hour (USD)</label><input id="rate" type="number" min="0" value="31"></div>
+    <div class="btns"><button id="meridian">Load Meridian triage example</button><button class="ghost" id="copy">Copy result</button></div>
+  </section>
+  <section>
+    <div class="big">
+      <div><b id="month">$0</b><span>model cost per month</span></div>
+      <div><b id="pertask">$0</b><span>model cost per task</span></div>
+      <div><b id="value">$0</b><span>staff time saved per month</span></div>
+    </div>
+    <div class="panel">
+      <h2>Same process, every model</h2>
+      <table id="cmp"><thead><tr><th>Model</th><th>Input / output per 1M tokens</th><th>Per month</th><th style="width:30%"></th></tr></thead><tbody></tbody></table>
+      <div class="verdict" id="verdict"></div>
+      <p class="note">Prices: Anthropic API list prices in USD per million tokens, checked 22 Nov 2026 (Claude Haiku 5.5 $0.10/$0.50, Sonnet 5.5 $2/$10, Opus 5.5 $4/$20, Fable 5.2 $8/$40). Cache reads: Haiku 10%, Sonnet and Opus 5%, Fable 2.5% of the input price; Haiku prices shown are for prompts up to 100k tokens. Cache writes cost more than normal input and are left out here; check current prices and your platform's rates before you budget. Model cost excludes licences, integration, human review and change effort: count those in the 90-day plan's Cost & Value box.</p>
+    </div>
+  </section>
+</main>
+<script>
+const M = [["Claude Haiku 5.5", .10, .50, .10], ["Claude Sonnet 5.5", 2, 10, .05], ["Claude Opus 5.5", 4, 20, .05], ["Claude Fable 5.2", 8, 40, .025]];  // [name, input, output, cache-read multiplier]
+const sel = document.getElementById("model");
+M.forEach((m, i) => { const o = document.createElement("option"); o.value = i; o.textContent = m[0]; sel.appendChild(o); });
+const $ = id => +document.getElementById(id).value || 0;
+const usd = v => v >= 100 ? "$" + Math.round(v).toLocaleString() : "$" + v.toFixed(v < 1 ? 4 : 2);
+function cost(m) {
+  const n = $("tasks") * $("days"), st = $("steps"), c = Math.min($("cache"), 100) / 100, b = Math.min($("batch"), 100) / 100;
+  const inTok = n * st * $("tin"), outTok = n * st * $("tout");
+  const inCost = inTok / 1e6 * m[1] * ((1 - c) + c * m[3]), outCost = outTok / 1e6 * m[2];
+  return (inCost + outCost) * (1 - 0.5 * b);
+}
+function draw() {
+  const n = $("tasks") * $("days"), m = M[+sel.value], mc = cost(m), val = n * $("mins") / 60 * $("rate");
+  document.getElementById("month").textContent = usd(mc);
+  document.getElementById("pertask").textContent = n ? usd(mc / n) : "$0";
+  document.getElementById("value").textContent = usd(val);
+  const all = M.map(cost), mx = Math.max(...all);
+  document.querySelector("#cmp tbody").innerHTML = M.map((x, i) =>
+    `<tr class="${i == sel.value ? "on" : ""}"><td>${x[0]}</td><td>$${x[1]} / $${x[2]}</td><td>${usd(all[i])}</td><td><div class="bar" style="width:${mx ? all[i] / mx * 100 : 0}%"></div></td></tr>`).join("");
+  const ratio = mc ? val / mc : 0;
+  document.getElementById("verdict").innerHTML = mc
+    ? `<b>Cost per outcome:</b> every $1 of model spend buys about <b>$${ratio.toFixed(ratio < 10 ? 1 : 0)}</b> of staff time at these assumptions. Now test the cheapest model that still passes your 10-case test, and set a monthly budget with an alert at 80%.`
+    : "Enter your process to see the cost per outcome.";
+}
+document.querySelectorAll("input,select").forEach(e => e.addEventListener("input", draw));
+document.getElementById("meridian").onclick = () => {
+  Object.entries({ tasks: 80, days: 22, tin: 3000, tout: 500, steps: 4, cache: 60, batch: 0, mins: 7, rate: 31 }).forEach(([k, v]) => document.getElementById(k).value = v);
+  sel.value = 0; draw();
+};
+document.getElementById("copy").onclick = () => {
+  const m = M[+sel.value];
+  navigator.clipboard.writeText(`${m[0]}: ${document.getElementById("month").textContent}/month, ${document.getElementById("pertask").textContent}/task; staff time saved ${document.getElementById("value").textContent}/month (${$("tasks")} tasks/day, ${$("steps")} steps, ${$("cache")}% cached, ${$("batch")}% batched).`);
+};
+draw();
+</script>
+</body>
+</html>

@@ -47,6 +47,8 @@ def topic_open(D, C, tp):
         text(s, 9.15, yy, 0.45, 0.42, str(i + 1), 17, ACC, bold=True, font=SERIF, autofit=False)
         text(s, 9.6, yy, 3.05, rowh, it, 13, LIGHT, minpt=9.5)
     text(s, 6.4, 7.08, 6.4, 0.3, f"© Tertiary Infotech Academy Pte Ltd  ·  {D.code}", 9, K.FOOT, align="r", autofit=False)
+    import slides_v53 as N
+    N.anchor(f"t{tp['num']}", s); N.map_button(D, s, y=0.3)
     return s
 
 def bignums(D, kicker, title, nums, sub=None, dark=False, source=None, url=None, tipt=None):
@@ -565,6 +567,8 @@ def scientific_agent_team_case(D):
 def topic1(D, C, mark):
     tp = C.TOPICS[0]; K1 = "Topic 1 · Identify and evaluate"
     mark("t1"); topic_open(D, C, tp)
+    import slides_v53 as N
+    N.t1_open(D)
     # --- history
     s = eras(D, "Topic 1 · History of AI", "From Rules to Large Language Models", [
         ("Rules", "1950s–80s", "If–then rules and expert systems"),
@@ -620,9 +624,7 @@ def topic1(D, C, mark):
         text(s, x + 1.4, y + 0.3, 3.0, 0.55, t, 23, INK, bold=True, font=SERIF)
         text(s, x + 1.4, y + 0.9, 3.0, 0.95, d, 15, MUTED, minpt=11)
     src(D, s, "Meta Muse app (Singapore, Nov 2026) · Meta Newsroom: Muse in Singapore, 27 Oct 2026", V.NEWS)
-    agent_evolution(D)
-    big_five(D)
-    for a_ in APPS: app_page(D, a_)
+    big_five(D)   # v53: OpenClaw evolution and the five single-product pages cut (vendor detail that ages in weeks)
     # --- Singapore government news
     mark("t1sg")
     bignums(D, "Topic 1 · Singapore government news", "Singapore Is Betting the Country on Agents", [
@@ -631,8 +633,7 @@ def topic1(D, C, mark):
         ("280+", "SMEs piloted agentic AI", "Marketing, sales and customer service")],
         source="IMDA (Jan; v1.5 20 May 2026) · Enterprise Singapore media release, 27 Oct 2026 · The Straits Times",
         url="https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/artificial-intelligence")
-    sg_health(D)
-    science_math_showcase(D)
+    sg_health(D)   # v53: science and mathematics showcase cut (not a business decision)
     # --- five collaboration scenarios
     mark("t1scen")
     icons(D, "Topic 1 · Five scenarios", "Five Ways Humans and Agents Team Up", [
@@ -656,7 +657,7 @@ def topic1(D, C, mark):
           ("building", "The one-person company", "You are the board.")], "pattern3.jpg", "One-person company", "One person still means oversight."),
         (4, "Multiple Humans, Multiple AI Agents", "When the whole organisation runs on agents",
          "Everyone builds and runs agents toward shared goals. Agents become part of the workforce.",
-         [("hospital", "Singapore public healthcare", "80,000+ staff, 12,000+ AgentSea agents."), ("flask", "Stanford's virtual biotech", "37,000 AI scientist agents."),
+         [("hospital", "Singapore public healthcare", "80,000+ staff, 12,000+ AgentSea agents."), ("users", "300+ shared agents", "AgentSea staff reuse each other's agents."),
           ("org", "DRIs + agent teams", "Topic 3: how to run it.")], "pattern4.jpg", None, "Scale needs owners, permissions and audit trails."),
         (5, "Inter-Company Collaboration", "Your agent negotiates with their agent",
          "A buyer's agent asks for quotes; a supplier's agent checks stock and replies. People sign off.",
@@ -664,13 +665,14 @@ def topic1(D, C, mark):
           ("phone", "Agents with identity", "Manus Cue: own email, phone, wallet.")], "pattern5.jpg", None, "Treat the other firm's agent as untrusted."),
     ]
     for n, t, p, hook, ex, img, use, tipt in SC:
-        scen(D, n, t, hook, ex, img, tipt)
-        if n == 3: opc_evidence(D)
+        s_ = scen(D, n, t, hook, ex, img, tipt)   # v53: OPC growth data and the Suzhou target cut
+        if n == 2: src(D, s_, "Klarna press release, 27 Feb 2024: AI assistant handles two-thirds of customer service chats in its first month",
+                       "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/")
+        if n == 4: src(D, s_, "The Straits Times, 24 Aug 2026 · Synapxe AgentSea")
     software_interface_case(D)
     service_agent_case(D)
     video_agent_team_case(D)
-    trading_agent_team_case(D)
-    scientific_agent_team_case(D)
+    N.t1_functions(D)   # v53: replaces the trading and scientific agent teams
     # Meridian and the BMC follow the general innovation use cases.
     mark("t1gaps")
     meridian_scene(D, K1 + " · Meridian scenario", "Meet Meridian: 80 Requests a Day, Every One Re-Keyed by Hand",
@@ -722,8 +724,10 @@ def topic1(D, C, mark):
         ("A human stays.", "Complaints, refunds and premium clients keep a person.")])
     board(D, "Topic 1 · Meridian's completed BMC", c1, "Meridian's Canvas, Block by Block",
           "The first note of each block, readable. The live board holds three per block.", example=True)
+    N.quiz(D, 1, N.T1_QUIZ)
     # --- Activity 1 Part A, steps 1-3 (Muse): after all Topic 1 content (owner, v48: activities end each topic)
     mark("labs1")
+    N.t1_hunt(D)
     L1 = B.LAB[1]
     icons(D, "Topic 1 · Activity 1", "Groups of 3-5: Build Your Company's BMC", [
         ("users", "Form a group", "3-5 learners; choose one member's company"),
@@ -742,8 +746,8 @@ def topic1(D, C, mark):
     activity_intro(D, "Topic 1 · Activity 1", c1, C)
     board(D, "Topic 1 · Activity 1 · Your board", c1, "Your Canvas: The Question Each Block Answers",
           "Answer every block for your own organisation. Screenshot your group board for PP Task 1.", example=False)
-    big_statement(D, "Next · Topic 2 · Action Plan to Get Started", "You found the opportunity.\nNow plan how to get started.",
-                  "Give the agents what they lack, your data, your language and safe access, then write the 90-day plan.")
+    big_statement(D, "Next · Topic 2 · Prove", "You found the opportunity.\nNow prove it works here.",
+                  "Give the agent what it lacks, test it on real cases against a baseline, then write the 90-day plan the CEO will fund.")
     mark("t1end")
 
 
@@ -1027,8 +1031,10 @@ def bonus(D, C, mark):
 def topic2(D, C, mark):
     tp = C.TOPICS[1]; K2 = "Topic 2 · Action plan"
     mark("t2"); topic_open(D, C, tp)
-    framework(D, "Topic 2 · The 90-day action plan", "PLAN", "Five Steps to Get Started with AI Agents", B.PLAN,
-              "Every slide in this topic serves one step. Activity 2 is the 90-day plan for your business.",
+    import slides_v53 as N
+    N.t2_open(D)
+    framework(D, "Topic 2 · The 90-day action plan", "PLAN", "Five Steps to Test an Agent Before You Bet the Business on It", B.PLAN,
+              "Every slide in this topic serves one step. Activity 2 is the 90-day plan for your business, with a real test inside it.",
               tipt="Steps 1 and 2 first: no agent before a goal and a real process.")
     mark("t2step1")
     icons(D, "Topic 2 · Step 1 of 5 · Set the goal", "Set Meridian's Goal Before Choosing an Agent", [
@@ -1046,9 +1052,11 @@ def topic2(D, C, mark):
         ("hand", "Mark decisions", "Who judges, on what evidence")],
         sub="Box to fill: Mine the Business Process. Map Meridian’s actual triage workflow.", tipt="Meridian found 6 steps, 3 handoffs and 38% of coordinator time spent re-keying.")
     big_statement(D, "Topic 2 · Step 2 · Mine the process", "Dormant Data Is a Gold Mine.", "Calls, chats, tickets and logs hold clues to demand, delays and repeat problems. Agents can help turn permitted records into business evidence.")
-    concept(D, "Dormant data", 2, kicker="Topic 2 · Step 2 · Mine the process")
-    full_image(D, "Topic 2 · Step 2 · Mine the process", "Awaken the Data You Already Own", asset("ainative", "dormant-data.png"),
-               "Digitise what you already have: text, audio, images, spreadsheets and logs, read by one model.")
+    icons(D, "Topic 2 · Step 2 · Mine the process", "Awaken the Data You Already Own", [
+        ("file", "Text", "Emails, chats, tickets, notes"), ("phone", "Audio", "Calls and voice notes"),
+        ("image", "Images", "Site photos and scanned forms"), ("chart", "Spreadsheets", "Logs, rosters, price lists"),
+        ("server", "System logs", "Timestamps of every step")], cols=5,
+        tipt="Digitise what you already have: one model can now read all five, with permission.")   # v53: native, no text baked in an image
     table(D, "Topic 2 · Step 2 · Mine the process", "Mine Records for Evidence, Then Test the Value", ["Dormant source", "What an agent can uncover", "Business decision"], [
         ["Closed tickets + technician notes", "Recurring faults, missing information and repeat visits", "Prioritise preventive maintenance"],
         ["Customer chats + complaints", "Unmet needs, repeated questions and renewal concerns", "Improve the offer and service journey"],
@@ -1080,14 +1088,15 @@ def topic2(D, C, mark):
     mark("t2step3")
     mark("t2layer")
     concept(D, "Enterprise AI decision layer", 2, kicker="Topic 2 · Step 3 of 5 · Plug in the agents")
-    full_image(D, "Topic 2 · Step 3 · Plug in the agents", "Four Parts Turn Data into Decisions", asset("ainative", "decision-layer.png"),
-               "Brain, map, navigation, operating system: wired across the whole company.")
+    icons(D, "Topic 2 · Step 3 · Plug in the agents", "Four Parts Turn Data into Decisions", [
+        ("brain", "Model", "The brain: reasons and proposes"), ("map", "Company map", "Your terms, records and rules"),
+        ("route", "Live navigation", "What is happening right now"), ("gear", "Operating system", "Schedules, connects, controls, logs")], cols=4, arrows=True,
+        tipt="A better model alone moves you from D to D+; the other three parts take you to A.")   # v53: native, no text baked in an image
     mark("t2map")
-    concept(D, "Company map (ontology)", 2, kicker="Topic 2 · Step 3 · Plug in the agents")
-    hubbig(D, "Topic 2 · Step 3 · Plug in the agents", "The Map Teaches AI How Your Business Works", "Company map", [
+    hubbig(D, "Topic 2 · Step 3 · Plug in the agents", "Company Map: Your Business, Explained to the Agent in Plain English", "Company map", [
         ("user", "People", "Who decides what"), ("users", "Customers", "What 'active' means here"), ("box", "Products", "SKU = product code?"),
         ("cart", "Orders", "Life cycle and states"), ("file", "Contracts", "Linked to obligations"), ("check", "Approvals", "Three more after signing")],
-        foot="Ontology 2.0: drawn in plain language by the people who run the business, and revised any day.")
+        foot="A one-page glossary of terms, records, rules and approvals, written by the people who run the work and updated any day.")
     table(D, "Topic 2 · Step 3 · Empower the agent", "Give Your Agent a Business Briefing", ["What it needs", "What you provide", "Meridian example"],
           [list(row) for row in B.AGENT_BRIEFING[:3]], colw=[2.4, 4.65, 5.05],
           sub="A capable model still needs your business context. Retrieve relevant, permitted documents and live facts for each task.")
@@ -1103,10 +1112,6 @@ def topic2(D, C, mark):
         ("check", "Correct", "Owner checks evidence, decisions and escalations"),
         ("shield", "Empower", "Grant the smallest useful tool scope; log and review")], cols=4,
         tipt="Start read-only. Pass agreed tests before enabling actions; retest whenever a process or policy changes.")
-    icons(D, "Topic 2 · Step 3 · Plug in the agents", "Four Subsystems Let Agents Act Safely", [
-        ("calendar", "Scheduling", "Plans the steps. Knows how to wait."), ("flask", "Execution", "Tests first: execute, check, correct"),
-        ("plug", "Access", "One keycard to CRM, ERP, email (MCP)"), ("eye", "Control", "Your permissions. Every action logged.")], cols=4,
-        tipt="Grant a task-specific identity only the data and actions it needs. Enforce limits in the connected systems.")
     ladder(D, "Topic 2 · Step 3 · Plug in the agents", "Step 3: Where Agents Plug In", [
         ("Inform", "Summarise, alert"), ("Recommend", "Rank, suggest"), ("Prepare", "Draft the ticket"),
         ("Execute with approval", "Acts after your yes"), ("Execute with monitoring", "Acts; you audit")],
@@ -1122,6 +1127,7 @@ def topic2(D, C, mark):
         ("star", "Our edge", "Is it what makes us different?"), ("rocket", "Time to value", "Weeks or months?"), ("plug", "Integration", "Fits our systems?"),
         ("coins", "3-year TCO", "Licences + build + run + change"), ("route", "Exit", "Can we leave cleanly?")], cols=5,
         tipt="Most firms land on hybrid: buy the platform, own the company map and the rules.")
+    N.t2_test(D, mark)
     mark("t2step4")
     icons(D, "Topic 2 · Step 4 of 5 · Name the owner", "Give Meridian’s Service Desk Head Decision Rights", [
         ("user", "Accountable owner", "Head of Service Desk owns results and may pause the pilot"),
@@ -1160,6 +1166,7 @@ def topic2(D, C, mark):
     board(D, "Topic 2 · Meridian's completed plan", c2, "Meridian's 90-Day Plan, Block by Block",
           "All nine boxes are filled. Use this structure for your own company in Activity 2.",
           example_notes=B.MERIDIAN_PLAN_BOXES)
+    N.quiz(D, 2, N.T2_QUIZ)
     mark("act2a")
     L2 = B.LAB[2]
     activity_intro(D, "Topic 2 · Activity 2", c2, C)
@@ -1167,12 +1174,13 @@ def topic2(D, C, mark):
     for i in range(2): step_slide(D, L2, i)
     mark("act2b")
     step_slide(D, L2, 2)
+    N.t2_handson_test(D)
     board_steps(D, L2)
-    muse_board(D, "Topic 2 · Activity 2 · Task 5 · Meta Muse", c2)
+    muse_board(D, "Topic 2 · Activity 2 · Task 6 · Meta Muse", c2)
     board(D, "Topic 2 · Activity 2 · Your board", c2, "Your 90-Day Plan: The Question Each Block Answers",
           "Steps 1 to 5, for your own organisation. Screenshot your group board for PP Task 2.", example=False)
-    big_statement(D, "Next · Topic 3 · Sustain and Operate", "The plan is live.\nNow keep it running.",
-                  "Run the business on DRIs and agent teams, keep people judging, review the numbers and keep new ideas coming.")
+    big_statement(D, "Next · Topic 3 · Transform", "The pilot works.\nNow make it how the company works.",
+                  "Stakeholders, org chart, roles, training, coaching, AI built into the process, token budgets, security and governance.")
     mark("t2end")
 
 # ------------------------------------------------------------------ v48: five agent risks, one page each, and the challenges
@@ -1277,10 +1285,14 @@ def coach_demo(D, kicker):
 
 # ================================================================== TOPIC 3
 def topic3(D, C, mark):
-    tp = C.TOPICS[2]; K3 = "Topic 3 · Sustain and operate"
+    """v53: Transform. Organise for outcomes, then SCALE across the company (owner brief, 22 Nov 2026)."""
+    import slides_v53 as N
+    tp = C.TOPICS[2]; K3 = "Topic 3 · Transform"
     mark("t3"); topic_open(D, C, tp)
+    # --- Part A: why transformations stall, outputs to outcomes, who owns AI
     mark("t3chal")
-    icons(D, "Topic 3 · Transformation challenges", "What Makes an AI Transition Hard?", [
+    N.t3_open(D, mark)
+    icons(D, "Topic 3 · What your people feel", "Six Worries to Answer Before Any Role Changes", [
         ("users", "Resistance to change", "People trust their current workflow and may have had little say in the redesign."),
         ("user", "Worry about job loss", "Staff ask which tasks will change and what happens to their roles."),
         ("grad", "Steep learning curve", "Learning the tool and checking its work takes time and practice."),
@@ -1297,56 +1309,50 @@ def topic3(D, C, mark):
         url=B.WORKFORCE_SOURCES["wef"])
     s.notes_slide.notes_text_frame.text = (
         "Adapted from Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, page 3. "
-        "Explain that WEF projects job changes across technology, demographics, the economy and the green transition. "
-        "Some of the fastest-growing roles by percentage are AI-related, while core economy occupations drive large absolute gains.")
-    s = bignums(D, "Topic 3 · Singapore workforce evidence", "Employment Grew and AI Skills Became More Common in Tech Postings", [
-        ("+27,700", "total employment", "Singapore, Q3 2026. MOM advance estimate."),
-        ("+2.7%", "tech workforce", "2023 to 2024. 214,000 tech professionals in 2024."),
-        ("11% → 14%", "AI skills in tech postings", "Share of Singapore tech postings, 2019 to 2024.")],
-        sub="MOM reports growth across multiple sectors. IMDA lists AI and data and cybersecurity among the fastest-growing tech roles in 2024.")
-    links_row(s, [("MOM · Q3 2026 advance employment release", B.WORKFORCE_SOURCES["mom"]),
-                  ("IMDA · Singapore Digital Economy Report 2025", B.WORKFORCE_SOURCES["imda"])])
-    framework(D, "Topic 3 · The SCALE framework", "SCALE", "SCALE: Five Moves to Sustain and Operate with AI Agents", B.SCALE,
-              "Run the business on agents without losing your people or your judgement. Activity 3 is your SCALE board.",
-              tipt="Story before structure: people hear what changes for them before any role changes.")
-    icons(D, "Topic 3 · S · Story", "Tell People What Changes and Invite Their Input", [
+        "Use it in the change story: jobs change more than they disappear, and the company's plan says where each role goes.")
+    N.t3_outcomes(D)
+    # --- Activity 3 Part A: readiness diagnostic
+    N.t3_diagnostic(D, mark)
+    # --- Part B: SCALE · Story and Commanders
+    mark("t3scale")
+    N.scale_nav(D, B.SCALE)
+    s = icons(D, "Topic 3 · S · Story", "Tell People What Changes and Invite Their Input", [
         ("megaphone", "Explain the purpose", "Meridian aims to shorten queues and give coordinators more time for clients."),
         ("users", "Say what changes", "Agents draft tickets. Coordinators retain approval and urgent decisions."),
         ("handshake", "State the commitment", "Meridian commits to no job losses during the pilot and sets a review date."),
         ("chat", "Invite questions", "Use team huddles, client updates and a named contact for concerns.")], cols=4,
         sub="Tailor the message to staff, customers and executives. Ask employees what the plan misses.")
-    full_image(D, "Topic 3 · C · Commanders", "Rewrite the Org Chart Around DRIs", asset("ainative", "flattened-org.png"),
-               "Fewer layers. One accountable person per outcome. Agents do the volume.")
+    N.back_scale(D, s, "S")
+    N.t3_story(D)
+    N.t3_commanders(D)
     concept(D, "DRI (Directly Responsible Individual)", 3)
-    icons(D, "Topic 3 · C · Commanders", "Flatten Smart: Five Moves, No Shock", arrows=True, items=[
-        ("memory", "Codify", "Tacit know-how into the map"), ("flask", "Test", "Real task, real agents"),
-        ("search", "Spot builders", "Who turns into a team?"), ("medal", "Give rights", "Goal, decision and resource rights"),
-        ("layers", "Flatten slowly", "Relay layers fade out")],
-        sub="Bayer went from 12-13 layers to 6-7 over a planned three-year journey.", tipt="Run old and new side by side (Kotter's dual operating system).")
     vs(D, "Topic 3 · C · Management support and leadership", "Your Managers Carry the Change. Your CEO Sets Its Pace.",
        ("Back the managers", "handshake", ["Protect time to learn and redesign work.", "Give each DRI a budget and a stop button.", "Treat early mistakes as data, not blame."]),
        ("The CEO goes first", "star", ["The C-suite uses agents for its own work, in public.", "Shopify's CEO, Apr 2025: \u201cReflexive AI usage is now a baseline expectation.\u201d", "Staff copy what leaders do."]),
        sub="Staff watch two signals: does my manager have time for this, and does the boss actually use it?",
        source="Tobi Lütke, internal memo shared publicly on X, 7 Apr 2025")
+    icons(D, "Topic 3 · C · Commanders", "Flatten Smart: Five Moves, No Shock", arrows=True, items=[
+        ("memory", "Codify", "Tacit know-how into playbooks"), ("flask", "Test", "Real task, real agents"),
+        ("search", "Spot builders", "Who turns into a team?"), ("medal", "Give rights", "Goal, decision and resource rights"),
+        ("layers", "Flatten slowly", "Relay layers fade out")],
+        sub="Bayer halved its management layers, from as many as 12 to five or six in some units, over a planned multi-year journey.",
+        tipt="Run old and new side by side (Kotter's dual operating system).",
+        source="Bayer, Dynamic Shared Ownership (bayer.com) · PMI, Building Bayer for the future (Oct 2026)", url="https://www.bayer.com/en/strategy/dynamic-shared-ownership")
     ladder(D, "Topic 3 · C · Progressive rollout", "Roll Out in Stages: Earn Each Step of Autonomy", [
         ("Shadow", "Agent drafts in the background; people still do the work"), ("Assist", "Agent drafts; a person approves every action"),
         ("Supervise", "Agent acts on low-risk work; people audit samples"), ("Scale", "More sites and processes, same rules and DRI")],
         sub="Meridian: shadow on 2 sites, assist on 10 by day 60, scale to all 30 only after the day-90 review.",
         foot="Move up a step only when the numbers say so. Move down at once if they do not.")
+    # --- Part C: Augment people, then Loop AI into the process
     mark("t3work")
-    vs(D, "Topic 3 · A · Augment people", "Agents Take the Routine. Move Your People Up.",
+    s = vs(D, "Topic 3 · A · Augment people", "Agents Take the Routine. Move Your People Up.",
        ("Work that shrinks", "stop", ["Rule-bound tasks agents do cheaper", "Relaying messages up and down layers", "Signing off without really checking"]),
        ("Work that grows", "trend", ["Directing a team of agents as the DRI", "Judging the exceptions agents flag", "Human work: trust, negotiation, care"]),
        sub="Plan where each role goes before the agents arrive.")
+    N.back_scale(D, s, "A")
     icons(D, "Topic 3 · A · Augment people", "Managers Move from Relay to Judgement", [
         ("gavel", "Judge at scale", "Owns outcomes for agents + people"), ("users", "Coach", "Teaches teams to work with agents"),
         ("network", "Translate", "Moves tacit know-how into the system"), ("stop", "Relay", "Only passes messages: most exposed")], cols=4)
-    image(D, "Topic 3 · A · Human ownership",
-          "Redesign the Coordinator’s Role Around Decisions", asset("generated", "meridian-human-owner.jpg"),
-          caption="Illustrative Meridian coaching scene · OpenAI ImageGen",
-          side=[("robot", "Agent drafts", "Extract location, fault, contact and urgency."),
-                ("check", "Coordinator decides", "Review context and approve or return the draft."),
-                ("user", "Owner is accountable", "The Head of Service Desk sets rules, reviews results and can pause the agent.")])
     s = icons(D, "Topic 3 · A · Redesign the job", "The Human Owns the Outcome. The Agent Does the Delegated Work.", B.HUMAN_OWNER_RIGHTS, cols=5,
         sub="The owner’s job shifts from producing every output to directing work, checking results and making decisions.",
         tipt="At Meridian, the Head of Service Desk owns the service outcome. The agent extracts details, drafts tickets and monitors deadlines.")
@@ -1358,6 +1364,18 @@ def topic3(D, C, mark):
         ("check", "Human decides", "Approve dispatch or send the ticket back. Own the result.")],
         sub="Give the service desk owner authority to change rules and stop the workflow. An agent can assist with checks at every gate.")
     s.notes_slide.notes_text_frame.text = "Adapted from Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, page 4."
+    N.t3_augment(D)
+    cards(D, "Topic 3 · A · Role-based training", "Train Three Groups, Three Different Ways", [
+        ("Everyone", "Safe everyday use: what data goes in, how to check an answer, when to ask a person. Two hours, on their own work.", "users"),
+        ("Builders", "The few who write prompts, skills and agent workflows for their team, and keep them current.", "tool"),
+        ("Managers", "Coaching, job redesign and reading the agent's numbers: the skills of this course.", "org")], cols=3,
+        tipt="Train on the employee's real tasks, not demos. Keep people doing some work unassisted so judgement does not atrophy.")
+    bignums(D, "Topic 3 · A · Augment people", "Train Everyone: AI Lifts Beginners Most", [
+        ("+14%", "more issues solved per hour", "5,000+ support agents (Stanford & MIT)"),
+        ("+34%", "for novice and low-skilled staff", "The gains went mostly to novices"),
+        ("2 = 6+", "months of experience", "A 2-month hire with AI matched staff with over 6 months without")],
+        source="Brynjolfsson, Li & Raymond, Generative AI at Work, Quarterly Journal of Economics 140(2), 2025 (NBER w31161)",
+        url="https://academic.oup.com/qje/article/140/2/889/7990658")
     flow(D, "Topic 3 · A · Coach the staff", "Coach the Person Through Four Moves", [
         ("hand", "Hear the fear", "Name it and validate it before solving anything."),
         ("search", "Explore their reality", "What do they do best? What do they enjoy? What do they worry about?"),
@@ -1366,26 +1384,19 @@ def topic3(D, C, mark):
         sub="Four moves built on GROW coaching. The employee opens up only when they feel heard.",
         tipt="Meridian: coordinators feared replacement; the change story promised no job losses in the pilot before any role changed.")
     coach_demo(D, "Topic 3 · A · Coaching example")
-    s = vs(D, "Topic 3 · A · Worked coaching example", "From Campaign Producer to Marketing Owner",
-        ("Sarah’s concern", "user", ["Campaign copy and decks were most of her day.", "She worries about her role and who gets blamed."]),
-        ("Sarah’s redesigned role", "flag", ["Set the campaign goal and brand voice.", "Agent drafts copy and decks. Sarah checks facts, approves release and improves the workflow."]),
-        sub="Agree a two-week trial with Sarah. Review draft time, corrections and whether she had enough control.")
-    s.notes_slide.notes_text_frame.text = "Fictional coaching example adapted from Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, page 9."
-    cards(D, "Topic 3 · A · Role-based training", "Train Three Groups, Three Different Ways", [
-        ("Everyone", "Safe everyday use: what data goes in, how to check an answer, when to ask a person. Two hours, on their own work.", "users"),
-        ("Builders", "The few who write prompts, skills and agent workflows for their team, and keep them current.", "tool"),
-        ("Managers", "Coaching, job redesign and reading the agent's numbers: the skills of this course.", "org")], cols=3,
-        tipt="Train on the employee's real tasks, not demos. Keep people doing some work unassisted so judgement does not atrophy.")
-    bignums(D, "Topic 3 · A · Augment people", "Train Everyone: AI Lifts Beginners Most", [
-        ("10%+", "more issues solved per hour", "5,000+ support agents (Stanford & MIT)"),
-        ("30%+", "for new and weaker staff", "The gains went mostly to novices"),
-        ("2 = 6", "months of experience", "A 2-month hire matched a 6-month one")])
-    bignums(D, "Topic 3 · A · Augment people", "Judgement Is a Muscle. Use It or Lose It.", [
-        ("−6 pts", "cancer-lesion detection", "28.4% → 22.4% once doctors lost the AI tool"),
-        ("80%", "accepted planted errors", "Wharton: wrong AI answers taken as right"),
-        ("10 min", "is enough to weaken", "Carnegie Mellon problem-solving study")],
+    N.quote(D, "The real question is not whether machines think but whether men do.", "B. F. Skinner, Contingencies of Reinforcement, 1969",
+            kicker="Topic 3 · A · Keep people judging",
+            note="Wording from the 1969 original (Quote Investigator, https://quoteinvestigator.com/2025/09/04/machines-think/). Later quote books changed 'question' to 'problem'.")
+    s = bignums(D, "Topic 3 · A · Augment people", "Judgement Is a Muscle. Use It or Lose It.", [
+        ("−6 pts", "adenoma detection", "28.4% → 22.4% in colonoscopies without AI, after routine AI use"),
+        ("~80%", "followed the wrong AI", "When people asked the AI and it was planted wrong (Wharton, Study 1)"),
+        ("10 min", "of AI help", "Then worse and quicker to give up without it (CMU, Oxford, Berkeley, MIT)")],
         tipt="Ask for hints before answers. Write your view first. Keep some work unassisted.")
+    links_row(s, [("Lancet Gastro Hep 2025 (Budzyń et al.)", "https://pubmed.ncbi.nlm.nih.gov/40816301/"),
+                  ("Shaw & Nave, SSRN 2026", "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6097646"),
+                  ("Liu et al., arXiv 2604.04721 (preprint)", "https://arxiv.org/abs/2604.04721")])
     mark("t3loop")
+    N.t3_loop(D)
     hubbig(D, "Topic 3 · L · Loop information", "Information Flows Through the DRI, Not Up Ten Layers", "DRI + agents", [
         ("star", "Sponsor", "Monthly one-page dashboard"), ("users", "Staff", "Weekly review and Q&A"), ("smile", "Clients", "Faster updates, same people"),
         ("robot", "Agents", "Daily 8:00 exceptions brief"), ("lightbulb", "Idea pipeline", "Anyone posts; best get a DRI"), ("shield", "Risk & DPO", "Audit trail on demand")],
@@ -1396,31 +1407,31 @@ def topic3(D, C, mark):
         ("tool", "Change", "Assign an owner and test a change to training, rules or tools"),
         ("check", "Report back", "Tell people what changed and check whether it helped")],
         tipt="At Meridian, repeated reports of missing building details lead to a change in the intake form.")
-    icons(D, "Topic 3 · E · Evaluate", "Singapore's Rulebook for Agents", [
+    # --- Part D: Evaluate and govern
+    mark("t3gov")
+    N.t3_govern(D, mark)
+    icons(D, "Topic 3 · E · Govern", "Singapore's Rulebook for Agents", [
         ("alert", "Bound the risk", "Assess and limit upfront"), ("user", "Humans accountable", "Meaningful oversight"),
         ("tool", "Technical controls", "Test, monitor, change-manage"), ("users", "Users responsible", "Train the people using agents")], cols=4,
-        sub="IMDA Model AI Governance Framework for Agentic AI · four dimensions",
+        sub="IMDA Model AI Governance Framework for Agentic AI (launched 22 Jan 2026) · four dimensions · plus the PDPA for personal data",
         source="IMDA MGF for Agentic AI v1.5 (20 May 2026) · CSA Securing Agentic AI addendum (Jun 2026) · PDPA",
         url="https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/artificial-intelligence")
-    icons(D, "Topic 3 · E · Evaluate", "Five Ways an Agent Can Hurt You", [(r["ic"], r["name"], r["short"]) for r in RISKS], cols=5,
+    icons(D, "Topic 3 · E · AI security", "Five Ways an Agent Can Hurt You", [(r["ic"], r["name"], r["short"]) for r in RISKS], cols=5,
           tipt="Jailbreak is not shadow AI: a jailbreak attacks the agent's rules; shadow AI is staff using tools nobody approved.")
     for i_, r_ in enumerate(RISKS): risk_page(D, i_, r_)
-    security5(D, "Topic 3 · E · Evaluate controls")
-    # --- review success, governance
+    security5(D, "Topic 3 · E · AI security controls")
     mark("t3review")
     bignums(D, "Topic 3 · E · Evaluate", "Day 90: The Numbers Decide", [
         ("10.7", "minutes per request", "from 18 · target ≤ 11"), ("95.1%", "quality", "target ≥ 94%"),
         ("1.7%", "complaints", "limit 2%"), ("77.5%", "staff adoption", "target ≥ 70%")],
-        tipt="Example pilot: benefit SGD 39,200 vs year-1 cost SGD 39,000. Scale, redesign, hold or stop?")
+        tipt="Example pilot: modelled benefit SGD 39,200 (at 60% realisation) vs year-1 cost SGD 39,000. Scale, redesign, hold or stop?")
     meridian_scene(D, K3 + " · Meridian scenario", "Day 90 at Meridian: the Numbers Say Scale. The People Are Nervous.",
-        "Same fictitious firm, Topic 3: keep the agents running, the coordinators judging and the ideas coming.", [
+        "Same fictitious firm, Topic 3: take one team's pilot to the whole company without losing people, judgement or trust.", [
         ("chart", "The result", "Handling time 10.7 minutes, quality 95.1%, complaints 1.7%, adoption 77.5%."),
         ("users", "The mood", "Coordinators fear replacement; clients want faster answers, not a chatbot wall."),
         ("org", "The next step", "Scale from 10 sites to all 30 with the same approval rules."),
         ("lightbulb", "The opening", "Meridian Assist could become a product for other building managers.")],
-        "How do we scale it without losing our people, our judgement or our clients' trust?", "Meridian's Topic 3 question")
-
-    # --- activity 4, labs 11-13
+        "How do we make this how Meridian works, without losing our people, our judgement or our clients' trust?", "Meridian's Topic 3 question")
     c4 = B.CANVAS["change"]
     scale_blocks = c4["blocks"]
     for title_part, blocks in [
@@ -1441,11 +1452,13 @@ def topic3(D, C, mark):
     board(D, "Topic 3 · Meridian's completed SCALE board", c4, "Meridian's Completed SCALE Board",
           "All nine blocks are filled. Apply the same questions to your own company in Activity 3.",
           example_notes=B.MERIDIAN_SCALE_BOXES)
+    N.quiz(D, 3, N.T3_QUIZ)
+    # --- Activity 3 Part B: the SCALE board
     mark("act3")
     L3 = B.LAB[3]
     activity_intro(D, "Topic 3 · Activity 3", c4, C)
     lab_overview(D, L3)
-    for i in range(2): step_slide(D, L3, i)
+    step_slide(D, L3, 1)
     board_steps(D, L3)
     muse_board(D, "Topic 3 · Activity 3 · Step 4 · Meta Muse", c4)
     board(D, "Topic 3 · Activity 3 · Your board", c4, "Your SCALE Board: The Question Each Block Answers",
