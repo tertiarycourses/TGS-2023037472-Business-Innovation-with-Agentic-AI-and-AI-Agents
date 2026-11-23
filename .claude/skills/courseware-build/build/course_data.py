@@ -11,7 +11,7 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v55"
+VERSION      = "v56"
 VERSION_DATE = "23 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
@@ -75,7 +75,7 @@ TOPICS = [
       pitch="Make AI how the company works, not a tool a few people use. SCALE it across people, structure, process and governance.",
       items=["The future org: fewer layers, people + agents, DRIs", "The challenges; readiness diagnostic (Activity 3 Part A)",
              "A · Job redesign, AI coaching, AI training", "C · Progressive change; S · buy-in",
-             "C · The C-suite and managers lead by example", "L · Build AI into the workflow and processes",
+             "C · The C-suite and managers lead by example", "L · Build AI into the workflow; ontology-driven agents",
              "E · Policies, access, token cost, security, results"]),
 ]
 DAY_THEMES = {1: "Discover AI agent opportunities (BMC), then prove them: the 90-day plan and its test",

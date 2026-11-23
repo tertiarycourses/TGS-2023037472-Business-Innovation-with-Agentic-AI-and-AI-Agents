@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 55 · 23 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 56 · 23 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -358,6 +358,24 @@ My team: [team and role]. Our three biggest weekly time-sinks: [1, hours], [2, h
 Check: Three time-sinks with hours; one ranked first; the data and the approver named for each.
 
 ## Activity 1 — Your Company's BMC in Groups of 3-5 (PP Task 1)
+
+### Team Padlets: 15 Minutes of Talk Before Each Activity
+
+Each activity opens with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. Post a screenshot of each finished board in the last column.
+
+| Team | Padlet code | Link |
+|---|---|---|
+| Team Catalyst | W2GQC7 | https://alfredang.github.io/padlet/?room=W2GQC7 |
+| Team Horizon | XBMF8X | https://alfredang.github.io/padlet/?room=XBMF8X |
+| Team Momentum | 5APT8X | https://alfredang.github.io/padlet/?room=5APT8X |
+| Team Pioneer | JRSUDS | https://alfredang.github.io/padlet/?room=JRSUDS |
+| Team Quantum | B39XG6 | https://alfredang.github.io/padlet/?room=B39XG6 |
+
+| Activity | Discuss for 15 minutes |
+|---|---|
+| Activity 1 | What business innovation can AI agents do for us? Which tasks in your companies could an AI agent take on today? Which block of the business model would it change most: customers, channels, activities or costs? Which idea moves a number your boss already tracks? That one goes on your Activity 1 BMC. |
+| Activity 2 | Which action plan should we focus on? Which process should your 90-day pilot start with, and why that one? What must be true at day 30 for you to keep going? Who is the DRI, and what can they decide without asking? Carry the answers into your Activity 2 plan. |
+| Activity 3 | Org change, DRI and ontology: how do we drive AI transformation? What does your organisation look like with fewer layers and mixed teams of people and agents? Which outcome needs a DRI first, and which business rules must agents never get wrong (your ontology)? What will stall the change, and who must lead by example? Carry the answers into your SCALE board. |
 
 Form a group of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.
 
@@ -1022,6 +1040,23 @@ Keep an AI capability register, one row per agent, reviewed monthly with the ris
 | Monthly client report | Report agent | Account Director | Account manager | Report skill v2.0 in shared drive | Masked tenant data; manager signs off | Hours per report; errors found |
 | Technician job notes | Voice-to-report agent | Operations Manager | Team lead, East | Approved app + template v1.1 | No tenant names in audio; 30-day deletion | Reports filed same day |
 
+### Ontology-Driven Agents: Your Company Map Checks Every Move
+
+An ontology-driven agent reasons, writes queries and takes actions through a structured model of your business, its ontology, instead of working on raw tables or statistical patterns alone. The ontology holds three things: the entities that exist (client, building, contract, job, technician), the relationships between them (a job sits in a building under one contract) and the constraints that must hold (a job is closed only when the technician signs off and the client confirms). The company map you wrote in Topic 2 is your ontology in plain English.
+
+A plain agent can write a query that follows the syntax and still returns the wrong answer, because it misreads how the records relate. This is common in enterprise systems, where business logic is not visible from the table structure. An ontology-driven agent runs a loop: user intent, query generation, an ontology check (validation and control), then either a valid result or structured, machine-readable feedback naming the rule that was broken, which the agent uses to rewrite its query. The same check applies to actions: a constraint can stop the agent before it acts, not only before it answers.
+
+|  | Plain agent | Ontology-driven agent |
+|---|---|---|
+| Meridian asks | Which urgent jobs breached their response promise this week? | The same question |
+| What it does | Counts status = done as closed; applies 4 hours to every urgent job | The check rejects the first query; it rewrites it through job, building, contract and SLA tier |
+| Result | 19 jobs, 12 of them wrong, and it looks valid | 7 jobs, each showing the rule it was checked against |
+| Actions | May send an uncertified technician to a lift job | The certification constraint blocks the dispatch |
+
+Keep the ontology owned by the business: operations and account managers write the definitions, IT encodes them, and the DRI signs off each change. Version it like the SOP, so that when a contract tier changes you update the map once and every agent follows it. Vendors build this in: Palantir AIP agents act on the Palantir Ontology of objects, links and actions, and Microsoft Fabric IQ (announced at Ignite, November 2025) lets companies define an ontology that grounds their agents in business meaning and live data. Meridian is fictitious; its figures are synthetic.
+
+*Source: Palantir Foundry documentation, The Ontology system: https://www.palantir.com/docs/foundry/architecture-center/ontology-system/ ; Microsoft Fabric blog, Introducing Microsoft Fabric IQ (Nov 2025): https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/from-data-platform-to-intelligence-platform-introducing-microsoft-fabric-iq/5172484*
+
 In an AI-native firm, information flows through the DRI and the decision layer instead of up and down ten layers. Set an operating rhythm: a daily 8:00 exceptions brief from the agents, a weekly DRI review with the team, a monthly one-page dashboard for the sponsor. Communicate the change per stakeholder (what changes, what does not, who to ask), and run an idea pipeline where anyone can post an idea, the agent clusters them, and the best get a DRI and 30 days.
 
 Close the loop with staff. Collect concerns and client feedback, review them weekly, name an owner for each change and tell people what was done. For example, Meridian could revise its intake form after coordinators repeatedly flag missing building details.
@@ -1236,7 +1271,7 @@ Continue from Topic 3. Turn the numbers in your Activity 2 plan and the progress
 | Guardrails | Is it safe? | Actions blocked, escalations and incidents this month |
 | Decisions | What do we decide? | Decision, owner, due date and go / hold / stop |
 
-## Worked Example: Meridian’s Dashboard
+### Worked Example: Meridian’s Dashboard
 
 Meridian’s dashboard shows the day-90 proof on one page: 10.7 minutes per request against a target of 11, quality 95.1%, complaints 1.7%, adoption 77.5%, 10 of 30 buildings live, 14 actions blocked by guardrails and this week’s decisions with their owners. Meridian is fictitious and every figure is synthetic. Download meridian-ai-dashboard.html from the course Activities folder and open it in a browser.
 
@@ -1245,7 +1280,7 @@ Meridian’s dashboard shows the day-90 proof on one page: 10.7 minutes per requ
 - Before you share: every number has a source and a date; targets match the plan; no personal data, only totals and rates; every decision has an owner.
 - Share with Sites (or your company's approved tool) only after the accountable owner approves who can see it.
 
-## Create Your Stakeholder Page With Codex
+### Create Your Stakeholder Page With Codex
 
 1. Bring in the change story, stakeholder map, messages, approvals and feedback routes from your SCALE board. Add evidence, owners and milestones from the Activity 2 plan.
 2. Give Codex one promise, each audience’s questions and its next action. Ask for a mobile-friendly page with the rollout timeline, human approval gates, results and feedback routes.
@@ -1272,6 +1307,7 @@ For current Sites access and hosting terms, see https://learn.chatgpt.com/docs/s
 | Company map | A plain-English glossary of business terms, records, relationships and rules for the agent |
 | Decision layer | Model + company map + live navigation + operating system |
 | DRI | Directly Responsible Individual: the one person accountable for an outcome |
+| Ontology-driven agent | An agent whose queries and actions are checked against the entities, relationships and constraints of the business |
 | MCP | Model Context Protocol: a standard way to connect agents to business systems |
 | Outcome contract | Population, baseline, target, owner, counter-metric |
 | TCO | Total cost of ownership over three years |

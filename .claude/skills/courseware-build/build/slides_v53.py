@@ -301,7 +301,7 @@ T1_QUIZ = [
 ]
 
 def t1_hunt(D):
-    quote(D, "Start with the pain, not the platform.", kicker="Topic 1 · Activity 1")
+    quote(D, "Point your first AI agent at the pain, not at the platform.", kicker="Topic 1 · Activity 1")   # v56: maxims about AI agents too
     h = B.PAIN_HUNT
     handson(D, "Topic 1 · Activity 1 · Hands-on", "Pain-Point Hunt: Three Time-Sinks, One Vote",
             "Before any canvas: find the work that wastes the most hours. That is where an agent earns its keep.",
@@ -309,7 +309,7 @@ def t1_hunt(D):
 
 # ---------------------------------------------------------------- Topic 2 · Prove
 def t2_open(D):
-    quote(D, "Success isn’t about building the most sophisticated system. It’s about building the right system for your needs.",
+    quote(D, "Success in the LLM space isn’t about building the most sophisticated system. It’s about building the right system for your needs.",
           "Anthropic, “Building Effective Agents”, December 2024", kicker="Topic 2 · Prove",
           note="Source: https://www.anthropic.com/research/building-effective-agents (19 Dec 2024; original: 'Success in the LLM space isn't about ...'; checked 23 Nov 2026). Point: prove the simplest agent that fixes one process against a baseline before anyone buys a platform.")
     poll(D, "Topic 2 · Prove", "AI Promises Greater Efficiency. Has It Delivered That for You?",

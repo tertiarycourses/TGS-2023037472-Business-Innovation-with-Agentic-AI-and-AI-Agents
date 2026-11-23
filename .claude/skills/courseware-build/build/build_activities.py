@@ -46,6 +46,12 @@ def lab_html(L):
          '<div class="note"><b>Before you start.</b> Use the current fill-in prompts for this edition. '
          'Download <b>activities/prompts.html</b> from the LMS course materials or the course Activities folder and open it in a browser. Type your organisation once; it fills every prompt. Replace every <span class="b">[blank]</span> before you paste into Meta Muse. '
          'Muse drafts; your group decides. Never put personal data (NRIC, phone numbers, customer names) on a shared board.</div>']
+    q, pts = B.PADLET_TALK[L['n']]   # v56: team padlet talk opens the group work
+    h.append(f'<div class="note"><b>Start here: team padlet discussion (15 min, as a group).</b> {e(q)} Join your team padlet at '
+             '<b>alfredang.github.io/padlet</b> with your team code and your name, post one idea per card in this topic\'s column, then build the activity board together.<ol>'
+             + ''.join(f'<li>{e(x)}</li>' for x in pts) + '</ol>'
+             + ' · '.join(f'<b>Team {e(t)}</b> {c}' for t, c in B.PADLET_TEAMS) + '</div>')
+    h.append(qr_html([(f'Team {t} · {c}', B.PADLET_URL + c) for t, c in B.PADLET_TEAMS]))
     if L["n"] == 1:
         h.append('<h2>Earlier in Topic 1: Mini Activity — Try Meta Muse (20 min)</h2><p>Do this just after the agent introductions. No PP screenshot is required for this mini activity.</p>')
         for i, step in enumerate(B.MINI_MUSE["steps"]):

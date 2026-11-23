@@ -1,3 +1,10 @@
+## v56 · 23 November 2026
+
+- Topic 3 Part D (L): ontology-driven agents. Two new slides: the loop (user intent, query generation, ontology check, valid result or machine-readable feedback that sends the agent back to rewrite) with the three parts of an ontology (entities, relationships, constraints), and Meridian's "same question, two agents" example, where only the ontology-driven agent gets the urgent-SLA list right and a constraint blocks an uncertified dispatch. The Topic 2 company map is presented as the learner's ontology; Palantir's Ontology and Microsoft Fabric IQ (Ignite, Nov 2025) are the real-world examples. LG section and glossary row added.
+- Five team padlets on alfredang.github.io/padlet (Catalyst W2GQC7, Horizon XBMF8X, Momentum 5APT8X, Pioneer JRSUDS, Quantum B39XG6). Each activity's group work opens with a 15-minute team discussion: Topic 1 what AI agents can do for the business, Topic 2 which action plan to focus on, Topic 3 org change, the DRI and ontology. A slide with every team's QR code and room code opens Activities 1, 2 and 3; the Instructions PDFs, LG and LP carry the same. Activity minutes and the timetable are unchanged.
+- Quotes: all are about AI agents or AI transformation and no older than three years. Mollick's general "Be the human in the loop" (2024) is replaced by Andy Jassy's 17 Jun 2025 message to Amazon staff on generative AI and agents.
+- 243 slides. LP, LG, FG v18 and AP v20 aligned. Assessment papers v44 unchanged.
+
 ## v55 · 23 November 2026
 
 - Topic 3 reordered so the change lasts. It now opens with the future organisation: fewer layers, mixed teams of people and agents, and projects driven by DRIs (new slide), then Meridian's outcome org chart. The DRI is taught in three new pages that replace the one-card concept: the definition (singular, accountable, empowered; Apple coined the term, GitLab runs its handbook on it), Meridian's DRI charter (outcome, rights, stop button, boundaries, rhythm, backup) and what a DRI does and does not do. WA Q5 asks for the role of the DRI.

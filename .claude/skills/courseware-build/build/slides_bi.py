@@ -758,6 +758,8 @@ def topic1(D, C, mark):
     # --- Activity 1 Part A, steps 1-3 (Muse): after all Topic 1 content (owner, v48: activities end each topic)
     mark("labs1")
     N.t1_hunt(D)
+    import slides_v54 as S6
+    S6.padlet_teams(D, 1)   # v56 (owner): 15-min team padlet talk, then Activity 1 as a group
     L1 = B.LAB[1]
     icons(D, "Topic 1 · Activity 1", "Groups of 3-5: Build Your Company's BMC", [
         ("users", "Form a group", "3-5 learners; choose one member's company"),
@@ -1225,6 +1227,8 @@ def topic2(D, C, mark):
     N.quiz(D, 2, N.T2_QUIZ)
     mark("act2a")
     L2 = B.LAB[2]
+    import slides_v54 as S6
+    S6.padlet_teams(D, 2)
     activity_intro(D, "Topic 2 · Activity 2", c2, C)
     lab_overview(D, L2)
     for i in range(2): step_slide(D, L2, i)
@@ -1446,9 +1450,11 @@ def topic3(D, C, mark):
         source="Brynjolfsson, Li & Raymond, Generative AI at Work, Quarterly Journal of Economics 140(2), 2025 (NBER w31161)",
         url="https://academic.oup.com/qje/article/140/2/889/7990658")
     mark("t3judge")
-    N.quote(D, "Be the human in the loop.", "Ethan Mollick, Co-Intelligence: Living and Working with AI, 2024",
-            kicker="Topic 3 · A · AI training · keep people judging",
-            note="Principle 2 of the four rules in Mollick's Co-Intelligence (Portfolio, 2024); see https://www.gsb.stanford.edu/insights/co-intelligence-ai-masterclass-ethan-mollick (checked 23 Nov 2026). Point: an agent's output is a draft until a person who knows the work checks it.")
+    # v56 (owner): every quote is about AI agents / AI transformation and at most 3 years old (Mollick 2024 general-AI line replaced)
+    N.quote(D, "Those who embrace this change, become conversant in AI, help us build and improve our AI capabilities internally and deliver for customers, will be well-positioned to have high impact and help us reinvent the company.",
+            "Andy Jassy, Amazon CEO, message to employees on generative AI and agents, June 2025",
+            kicker="Topic 3 · A · AI training",
+            note="Source: https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-on-generative-ai (17 Jun 2025; the same message says agents will change how work is done; checked 23 Nov 2026). Point: training is how staff move from doing the work to directing and checking agents; the next slide shows what happens to judgement if they stop checking.")
     s = bignums(D, "Topic 3 · A · AI training", "Judgement Is a Muscle. Use It or Lose It.", [
         ("−6 pts", "adenoma detection", "28.4% → 22.4% in colonoscopies without AI, after routine AI use"),
         ("~80%", "followed the wrong AI", "When people asked the AI and it was planted wrong (Wharton, Study 1)"),
@@ -1486,6 +1492,8 @@ def topic3(D, C, mark):
     # --- Part D: build AI into the workflow and processes (L), then Evaluate and govern (E)
     mark("t3loop")
     N.t3_loop(D)
+    import slides_v54 as S6
+    S6.ontology(D)   # v56 (owner): ontology-driven agents: the company map checks every agent query and action
     hubbig(D, "Topic 3 · L · Loop information", "Information Flows Through the DRI, Not Up Ten Layers", "DRI + agents", [
         ("star", "Sponsor", "Monthly one-page dashboard"), ("users", "Staff", "Weekly review and Q&A"), ("smile", "Clients", "Faster updates, same people"),
         ("robot", "Agents", "Daily 8:00 exceptions brief"), ("lightbulb", "Idea pipeline", "Anyone posts; best get a DRI"), ("shield", "Risk & DPO", "Audit trail on demand")],
@@ -1539,6 +1547,8 @@ def topic3(D, C, mark):
     # --- Activity 3 Part B: the SCALE board
     mark("act3")
     L3 = B.LAB[3]
+    import slides_v54 as S6
+    S6.padlet_teams(D, 3)
     activity_intro(D, "Topic 3 · Activity 3", c4, C)
     lab_overview(D, L3)
     step_slide(D, L3, 1)

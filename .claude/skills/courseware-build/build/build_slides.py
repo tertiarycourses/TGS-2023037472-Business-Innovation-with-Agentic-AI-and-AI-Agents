@@ -58,7 +58,7 @@ cards(D, "Housekeeping", "Ground Rules", [
     ("75% attendance", "Required for funding.", "check"), ("Hands-on", "Do every activity yourself.", "tool")], cols=3, bottom=5.9, desc_pt=16)
 
 T.big_statement(D, "Why you are here", "Stop piloting AI.\nStart running the business on it.", C.PITCH, dark=True)
-N.quote(D, "In 2025, we may see the first AI agents “join the workforce” and materially change the output of companies.",
+N.quote(D, "…in 2025, we may see the first AI agents “join the workforce” and materially change the output of companies.",
         "Sam Altman, OpenAI CEO, “Reflections”, January 2025", kicker="Before we start",
         note="Source: https://blog.samaltman.com/reflections (checked 23 Nov 2026; the original opens 'We believe that, in 2025, ...'). Ask: has it happened in your company yet? This course is how you make it happen on purpose.")
 # v53: the learner plays the AI consultant inside their own company

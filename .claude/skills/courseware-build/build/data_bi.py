@@ -315,14 +315,14 @@ SCHEDULE = {
   ('10:45', '11:00', 15, 'break', 'Tea break', 1),
   ('11:00', '11:35', 35, 'topic', 'Topic 1 (Part B) - six always-on agents, one page each; Singapore and AgentSea; five ways humans and agents team up; use cases by function', 1),
   ('11:35', '12:10', 35, 'topic', 'Topic 1 (Part C) - Meridian scenario; nine-block BMC; five capability gaps; value levers and opportunity scoring; completed Meridian BMC; knowledge check', 1),
-  ('12:10', '12:40', 30, 'activity', 'Activity 1 (Part A) - pain-point hunt, then groups of 3-5 choose one company, join one board and draft its BMC', 1),
+  ('12:10', '12:40', 30, 'activity', 'Activity 1 (Part A) - pain-point hunt; 15-min team padlet discussion (what AI agents can do); groups of 3-5 choose one company, join one board and draft its BMC', 1),
   ('12:40', '13:40', 60, 'lunch', 'Lunch break', 0),
   ('13:40', '14:30', 50, 'activity', 'Activity 1 (Part B) - verify and refine all nine BMC blocks, score opportunities and capture individual PP Task 1 evidence', 1),
   ('14:30', '14:55', 25, 'topic', 'Topic 2 (Part A) - room poll; pilot purgatory; Step 1 set the goal and baseline; Step 2 mine the process from dormant data and event logs', 2),
   ('14:55', '15:55', 60, 'topic', 'Topic 2 (Part B) - Step 3 plug in the agents: the decision layer and company map in plain English, business briefing, policies into permissions, patterns, build or buy', 2),
   ('15:55', '16:10', 15, 'break', 'Tea break', 2),
   ('16:10', '17:10', 60, 'topic', 'Topic 2 (Part C) - test before you trust: test set, four checks, shadow to autonomy; Step 4 name the owner; Step 5 run and evaluate the pilot; Meridian plan; knowledge check', 2),
-  ('17:10', '18:15', 65, 'activity', 'Activity 2 (Part A) - groups of 3-5 choose a company, mine its process and write the company map the agent needs', 2),
+  ('17:10', '18:15', 65, 'activity', 'Activity 2 (Part A) - 15-min team padlet discussion (which action plan to focus on); groups of 3-5 choose a company, mine its process and write the company map the agent needs', 2),
   ('18:15', '18:30', 15, 'recap', 'Day 1 recap, Q&A and PM digital attendance', 2),
  ],
  2: [
@@ -337,7 +337,7 @@ SCHEDULE = {
   ('14:10', '14:35', 25, 'topic', 'Topic 3 (Part C) - AI training that builds ability; progressive change; buy-in (story, stakeholders, ADKAR); C-suite and managers lead by example', 3),
   ('14:35', '15:05', 30, 'topic', 'Topic 3 (Part D) - L build AI into the workflow and processes; E evaluate and govern: policy stack, access, token cost drill, agent risks, six security principles; Meridian SCALE board; knowledge check', 3),
   ('15:05', '15:20', 15, 'break', 'Tea break', 3),
-  ('15:20', '16:15', 55, 'activity', "Activity 3 (Part B) - Muse drafts the change messages and the SCALE board; the group refines it and judges the decision (PP Task 3 evidence)", 3),
+  ('15:20', '16:15', 55, 'activity', "Activity 3 (Part B) - 15-min team padlet discussion (org change, DRI, ontology); Muse drafts the change messages and the SCALE board; the group refines it and judges the decision (PP Task 3 evidence)", 3),
   ('16:15', '16:30', 15, 'assess', 'Course recap and Briefing for Assessment', 3),
   ('16:30', '17:30', 60, 'assess', 'Written Assessment (WA-SAQ) - 1 hour, open book; TRAQOM survey and assessment attendance first', -1),
   ('17:30', '18:30', 60, 'assess', 'Practical Performance (PP) - 1 hour, open book; paste the group board screenshots; upload on the LMS or hand in a printed copy', -1),
@@ -385,6 +385,26 @@ _L3["minutes"] = 70
 CANVAS["change"]["minutes"] = 70
 _L3["goal"] = "Score your company's AI readiness, then use SCALE (Story, Commanders, Augment people, Loop information, Evaluate) to plan the company-wide change; Meta Muse drafts, your group decides."
 LAB = {L['n']: L for L in LABS}
+
+# --- v56 (owner, 23 Nov 2026): five team padlets, one 15-min group discussion at the start of each activity (inside its minutes).
+# Rooms on alfredang.github.io/padlet (Firestore padlet-7c3eb), owned by the trainer's Google account; each room has one
+# column per topic with the questions pinned, plus a column for board screenshots.
+PADLET_URL = "https://alfredang.github.io/padlet/?room="
+PADLET_TEAMS = [("Catalyst", "W2GQC7"), ("Horizon", "XBMF8X"), ("Momentum", "5APT8X"), ("Pioneer", "JRSUDS"), ("Quantum", "B39XG6")]
+PADLET_TALK = {
+    1: ("What business innovation can AI agents do for us?",
+        ["Which tasks in your companies could an AI agent take on today?",
+         "Which block of the business model would it change most: customers, channels, activities or costs?",
+         "Which idea moves a number your boss already tracks? That one goes on your Activity 1 BMC."]),
+    2: ("Which action plan should we focus on?",
+        ["Which process should your 90-day pilot start with, and why that one?",
+         "What must be true at day 30 for you to keep going?",
+         "Who is the DRI, and what can they decide without asking? Carry the answers into your Activity 2 plan."]),
+    3: ("Org change, DRI and ontology: how do we drive AI transformation?",
+        ["What does your organisation look like with fewer layers and mixed teams of people and agents?",
+         "Which outcome needs a DRI first, and which business rules must agents never get wrong (your ontology)?",
+         "What will stall the change, and who must lead by example? Carry the answers into your SCALE board."]),
+}
 
 # --- Topic 3 evidence (owner's attachment, v53). Each figure is re-checked before the slide ships; see notes on each slide.
 READINESS_DIMS = [  # (name, what a high score looks like), each scored /20 (four statements x 1-5)

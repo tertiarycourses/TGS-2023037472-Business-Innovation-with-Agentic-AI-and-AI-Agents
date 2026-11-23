@@ -413,3 +413,130 @@ def future_org(D):
         text(s, x + 0.75, 5.62, w - 0.85, 0.65, d, 11, SOFT if i == 2 else MUTED, minpt=8.5, lh=1.03)
     tip(D, s, "This is where Topic 3 ends up. First, Meridian's version of it; then the challenges that stop most companies getting there.", y=6.42)
     return s
+
+
+# --- v56 (owner, 23 Nov 2026): ontology-driven agents, Topic 3 Part D (L: build AI into the workflow) ---
+KO = "Topic 3 · L · Ontology-driven agents"
+
+
+def _node(s, x, y, w, h, ic, title, sub, fill, col):
+    box(s, x, y, w, h, fill=fill, line=col, lw=1.25, shape=K.MSO_SHAPE.ROUNDED_RECTANGLE, radius=0.12)
+    icon(s, ic, x + 0.1, y + (h - 0.4) / 2, 0.4, fill=col)
+    text(s, x + 0.56, y + 0.06, w - 0.62, h - 0.12 if not sub else 0.34, title, 11.5, INK, bold=True, anchor="m" if not sub else "t",
+         minpt=9, lh=1.0, autofit=False)
+    if sub:
+        text(s, x + 0.56, y + 0.38, w - 0.62, h - 0.42, sub, 8.5, MUTED, minpt=7, lh=1.0, autofit=False)
+
+
+def ontology_loop(D):
+    s = D.new(); header(D, s, KO, "Ontology-Driven Agents: Your Company Map Checks Every Move",
+                        "A plain agent writes a query that looks right and is still wrong. An ontology-driven agent checks it against how your business fits together.")
+    # the loop diagram (redrawn): ontology on top feeds query generation and enforcement
+    card(s, 0.6, 2.3, 7.9, 3.95)
+    G, Y, P, R, B_ = "E8F3EC", "FBF1DC", "EFEAF6", "F8E6E1", "E6EEF7"
+    _node(s, 2.75, 2.45, 3.4, 0.72, "network", "Ontology", "Entities · relationships · constraints", P, PLUM)
+    _node(s, 0.75, 3.75, 1.55, 0.72, "user", "User intent", None, B_, "4A78A8")
+    _node(s, 2.65, 3.75, 1.75, 0.72, "brain", "Query generation", None, "E3F2F1", TEAL)
+    _node(s, 4.65, 3.75, 2.0, 0.72, "shield", "Ontology check", "Validation and control", Y, AMBER)
+    _node(s, 7.15, 3.75, 1.2, 0.72, "chart", "Result", None, G, "3F8F5A")
+    _node(s, 4.55, 5.15, 2.2, 0.72, "chat", "Feedback", "Exact rule broken, machine-readable", R, RED)
+    line(s, 4.45, 3.17, 4.45, 3.4, PLUM, 1.25, dash=True)          # ontology feeds both boxes
+    line(s, 3.52, 3.4, 5.65, 3.4, PLUM, 1.25, dash=True)
+    line(s, 3.52, 3.4, 3.52, 3.75, PLUM, 1.25, arrow=True, dash=True)
+    line(s, 5.65, 3.4, 5.65, 3.75, PLUM, 1.25, arrow=True, dash=True)
+    line(s, 2.3, 4.11, 2.65, 4.11, CHAR, 1.5, arrow=True)
+    line(s, 4.4, 4.11, 4.65, 4.11, CHAR, 1.5, arrow=True)
+    line(s, 6.65, 4.11, 7.15, 4.11, "3F8F5A", 1.75, arrow=True)
+    text(s, 6.62, 3.82, 0.55, 0.25, "Valid", 8.5, "3F8F5A", bold=True, align="c", autofit=False)
+    line(s, 5.65, 4.47, 5.65, 5.15, RED, 1.5, arrow=True)
+    text(s, 5.72, 4.65, 0.8, 0.25, "Invalid", 8.5, RED, bold=True, autofit=False)
+    line(s, 4.55, 5.51, 3.52, 5.51, RED, 1.5)                      # feedback returns to query generation
+    line(s, 3.52, 5.51, 3.52, 4.47, RED, 1.5, arrow=True)
+    text(s, 0.8, 5.25, 2.6, 0.85, "The agent fixes its own query until the ontology accepts it. Nothing wrong reaches you.", 10.5, MUTED,
+         minpt=8.5, lh=1.05)
+    # definition
+    card(s, 8.75, 2.3, 3.95, 2.2, fill=CHAR)
+    text(s, 9.0, 2.42, 3.5, 0.3, "ONTOLOGY-DRIVEN AGENT", 10, ACC, bold=True, autofit=False)
+    text(s, 9.0, 2.78, 3.5, 1.65, "An AI agent that reasons, writes queries and acts through a structured model of your business, "
+         "not through raw tables or patterns alone.", 14, WHITE, font=SERIF, minpt=11, lh=1.05)
+    parts = [("ENTITIES", "What exists: client, building, contract, job, technician"),
+             ("RELATIONSHIPS", "How they link: a job sits in a building under one contract"),
+             ("CONSTRAINTS", "What must hold: 'closed' needs the client's confirmation")]
+    for i, (h, d) in enumerate(parts):
+        y = 4.62 + i * 0.55
+        card(s, 8.75, y, 3.95, 0.48, shadow=False)
+        text(s, 8.88, y + 0.05, 1.35, 0.38, h, 8.5, PLUM, bold=True, anchor="m", autofit=False)
+        text(s, 10.2, y + 0.03, 2.45, 0.42, d, 9.5, INK, anchor="m", minpt=7.5, lh=1.0)
+    tip(D, s, "Your Topic 2 company map is your ontology. Palantir AIP and Microsoft Fabric IQ (Nov 2025) put one under their agents.", y=6.38)
+    text(s, 0.6, 6.82, 12.1, 0.22, "Sources: Palantir Foundry docs, The Ontology system · Microsoft Fabric blog, Introducing Microsoft Fabric IQ (Nov 2025)",
+         8, MUTED, autofit=False)
+    return s
+
+
+def ontology_meridian(D):
+    s = D.new(); header(D, s, KO + " at Meridian", "Same Question, Two Agents: Only One Gets It Right",
+                        "The coordinator asks: “Which urgent jobs breached their response promise this week?” Both agents answer in seconds.")
+    # left: plain agent
+    card(s, 0.6, 2.3, 5.85, 3.2)
+    text(s, 0.85, 2.42, 5.4, 0.3, "PLAIN AGENT · READS THE TABLES", 10, RED, bold=True, autofit=False)
+    steps_l = [("Counts a job as done when status = 'done'", "The technician ticked it; the client never confirmed."),
+               ("Applies the 4-hour promise to every urgent job", "Only Premium contracts carry 4 hours; Standard has 8."),
+               ("Returns 19 jobs, neatly formatted", "Looks valid. Twelve are wrong. Nobody can tell.")]
+    for i, (a, b) in enumerate(steps_l):
+        y = 2.82 + i * 0.86
+        circle(s, 0.85, y + 0.06, 0.4, RED)
+        text(s, 0.85, y + 0.06, 0.4, 0.4, str(i + 1), 12, WHITE, bold=True, align="c", anchor="m", autofit=False)
+        text(s, 1.42, y, 4.9, 0.36, a, 12.5, INK, bold=True, minpt=9.5, lh=1.0)
+        text(s, 1.42, y + 0.36, 4.9, 0.4, b, 11, MUTED, minpt=8.5, lh=1.0)
+    # right: ontology-driven agent
+    card(s, 6.85, 2.3, 5.85, 3.2, fill=CHAR)
+    text(s, 7.1, 2.42, 5.4, 0.3, "ONTOLOGY-DRIVEN AGENT · READS THE COMPANY MAP", 10, TEAL, bold=True, autofit=False)
+    steps_r = [("Drafts the same query; the check rejects it", "Feedback: “Closed = technician sign-off AND client confirmation.”"),
+               ("Rewrites it through the links", "Job → building → contract → SLA tier: 4 h Premium, 8 h Standard."),
+               ("Returns 7 jobs, each traceable", "Every row shows the rule it was checked against.")]
+    for i, (a, b) in enumerate(steps_r):
+        y = 2.82 + i * 0.86
+        circle(s, 7.1, y + 0.06, 0.4, TEAL)
+        text(s, 7.1, y + 0.06, 0.4, 0.4, str(i + 1), 12, WHITE, bold=True, align="c", anchor="m", autofit=False)
+        text(s, 7.67, y, 4.9, 0.36, a, 12.5, WHITE, bold=True, minpt=9.5, lh=1.0)
+        text(s, 7.67, y + 0.36, 4.9, 0.4, b, 11, SOFT, minpt=8.5, lh=1.0)
+    # bottom: actions are checked too + what to do on Monday
+    w = (12.1 - 0.3) / 3
+    rows = [("lock", "Actions, not just answers", "The agent tries to send an uncertified technician to a lift job. The constraint blocks it before dispatch."),
+            ("file", "Written by the business", "Ops and account managers own the definitions. IT encodes them; the DRI signs off each change."),
+            ("history", "Versioned like the SOP", "When a contract tier changes, update the map once; every agent follows it next morning.")]
+    for i, (ic, t, d) in enumerate(rows):
+        x = 0.6 + i * (w + 0.15)
+        card(s, x, 5.65, w, 1.05)
+        icon(s, ic, x + 0.16, 5.78, 0.44, fill=ACC)
+        text(s, x + 0.72, 5.72, w - 0.82, 0.34, t, 13.5, INK, bold=True, font=SERIF, autofit=False)
+        text(s, x + 0.72, 6.05, w - 0.82, 0.62, d, 10.5, MUTED, minpt=8.5, lh=1.03)
+    text(s, 0.6, 6.82, 12.1, 0.22, "Meridian Services Pte Ltd is fictitious; all figures are synthetic.", 8, MUTED, autofit=False)
+    return s
+
+
+def ontology(D):
+    ontology_loop(D)
+    ontology_meridian(D)
+
+
+# --- v56 (owner, 23 Nov 2026): five team padlets; QR + room code on the slide that opens each activity's group work
+def padlet_teams(D, topic):
+    import data_bi as B
+    from slides_bi import qr
+    q, pts = B.PADLET_TALK[topic]
+    s = D.new(); header(D, s, f"Topic {topic} · Activity {topic} · Team padlet · 15 min", "Join Your Team Padlet: Talk First, Then Build",
+                        f"Groups of 3-5, one padlet per team: 15 minutes of talk, then build Activity {topic} together.")
+    g = 0.18; w = (12.1 - 4 * g) / 5; top = 2.3
+    for i, (team, code) in enumerate(B.PADLET_TEAMS):
+        x = 0.6 + i * (w + g); dk = i % 2 == 0
+        card(s, x, top, w, 2.95, fill=CHAR if dk else WHITE)
+        text(s, x + 0.1, top + 0.12, w - 0.2, 0.42, "Team " + team, 17, WHITE if dk else INK, bold=True, font=SERIF, align="c", autofit=False)
+        qr(s, B.PADLET_URL + code, x + (w - 1.55) / 2, top + 0.62, 1.55, dark=dk)
+        text(s, x + 0.1, top + 2.3, w - 0.2, 0.5, code, 22, ACC, bold=True, font=MONO, align="c", anchor="m", autofit=False)
+    card(s, 0.6, 5.42, 12.1, 0.95, shadow=False)
+    text(s, 0.82, 5.5, 11.6, 0.3, "DISCUSS · 15 MIN · " + q.upper(), 9.5, ACC, bold=True, autofit=False)
+    for k, ptxt in enumerate(pts):
+        text(s, 0.82 + k * 3.95, 5.8, 3.75, 0.55, f"{k + 1}. {ptxt}", 11, INK, minpt=8.5, lh=1.02)
+    tip(D, s, "Scan the QR or key in your team code at alfredang.github.io/padlet. One idea per card; board screenshots go in the last column.", y=6.5)
+    return s

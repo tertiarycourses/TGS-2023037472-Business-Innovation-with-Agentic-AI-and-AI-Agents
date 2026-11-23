@@ -231,6 +231,12 @@ bl(B.PAIN_HUNT["body"])
 prompt(B.PAIN_HUNT["prompt"])
 p("Check: " + B.PAIN_HUNT["check"])
 h2("Activity 1 — Your Company's BMC in Groups of 3-5 (PP Task 1)")
+h3("Team Padlets: 15 Minutes of Talk Before Each Activity")
+p("Each activity opens with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. "
+  "Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. "
+  "Post a screenshot of each finished board in the last column.")
+tbl(["Team", "Padlet code", "Link"], [("Team " + t, c, B.PADLET_URL + c) for t, c in B.PADLET_TEAMS], [1.4, 1.2, 4.0])
+tbl(["Activity", "Discuss for 15 minutes"], [(f"Activity {n}", B.PADLET_TALK[n][0] + " " + " ".join(B.PADLET_TALK[n][1])) for n in (1, 2, 3)], [1.2, 5.4])
 p("Form a group of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.")
 X.append(("canvas", "opportunity"))
 
@@ -492,6 +498,29 @@ ol(["Map the process (Step 2 of your plan).", "Write the playbook (instructions,
     "Version and own it: an owner, a backup owner, a change log and a review date."])
 p("Keep an AI capability register, one row per agent, reviewed monthly with the risk owner. An agent without an owner is switched off.")
 tbl(["Process", "Agent", "Owner (DRI)", "Backup", "Playbook", "Controls", "Measure"], B.CAPABILITY_REGISTER, [0.9, 0.95, 0.95, 0.85, 1.05, 1.15, 0.85])
+h3("Ontology-Driven Agents: Your Company Map Checks Every Move")
+p("An ontology-driven agent reasons, writes queries and takes actions through a structured model of your business, its ontology, "
+  "instead of working on raw tables or statistical patterns alone. The ontology holds three things: the entities that exist (client, "
+  "building, contract, job, technician), the relationships between them (a job sits in a building under one contract) and the "
+  "constraints that must hold (a job is closed only when the technician signs off and the client confirms). The company map you "
+  "wrote in Topic 2 is your ontology in plain English.")
+p("A plain agent can write a query that follows the syntax and still returns the wrong answer, because it misreads how the records "
+  "relate. This is common in enterprise systems, where business logic is not visible from the table structure. An ontology-driven "
+  "agent runs a loop: user intent, query generation, an ontology check (validation and control), then either a valid result or "
+  "structured, machine-readable feedback naming the rule that was broken, which the agent uses to rewrite its query. The same check "
+  "applies to actions: a constraint can stop the agent before it acts, not only before it answers.")
+tbl(["", "Plain agent", "Ontology-driven agent"], [
+    ("Meridian asks", "Which urgent jobs breached their response promise this week?", "The same question"),
+    ("What it does", "Counts status = done as closed; applies 4 hours to every urgent job", "The check rejects the first query; it rewrites it through job, building, contract and SLA tier"),
+    ("Result", "19 jobs, 12 of them wrong, and it looks valid", "7 jobs, each showing the rule it was checked against"),
+    ("Actions", "May send an uncertified technician to a lift job", "The certification constraint blocks the dispatch")], [1.0, 2.6, 2.9])
+p("Keep the ontology owned by the business: operations and account managers write the definitions, IT encodes them, and the DRI "
+  "signs off each change. Version it like the SOP, so that when a contract tier changes you update the map once and every agent "
+  "follows it. Vendors build this in: Palantir AIP agents act on the Palantir Ontology of objects, links and actions, and "
+  "Microsoft Fabric IQ (announced at Ignite, November 2025) lets companies define an ontology that grounds their agents in business "
+  "meaning and live data. Meridian is fictitious; its figures are synthetic.")
+src("Palantir Foundry documentation, The Ontology system: https://www.palantir.com/docs/foundry/architecture-center/ontology-system/ ; "
+    "Microsoft Fabric blog, Introducing Microsoft Fabric IQ (Nov 2025): https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/from-data-platform-to-intelligence-platform-introducing-microsoft-fabric-iq/5172484")
 p("In an AI-native firm, information flows through the DRI and the decision layer instead of up and down ten layers. Set an operating "
   "rhythm: a daily 8:00 exceptions brief from the agents, a weekly DRI review with the team, a monthly one-page dashboard for the sponsor. "
   "Communicate the change per stakeholder (what changes, what does not, who to ask), and run an idea pipeline where anyone can post an "
@@ -572,14 +601,14 @@ tbl(["Panel", "The CEO's question", "Where the numbers come from"], [
     ("Rollout", "How far have we rolled out?", "Teams or sites live vs planned"),
     ("Guardrails", "Is it safe?", "Actions blocked, escalations and incidents this month"),
     ("Decisions", "What do we decide?", "Decision, owner, due date and go / hold / stop")], [1.4, 1.7, 3.6])
-h2("Worked Example: Meridian’s Dashboard")
+h3("Worked Example: Meridian’s Dashboard")   # v56: H3 keeps the TOC on one page
 p("Meridian’s dashboard shows the day-90 proof on one page: 10.7 minutes per request against a target of 11, quality 95.1%, complaints 1.7%, adoption 77.5%, "
   "10 of 30 buildings live, 14 actions blocked by guardrails and this week’s decisions with their owners. Meridian is fictitious and every figure is synthetic. "
   "Download meridian-ai-dashboard.html from the course Activities folder and open it in a browser.")
 img(os.path.join(IMG, "screenshots", "meridian-ai-dashboard.png"), "Meridian AI transformation dashboard (fictitious example)", 6.0)
 bl(["Before you share: every number has a source and a date; targets match the plan; no personal data, only totals and rates; every decision has an owner.",
     "Share with Sites (or your company's approved tool) only after the accountable owner approves who can see it."])
-h2("Create Your Stakeholder Page With Codex")
+h3("Create Your Stakeholder Page With Codex")
 ol(["Bring in the change story, stakeholder map, messages, approvals and feedback routes from your SCALE board. Add evidence, owners and milestones from the Activity 2 plan.",
     "Give Codex one promise, each audience’s questions and its next action. Ask for a mobile-friendly page with the rollout timeline, human approval gates, results and feedback routes.",
     "Verify figures, claims, contact routes and accessibility on a phone and desktop. Get approval from the owner of the rollout and agree who should see the page.",
@@ -594,7 +623,7 @@ h1("Glossary")
 tbl(["Term", "Meaning"], [("Agentic AI", "A goal-directed AI system that plans, acts with tools, checks results and repeats"),
      ("AI agent", "One AI worker: a model with tools, memory and instructions"), ("Always-on agent", "An agent that keeps running and watching between your messages"),
      ("Dormant data", "Unused operational records: calls, chats, tickets, logs, edit history"), ("Company map", "A plain-English glossary of business terms, records, relationships and rules for the agent"),
-     ("Decision layer", "Model + company map + live navigation + operating system"), ("DRI", "Directly Responsible Individual: the one person accountable for an outcome"),
+     ("Decision layer", "Model + company map + live navigation + operating system"), ("DRI", "Directly Responsible Individual: the one person accountable for an outcome"), ("Ontology-driven agent", "An agent whose queries and actions are checked against the entities, relationships and constraints of the business"),
      ("MCP", "Model Context Protocol: a standard way to connect agents to business systems"), ("Outcome contract", "Population, baseline, target, owner, counter-metric"),
      ("TCO", "Total cost of ownership over three years"), ("Token", "The unit AI models are billed in; about 750 words per 1,000 tokens"),
      ("Test set", "Real, anonymised cases with agreed answers, used to test an agent before anyone relies on it"),
