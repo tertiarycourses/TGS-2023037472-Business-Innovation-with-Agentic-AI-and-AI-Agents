@@ -526,7 +526,7 @@ def padlet_teams(D, topic):
     from slides_bi import qr
     q, pts = B.PADLET_TALK[topic]
     s = D.new(); header(D, s, f"Topic {topic} · Activity {topic} · Team padlet · 15 min", "Join Your Team Padlet: Talk First, Then Build",
-                        f"Groups of 3-5, one padlet per team: 15 minutes of talk, then build Activity {topic} together.")
+                        f"You just saw Meridian fill each box. Talk for 15 minutes as a team of 3-5, then fill your own board.")   # v57: demo -> padlet -> activity
     g = 0.18; w = (12.1 - 4 * g) / 5; top = 2.3
     for i, (team, code) in enumerate(B.PADLET_TEAMS):
         x = 0.6 + i * (w + g); dk = i % 2 == 0
@@ -540,3 +540,62 @@ def padlet_teams(D, topic):
         text(s, 0.82 + k * 3.95, 5.8, 3.75, 0.55, f"{k + 1}. {ptxt}", 11, INK, minpt=8.5, lh=1.02)
     tip(D, s, "Scan the QR or key in your team code at alfredang.github.io/padlet. One idea per card; board screenshots go in the last column.", y=6.5)
     return s
+
+
+# ------------------------------------------------------------------ v57 (owner, 23 Nov 2026): the six AI Coaching profiles
+# One overview and one page per worried employee of the AI Coaching simulator (data_bi.COACH_PROFILES). Sarah's page keeps the
+# v54 worked-example title "From Campaign Producer to Marketing Owner".
+KC = "Topic 3 · A · Job redesign · AI coaching"
+
+
+def coach_overview(D):
+    import data_bi as B
+    s = D.new(); header(D, s, KC + " · six profiles", "Six People, Six Fears, Six Jobs Worth Keeping",
+                        "Each fears the agent for a different reason. Each ends up owning a decision the agent cannot make.")
+    g = 0.2; w = (12.1 - 2 * g) / 3; h = 1.88
+    for i, p in enumerate(B.COACH_PROFILES):
+        x = 0.6 + (i % 3) * (w + g); y = 2.3 + (i // 3) * (h + 0.16); dk = i in (0, 4)
+        card(s, x, y, w, h, fill=CHAR if dk else WHITE)
+        icon(s, p["ic"], x + 0.22, y + 0.22, 0.55)
+        text(s, x + 0.92, y + 0.14, w - 1.05, 0.42, p["name"], 20, WHITE if dk else INK, bold=True, font=SERIF, autofit=False)
+        text(s, x + 0.92, y + 0.52, w - 1.05, 0.3, p["role"], 12, SOFT if dk else MUTED, autofit=False)
+        text(s, x + 0.22, y + 0.92, w - 0.44, 0.28, p["tension"].upper(), 9.5, ACC, bold=True, autofit=False)
+        text(s, x + 0.22, y + 1.2, w - 0.44, 0.6, "Owns: " + p["own_short"], 12.5,
+             WHITE if dk else INK, minpt=9, lh=1.02)
+    tip(D, s, "One page per person follows: what they say, the strength to build on, the job they own and a safe two-week experiment.", y=6.45)
+    return s
+
+
+def coach_profile(D, i, p):
+    s = D.new(); header(D, s, f"{KC} · profile {i} of 6 · {p['name']}", p["title"], p["sub"])
+    top, hh = 2.35, 3.95
+    card(s, 0.6, top, 4.5, hh, fill=CHAR)
+    circle(s, 0.85, top + 0.25, 0.85, ACC)
+    text(s, 0.85, top + 0.25, 0.85, 0.85, p["name"][0], 30, WHITE, bold=True, font=SERIF, align="c", anchor="m", autofit=False)
+    text(s, 1.9, top + 0.24, 3.05, 0.45, p["name"], 22, WHITE, bold=True, font=SERIF, autofit=False)
+    text(s, 1.9, top + 0.7, 3.05, 0.35, p["role"], 12.5, SOFT, autofit=False)
+    text(s, 0.85, top + 1.32, 4.0, 0.28, "WHAT " + p["name"].upper() + " SAYS", 9.5, ACC, bold=True, autofit=False)
+    text(s, 0.85, top + 1.62, 4.0, 2.1, "\u201c" + p["says"] + "\u201d", 17, WHITE, font=SERIF, italic=True, minpt=11, lh=1.1)
+    rows = [("robot", "THE AGENT NOW DOES", p["agent"]),
+            ("star", "STRENGTH TO BUILD ON, IN " + p["name"].upper() + "'S OWN WORDS", "\u201c" + p["strength"] + "\u201d"),
+            ("flag", "THE JOB " + p["name"].upper() + " OWNS NOW", p["owns"]),
+            ("calendar", "SAFE EXPERIMENT", p["trial"])]
+    rh = (hh - 3 * 0.1) / 4
+    for k, (ic, lab, body) in enumerate(rows):
+        y = top + k * (rh + 0.1); hi = k == 2
+        card(s, 5.35, y, 7.35, rh, fill=CREAM if hi else WHITE, shadow=not hi)
+        icon(s, ic, 5.55, y + (rh - 0.5) / 2, 0.5, fill=TEAL if k == 1 else ACC)
+        text(s, 6.25, y + 0.08, 6.3, 0.26, lab, 9.5, ACC if k != 1 else TEAL, bold=True, autofit=False)
+        text(s, 6.25, y + 0.34, 6.3, rh - 0.4, body, 13.5, INK, minpt=9.5, lh=1.02)
+    tip(D, s, f"Practise this conversation: alfredang.github.io/AICoaching, Demo mode, choose {p['name']}. Fictional profile.", y=6.48)
+    return s
+
+
+def coach_profiles(D):
+    import data_bi as B
+    coach_overview(D)
+    for i, p in enumerate(B.COACH_PROFILES, 1):
+        s = coach_profile(D, i, p)
+        s.notes_slide.notes_text_frame.text = (f"Fictional profile from the AI Coaching simulator (github.com/alfredang/AICoaching, scenario '{p['name']}'). "
+            "Quote = the simulator's opening line, cut with ellipses. Safe experiment = course suggestion. "
+            + ("Worked example adapted from Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, page 9." if i == 1 else ""))

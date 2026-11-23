@@ -747,6 +747,10 @@ def topic1(D, C, mark):
     rich(s, 0.6, 5.2, 12.1, 1.2, [[("Example:  ", dict(color=ACC, bold=True, size=20, font=SERIF)),
                                    ("triage agent 5 × 4 × 4 = 80  ·  report agent 75  ·  fault predictor 24 → park it", dict(color=INK, size=20, font=SERIF))]])
     tip(D, s, "Set a veto: any score of 1 on data or risk stops the idea, whatever the total.", y=6.3)
+    N.quiz(D, 1, N.T1_QUIZ)   # v57 (owner): knowledge check first, then Meridian demo -> team padlet -> activity
+    fill_demo(D, 1, c1, "BMC block", {b["id"]: f"{b['example'][0][0]}. {b['example'][0][1]}" for b in c1["blocks"]}, [
+        ("Meridian Fills the Customer Side First", ["valueProps", "customerSeg", "customerRel", "channels"]),
+        ("Then the Engine Room: What Agents Do, Need and Cost", ["keyActivities", "keyResources", "keyPartners", "costStructure", "revenueStreams"])])
     meridian_shot(D, "Topic 1 · Meridian's completed BMC", "Meridian's Canvas: All Nine Blocks, Filled In",
         "A finished Activity 1 board for the fictitious Meridian. Open it on your phone and compare it with yours.", "meridian-bmc.png", 1, [
         ("Value first.", "Same-day answers, 24/7: the block every other block serves."),
@@ -754,15 +758,14 @@ def topic1(D, C, mark):
         ("A human stays.", "Complaints, refunds and premium clients keep a person.")])
     board(D, "Topic 1 · Meridian's completed BMC", c1, "Meridian's Canvas, Block by Block",
           "The first note of each block, readable. The live board holds three per block.", example=True)
-    N.quiz(D, 1, N.T1_QUIZ)
-    # --- Activity 1 Part A, steps 1-3 (Muse): after all Topic 1 content (owner, v48: activities end each topic)
+    # --- Activity 1 Part A: team padlet talk, pain-point hunt, then steps 1-3 (Muse) on the group board
     mark("labs1")
-    N.t1_hunt(D)
     import slides_v54 as S6
     S6.padlet_teams(D, 1)   # v56 (owner): 15-min team padlet talk, then Activity 1 as a group
+    N.t1_hunt(D)
     L1 = B.LAB[1]
     icons(D, "Topic 1 · Activity 1", "Groups of 3-5: Build Your Company's BMC", [
-        ("users", "Form a group", "3-5 learners; choose one member's company"),
+        ("users", "Stay in your padlet team", "Your 3-5 teammates choose one member's company"),
         ("building", "Create one board", "Leader selects Activity 1 and names the company"),
         ("login", "Everyone joins", "Use its Board ID or QR code and your name"),
         ("pen", "Create your BMC", "Fill all nine blocks; assess where agents help")], cols=4,
@@ -973,6 +976,17 @@ def app_page(D, a):
 MERIDIAN_DOWNLOADS = "https://drive.google.com/drive/folders/1A0P71IKdSMRUyAAwv0iNLsEo5bHWpbox"
 SITES_DOC = "https://learn.chatgpt.com/docs/sites"
 def demo_url(n): return f"{B.BCM_URL}?join=meridian-activity-{n}"
+
+
+def fill_demo(D, topic, canvas, box, fills, pages, sub=None):
+    """v57 (owner): every topic runs Meridian demo -> team padlet -> activity. The demo shows, box by box, what to decide and
+    what Meridian wrote. pages = [(title, [block ids])]; fills = {block id: Meridian's entry}."""
+    by = {b["id"]: b for b in canvas["blocks"]}
+    for title_, ids in pages:
+        table(D, f"Topic {topic} · Meridian demo · How to fill each {box}", title_,
+              [box[0].upper() + box[1:], "What to decide", "Meridian fills in"],
+              [(by[i]["title"], by[i]["prompt"], fills[i]) for i in ids], colw=[2.8, 3.7, 5.6],
+              sub=sub or "Watch Meridian fill every box. Next your team talks it through on the padlet, then fills its own board.")
 
 def meridian_scene(D, kicker, title, sub, facts, ask, ask_label):
     """Meridian scenario: four facts on the left, this topic's question for Meridian on the right."""
@@ -1213,9 +1227,13 @@ def topic2(D, C, mark):
     table(D, "Topic 2 · Step 5 · Evaluation rubric", "Use Meridian’s Scorecard to Decide What Happens Next",
           ["Decision", "Rule", "Meridian example"], B.PILOT_RUBRIC, colw=[1.65, 5.05, 5.4],
           sub="Review weekly. At day 90, evaluate handling time (18 to ≤11 min), complaints (≤2%) and the rework stop rule.")
-    # --- Meridian case briefing and Activity 2
+    N.quiz(D, 2, N.T2_QUIZ)   # v57 (owner): knowledge check first, then Meridian demo -> team padlet -> activity
+    # --- Meridian demo and Activity 2
     mark("t2scenario")
     c2 = B.CANVAS["actionplan"]
+    fill_demo(D, 2, c2, "plan box", B.MERIDIAN_PLAN_BOXES, [
+        ("Meridian Sets the Goal and Maps the Work Before Any Agent", ["objective", "budget", "mine", "integrate"]),
+        ("Then It Names the Owner and Writes the Stop Rule", ["architecture", "owners", "milestones", "risks", "kpis"])])
     meridian_shot(D, "Topic 2 · Meridian's completed plan", "Meridian's 90-Day Plan: Five Steps, Nine Blocks, One Owner",
         "A finished Activity 2 board for the fictitious Meridian. Every step has a number, a name or a date.", "meridian-plan.png", 2, [
         ("Mined first.", "Six steps, three handoffs, 38% re-keying: then agents."),
@@ -1224,7 +1242,6 @@ def topic2(D, C, mark):
     board(D, "Topic 2 · Meridian's completed plan", c2, "Meridian's 90-Day Plan, Block by Block",
           "All nine boxes are filled. Use this structure for your own company in Activity 2.",
           example_notes=B.MERIDIAN_PLAN_BOXES)
-    N.quiz(D, 2, N.T2_QUIZ)
     mark("act2a")
     L2 = B.LAB[2]
     import slides_v54 as S6
@@ -1428,11 +1445,8 @@ def topic3(D, C, mark):
         ("flag", "Agree a safe experiment", "Small, time-bound, supported, with a review date.")],
         sub="Four moves built on GROW coaching. The employee opens up only when they feel heard.",
         tipt="Meridian: coordinators feared replacement; the change story promised no job losses in the pilot before any role changed.")
-    s = vs(D, "Topic 3 · A · AI coaching · worked example", "From Campaign Producer to Marketing Owner",   # v54: restored from v52
-        ("Sarah’s concern", "user", ["Campaign copy and decks were most of her day.", "She worries about her role and who gets blamed."]),
-        ("Sarah’s redesigned role", "flag", ["Set the campaign goal and brand voice.", "Agent drafts copy and decks. Sarah checks facts, approves release and improves the workflow."]),
-        sub="Agree a two-week trial with Sarah. Review draft time, corrections and whether she had enough control.")
-    s.notes_slide.notes_text_frame.text = "Fictional coaching example adapted from Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, page 9."
+    import slides_v54 as S6
+    S6.coach_profiles(D)   # v57 (owner): all six AI Coaching profiles, one page each; Sarah's page keeps the v54 worked example
     mark("coachmini")
     coach_demo(D, "Topic 3 · A · AI Coaching Mini Activity · 10 min · pairs")
     # --- Part C: AI training, progressive change, buy-in, leaders by example
@@ -1523,18 +1537,11 @@ def topic3(D, C, mark):
         ("10.7", "minutes per request", "from 18 · target ≤ 11"), ("95.1%", "quality", "target ≥ 94%"),
         ("1.7%", "complaints", "limit 2%"), ("77.5%", "staff adoption", "target ≥ 70%")],
         tipt="Example pilot: modelled benefit SGD 39,200 (at 60% realisation) vs year-1 cost SGD 39,000. Scale, redesign, hold or stop?")
+    N.quiz(D, 3, N.T3_QUIZ)   # v57 (owner): knowledge check first, then Meridian demo -> team padlet -> activity
     c4 = B.CANVAS["change"]
-    scale_blocks = c4["blocks"]
-    for title_part, blocks in [
-        ("Write the Story and Name the Owners", scale_blocks[:4]),
-        ("Plan the People Support, Feedback and Review", scale_blocks[4:]),
-    ]:
-        table(D, "Topic 3 · Meridian demo · How to fill each SCALE box", title_part,
-              ["SCALE box", "What to decide", "Meridian fills in"], [
-                  (block["title"], block["prompt"], B.MERIDIAN_SCALE_BOXES[block["id"]])
-                  for block in blocks
-              ], colw=[2.8, 3.7, 5.6],
-              sub="Use this worked example to decide what belongs in each box on your own company’s board.")
+    ids4 = [b["id"] for b in c4["blocks"]]
+    fill_demo(D, 3, c4, "SCALE box", B.MERIDIAN_SCALE_BOXES, [
+        ("Write the Story and Name the Owners", ids4[:4]), ("Plan the People Support, Feedback and Review", ids4[4:])])
     meridian_shot(D, "Topic 3 · Meridian's completed SCALE board", "Meridian's SCALE Board: Story to Evaluation, Filled In",
         "A finished Activity 3 board for the fictitious Meridian. Notice how often a person still decides.", "meridian-scale.png", 3, [
         ("Story first.", "No one loses their job in the pilot; every client reaches a person."),
@@ -1543,7 +1550,6 @@ def topic3(D, C, mark):
     board(D, "Topic 3 · Meridian's completed SCALE board", c4, "Meridian's Completed SCALE Board",
           "All nine blocks are filled. Apply the same questions to your own company in Activity 3.",
           example_notes=B.MERIDIAN_SCALE_BOXES)
-    N.quiz(D, 3, N.T3_QUIZ)
     # --- Activity 3 Part B: the SCALE board
     mark("act3")
     L3 = B.LAB[3]

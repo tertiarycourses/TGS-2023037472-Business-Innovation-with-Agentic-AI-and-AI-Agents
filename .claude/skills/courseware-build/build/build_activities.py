@@ -47,7 +47,7 @@ def lab_html(L):
          'Download <b>activities/prompts.html</b> from the LMS course materials or the course Activities folder and open it in a browser. Type your organisation once; it fills every prompt. Replace every <span class="b">[blank]</span> before you paste into Meta Muse. '
          'Muse drafts; your group decides. Never put personal data (NRIC, phone numbers, customer names) on a shared board.</div>']
     q, pts = B.PADLET_TALK[L['n']]   # v56: team padlet talk opens the group work
-    h.append(f'<div class="note"><b>Start here: team padlet discussion (15 min, as a group).</b> {e(q)} Join your team padlet at '
+    h.append(f'<div class="note"><b>Start here, right after the trainer’s Meridian demo: team padlet discussion (15 min, as a group).</b> {e(q)} Join your team padlet at '
              '<b>alfredang.github.io/padlet</b> with your team code and your name, post one idea per card in this topic\'s column, then build the activity board together.<ol>'
              + ''.join(f'<li>{e(x)}</li>' for x in pts) + '</ol>'
              + ' · '.join(f'<b>Team {e(t)}</b> {c}' for t, c in B.PADLET_TEAMS) + '</div>')
@@ -59,7 +59,10 @@ def lab_html(L):
             if step.get("links") == "MUSE": h.append(qr_html(B.MUSE_LINKS))
             h.append(f'<pre>{blanks(step["prompt"])}</pre><p><b>Check:</b> {e(step["check"])}</p></div>')
         h.append('<h2>At the end of Topic 1: Activity 1 — Your Company BMC (80 min)</h2>')
-        h.append('<div class="note"><b>Group task.</b> Form a group of <b>3-5 learners</b> and choose one member\'s company. '
+        h.append(f'<div class="step"><h2>After the padlet talk · {e(B.PAIN_HUNT["title"])} ({B.PAIN_HUNT["minutes"]} min)</h2><ol>'
+                 + ''.join(f'<li>{e(x)}</li>' for x in B.PAIN_HUNT["body"]) + '</ol>'
+                 f'<pre>{blanks(B.PAIN_HUNT["prompt"])}</pre><p><b>Check:</b> {e(B.PAIN_HUNT["check"])}</p></div>')   # v57: hunt follows the padlet talk
+        h.append('<div class="note"><b>Group task.</b> Stay in your padlet team of <b>3-5 learners</b> and choose one member\'s company. '
                  'The leader opens <b>alfredang.github.io/bcm/?activity=opportunity</b>, creates ONE Activity 1 board and names the company. '
                  'Everyone joins with its Board ID or QR code and their own name. Create your company\'s BMC across all nine blocks, '
                  'show where AI agents help, and label assumptions. Keep this company for Activities 2 and 3.</div>')

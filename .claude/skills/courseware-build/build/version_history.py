@@ -68,4 +68,7 @@ V55 = ("55", "23 November 2026",
 V56 = ("56", "23 November 2026",
        "Ontology-driven agents (Topic 3); five team padlets with QR codes, 15-min group talk per activity; quotes all AI-agent, 2023+.",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54, V55, V56]
+V57 = ("57", "23 November 2026",
+       "Each topic: knowledge check, Meridian demo of every box, team padlet talk, then the board; six AI Coaching profiles.",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54, V55, V56, V57]

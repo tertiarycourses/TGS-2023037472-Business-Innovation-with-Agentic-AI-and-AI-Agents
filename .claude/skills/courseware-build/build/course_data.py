@@ -11,7 +11,7 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v56"
+VERSION      = "v57"
 VERSION_DATE = "23 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
@@ -61,14 +61,14 @@ TOPICS = [
       items=["Where companies get stuck: adoption without impact", "From rules to LLMs, then the Agent Stairway",
              "What an agent is, then the Meta Muse mini activity", "Always-on agents, Singapore and five ways to team up",
              "Use cases by function; Meridian and the nine-block BMC", "Five capability gaps, value levers and scoring",
-             "Pain-point hunt, knowledge check, then Activity 1 (BMC)"]),
+             "Knowledge check, Meridian demo, padlet, Activity 1 (BMC)"]),
  dict(num=2, code="02", lo=1, codes="K3, K4, A3, A4", day="Day 1 PM - Day 2 AM",
       title="Designing Digital Architectures and AI Agent Implementation Plans",
       short="Prove: plan, test and evaluate",
       pitch="Prove it works here before you bet on it: five steps, a real test set and a 90-day pilot the CEO will fund.",
       items=["Pilot purgatory: why good ideas stall", "Step 1 · Set the goal and the baseline", "Step 2 · Mine the process from dormant data",
              "Step 3 · Plug in agents: company map, rules, architecture", "Test before you trust: 30 cases, four checks",
-             "Steps 4-5 · Name the owner, run the 90-day pilot", "Knowledge check, then Activity 2 (90-day plan)"]),
+             "Steps 4-5 · Name the owner, run the 90-day pilot", "Knowledge check, Meridian demo, padlet, Activity 2 (plan)"]),
  dict(num=3, code="03", lo=2, codes="K5, K6, A5, A6", day="Day 2 PM",
       title="Managing AI-Driven Innovation, Governance and Stakeholder Collaboration",
       short="Transform: lead the company's AI transformation",

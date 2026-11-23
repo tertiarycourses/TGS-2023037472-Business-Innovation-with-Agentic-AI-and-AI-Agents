@@ -1,3 +1,11 @@
+## v57 · 23 November 2026
+
+- One flow in every topic: the knowledge check, then the Meridian demo, then the team padlet talk, then the group fills its own board. The knowledge check moved ahead of the demo, so the demo, the 15-minute padlet discussion and the activity now run back to back in Topics 1, 2 and 3.
+- The Meridian demo shows how to fill each box: two new "what to decide / what Meridian fills in" pages for the Topic 1 BMC and two for the Topic 2 90-day plan, matching the existing Topic 3 SCALE pages, before Meridian's finished board.
+- Topic 1: the pain-point hunt now follows the padlet talk, and the padlet team stays together as the Activity 1 group. Minutes and timetable unchanged.
+- Topic 3 job redesign: all six AI Coaching simulator profiles (Sarah, David, Mei Ling, Arjun, Aisha, Farah), an overview plus one page each: what the person says, the strength to build on, the job they own and a safe experiment. Sarah's page keeps the worked example. LG table added.
+- 253 slides. LP, LG, FG v19 and AP v21 aligned. Assessment papers v44 unchanged.
+
 ## v56 · 23 November 2026
 
 - Topic 3 Part D (L): ontology-driven agents. Two new slides: the loop (user intent, query generation, ontology check, valid result or machine-readable feedback that sends the agent back to rewrite) with the three parts of an ontology (entities, relationships, constraints), and Meridian's "same question, two agents" example, where only the ontology-driven agent gets the urgent-SLA list right and a constraint blocks an uncertified dispatch. The Topic 2 company map is presented as the learner's ontology; Palantir's Ontology and Microsoft Fabric IQ (Ignite, Nov 2025) are the real-world examples. LG section and glossary row added.

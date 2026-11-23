@@ -226,18 +226,19 @@ p("Meridian's filled Activity 1 board (read-only): https://alfredang.github.io/b
   "own organisation. Meridian is fictitious and all its figures are synthetic.")
 img(os.path.join(IMG, "screenshots", "meridian-bmc.png"), "Meridian Services (fictitious): filled Activity 1 board in the Activity Studio", 5.2)
 
-h3("Hands-on: Pain-Point Hunt (5 minutes, opens Activity 1)")
-bl(B.PAIN_HUNT["body"])
-prompt(B.PAIN_HUNT["prompt"])
-p("Check: " + B.PAIN_HUNT["check"])
 h2("Activity 1 — Your Company's BMC in Groups of 3-5 (PP Task 1)")
 h3("Team Padlets: 15 Minutes of Talk Before Each Activity")
+p("Every topic runs in the same order: the trainer first shows how Meridian fills each box of the board, your team then talks for 15 minutes on its padlet, and only then do you fill your own board.")
 p("Each activity opens with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. "
   "Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. "
   "Post a screenshot of each finished board in the last column.")
 tbl(["Team", "Padlet code", "Link"], [("Team " + t, c, B.PADLET_URL + c) for t, c in B.PADLET_TEAMS], [1.4, 1.2, 4.0])
 tbl(["Activity", "Discuss for 15 minutes"], [(f"Activity {n}", B.PADLET_TALK[n][0] + " " + " ".join(B.PADLET_TALK[n][1])) for n in (1, 2, 3)], [1.2, 5.4])
-p("Form a group of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.")
+h3("Hands-on: Pain-Point Hunt (5 minutes, after the padlet talk)")
+bl(B.PAIN_HUNT["body"])
+prompt(B.PAIN_HUNT["prompt"])
+p("Check: " + B.PAIN_HUNT["check"])
+p("Stay in your padlet team of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.")
 X.append(("canvas", "opportunity"))
 
 # ------------------------------------------------------------------ Topic 2
@@ -448,7 +449,12 @@ src("Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, pp. 3,
 h2("A · AI Coaching: Help Each Person Through the Change")
 h3("AI Coaching Mini Activity (10 Minutes, in Pairs)")
 p("Ask the employee what concerns them, explore their strengths and workload, co-create a role that uses their judgment, and agree one small trial and a review date. At Meridian, the coordinator keeps urgent dispatch decisions and spends more time on customer follow-up. Give employees practice on their own work, builders training on testing and controls, and managers time for coaching.")
-p("Worked example: Sarah produced campaign copy and decks most of the day and worried about her role and who gets blamed. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.")
+p("Worked example: Sarah produced campaign copy and decks most of the day and worried about her role. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.")
+h3("Six Worried Employees: The AI Coaching Profiles")
+p("The AI Coaching simulator gives you six fictional employees. Each fears the agent for a different reason, and each ends up owning a decision the agent cannot make. Pick one for the mini activity.")
+tbl(["Person", "Coaching tension", "The job they own now", "Safe experiment"],
+    [(f"{x['name']}, {x['role']}", x["tension"], x["owns"], x["trial"]) for x in B.COACH_PROFILES], [1.3, 1.2, 2.1, 2.1])
+src("AI Coaching simulator, https://github.com/alfredang/AICoaching (six coaching scenarios); safe experiments are course suggestions.")
 p("In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.")
 h2("A · AI Training That Builds Ability")
 p("Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.")
@@ -630,8 +636,8 @@ tbl(["Term", "Meaning"], [("Agentic AI", "A goal-directed AI system that plans, 
      ("Capability register", "One row per agent: process, owner, backup owner, playbook, controls, measure"), ("Atrophy trap", "Losing judgement by always deferring to AI"), ("Codex / Sites", "OpenAI's coding agent / its website builder and host in ChatGPT and Codex")], [1.8, 4.9])
 h1("References")
 bl(["IMDA, Model AI Governance Framework for Agentic AI v1.5 (20 May 2026).", "Enterprise Singapore, media release on AI initiatives (27 Oct 2026).",
-    "The Straits Times, 24 Aug 2026: New platform to create AI agents available to all public healthcare professionals.",
-    "Meta Newsroom, Muse in Singapore (27 Oct 2026); Meta Help, Connectors.", "Klarna press release, Feb 2024 (AI assistant handles two-thirds of service chats); OpenAI Sites docs, accessed 18 Nov 2026."])
+    "The Straits Times, 24 Aug 2026: AI agent platform for all public healthcare professionals.",
+    "Meta Newsroom, Muse in Singapore (27 Oct 2026); Meta Help, Connectors; Klarna press release (Feb 2024); OpenAI Sites docs (18 Nov 2026)."])
 
 # ------------------------------------------------------------------ canvas renderer helper (MD + DOCX share the data)
 def canvas_rows(key):

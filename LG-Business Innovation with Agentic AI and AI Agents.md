@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 56 · 23 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 57 · 23 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -346,20 +346,11 @@ Meridian's filled Activity 1 board (read-only): https://alfredang.github.io/bcm/
 
 *[Figure: Meridian Services (fictitious): filled Activity 1 board in the Activity Studio]*
 
-### Hands-on: Pain-Point Hunt (5 minutes, opens Activity 1)
-
-- Alone, 3 minutes: write the three tasks that waste the most hours in your team each week, with a rough number of hours.
-- As a group, 2 minutes: read them out, cluster the repeats and vote. The winner is your first BMC question.
-
-```text
-My team: [team and role]. Our three biggest weekly time-sinks: [1, hours], [2, hours], [3, hours]. For each, tell me whether an AI agent could take it on today (yes, partly or no), what data it would need, and who would have to approve its work. Rank the three by hours saved. Mark guesses as (assumption).
-```
-
-Check: Three time-sinks with hours; one ranked first; the data and the approver named for each.
-
 ## Activity 1 — Your Company's BMC in Groups of 3-5 (PP Task 1)
 
 ### Team Padlets: 15 Minutes of Talk Before Each Activity
+
+Every topic runs in the same order: the trainer first shows how Meridian fills each box of the board, your team then talks for 15 minutes on its padlet, and only then do you fill your own board.
 
 Each activity opens with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. Post a screenshot of each finished board in the last column.
 
@@ -377,7 +368,18 @@ Each activity opens with a 15-minute group discussion on your team padlet (alfre
 | Activity 2 | Which action plan should we focus on? Which process should your 90-day pilot start with, and why that one? What must be true at day 30 for you to keep going? Who is the DRI, and what can they decide without asking? Carry the answers into your Activity 2 plan. |
 | Activity 3 | Org change, DRI and ontology: how do we drive AI transformation? What does your organisation look like with fewer layers and mixed teams of people and agents? Which outcome needs a DRI first, and which business rules must agents never get wrong (your ontology)? What will stall the change, and who must lead by example? Carry the answers into your SCALE board. |
 
-Form a group of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.
+### Hands-on: Pain-Point Hunt (5 minutes, after the padlet talk)
+
+- Alone, 3 minutes: write the three tasks that waste the most hours in your team each week, with a rough number of hours.
+- As a group, 2 minutes: read them out, cluster the repeats and vote. The winner is your first BMC question.
+
+```text
+My team: [team and role]. Our three biggest weekly time-sinks: [1, hours], [2, hours], [3, hours]. For each, tell me whether an AI agent could take it on today (yes, partly or no), what data it would need, and who would have to approve its work. Rank the three by hours saved. Mark guesses as (assumption).
+```
+
+Check: Three time-sinks with hours; one ranked first; the data and the approver named for each.
+
+Stay in your padlet team of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.
 
 In groups of 3-5, join one shared board and create a nine-block BMC for one member's company; evaluate its AI agent opportunities.
 
@@ -954,7 +956,22 @@ A second example is Sarah, a marketing lead. The agent drafts campaign copy and 
 
 Ask the employee what concerns them, explore their strengths and workload, co-create a role that uses their judgment, and agree one small trial and a review date. At Meridian, the coordinator keeps urgent dispatch decisions and spends more time on customer follow-up. Give employees practice on their own work, builders training on testing and controls, and managers time for coaching.
 
-Worked example: Sarah produced campaign copy and decks most of the day and worried about her role and who gets blamed. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.
+Worked example: Sarah produced campaign copy and decks most of the day and worried about her role. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.
+
+### Six Worried Employees: The AI Coaching Profiles
+
+The AI Coaching simulator gives you six fictional employees. Each fears the agent for a different reason, and each ends up owning a decision the agent cannot make. Pick one for the mini activity.
+
+| Person | Coaching tension | The job they own now | Safe experiment |
+|---|---|---|---|
+| Sarah, Marketing Executive | Fear and work identity | Campaign direction, brand quality and final approval. She sets the goal and brand voice; the agent drafts. | Two weeks: the agent drafts, Sarah directs and approves. Review draft time, corrections and whether she had enough control. |
+| David, Customer Service Officer | Anger and betrayal | Escalations, the bot's knowledge and answer quality, with authority to pull a bad answer. | Two weeks: David takes every escalation and logs each wrong bot answer. Review fixes made, repeat questions and complaints. |
+| Mei Ling, Data Analyst | Anxiety and withdrawal | Data validation, output audit and stakeholder interpretation: no agent report goes out unchecked. | Two weeks with training: Mei Ling audits every agent report before release. Review errors caught and stakeholder questions answered. |
+| Arjun, Software Developer | Scepticism and professional pride | Architecture, code review, tests and security gates. The role grows more senior, not smaller. | One sprint: Arjun sets the tests and security gates, the agent codes, nothing merges without Arjun's review. Review defects and rework. |
+| Aisha, Web Operations Executive | Control and accountability | Release control, exceptions, rollback and web quality, with real approval rights. | Two weeks: nothing goes live without Aisha's release check, and Aisha holds the rollback. Review errors stopped and time to publish. |
+| Farah, HR Executive | Ethics and human purpose | Bias review, policy guardrails, appeals and the human decision on every career outcome. | One hiring round: the agent shortlists, Farah reviews each rejection for bias and a person decides. Review overturned rejections. |
+
+*Source: AI Coaching simulator, https://github.com/alfredang/AICoaching (six coaching scenarios); safe experiments are course suggestions.*
 
 In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.
 
@@ -1321,6 +1338,5 @@ For current Sites access and hosting terms, see https://learn.chatgpt.com/docs/s
 
 - IMDA, Model AI Governance Framework for Agentic AI v1.5 (20 May 2026).
 - Enterprise Singapore, media release on AI initiatives (27 Oct 2026).
-- The Straits Times, 24 Aug 2026: New platform to create AI agents available to all public healthcare professionals.
-- Meta Newsroom, Muse in Singapore (27 Oct 2026); Meta Help, Connectors.
-- Klarna press release, Feb 2024 (AI assistant handles two-thirds of service chats); OpenAI Sites docs, accessed 18 Nov 2026.
+- The Straits Times, 24 Aug 2026: AI agent platform for all public healthcare professionals.
+- Meta Newsroom, Muse in Singapore (27 Oct 2026); Meta Help, Connectors; Klarna press release (Feb 2024); OpenAI Sites docs (18 Nov 2026).
