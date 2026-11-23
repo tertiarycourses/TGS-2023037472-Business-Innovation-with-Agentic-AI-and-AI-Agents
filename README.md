@@ -27,7 +27,7 @@ A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day act
 | Current Meta Muse prompt templates | Download [activities/prompts.html](activities/prompts.html) from the course materials and open it in a browser |
 | Meridian demo boards (read-only) | [Activity 1](https://alfredang.github.io/bcm/?join=meridian-activity-1) · [Activity 2](https://alfredang.github.io/bcm/?join=meridian-activity-2) · [Activity 3](https://alfredang.github.io/bcm/?join=meridian-activity-3): a finished board for the fictitious Meridian Services |
 | AI Coaching simulator (Topic 3 demo) | [alfredang.github.io/AICoaching](https://alfredang.github.io/AICoaching/): practise coaching a worried employee; demo mode or your own OpenAI / MiniMax / Anthropic (Claude Haiku 5.5) key |
-| Courseware version | v54 · 23 November 2026 · 235 slides |
+| Courseware version | v55 · 23 November 2026 · 238 slides |
 
 ## About the course
 
@@ -71,7 +71,7 @@ The 20-minute Meta Muse mini activity follows the agent introductions; its instr
 
 | File | What it is |
 |---|---|
-| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v54.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v54.pdf>) | Trainer slides |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v55.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v55.pdf>) | Trainer slides |
 | [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
 | [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
 | [activities/](activities/) | One folder per activity with its Instructions PDF |

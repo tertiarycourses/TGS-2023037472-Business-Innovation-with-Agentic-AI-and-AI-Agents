@@ -235,7 +235,8 @@ def right_sized(D):
     text(s, 9.15, 4.72, 3.4, 0.3, "AT MERIDIAN", 11, ACC, bold=True, autofit=False)
     text(s, 9.15, 5.05, 3.4, 1.1, "Triage runs on Haiku 5.5: about US$3 a month for 80 requests a day, against US$211 on Fable 5.2.",
          12, SOFT, minpt=9.5, lh=1.05)
-    tip(D, s, "Do not default to the biggest model. Give each agent the smallest one that passes your checks; it is cheaper, faster and easier to control.", y=6.35)
+    text(s, 0.6, 6.78, 12.1, 0.25, "Source: Anthropic, Project Glasswing and Claude Mythos Preview (anthropic.com/glasswing, 7 Apr 2026)", 8, MUTED, autofit=False)
+    tip(D, s, "Do not default to the biggest model. Give each agent the smallest one that passes your checks: the bill is lower and every step is easier to audit.", y=6.35)
     return s
 
 
@@ -244,4 +245,171 @@ def security6(D, kicker=None):
     s = overview(D)
     for f in (data_control, permission_control, guardrails, human_in_loop, traceability, right_sized):
         f(D)
+    return s
+
+
+# ------------------------------------------------------------------ DRI (owner, 23 Nov 2026: "the part on the DRI is missing")
+# v52 had a DRI org-chart slide plus a concept card; v53 cut the slide and left only the text card. WA Q5 asks for
+# "the role of the DRI", so v55 teaches it in three designed pages right after the outcome org chart.
+# Sources: Fortune, "How Apple works: inside the world's biggest startup" (May 2011: DRIs at Apple; QA v55: supports use, not coinage);
+# GitLab Handbook, "Directly Responsible Individuals (DRI)" (handbook.gitlab.com, checked 23 Nov 2026).
+KD = "Topic 3 · C · The future organisation · DRI"
+
+
+def _person(s, x, y, d, fill):
+    icon(s, "user", x, y, d, fill=fill)
+
+
+def dri_meet(D):
+    s = D.new(); header(D, s, KD, "One Outcome, One Name: Meet the DRI",
+                        "Made famous at Apple: every task carries a person's name. Agents can do the work; they cannot answer for it.")
+    # before / after panel
+    card(s, 0.6, 2.3, 7.55, 2.45)
+    text(s, 0.85, 2.42, 3.3, 0.3, "WITHOUT A DRI", 10, RED, bold=True, autofit=False)
+    text(s, 4.55, 2.42, 3.3, 0.3, "WITH A DRI", 10, TEAL, bold=True, autofit=False)
+    line(s, 4.35, 2.5, 4.35, 4.6, K.RULE, 1.0)
+    for i in range(5):                                   # a committee around a question mark
+        _person(s, 0.8 + i * 0.66, 2.95, 0.5, MUTED)
+    circle(s, 1.9, 3.6, 0.55, RED)
+    text(s, 1.9, 3.6, 0.55, 0.55, "?", 20, WHITE, bold=True, align="c", anchor="m", autofit=False)
+    text(s, 0.8, 4.18, 3.4, 0.5, "Five owners means no owner. “The AI did it.”", 12, INK, minpt=9, lh=1.0)
+    _person(s, 5.75, 2.82, 0.62, ACC)                     # one name, a mixed team below
+    icon(s, "flag", 6.22, 2.76, 0.3, fill=CHAR)
+    team = [("robot", ACC), ("robot", ACC), ("user", TEAL), ("robot", ACC), ("user", TEAL)]
+    for j, (ic, col) in enumerate(team):
+        x = 4.62 + j * 0.66
+        line(s, 6.06, 3.44, x + 0.2, 3.62, K.MUTED, 1.0)
+        icon(s, ic, x, 3.62, 0.4, fill=col)
+    text(s, 4.55, 4.18, 3.5, 0.5, "One name answers. People and agents do the volume.", 12, INK, minpt=9, lh=1.0)
+    # definition
+    card(s, 8.4, 2.3, 4.3, 2.45, fill=CHAR)
+    text(s, 8.65, 2.42, 3.9, 0.3, "DIRECTLY RESPONSIBLE INDIVIDUAL", 10, ACC, bold=True, autofit=False)
+    text(s, 8.65, 2.78, 3.85, 1.1, "The one named person accountable for an outcome, with the rights to deliver it.",
+         17, WHITE, font=SERIF, minpt=12, lh=1.05)
+    text(s, 8.65, 3.95, 3.85, 0.7, "Agents bring capability.\nThe DRI brings accountability.", 13, SOFT, bold=True, minpt=10, lh=1.05)
+    # three properties
+    props = [("user", "Singular", "One named person. Not a committee, not a department, not “the AI team”."),
+             ("target", "Accountable", "Owns the outcome, not just the task. Answers when the agent gets it wrong."),
+             ("gavel", "Empowered", "Holds decision and resource rights, commands the agent team, can press stop.")]
+    w = (12.1 - 0.3) / 3
+    for i, (ic, t, d) in enumerate(props):
+        x = 0.6 + i * (w + 0.15)
+        card(s, x, 4.95, w, 1.3)
+        icon(s, ic, x + 0.18, 5.12, 0.5, fill=ACC)
+        text(s, x + 0.82, 5.08, w - 0.95, 0.4, t, 16, INK, bold=True, font=SERIF, autofit=False)
+        text(s, x + 0.82, 5.45, w - 0.95, 0.75, d, 11.5, MUTED, minpt=9, lh=1.05)
+    tip(D, s, "GitLab runs its company handbook on DRIs: the DRI consults the people affected, then makes the final call.", y=6.38)
+    text(s, 0.6, 6.78, 12.1, 0.25, "Sources: Fortune, “How Apple works” (May 2011) · GitLab Handbook, Directly Responsible Individuals",
+         8, MUTED, autofit=False)
+    return s
+
+
+def dri_charter(D):
+    s = D.new(); header(D, s, KD + " at Meridian", "Meridian's DRI Charter: One Page, One Owner",
+                        "Write the DRI's rights down. An owner without a budget, rule changes or a stop button is a scapegoat, not a DRI.")
+    rows = [("OUTCOME", "Handling time from 18 to ≤11 minutes by day 90; complaints ≤2%"),
+            ("DRI", "Head of Service Desk  ·  backup: the senior coordinator"),
+            ("AGENT TEAM", "Triage agent drafts tickets; SLA agent flags late jobs; 2 coordinators review"),
+            ("DECISION RIGHTS", "Changes routing rules and the playbook; decides what the agent may draft"),
+            ("RESOURCE RIGHTS", "SGD 39,000 year-1 budget; system access granted through IT"),
+            ("STOP BUTTON", "Pauses the agent if rework tops 20% for two weeks"),
+            ("BOUNDARIES", "Coordinators approve every dispatch; tenant-data questions go to the DPO"),
+            ("RHYTHM", "Daily 8:00 exceptions brief · weekly review · monthly dashboard to the CEO")]
+    card(s, 0.6, 2.3, 8.15, 3.95)
+    for i, (k, v) in enumerate(rows):
+        y = 2.4 + i * 0.47
+        if i % 2 == 0: box(s, 0.7, y, 7.95, 0.44, fill=CREAM)
+        text(s, 0.85, y + 0.02, 1.95, 0.4, k, 10, ACC if k != "STOP BUTTON" else RED, bold=True, anchor="m", autofit=False)
+        text(s, 2.85, y + 0.02, 5.75, 0.4, v, 12, INK, bold=(k == "DRI"), anchor="m", autofit=False)   # one size for every row (QA v55)
+    card(s, 9.0, 2.3, 3.7, 2.2, fill=CHAR)
+    icon(s, "scale", 9.22, 2.48, 0.5, fill=ACC)
+    text(s, 9.85, 2.5, 2.75, 0.5, "Rights match the responsibility", 13.5, WHITE, bold=True, font=SERIF, minpt=10, lh=1.0, anchor="m")
+    text(s, 9.22, 3.12, 3.3, 1.3, "If the DRI owns handling time, the DRI must also be able to change the rules, spend the budget and stop the agent.",
+         12, SOFT, minpt=9.5, lh=1.08)
+    card(s, 9.0, 4.65, 3.7, 1.6, fill=CREAM, shadow=False)
+    text(s, 9.2, 4.75, 3.35, 0.3, "YOUR ACTIVITY 3 BOARD", 10, ACC, bold=True, autofit=False)
+    text(s, 9.2, 5.07, 3.35, 1.12, "Block C · DRIs & Agent Teams asks for exactly this: one name, decision rights, resource rights, boundaries.",
+         12, INK, minpt=9.5, lh=1.06)
+    tip(D, s, "Every agent in the capability register has an owner and a backup owner. A row that names a team instead of a person has no DRI yet.", y=6.38)
+    return s
+
+
+def dri_does(D):
+    s = D.new(); header(D, s, KD, "What a DRI Does, and What a DRI Does Not Do",
+                        "Not a hero who does all the work. Not a manager who signs whatever the agent drafts.")
+    cols = [("check", TEAL, "A DRI DOES", [
+                ("users", "Consult the people affected, then make the final call"),
+                ("target", "Set the agents' goal, limits and checks"),
+                ("eye", "Read the exceptions and sample the agents' work every week"),
+                ("megaphone", "Answer for the result, good or bad, and report back")]),
+            ("stop", RED, "A DRI DOES NOT", [
+                ("tool", "Do all the work alone"),
+                ("pause", "Wait for consensus before deciding"),
+                ("thumbs", "Rubber-stamp whatever the agent drafts"),
+                ("robot", "Say “the AI did it” when something goes wrong")])]
+    for c, (hic, col, head, items) in enumerate(cols):
+        x = 0.6 + c * 6.15
+        card(s, x, 2.3, 5.95, 3.2)
+        icon(s, hic, x + 0.22, 2.42, 0.5, fill=col)
+        text(s, x + 0.85, 2.47, 4.8, 0.4, head, 14, col, bold=True, anchor="m", autofit=False)
+        for i, (ic, t) in enumerate(items):
+            y = 3.08 + i * 0.6
+            icon(s, ic, x + 0.3, y + 0.04, 0.4, fill=CHAR if c == 0 else MUTED)
+            text(s, x + 0.88, y, 4.9, 0.5, t, 14, INK, anchor="m", minpt=10, lh=1.0)
+    card(s, 0.6, 5.68, 12.1, 0.62, fill=CHAR)
+    rich(s, 0.85, 5.7, 11.7, 0.58, [[("TEST YOUR BOARD   ", dict(color=ACC, bold=True, size=13)),
+         ("Write one person's name next to every outcome. A team, a committee or “the AI” means you have no DRI yet.",
+          dict(color=WHITE, size=14, font=SERIF))]], anchor="m")
+    tip(D, s, "Bias and Blame (Topic 3 · E) shows what happens when no one owns an agent's decision.", y=6.42)
+    return s
+
+
+def dri(D):
+    """Three DRI pages: concept, Meridian's charter, does / does not (v55)."""
+    first = dri_meet(D)
+    dri_charter(D); dri_does(D)
+    return first
+
+
+def future_org(D):
+    """v55 (owner): open Topic 3 with the future organisation: flatter, people + agents, projects driven by DRIs."""
+    s = D.new(); header(D, s, "Topic 3 · C · The future organisation", "Fewer Layers, Mixed Teams, Projects Driven by DRIs",
+                        "When agents take the relaying, reporting and first drafts, the layers that only pass work along thin out.")
+    # TODAY: a tall pyramid of relay layers
+    card(s, 0.6, 2.3, 4.6, 2.75)
+    text(s, 0.85, 2.4, 4.1, 0.3, "TODAY · MANY LAYERS, WORK RELAYED", 10, MUTED, bold=True, autofit=False)
+    for r, n in enumerate([1, 2, 3, 4, 6, 8]):
+        y = 2.8 + r * 0.33; w_ = 0.32; g = 0.12; tot = n * w_ + (n - 1) * g; x0 = 2.9 - tot / 2
+        for k in range(n):
+            box(s, x0 + k * (w_ + g), y, w_, 0.22, fill=SOFT if r < 5 else LIGHT, line=K.RULE)
+    text(s, 0.85, 4.8, 4.1, 0.25, "Status climbs up, instructions trickle down", 10.5, MUTED, align="c", autofit=False)
+    text(s, 5.3, 3.35, 0.5, 0.6, "→", 30, ACC, bold=True, align="c", autofit=False)
+    # TOMORROW: sponsor, DRIs, mixed teams
+    card(s, 5.9, 2.3, 6.8, 2.75)
+    text(s, 6.15, 2.4, 6.3, 0.3, "AI-NATIVE · THREE LAYERS, ONE NAME PER PROJECT", 10, TEAL, bold=True, autofit=False)
+    icon(s, "star", 9.05, 2.72, 0.5, fill=CHAR)
+    text(s, 9.6, 2.78, 2.8, 0.4, "CEO · AI sponsor", 12, INK, bold=True, autofit=False)
+    projects = ["Handling time", "Client retention", "First-time fix"]
+    for j, pj in enumerate(projects):
+        x = 6.25 + j * 2.12
+        line(s, 9.3, 3.22, x + 0.95, 3.45, K.MUTED, 1.0)
+        card(s, x, 3.45, 1.9, 0.5, fill=CREAM, shadow=False)
+        icon(s, "flag", x + 0.08, 3.52, 0.36, fill=ACC)
+        text(s, x + 0.5, 3.47, 1.38, 0.46, "DRI · " + pj, 10, INK, bold=True, anchor="m", minpt=8, lh=1.0)
+        for k, (ic, col) in enumerate([("user", TEAL), ("robot", ACC), ("robot", ACC), ("user", TEAL)]):
+            line(s, x + 0.95, 3.95, x + 0.2 + k * 0.45 + 0.16, 4.12, K.MUTED, 0.75)
+            icon(s, ic, x + 0.2 + k * 0.45, 4.12, 0.32, fill=col)
+    text(s, 6.15, 4.6, 6.3, 0.3, "People judge and decide; agents do the volume; one DRI owns each project", 10.5, MUTED, align="c", autofit=False)
+    # three shifts
+    shifts = [("layers", "Fewer layers", "Agents absorb the relay work: status reports, hand-offs, first drafts, follow-ups."),
+              ("users", "People + agents, one team", "Every team mixes staff and agents. People set goals, judge exceptions and own clients."),
+              ("flag", "Projects driven by DRIs", "Each project has one named owner with the rights, budget and stop button to deliver it.")]
+    w = (12.1 - 0.3) / 3
+    for i, (ic, t, d) in enumerate(shifts):
+        x = 0.6 + i * (w + 0.15)
+        card(s, x, 5.2, w, 1.1, fill=CHAR if i == 2 else WHITE)
+        icon(s, ic, x + 0.16, 5.33, 0.46, fill=ACC)
+        text(s, x + 0.75, 5.27, w - 0.85, 0.36, t, 14.5, WHITE if i == 2 else INK, bold=True, font=SERIF, autofit=False)
+        text(s, x + 0.75, 5.62, w - 0.85, 0.65, d, 11, SOFT if i == 2 else MUTED, minpt=8.5, lh=1.03)
+    tip(D, s, "This is where Topic 3 ends up. First, Meridian's version of it; then the challenges that stop most companies getting there.", y=6.42)
     return s

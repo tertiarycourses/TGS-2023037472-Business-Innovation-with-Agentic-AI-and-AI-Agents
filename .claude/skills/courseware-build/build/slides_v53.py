@@ -160,7 +160,7 @@ def orgtree(D, kicker, title, sub):
             icon(s, ic, x + w - 0.36 - j * 0.3, y + 0.565, 0.27, fill=ACC if ic == "robot" else TEAL)
         return x + w / 2, y, y + 0.95
     cx, _, cb = node(5.05, 2.3, 3.2, "CEO · AI sponsor", "Strategy & AI office: 2 people + agents")
-    kids = [(0.6, "Head of Service Desk", "DRI · response time"), (3.65, "Account Director", "DRI · client retention"),
+    kids = [(0.6, "Head of Service Desk", "DRI · handling time"), (3.65, "Account Director", "DRI · client retention"),
             (6.7, "Operations Manager", "DRI · first-time fix"), (9.75, "Finance Lead", "DRI · cost per job")]
     teams = ["Coordinators + triage agent", "Account team + report agent", "Technicians + job-notes agent", "Finance team + invoice agent"]
     line(s, cx, cb, cx, cb + 0.3, K.MUTED, 1.5)
@@ -383,18 +383,26 @@ T2_QUIZ = [
 
 # ---------------------------------------------------------------- Topic 3 · Transform
 def t3_open(D, mark):
-    from slides_bi import full_image, icons, bignums
+    """v54 order (kept for reference). v55 calls t3_quote, t3_cartoon and t3_challenges separately."""
+    t3_quote(D); t3_cartoon(D); t3_challenges(D)
+
+def t3_quote(D):
     quote(D, "From the boardroom to the frontline, every worker will need to think like the CEO of an agent-powered startup.",
           "Microsoft 2025 Work Trend Index, April 2025", kicker="Topic 3 · Transform",
           note="Source: https://blogs.microsoft.com/blog/2025/04/23/the-2025-annual-work-trend-index-the-frontier-firm-is-born/ (checked 23 Nov 2026). Point: when everyone manages agents, the org chart, job descriptions, training and governance all have to change. That is Topic 3.")
-    full_image(D, "Topic 3 · Transform", "AI Made Work Generation Almost Free. Owning the Work Is Still Expensive.",
+
+def t3_cartoon(D):
+    from slides_bi import full_image
+    full_image(D, "Topic 3 · C · The future organisation", "AI Made Work Generation Almost Free. Owning the Work Is Still Expensive.",
                asset("v53", "office-baby-generator.png"),
                "Making the output is easy. Checking, approving and owning 500 of them a day is the real job.")
-    poll(D, "Topic 3 · Transform", "Is Your Organisation Built to Benefit from AI?",
+
+def t3_challenges(D):
+    poll(D, "Topic 3 · The challenges", "Is Your Organisation Built to Benefit from AI?",
          ["Yes: roles and workflows were redesigned", "Partly: some teams have changed how they work",
           "Not yet: AI is a personal tool people use alone", "We have not started"],
          note="Most rooms answer C. That is the point of Topic 3: personal AI skill does not add up to company capability, and it leaves when the person leaves.")
-    pains(D, "Topic 3 · Why AI transformations stall", "Six Reasons the Change Does Not Stick",
+    pains(D, "Topic 3 · The challenges · why transformations stall", "Six Reasons the Change Does Not Stick",
           "72%", "of 10,018 leaders say their organisation is not fully ready for the changes ahead",
           [("Aimed at the wrong target", "Awareness campaigns and prompt classes, when the gaps are judgement and incentives."),
            ("Skills that walk out the door", "The know-how lives in a few enthusiasts' chats. When they leave, it leaves."),
@@ -407,7 +415,7 @@ def t3_open(D, mark):
 
 def t3_outcomes(D):
     from slides_bi import bignums
-    table(D, "Topic 3 · From outputs to outcomes", "Adoption Runs Projects. Transformation Runs the Business.",
+    table(D, "Topic 3 · The challenges · outputs to outcomes", "Adoption Runs Projects. Transformation Runs the Business.",
           ["", "Adoption operating model", "Transformation operating model"], [
               ["Conditions", "Known rules and known unknowns; plan it once", "Unknown unknowns: markets, customers and the technology keep moving"],
               ["Funding", "Fixed budget tied to a scope; new work needs new approval", "Steady funding for a value stream, adjusted to outcomes"],
@@ -418,13 +426,13 @@ def t3_outcomes(D):
               ["AI", "Speeds up output; magnifies planning and alignment gaps", "Scales iteration, learning and outcome delivery"]],
           colw=[1.6, 5.0, 5.5], size=12.5, hi_col=2,
           sub="You cannot build a one-off project team around a technology that changes every quarter.")
-    bignums(D, "Topic 3 · From outputs to outcomes", "The Value Sits in Redesigned Work, Not in More Usage", [
+    bignums(D, "Topic 3 · The challenges · outputs to outcomes", "The Value Sits in Redesigned Work, Not in More Usage", [
         ("88%", "use AI", "in at least one business function"),
         ("39%", "see EBIT impact", "any level, at enterprise level"),
         ("~3×", "high performers", "more likely to have redesigned workflows")],
         sub="Usage is nearly universal; profit is not. The firms that win redesign whole workflows and measure them.",
         source="McKinsey, The state of AI in 2025 (5 Nov 2025)", url=MCK_2025)
-    bignums(D, "Topic 3 · Who owns AI", "Put Ownership Where the Decisions Are Made", [
+    bignums(D, "Topic 3 · The challenges · who owns AI", "Put Ownership Where the Decisions Are Made", [
         ("#1", "workflow redesign", "Of 25 attributes tested, the biggest effect on EBIT impact"),
         ("CEO", "owns governance", "One element most correlated with bottom-line impact; strongest at large firms"),
         ("28%", "actually do it", "say their CEO oversees AI governance")],
@@ -457,8 +465,8 @@ def scale_nav(D, rows_):
     rows_ = [(l, w_, d, ic) for (l, w_, _x, ic), d in zip(rows_, ["Stakeholders, sponsors and an honest story",
              "Outcome org chart; DRIs lead people + agents", "Redesign jobs, train for ability, coach",
              "Build AI into the process, not the person", "Govern, cost, secure; judge vs baseline"])]
-    s = framework(D, "Topic 3 · The SCALE framework · click a letter", "SCALE", "SCALE: Five Moves to Transform the Company with AI Agents", rows_,
-                  "Story, Commanders, Augment people, Loop information into the process, Evaluate and govern. Activity 3 is your SCALE board.",
+    s = framework(D, "Topic 3 · The SCALE framework · click a letter", "SCALE", "SCALE: Five Moves That Make the Change Stick", rows_,
+                  "You have seen the future org and why change stalls. These five moves make the change last.",
                   tipt="Click a column to jump to it. Each section ends with a ◀ SCALE button back here.")
     anchor("scale", s)
     w = 12.1 / 5
@@ -474,20 +482,29 @@ def back_scale(D, s, letter):
 def t3_story(D):
     from slides_bi import quadrant
     from ccdeck import rows, loop
-    quadrant(D, "Topic 3 · S · Stakeholders", "Map Who Can Stop It and Who Has to Live With It", [
+    quadrant(D, "Topic 3 · S · Buy-in · stakeholders", "Map Who Can Stop It and Who Has to Live With It", [
         ("Keep satisfied", "Board, finance, legal and the data protection officer: brief them early, show the controls and the numbers."),
         ("Manage closely", "CEO sponsor, heads of department, IT and security: co-own the plan, decide together, meet weekly."),
         ("Monitor", "Vendors and teams outside the pilot: share updates; watch for knock-on effects."),
         ("Involve and inform", "Frontline staff, clients and staff representatives: ask what the plan misses; tell them what changes first.")],
         "Interest in the change  →", "Power  ↑",
         sub="Meridian: coordinators had the least power and the most to lose. They heard the story first.")
-    table(D, "Topic 3 · S · Story", "Three Standard Moves, Aimed at the Wrong Target", ["The usual move", "The hidden assumption", "What works instead"], [
+    table(D, "Topic 3 · S · Buy-in", "Three Standard Moves, Aimed at the Wrong Target", ["The usual move", "The hidden assumption", "What works instead"], [
         ["Awareness campaigns", "People don't know why AI matters", "Most already use AI (66% regularly, KPMG 2025). Explain why it matters to this company and this role."],
         ["More town halls and leadership videos", "Resistance is a communication problem", "It is usually an incentive problem: change time, targets and recognition. No video fixes an incentive."],
         ["Tool and prompt training", "Prompting is the gap", "The gap is judgement: knowing whether the output is good enough to send. People who lack it cannot see that they do."]],
         colw=[2.8, 3.3, 6.0], size=12.5, sub="Right intentions, wrong assumptions: three activities most AI programmes run first.",
         tipt="Source: KPMG & University of Melbourne, Trust, attitudes and use of AI: a global study 2025 (48,000+ people, 47 countries).")
-    s = rows(D, "Topic 3 · S · Sponsors", "What an Effective AI Sponsor Does Differently", [
+    loop(D, "Topic 3 · S · Buy-in · one person at a time", "ADKAR Is a Loop, Not a Line", [
+        ("lightbulb", "Awareness", "Why this change, here, now"), ("heart", "Desire", "What is in it for me and my team"),
+        ("book", "Knowledge", "How to work with the agent"), ("tool", "Ability", "Doing it on real work, with coaching"),
+        ("medal", "Reinforcement", "Recognition, targets and habits that hold")],
+        sub="The plan reads left to right. In practice, every new model or tool restarts the loop: sense, adjust, repeat.",
+        foot="Successful AI integration happens one person at a time.")
+
+def t3_sponsor(D):
+    from ccdeck import rows
+    s = rows(D, "Topic 3 · C · Lead by example · the C-suite", "What an Effective AI Sponsor Does Differently", [
         ("eye", "Active and visible, all the way through", "Present across the whole life cycle, not just the launch. The common failure: the sponsor who delegates and disappears."),
         ("users", "Builds a coalition", "Sponsorship cascades through peers and people managers. One keen executive with unaligned heads reads, from below, as no sponsor at all."),
         ("megaphone", "Communicates directly", "Staff want the business reason from the most senior person, not routed through IT or the project team."),
@@ -496,32 +513,36 @@ def t3_story(D):
         dark=False)
     from slides_bi import src
     src(D, s, "Prosci, The primary sponsor's role and importance (Prosci benchmarking since 1998)", PROSCI_SPONSOR)
-    loop(D, "Topic 3 · S · One person at a time", "ADKAR Is a Loop, Not a Line", [
-        ("lightbulb", "Awareness", "Why this change, here, now"), ("heart", "Desire", "What is in it for me and my team"),
-        ("book", "Knowledge", "How to work with the agent"), ("tool", "Ability", "Doing it on real work, with coaching"),
-        ("medal", "Reinforcement", "Recognition, targets and habits that hold")],
-        sub="The plan reads left to right. In practice, every new model or tool restarts the loop: sense, adjust, repeat.",
-        foot="Successful AI integration happens one person at a time.")
 
 def t3_commanders(D):
     from slides_bi import vs
-    s = orgtree(D, "Topic 3 · C · Commanders", "Draw the Org Chart Around Outcomes, Not Functions",
+    s = orgtree(D, "Topic 3 · C · The future organisation · Meridian", "Draw the Org Chart Around Outcomes, Not Functions",
                 "Each leader owns one outcome and a team of people and agents. Some value streams run on agents, audited by a person.")
     back_scale(D, s, "C")
-    vs(D, "Topic 3 · C · Managers", "Middle Managers Become Outcome Managers",
+    return s
+
+def t3_managers(D):
+    from slides_bi import vs
+    vs(D, "Topic 3 · C · The future organisation · managers", "Middle Managers Become Outcome Managers",
        ("Observed: managers are the lever", "check", ["Gallup, Feb 2026, 23,717 US staff:", "78% with strongly supportive managers use AI often; 44% of the rest do."]),
        ("Forecast: 'AI will gut middle management'", "alert", ["Gartner, Oct 2024: by 2026, 20% of firms flatten with AI, cutting over half of middle managers.", "A forecast, not an observation."]),
        sub="Plan for the evidence, not the headline: give managers time, targets and authority to run human + agent teams.",
        source="Gallup (12 Apr 2026) · Gartner press release (22 Oct 2024)")
 
 def t3_augment(D):
-    from slides_bi import vs, bignums
-    vs(D, "Topic 3 · A · Training", "Training That Transfers Knowledge vs Training That Builds Ability",
+    t3_coaching_gap(D); t3_training_ability(D)
+
+def t3_training_ability(D):
+    from slides_bi import vs
+    vs(D, "Topic 3 · A · AI training", "Training That Transfers Knowledge vs Training That Builds Ability",
        ("Knowledge only", "book", ["One-off tool and prompt classes", "E-learning completion targets", "Static policy decks", "Confidence surveys"]),
        ("Builds ability", "tool", ["Practice on their own work", "Daily coaching from the manager", "Teams judge real output together", "Feedback on output, not self-rating"]),
        sub="Prosci: user proficiency is the largest AI adoption challenge, 38% of those reported.",
        source="Prosci, AI adoption challenges (Sep 2026)")
-    bignums(D, "Topic 3 · A · Coaching", "Leaders Think They Coach. Staff Don't See It.", [
+
+def t3_coaching_gap(D):
+    from slides_bi import bignums
+    bignums(D, "Topic 3 · A · AI coaching", "Leaders Think They Coach. Staff Don't See It.", [
         ("3.55", "leaders' self-rating", "How often they hold 1:1 AI conversations (of 5)"),
         ("2.38", "employees' view", "How often employees see it happen (of 5)"),
         ("1.17", "the gap", "Widest on private, hard-to-verify behaviours")],

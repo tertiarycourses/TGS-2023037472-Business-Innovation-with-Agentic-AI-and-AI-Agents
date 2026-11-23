@@ -1010,7 +1010,7 @@ def meridian_shot(D, kicker, title, sub, img, n, notes):
 def bonus_open(D):
     """v54 (owner): the bonus is to vibe code a dashboard that shows the AI transformation's progress."""
     s = D.new(dark=True)
-    circle(s, -1.7, 5.2, 4.2, ACC)
+    circle(s, -2.2, 4.3, 3.0, ACC)   # QA v55: smaller and higher so the copyright line sits on charcoal, not on the circle
     text(s, 0.9, 0.9, 7.6, 0.45, "BONUS TOPIC  ·  SELF-PACED  ·  OPTIONAL", 12.5, ACC, bold=True, autofit=False)
     text(s, 0.85, 1.45, 7.9, 2.0, "Vibe Code Your AI Transformation Dashboard", 34, WHITE, bold=True, font=SERIF, cw=0.52, lh=1.04)
     text(s, 0.9, 3.75, 7.7, 0.9, "Turn your 90-day plan and SCALE board into one live page your CEO opens every Monday.", 19, SOFT, font=SERIF, lh=1.1)
@@ -1345,9 +1345,12 @@ def topic3(D, C, mark):
     import slides_v53 as N
     tp = C.TOPICS[2]; K3 = "Topic 3 · Transform"
     mark("t3"); topic_open(D, C, tp)
-    # --- Part A: why transformations stall, outputs to outcomes, who owns AI
+    # v55 (owner, 23 Nov 2026): the future organisation first, then the challenges, then the moves that make the
+    # change sustainable: job redesign, AI coaching, AI training, progressive change, buy-in, leaders by example,
+    # AI built into the workflow and processes. Governance and security follow (Evaluate).
+    # --- Part A (1): the future organisation: flatter, people + agents, projects driven by DRIs
     mark("t3chal")
-    N.t3_open(D, mark)
+    N.t3_quote(D)
     # v54 (owner): the Meridian scenario opens the topic's Meridian thread
     meridian_scene(D, K3 + " · Meridian scenario", "Day 90 at Meridian: the Numbers Say Scale. The People Are Nervous.",
         "The Topic 2 pilot worked. Watch Meridian take it company-wide with SCALE; then do the same for your company in Activity 3.", [
@@ -1356,7 +1359,15 @@ def topic3(D, C, mark):
         ("org", "The next step", "Scale from 10 sites to all 30 with the same approval rules."),
         ("lightbulb", "The opening", "Meridian Assist could become a product for other building managers.")],
         "How do we make this how Meridian works, without losing our people, our judgement or our clients' trust?", "Meridian's Topic 3 question")
-    icons(D, "Topic 3 · What your people feel", "Six Worries to Answer Before Any Role Changes", [
+    import slides_v54 as S6
+    S6.future_org(D)
+    N.t3_commanders(D)          # Meridian's outcome org chart (anchor for SCALE · C)
+    N.t3_cartoon(D)             # making work is cheap; owning it is not
+    S6.dri(D)                   # the DRI: one name per outcome (three pages)
+    N.t3_managers(D)            # middle managers become outcome managers
+    # --- Part A (2): the challenges of driving AI transformation
+    N.t3_challenges(D)
+    icons(D, "Topic 3 · The challenges · what your people feel", "Six Worries to Answer Before Any Role Changes", [
         ("users", "Resistance to change", "People trust their current workflow and may have had little say in the redesign."),
         ("user", "Worry about job loss", "Staff ask which tasks will change and what happens to their roles."),
         ("grad", "Steep learning curve", "Learning the tool and checking its work takes time and practice."),
@@ -1364,7 +1375,7 @@ def topic3(D, C, mark):
         ("clock", "Pressure on managers", "Managers need time and resources to coach while keeping the service running."),
         ("shield", "Data and reliability", "Incomplete records and unreliable outputs make it harder for people to trust the change.")], cols=3,
         sub="At Meridian, coordinators worry about replacement and still carry responsibility for urgent jobs.")
-    s = bignums(D, "Topic 3 · Workforce outlook", "The Global Job Market Is Projected to Grow and Change", [
+    s = bignums(D, "Topic 3 · The challenges · workforce outlook", "The Global Job Market Is Projected to Grow and Change", [
         ("170M", "jobs created", "Projected worldwide by 2030"),
         ("92M", "jobs displaced", "Projected worldwide by 2030"),
         ("+78M", "net jobs", "Projected net increase across economic trends")],
@@ -1377,44 +1388,15 @@ def topic3(D, C, mark):
     N.t3_outcomes(D)
     # --- Activity 3 Part A: readiness diagnostic
     N.t3_diagnostic(D, mark)
-    # --- Part B: SCALE · Story and Commanders
+    # --- Part B: SCALE, then job redesign and AI coaching
     mark("t3scale")
     N.scale_nav(D, B.SCALE)
-    s = icons(D, "Topic 3 · S · Story", "Tell People What Changes and Invite Their Input", [
-        ("megaphone", "Explain the purpose", "Meridian aims to shorten queues and give coordinators more time for clients."),
-        ("users", "Say what changes", "Agents draft tickets. Coordinators retain approval and urgent decisions."),
-        ("handshake", "State the commitment", "Meridian commits to no job losses during the pilot and sets a review date."),
-        ("chat", "Invite questions", "Use team huddles, client updates and a named contact for concerns.")], cols=4,
-        sub="Tailor the message to staff, customers and executives. Ask employees what the plan misses.")
-    N.back_scale(D, s, "S")
-    N.t3_story(D)
-    N.t3_commanders(D)
-    concept(D, "DRI (Directly Responsible Individual)", 3)
-    vs(D, "Topic 3 · C · Management support and leadership", "Your Managers Carry the Change. Your CEO Sets Its Pace.",
-       ("Back the managers", "handshake", ["Protect time to learn and redesign work.", "Give each DRI a budget and a stop button.", "Treat early mistakes as data, not blame."]),
-       ("The CEO goes first", "star", ["The C-suite uses agents for its own work, in public.", "Shopify's CEO, Apr 2025: \u201cReflexive AI usage is now a baseline expectation.\u201d", "Staff copy what leaders do."]),
-       sub="Staff watch two signals: does my manager have time for this, and does the boss actually use it?",
-       source="Tobi Lütke, internal memo shared publicly on X, 7 Apr 2025")
-    icons(D, "Topic 3 · C · Commanders", "Flatten Smart: Five Moves, No Shock", arrows=True, items=[
-        ("memory", "Codify", "Tacit know-how into playbooks"), ("flask", "Test", "Real task, real agents"),
-        ("search", "Spot builders", "Who turns into a team?"), ("medal", "Give rights", "Goal, decision and resource rights"),
-        ("layers", "Flatten slowly", "Relay layers fade out")],
-        sub="Bayer halved its management layers, from as many as 12 to five or six in some units, over a planned multi-year journey.",
-        tipt="Run old and new side by side (Kotter's dual operating system).",
-        source="Bayer, Dynamic Shared Ownership (bayer.com) · PMI, Building Bayer for the future (Oct 2026)", url="https://www.bayer.com/en/strategy/dynamic-shared-ownership")
-    ladder(D, "Topic 3 · C · Progressive rollout", "Roll Out in Stages: Earn Each Step of Autonomy", [
-        ("Shadow", "Agent drafts in the background; people still do the work"), ("Assist", "Agent drafts; a person approves every action"),
-        ("Supervise", "Agent acts on low-risk work; people audit samples"), ("Scale", "More sites and processes, same rules and DRI")],
-        sub="Meridian: shadow on 2 sites, assist on 10 by day 60, scale to all 30 only after the day-90 review.",
-        foot="Move up a step only when the numbers say so. Move down at once if they do not.")
-    # --- Part C: Augment people, then Loop AI into the process
-    mark("t3work")
-    s = vs(D, "Topic 3 · A · Augment people", "Agents Take the Routine. Move Your People Up.",
+    s = vs(D, "Topic 3 · A · Job redesign", "Agents Take the Routine. Move Your People Up.",
        ("Work that shrinks", "stop", ["Rule-bound tasks agents do cheaper", "Relaying messages up and down layers", "Signing off without really checking"]),
        ("Work that grows", "trend", ["Directing a team of agents as the DRI", "Judging the exceptions agents flag", "Human work: trust, negotiation, care"]),
        sub="Plan where each role goes before the agents arrive.")
     N.back_scale(D, s, "A")
-    icons(D, "Topic 3 · A · Augment people", "Managers Move from Relay to Judgement", [
+    icons(D, "Topic 3 · A · Job redesign · managers", "Managers Move from Relay to Judgement", [
         ("gavel", "Judge at scale", "Owns outcomes for agents + people"), ("users", "Coach", "Teaches teams to work with agents"),
         ("network", "Translate", "Moves tacit know-how into the system"), ("stop", "Relay", "Only passes messages: most exposed")], cols=4)
     image(D, "Topic 3 · A · Job redesign · human ownership",   # v54 (owner): restored from v52
@@ -1434,19 +1416,8 @@ def topic3(D, C, mark):
         ("check", "Human decides", "Approve dispatch or send the ticket back. Own the result.")],
         sub="Give the service desk owner authority to change rules and stop the workflow. An agent can assist with checks at every gate.")
     s.notes_slide.notes_text_frame.text = "Adapted from Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, page 4."
-    N.t3_augment(D)
-    cards(D, "Topic 3 · A · Role-based training", "Train Three Groups, Three Different Ways", [
-        ("Everyone", "Safe everyday use: what data goes in, how to check an answer, when to ask a person. Two hours, on their own work.", "users"),
-        ("Builders", "The few who write prompts, skills and agent workflows for their team, and keep them current.", "tool"),
-        ("Managers", "Coaching, job redesign and reading the agent's numbers: the skills of this course.", "org")], cols=3,
-        tipt="Train on the employee's real tasks, not demos. Keep people doing some work unassisted so judgement does not atrophy.")
-    bignums(D, "Topic 3 · A · Augment people", "Train Everyone: AI Lifts Beginners Most", [
-        ("+14%", "more issues solved per hour", "5,000+ support agents (Stanford & MIT)"),
-        ("+34%", "for novice and low-skilled staff", "The gains went mostly to novices"),
-        ("2 = 6+", "months of experience", "A 2-month hire with AI matched staff with over 6 months without")],
-        source="Brynjolfsson, Li & Raymond, Generative AI at Work, Quarterly Journal of Economics 140(2), 2025 (NBER w31161)",
-        url="https://academic.oup.com/qje/article/140/2/889/7990658")
-    flow(D, "Topic 3 · A · Coach the staff", "Coach the Person Through Four Moves", [
+    N.t3_coaching_gap(D)
+    flow(D, "Topic 3 · A · AI coaching · four moves", "Coach the Person Through Four Moves", [
         ("hand", "Hear the fear", "Name it and validate it before solving anything."),
         ("search", "Explore their reality", "What do they do best? What do they enjoy? What do they worry about?"),
         ("puzzle", "Co-create the role", "Design the human part around the agent, together."),
@@ -1460,18 +1431,59 @@ def topic3(D, C, mark):
     s.notes_slide.notes_text_frame.text = "Fictional coaching example adapted from Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, page 9."
     mark("coachmini")
     coach_demo(D, "Topic 3 · A · AI Coaching Mini Activity · 10 min · pairs")
+    # --- Part C: AI training, progressive change, buy-in, leaders by example
+    mark("t3work")
+    N.t3_training_ability(D)
+    cards(D, "Topic 3 · A · AI training · three groups", "Train Three Groups, Three Different Ways", [
+        ("Everyone", "Safe everyday use: what data goes in, how to check an answer, when to ask a person. Two hours, on their own work.", "users"),
+        ("Builders", "The few who write prompts, skills and agent workflows for their team, and keep them current.", "tool"),
+        ("Managers", "Coaching, job redesign and reading the agent's numbers: the skills of this course.", "org")], cols=3,
+        tipt="Train on the employee's real tasks, not demos. Keep people doing some work unassisted so judgement does not atrophy.")
+    bignums(D, "Topic 3 · A · AI training", "Train Everyone: AI Lifts Beginners Most", [
+        ("+14%", "more issues solved per hour", "5,000+ support agents (Stanford & MIT)"),
+        ("+34%", "for novice and low-skilled staff", "The gains went mostly to novices"),
+        ("2 = 6+", "months of experience", "A 2-month hire with AI matched staff with over 6 months without")],
+        source="Brynjolfsson, Li & Raymond, Generative AI at Work, Quarterly Journal of Economics 140(2), 2025 (NBER w31161)",
+        url="https://academic.oup.com/qje/article/140/2/889/7990658")
     mark("t3judge")
     N.quote(D, "Be the human in the loop.", "Ethan Mollick, Co-Intelligence: Living and Working with AI, 2024",
-            kicker="Topic 3 · A · Keep people judging",
+            kicker="Topic 3 · A · AI training · keep people judging",
             note="Principle 2 of the four rules in Mollick's Co-Intelligence (Portfolio, 2024); see https://www.gsb.stanford.edu/insights/co-intelligence-ai-masterclass-ethan-mollick (checked 23 Nov 2026). Point: an agent's output is a draft until a person who knows the work checks it.")
-    s = bignums(D, "Topic 3 · A · Augment people", "Judgement Is a Muscle. Use It or Lose It.", [
+    s = bignums(D, "Topic 3 · A · AI training", "Judgement Is a Muscle. Use It or Lose It.", [
         ("−6 pts", "adenoma detection", "28.4% → 22.4% in colonoscopies without AI, after routine AI use"),
         ("~80%", "followed the wrong AI", "When people asked the AI and it was planted wrong (Wharton, Study 1)"),
-        ("10 min", "of AI help", "Then worse and quicker to give up without it (CMU, Oxford, Berkeley, MIT)")],
+        ("10 min", "of AI help", "Then worse and quicker to give up without it (Liu et al., 2026 preprint)")],
         tipt="Ask for hints before answers. Write your view first. Keep some work unassisted.")
     links_row(s, [("Lancet Gastro Hep 2025 (Budzyń et al.)", "https://pubmed.ncbi.nlm.nih.gov/40816301/"),
                   ("Shaw & Nave, SSRN 2026", "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6097646"),
                   ("Liu et al., arXiv 2604.04721 (preprint)", "https://arxiv.org/abs/2604.04721")])
+    ladder(D, "Topic 3 · C · Progressive change · rollout", "Roll Out in Stages: Earn Each Step of Autonomy", [
+        ("Shadow", "Agent drafts in the background; people still do the work"), ("Assist", "Agent drafts; a person approves every action"),
+        ("Supervise", "Agent acts on low-risk work; people audit samples"), ("Scale", "More sites and processes, same rules and DRI")],
+        sub="Meridian: shadow on 2 sites, assist on 10 by day 60, scale to all 30 only after the day-90 review.",
+        foot="Move up a step only when the numbers say so. Move down at once if they do not.")
+    icons(D, "Topic 3 · C · Progressive change", "Flatten Smart: Five Moves, No Shock", arrows=True, items=[
+        ("memory", "Codify", "Tacit know-how into playbooks"), ("flask", "Test", "Real task, real agents"),
+        ("search", "Spot builders", "Who turns into a team?"), ("medal", "Give rights", "Goal, decision and resource rights"),
+        ("layers", "Flatten slowly", "Relay layers fade out")],
+        sub="Bayer halved its management layers, from as many as 12 to five or six in some units, over a planned multi-year journey.",
+        tipt="Run old and new side by side (Kotter's dual operating system).",
+        source="Bayer, Dynamic Shared Ownership (bayer.com) · PMI, Building Bayer for the future (Oct 2026)", url="https://www.bayer.com/en/strategy/dynamic-shared-ownership")
+    s = icons(D, "Topic 3 · S · Buy-in · story", "Tell People What Changes and Invite Their Input", [
+        ("megaphone", "Explain the purpose", "Meridian aims to shorten queues and give coordinators more time for clients."),
+        ("users", "Say what changes", "Agents draft tickets. Coordinators retain approval and urgent decisions."),
+        ("handshake", "State the commitment", "Meridian commits to no job losses during the pilot and sets a review date."),
+        ("chat", "Invite questions", "Use team huddles, client updates and a named contact for concerns.")], cols=4,
+        sub="Tailor the message to staff, customers and executives. Ask employees what the plan misses.")
+    N.back_scale(D, s, "S")
+    N.t3_story(D)               # buy-in: stakeholders, three standard moves, ADKAR
+    N.t3_sponsor(D)             # lead by example: the C-suite sponsor
+    vs(D, "Topic 3 · C · Lead by example · managers and the CEO", "Your Managers Carry the Change. Your CEO Sets Its Pace.",
+       ("Back the managers", "handshake", ["Protect time to learn and redesign work.", "Give each DRI a budget and a stop button.", "Treat early mistakes as data, not blame."]),
+       ("The CEO goes first", "star", ["The C-suite uses agents for its own work, in public.", "Shopify's CEO, Apr 2025: \u201cReflexive AI usage is now a baseline expectation.\u201d", "Staff copy what leaders do."]),
+       sub="Staff watch two signals: does my manager have time for this, and does the boss actually use it?",
+       source="Tobi Lütke, internal memo shared publicly on X, 7 Apr 2025")
+    # --- Part D: build AI into the workflow and processes (L), then Evaluate and govern (E)
     mark("t3loop")
     N.t3_loop(D)
     hubbig(D, "Topic 3 · L · Loop information", "Information Flows Through the DRI, Not Up Ten Layers", "DRI + agents", [

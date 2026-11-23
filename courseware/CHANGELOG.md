@@ -1,3 +1,10 @@
+## v55 · 23 November 2026
+
+- Topic 3 reordered so the change lasts. It now opens with the future organisation: fewer layers, mixed teams of people and agents, and projects driven by DRIs (new slide), then Meridian's outcome org chart. The DRI is taught in three new pages that replace the one-card concept: the definition (singular, accountable, empowered; Apple coined the term, GitLab runs its handbook on it), Meridian's DRI charter (outcome, rights, stop button, boundaries, rhythm, backup) and what a DRI does and does not do. WA Q5 asks for the role of the DRI.
+- Then the challenges, the readiness diagnostic and the SCALE moves in the order a company lives them: job redesign, AI coaching, AI training, progressive change, buy-in, the C-suite and managers leading by example, AI built into the workflow and processes, then governance and security.
+- Timetable: the AI Coaching mini activity moves to 14:00-14:10, straight after lunch; Part C now runs 14:10-14:35. Day and LU3 minutes are unchanged.
+- 238 slides. LP, LG (Topic 3 sections reordered; the AI Native book figure replaced by text), FG v17 and AP v19 aligned. Assessment papers v44 unchanged.
+
 ## v54 · 23 November 2026
 
 - Quotes: the five old quotes (Kay 1971, Ng 2017, Eisenhower 1957, Kennedy 1963, Skinner 1969) replaced with verified 2024-2025 quotes on AI agents: Sam Altman (Reflections, Jan 2025), Andrew Ng (agentic workflows, Mar 2024), Anthropic (Building Effective Agents, Dec 2024), Microsoft Work Trend Index (Apr 2025), Ethan Mollick (Co-Intelligence, 2024). The Topic 1 quote now opens the always-on agents section.

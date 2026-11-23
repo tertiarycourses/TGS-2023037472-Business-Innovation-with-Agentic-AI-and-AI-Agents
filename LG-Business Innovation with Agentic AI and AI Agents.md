@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 54 · 23 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 55 · 23 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -430,7 +430,7 @@ Discuss: Which block of your business model would an AI agent change the most? W
 | Key Activities | Which key activities could AI agents do, speed up or watch over? | Request triage (agent): Agent reads 80 emails and WhatsApps a day, drafts tickets; coordinators approve; Technician scheduling: Agent proposes routes; supervisor confirms; Monthly client reports: Agent drafts from tickets; account manager reviews. |
 | Key Resources | Which data and know-how would make your agents smart about your business? | 5 years of closed tickets: Root causes and repeat faults per site: fuel for a predictor agent; Technician photos and voice notes: Thousands in WhatsApp groups, never searched; Senior coordinator know-how: Which clients need a call, not an email. |
 | Value Propositions | What new or better value can AI agents deliver to your customers? | Same-day answers, 24/7: Always-on triage agent replies within minutes, even at 2 am; No repeat faults: Predictor agent flags sites likely to fail again within 30 days; Live job status: Agent updates the client portal as work progresses. |
-| Customer Relationships | How will agents change the way you serve and keep customers, and where must a human stay? | Agent first, human always reachable: Routine updates by agent; complaints and refunds by a coordinator; DRI: Head of Service Desk: Owns triage accuracy and response time; Personal touch kept: Account managers call key clients monthly. |
+| Customer Relationships | How will agents change the way you serve and keep customers, and where must a human stay? | Agent first, human always reachable: Routine updates by agent; complaints and refunds by a coordinator; DRI: Head of Service Desk: Owns triage accuracy and handling time; Personal touch kept: Account managers call key clients monthly. |
 | Channels | Through which channels will your agents meet customers? | Email + WhatsApp Business: Agent drafts every reply; coordinator sends at first; Client portal: Agent posts live job status; Teams channel: Daily 8:00 exceptions brief to supervisors. |
 | Customer Segments | Which customer segments gain most from AI agents, and which still want a person? | Building managers (clients): Want same-day answers; happy with an agent for status updates; Premium contracts: Expect a named human: agent supports, person serves; Small offices (new): Low-cost, agent-led service tier becomes viable. |
 | Cost Structure | What will the agents cost, and which costs will they remove or add? | Year-1 cost SGD 39,000: Licences 14k, integration 15k, training and change 10k; Cost removed: 38% of coordinator time spent re-keying; Risk cost: Human approval for 90 days to avoid misrouted urgent jobs. |
@@ -760,7 +760,7 @@ Discuss: Which step of the mined process gives the fastest visible win? What mus
 | Block | Question | Example (fictional sample company) |
 |---|---|---|
 | 1 · Objective & Outcome | Which organisational objective does this serve, and how will you know? | Same-day response for every client: Handling time 18 -> 11 min by day 90; complaints stay at or below 2%. |
-| 1 · Cost & Value | What does it cost and what does it return? | Year 1: Cost SGD 39,000; realised benefit SGD 39,200 at 60% realisation; Downside: At 55% adoption, benefit falls; keep scope small until proven. |
+| 1 · Cost & Value | What does it cost and what does it return? | Year 1: Cost SGD 39,000; modelled benefit SGD 39,200 at 60% realisation; Downside: At 55% adoption, benefit falls; keep scope small until proven. |
 | 2 · Mine the Business Process | What actually happens today, step by step? | As-is triage: 6 steps, 3 handoffs: Email -> coordinator reads -> re-keys ticket -> calls client -> assigns -> chases; Friction: 38% of time spent re-keying; 14% rework from missing details. |
 | 3 · Where Agents Plug In | Which steps go to an agent, which stay human? | Agent prepares: Reads email, extracts site, fault and urgency, drafts the ticket; Human approves: Coordinator confirms routing for urgent and VIP clients; Agent monitors: Watches SLA timers and alerts the supervisor. |
 | 3 · Digital Architecture | Which systems, data, agents and controls make it work? | Hybrid: Bought ticketing AI add-on + our own routing rules and terms; Connectors: Gmail, WhatsApp Business API, ServiceNow via MCP; read + draft only; Controls: Coordinator approval on urgent jobs; every agent action logged. |
@@ -773,7 +773,51 @@ Discuss: Which step of the mined process gives the fastest visible win? What mus
 
 LO3: Manage business innovation and facilitate information flow among stakeholders to review success and develop innovative ideas. (K5, K6, A5, A6)
 
-## Topic 3 Pain Points: Why AI Transformations Stall
+## The Future Organisation: Fewer Layers, Mixed Teams, DRI-Led Projects
+
+Start with where the company is heading. When agents take the relaying, reporting and first drafts, the layers that only pass work along thin out. Three shifts follow: fewer layers between the CEO and the work; teams that mix people and agents, where people set goals, judge exceptions and own the client relationship while agents do the volume; and projects driven by DRIs, each with one named owner who holds the rights, budget and stop button to deliver it.
+
+### Meridian's Outcome Org Chart
+
+Draw the org chart around outcomes, not functions. Each leader owns one outcome (handling time, client retention, first-time fix, cost per job) and a team of people and agents; some value streams, such as overnight alerts, run on agents and are audited daily by a person. Ask of every box: which outcome does this person own, and which agents work for them?
+
+Managers are the lever, not the casualty. Gallup (survey of 23,717 US employees, February 2026) found 78% of employees with strongly supportive managers use AI frequently, against 44% of the rest. Gartner's October 2024 forecast that 20% of organisations will use AI to flatten and cut over half of middle-management roles through 2026 is a prediction, not an observation. Plan for managers who lead mixed teams of people and agents.
+
+*Source: Gallup (12 Apr 2026): https://www.gallup.com/workplace/704252/workplace-separates-adopters-and-holdouts.aspx ; Gartner (22 Oct 2024) press release.*
+
+### The DRI: One Name per Outcome
+
+A Directly Responsible Individual (DRI), a term made famous by Apple, is the one person accountable for an outcome: singular (one named person, not a committee), accountable (owns the outcome, not just the task) and holding the decision rights (commands the AI workforce). DRIs carry responsibility to the end, are self-driven, coordinate without formal authority and now command agents. Agents supply capability; the DRI supplies accountability. GitLab runs its company handbook on DRIs: the DRI consults the people affected, then makes the final call.
+
+*Source: Fortune, 'How Apple works: inside the world's biggest startup' (May 2011); GitLab Handbook: https://handbook.gitlab.com/handbook/people-group/directly-responsible-individuals/*
+
+### Meridian's DRI Charter
+
+Write the DRI's rights down. If the DRI owns the outcome, the DRI must also be able to change the rules, spend the budget and stop the agent; an owner without those rights is a scapegoat, not a DRI.
+
+| Charter line | Meridian (fictitious) |
+|---|---|
+| Outcome | Handling time from 18 to 11 minutes or less by day 90; complaints at 2% or less |
+| DRI and backup | Head of Service Desk; the senior coordinator steps in when the DRI is away |
+| Agent team | Triage agent drafts tickets; SLA agent flags late jobs; two coordinators review |
+| Decision rights | Changes routing rules and the playbook; decides what the agent may draft |
+| Resource rights | SGD 39,000 year-1 budget; system access granted through IT |
+| Stop button | Pauses the agent if rework tops 20% for two weeks |
+| Boundaries | A coordinator approves every dispatch; tenant-data questions go to the DPO |
+| Rhythm | Daily 8:00 exceptions brief, weekly review, monthly dashboard to the CEO |
+
+### What a DRI Does, and Does Not Do
+
+| A DRI does | A DRI does not |
+|---|---|
+| Consult the people affected, then make the final call | Do all the work alone |
+| Set the agents' goal, limits and checks | Wait for consensus before deciding |
+| Read the exceptions and sample the agents' work every week | Rubber-stamp whatever the agent drafts |
+| Answer for the result, good or bad, and report back | Say 'the AI did it' when something goes wrong |
+
+Test your board: write one person's name next to every outcome. A team, a committee or 'the AI' means you have no DRI yet.
+
+## The Challenges: Why AI Transformations Stall
 
 AI has made producing work almost free; owning the work (checking, approving and following up hundreds of outputs a day) is still expensive. McKinsey's State of Organizations 2026 (n = 10,018 leaders) found 72% say their organisation is not fully ready for the changes ahead. The usual reasons the change does not stick:
 
@@ -788,7 +832,28 @@ AI has made producing work almost free; owning the work (checking, approving and
 
 *Source: McKinsey, The State of Organizations 2026; Prosci, Leading AI integration (Sep 2026): https://www.prosci.com/blog/leading-ai-integration-what-separates-results-from-stalled-ai-investment*
 
-## From Outputs to Outcomes
+### What Your People Feel: Challenges of AI Transformation
+
+| Challenge | What Meridian hears or sees |
+|---|---|
+| Resistance to change | Coordinators trust the current workflow and want a say in how it changes. |
+| Worry about job loss | Staff ask whether drafting tickets is the first step in replacing their roles. |
+| Steep learning curve | Teams need time to practise using the agent and checking its drafts. |
+| Trust and accountability | Coordinators want clear approval rules and an escalation contact for mistakes. |
+| Pressure on managers | Managers need protected time and resources to coach while running the service. |
+| Data and reliability | Missing request details or poor tickets can make staff revert to manual work. |
+
+### Job-Market Outlook and Demand for AI Skills
+
+The World Economic Forum projects 170 million jobs created and 92 million displaced globally by 2030, yielding 78 million net jobs across technology, demographic, economic and environmental trends. AI and data roles are among the fastest-growing by percentage. Care, education and other occupations also contribute to job growth.
+
+*Source: World Economic Forum, Future of Jobs Report 2025, Jobs Outlook: https://www.weforum.org/publications/the-future-of-jobs-report-2025/2-jobs-outlook*
+
+Singapore’s total employment increased by 27,700 in Q3 2026 in MOM’s advance release. Resident growth was supported by essential and public services. Construction and manufacturing contributed to non-resident growth. IMDA separately reports tech workforce growth of 2.7% to 214,000 in 2024, with AI and data and cybersecurity among the fastest-growing tech roles. The share of tech postings requiring AI skills rose from 11% in 2019 to 14% in 2024.
+
+*Source: MOM, Labour Market Advance Release Q3 2026: https://www.mom.gov.sg/newsroom/press-releases/2026/1030-labour-market-advance-release-3q-2026 · IMDA, Singapore Digital Economy Report 2025: https://www.imda.gov.sg/-/media/imda/files/about/resources/corporate-publications/annual-report/imda-sgde-report-fy2024-2025.pdf*
+
+### From Outputs to Outcomes
 
 Adoption treats AI as a project; transformation changes how the business runs.
 
@@ -824,30 +889,9 @@ Then, in your group, share the shape, not the score: which dimension came out lo
 Here are my company's AI readiness scores out of 20 [paste the six scores from the scorecard]. Our company: [two sentences]. Name our lowest dimension, what it looks like day to day, who would have to act differently for it to move, and one change we can make in the next 30 days without new budget. 120 words at most.
 ```
 
-### What Your People Feel: Challenges of AI Transformation
+## The SCALE Framework: Five Moves That Make the Change Stick
 
-| Challenge | What Meridian hears or sees |
-|---|---|
-| Resistance to change | Coordinators trust the current workflow and want a say in how it changes. |
-| Worry about job loss | Staff ask whether drafting tickets is the first step in replacing their roles. |
-| Steep learning curve | Teams need time to practise using the agent and checking its drafts. |
-| Trust and accountability | Coordinators want clear approval rules and an escalation contact for mistakes. |
-| Limited capacity | Managers need protected time and resources to coach while running the service. |
-| Data and reliability | Missing request details or poor tickets can make staff revert to manual work. |
-
-### Job-Market Outlook and Demand for AI Skills
-
-The World Economic Forum projects 170 million jobs created and 92 million displaced globally by 2030, yielding 78 million net jobs across technology, demographic, economic and environmental trends. AI and data roles are among the fastest-growing by percentage. Care, education and other occupations also contribute to job growth.
-
-*Source: World Economic Forum, Future of Jobs Report 2025, Jobs Outlook: https://www.weforum.org/publications/the-future-of-jobs-report-2025/2-jobs-outlook*
-
-Singapore’s total employment increased by 27,700 in Q3 2026 in MOM’s advance release. Resident growth was supported by essential and public services. Construction and manufacturing contributed to non-resident growth. IMDA separately reports tech workforce growth of 2.7% to 214,000 in 2024, with AI and data and cybersecurity among the fastest-growing tech roles. The share of tech postings requiring AI skills rose from 11% in 2019 to 14% in 2024.
-
-*Source: MOM, Labour Market Advance Release Q3 2026: https://www.mom.gov.sg/newsroom/press-releases/2026/1030-labour-market-advance-release-3q-2026 · IMDA, Singapore Digital Economy Report 2025: https://www.imda.gov.sg/-/media/imda/files/about/resources/corporate-publications/annual-report/imda-sgde-report-fy2024-2025.pdf*
-
-## The SCALE Framework: Five Moves to Transform the Company
-
-Topic 3 and Activity 3 follow one framework. Each move is a block on your SCALE board.
+Topic 3 and Activity 3 follow one framework. Each move is a block on your SCALE board. The rest of Topic 3 takes the moves in the order a company lives them, so that the change lasts: redesign jobs, coach, train, roll out in stages, win buy-in, lead from the top, then build AI into the process and govern it.
 
 |  | Move | What you do |
 |---|---|---|
@@ -857,80 +901,16 @@ Topic 3 and Activity 3 follow one framework. Each move is a block on your SCALE 
 | L | Loop information | Daily brief, weekly review, monthly dashboard, idea pipeline |
 | E | Evaluate | KPIs vs baseline, ROI, governance: scale, redesign, hold or stop |
 
-## S · Story: Communicate the Change
-
-Explain why Meridian is piloting triage, what the agent will draft, what staff still decide and when the plan will be reviewed. Explain the no-job-loss commitment for the pilot. Use a team huddle for coordinators, a service update for customers and a short review for leaders. Give each group a named contact for questions.
-
-### Map the Stakeholders
-
-| Group | Power / interest | What to do |
-|---|---|---|
-| Board, finance, legal, data protection officer | High power, lower interest | Keep satisfied: brief early; show the controls and the numbers. |
-| CEO sponsor, heads of department, IT and security | High power, high interest | Manage closely: co-own the plan; decide together; meet weekly. |
-| Frontline staff, clients, staff representatives | Lower power, high interest | Involve and inform: ask what the plan misses; tell them first. |
-| Vendors, teams outside the pilot | Lower power, lower interest | Monitor: share updates; watch for knock-on effects. |
-
-### Three Standard Moves Aimed at the Wrong Target
-
-- Awareness campaigns assume people do not know why AI matters; most already use it (KPMG and University of Melbourne, 2025: 66% use AI regularly). Explain why it matters to this company and this role.
-- More town halls assume resistance is a communication problem; it is usually an incentive problem. Change time, targets and recognition.
-- Tool and prompt training assumes prompting is the gap; the gap is judgement: knowing whether the output is good enough to send.
-
-### What an Effective Sponsor Does
-
-Prosci's benchmarking has found active and visible sponsorship to be the top contributor to change success in every report since 1998. Effective AI sponsors stay active and visible through the whole life cycle, build a coalition of peers and people managers, communicate the business reason directly, and use the tools themselves and say so.
-
-Treat ADKAR (Awareness, Desire, Knowledge, Ability, Reinforcement) as a loop, not a line: each new model or tool restarts it, and successful AI integration happens one person at a time.
-
-*Source: Prosci, The primary sponsor's role: https://www.prosci.com/resources/articles/primary-sponsors-role-and-importance ; KPMG, Trust in AI 2025: https://kpmg.com/au/en/insights/artificial-intelligence-ai/trust-in-ai-global-insights-2025.html*
-
-## C · Commanders: Draw the Org Chart Around Outcomes
-
-Draw the org chart around outcomes, not functions. Each leader owns one outcome (response time, client retention, first-time fix, cost per job) and a team of people and agents; some value streams, such as overnight alerts, run on agents and are audited daily by a person. Ask of every box: which outcome does this person own, and which agents work for them?
-
-Managers are the lever, not the casualty. Gallup (survey of 23,717 US employees, February 2026) found 78% of employees with strongly supportive managers use AI frequently, against 44% of the rest. Gartner's October 2024 forecast that 20% of organisations will use AI to flatten and cut over half of middle-management roles through 2026 is a prediction, not an observation. Plan for managers who lead mixed teams of people and agents.
-
-*Source: Gallup (12 Apr 2026): https://www.gallup.com/workplace/704252/workplace-separates-adopters-and-holdouts.aspx ; Gartner (22 Oct 2024) press release.*
-
-*[Figure: Rewrite companies in a flattened org chart]*
-
-A Directly Responsible Individual (DRI), a term from Apple, is the one person accountable for an outcome: singular (one named person, not a committee), accountable (owns the outcome, not just the task) and holding the decision rights (commands the AI workforce). DRIs carry responsibility to the end, are self-driven, coordinate without formal authority and now command agents. Agents supply capability; the DRI supplies accountability.
-
-### Flatten smart, not by decree
-
-Block laid off about 4,000 people (nearly 40%) at once; about 30% of Zappos staff left after the Holacracy ultimatum in 2015; Google removed engineering managers in 2001 and reinstated them within months. Flattening by decree wipes institutional memory. The right order: preserve and codify the knowledge in the decision layer first, then simplify the hierarchy. Bayer says it halved its management layers and cut management roles by two thirds; in some units layers fell from as many as 12 to five or six.
-
-1. Codify tacit know-how into playbooks, the company map and skills.
-2. Run a business scenario test: real access to agents, a small valuable task, four boundaries (goal, time, data, token spend).
-3. Spot the builders; they are your first DRIs.
-4. Give each DRI matching decision rights and resource rights.
-5. Let relay layers fade as more DRIs emerge.
-
-| Type seen in the test | What to do |
-|---|---|
-| Learners: use AI as a better search | Give time and coaching |
-| Followers: forward unchecked 'workslop' | Do not mistake it for productivity |
-| Irreplaceable experts | Pair with tool users; extract their knowledge |
-| Builders: become a small team at once | Your first DRIs; give them authority to match |
-
-### Progressive Implementation
-
-Start with shadow mode, where the agent drafts alongside normal work. Move to assist mode with a person approving each action. Test supervised autonomy only for low-risk tasks that pass the agreed checks. Meridian starts with two sites, expands to ten after review and keeps human approval for dispatch. The DRI pauses the rollout when quality or safety falls outside limits.
-
-## A · Augment People: Redesign Roles and Coach
+## A · Job Redesign: Move Your People Up
 
 | Role | Outlook |
 |---|---|
-| Amplified commander (DRI) | Manages many agents, raises output tenfold; most valuable |
+| Amplified commander (DRI) | Directs a team of agents and people; owns the outcome; most valuable |
 | Human-to-human work | Trust, warmth, negotiation, calming a customer; endures |
 | Rubber-stamp manager | Signs off AI output without judging; hollowed out |
 | Rule-bound, predictable work | AI already does it better, faster, cheaper; reskill |
 
 Managers move from relaying information to judgement: the judge at scale who owns outcomes for agents and people; the coach who teaches teams to work with agents; the translator and connector who moves tacit knowledge into the system during transition. The manager who only holds meetings and passes on approvals is most exposed.
-
-### The Learner's Advantage and the Atrophy Trap
-
-Stanford and MIT researchers tracking more than 5,000 customer-service agents found AI help raised issues resolved per hour by 14%, and by 34% for novice and low-skilled staff; agents with two months' tenure using AI performed like staff with more than six months without it (Quarterly Journal of Economics, 2025). The difference that matters now is appetite for mental effort. But judgement decays with disuse: doctors' detection of precancerous lesions fell from 28.4% to 22.4% after the AI tool was removed, and people accepted planted wrong AI answers 80% of the time (Wharton). Ask for hints before answers, write your position first, and keep some work unassisted.
 
 ### Redesign the Job Around a Human Owner
 
@@ -950,11 +930,7 @@ A second example is Sarah, a marketing lead. The agent drafts campaign copy and 
 
 *Source: Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, pp. 3, 4, 6 and 9.*
 
-### Training That Builds Ability
-
-Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.
-
-*Source: Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value*
+## A · AI Coaching: Help Each Person Through the Change
 
 ### AI Coaching Mini Activity (10 Minutes, in Pairs)
 
@@ -963,6 +939,70 @@ Ask the employee what concerns them, explore their strengths and workload, co-cr
 Worked example: Sarah produced campaign copy and decks most of the day and worried about her role and who gets blamed. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.
 
 In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.
+
+## A · AI Training That Builds Ability
+
+Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.
+
+*Source: Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value*
+
+### The Learner's Advantage and the Atrophy Trap
+
+Stanford and MIT researchers tracking more than 5,000 customer-service agents found AI help raised issues resolved per hour by 14%, and by 34% for novice and low-skilled staff; agents with two months' tenure using AI performed like staff with more than six months without it (Quarterly Journal of Economics, 2025). The difference that matters now is appetite for mental effort. But judgement decays with disuse: doctors' detection of precancerous lesions fell from 28.4% to 22.4% after the AI tool was removed, and people accepted planted wrong AI answers 80% of the time (Wharton). Ask for hints before answers, write your position first, and keep some work unassisted.
+
+## C · Progressive Change: Earn Each Step of Autonomy
+
+Start with shadow mode, where the agent drafts alongside normal work. Move to assist mode with a person approving each action. Test supervised autonomy only for low-risk tasks that pass the agreed checks. Meridian starts with two sites, expands to ten after review and keeps human approval for dispatch. The DRI pauses the rollout when quality or safety falls outside limits.
+
+### Flatten smart, not by decree
+
+Flattening by decree wipes institutional memory. The right order: preserve and codify the knowledge in the decision layer first, then simplify the hierarchy. Bayer halved its management layers, from as many as 12 to five or six in some units, over a planned multi-year journey, running old and new side by side.
+
+*Source: Bayer, Dynamic Shared Ownership: https://www.bayer.com/en/strategy/dynamic-shared-ownership*
+
+1. Codify tacit know-how into playbooks, the company map and skills.
+2. Run a business scenario test: real access to agents, a small valuable task, four boundaries (goal, time, data, token spend).
+3. Spot the builders; they are your first DRIs.
+4. Give each DRI matching decision rights and resource rights.
+5. Let relay layers fade as more DRIs emerge.
+
+| Type seen in the test | What to do |
+|---|---|
+| Learners: use AI as a better search | Give time and coaching |
+| Followers: forward unchecked 'workslop' | Do not mistake it for productivity |
+| Irreplaceable experts | Pair with tool users; extract their knowledge |
+| Builders: become a small team at once | Your first DRIs; give them authority to match |
+
+## S · Buy-In: Communicate the Change
+
+Explain why Meridian is piloting triage, what the agent will draft, what staff still decide and when the plan will be reviewed. Explain the no-job-loss commitment for the pilot. Use a team huddle for coordinators, a service update for customers and a short review for leaders. Give each group a named contact for questions.
+
+### Map the Stakeholders
+
+| Group | Power / interest | What to do |
+|---|---|---|
+| Board, finance, legal, data protection officer | High power, lower interest | Keep satisfied: brief early; show the controls and the numbers. |
+| CEO sponsor, heads of department, IT and security | High power, high interest | Manage closely: co-own the plan; decide together; meet weekly. |
+| Frontline staff, clients, staff representatives | Lower power, high interest | Involve and inform: ask what the plan misses; tell them first. |
+| Vendors, teams outside the pilot | Lower power, lower interest | Monitor: share updates; watch for knock-on effects. |
+
+### Three Standard Moves Aimed at the Wrong Target
+
+- Awareness campaigns assume people do not know why AI matters; most already use it (KPMG and University of Melbourne, 2025: 66% use AI regularly). Explain why it matters to this company and this role.
+- More town halls assume resistance is a communication problem; it is usually an incentive problem. Change time, targets and recognition.
+- Tool and prompt training assumes prompting is the gap; the gap is judgement: knowing whether the output is good enough to send.
+
+Treat ADKAR (Awareness, Desire, Knowledge, Ability, Reinforcement) as a loop, not a line: each new model or tool restarts it, and successful AI integration happens one person at a time.
+
+## C · Lead by Example: The C-Suite and Managers
+
+Prosci's benchmarking has found active and visible sponsorship to be the top contributor to change success in every report since 1998. Effective AI sponsors stay active and visible through the whole life cycle, build a coalition of peers and people managers, communicate the business reason directly, and use the tools themselves and say so.
+
+Staff watch two signals: does my manager have time for this, and does the boss actually use it? Back the managers: protect time to learn and redesign work, give each DRI a budget and a stop button, and treat early mistakes as data, not blame. The CEO goes first: Shopify's CEO wrote in April 2025 that reflexive AI usage is now a baseline expectation. Staff copy what leaders do.
+
+*Source: Prosci, The primary sponsor's role: https://www.prosci.com/resources/articles/primary-sponsors-role-and-importance ; KPMG, Trust in AI 2025: https://kpmg.com/au/en/insights/artificial-intelligence-ai/trust-in-ai-global-insights-2025.html*
+
+*Source: Tobi Lütke, internal memo shared publicly on X, 7 Apr 2025.*
 
 ## L · Loop Information: Build AI Into the Process (A6)
 
@@ -986,7 +1026,7 @@ In an AI-native firm, information flows through the DRI and the decision layer i
 
 Close the loop with staff. Collect concerns and client feedback, review them weekly, name an owner for each change and tell people what was done. For example, Meridian could revise its intake form after coordinators repeatedly flag missing building details.
 
-## E · Evaluate: Decide Whether to Continue or Scale
+## E · Evaluate and Govern: Decide Whether to Continue or Scale
 
 Check service outcomes, adoption, safety and staff or customer feedback against the agreed targets. Review costs and the stop rule with the DRI. Scale in stages when the evidence supports it, redesign and retest weak parts, or pause the pilot and return to the human workflow.
 
@@ -1046,6 +1086,8 @@ Manage cost per outcome, not cost per token. In the token-cost-calculator.html d
 - Accountability: the organisation stays responsible for its agents' actions; keep an audit trail of who asked what and when.
 - Ethics: transparency, fairness, explainability, human oversight; tell customers when they are dealing with an agent.
 
+*Source: Claude Mythos Preview: Anthropic, Project Glasswing (https://www.anthropic.com/glasswing, 7 Apr 2026).*
+
 ### Review Meridian’s Pilot Results (K5, A5)
 
 - Start narrow with one high-value process, a measured baseline and a named DRI.
@@ -1060,9 +1102,9 @@ Manage cost per outcome, not cost per token. In the token-cost-calculator.html d
 | Complaints | ≤ 2% | 1.7% |
 | Sustained use | ≥ 70% | 77.5% |
 | Critical unsafe actions | 0 | 0 |
-| Realised benefit vs year-1 cost | benefit ≥ cost | SGD 39,200 vs SGD 39,000 |
+| Modelled benefit (60% realisation) vs year-1 cost | benefit ≥ cost | SGD 39,200 vs SGD 39,000 |
 
-ROI = (realised benefit - cost) / cost. Here year-1 ROI is close to zero but recurring costs are lower, so the case for scaling rests on year 2 and on keeping quality. Always add a downside case (lower adoption, smaller time saving).
+ROI = (modelled benefit - cost) / cost. Here year-1 ROI is close to zero but recurring costs are lower, so the case for scaling rests on year 2 and on keeping quality. Always add a downside case (lower adoption, smaller time saving).
 
 ## Meridian Demo: SCALE Board (fictitious company)
 
@@ -1073,7 +1115,7 @@ At day 90 Meridian's numbers say scale: handling time 10.7 minutes, quality 95.1
 | S · The Change Story | Why, what and when, in three sentences anyone can repeat. | Shorten queues. Agents draft tickets, people approve dispatch. No job losses during the pilot. |
 | S · Stakeholder Map | Who is affected, how much, and what do they worry about? | Sponsor: CEO. Coordinators redesign handoffs. Clients test updates. DPO checks tenant-data use. |
 | S · Messages & Channels | What does each group hear, from whom, through which channel? | Supervisor runs staff huddles and Q&A. Account manager explains faster updates and the human contact. |
-| C · DRIs & Agent Teams | Who is the one person accountable for each outcome? | Head of Service Desk owns response time and quality. Can change rules, grant access via IT and pause the agent. |
+| C · DRIs & Agent Teams | Who is the one person accountable for each outcome? | Head of Service Desk owns handling time and quality. Can change rules, grant access via IT and pause the agent. |
 | A · Workforce Transition | Where will each role land, and how will you help? | Shift coordinators from re-keying to follow-up and exceptions. Coach on live tasks with a weekly check-in. |
 | A · Guardrails & Judgement | How do you keep people genuinely judging, not rubber-stamping? | Coordinators approve dispatch. Log decisions. Supervisors re-check five tickets each week without AI. |
 | L · Information Flow & Rhythm | How does information flow without layers of relay? | Daily agent exceptions brief. Weekly DRI feedback review. Monthly dashboard for the sponsor. |
@@ -1174,7 +1216,7 @@ Discuss: Which group hears about the change last today, and should hear first? W
 | S · The Change Story | Why, what and when, in three sentences anyone can repeat. | Why: Clients wait too long and coordinators drown in re-keying; What: An agent drafts every ticket; people decide, approve and handle clients; Not changing: No one loses their job in the pilot; every client still reaches a person. |
 | S · Stakeholder Map | Who is affected, how much, and what do they worry about? | CEO (sponsor): Wants proof by day 90; Coordinators: Fear replacement; want less re-keying; Clients: Want faster answers, not a chatbot wall. |
 | S · Messages & Channels | What does each group hear, from whom, through which channel? | Coordinators: Huddle with the DRI + hands-on demo; weekly Q&A; Clients: Email from account manager: faster updates, same people; All staff: Intranet FAQ + anonymous question form. |
-| C · DRIs & Agent Teams | Who is the one person accountable for each outcome? | Service DRI: Triage agent + SLA watcher; owns response time; Client-reporting DRI: Report agent; owns report accuracy and on-time delivery. |
+| C · DRIs & Agent Teams | Who is the one person accountable for each outcome? | Service DRI: Triage agent + SLA watcher; owns handling time; Client-reporting DRI: Report agent; owns report accuracy and on-time delivery. |
 | A · Workforce Transition | Where will each role land, and how will you help? | Senior coordinators: Become DRIs or coaches; 6-week agent-management training; Coordinators: Move to client calls and exception handling (human-to-human work); Managers who only relay: Retrain as translators who move tacit know-how into the company map. |
 | A · Guardrails & Judgement | How do you keep people genuinely judging, not rubber-stamping? | Sample audits: Reviewers re-do 5 tickets a week unassisted; Audit trail: Every agent action logged with who asked and when. |
 | L · Information Flow & Rhythm | How does information flow without layers of relay? | Daily 8:00: Agent posts exceptions brief to the team channel; Weekly: DRI reviews KPIs and agent errors with coordinators; Monthly: Leadership sees one dashboard: KPIs, risks, ideas. |

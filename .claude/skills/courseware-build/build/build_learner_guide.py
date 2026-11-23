@@ -349,7 +349,42 @@ X.append(("canvas", "actionplan"))
 # ------------------------------------------------------------------ Topic 3
 h1("Topic 3 — " + C.TOPICS[2]["title"])
 p(C.LEARNING_OUTCOMES[2] + " (K5, K6, A5, A6)")
-h2("Topic 3 Pain Points: Why AI Transformations Stall")
+h2("The Future Organisation: Fewer Layers, Mixed Teams, DRI-Led Projects")
+p("Start with where the company is heading. When agents take the relaying, reporting and first drafts, the layers that only pass "
+  "work along thin out. Three shifts follow: fewer layers between the CEO and the work; teams that mix people and agents, where "
+  "people set goals, judge exceptions and own the client relationship while agents do the volume; and projects driven by DRIs, "
+  "each with one named owner who holds the rights, budget and stop button to deliver it.")
+h3("Meridian's Outcome Org Chart")
+p("Draw the org chart around outcomes, not functions. Each leader owns one outcome (handling time, client retention, first-time fix, cost per job) and a team of people and agents; some value streams, such as overnight alerts, run on agents and are audited daily by a person. Ask of every box: which outcome does this person own, and which agents work for them?")
+p("Managers are the lever, not the casualty. Gallup (survey of 23,717 US employees, February 2026) found 78% of employees with strongly supportive managers use AI frequently, against 44% of the rest. Gartner's October 2024 forecast that 20% of organisations will use AI to flatten and cut over half of middle-management roles through 2026 is a prediction, not an observation. Plan for managers who lead mixed teams of people and agents.")
+src("Gallup (12 Apr 2026): https://www.gallup.com/workplace/704252/workplace-separates-adopters-and-holdouts.aspx ; Gartner (22 Oct 2024) press release.")
+h3("The DRI: One Name per Outcome")
+p("A Directly Responsible Individual (DRI), a term made famous by Apple, is the one person accountable for an outcome: singular (one named "
+  "person, not a committee), accountable (owns the outcome, not just the task) and holding the decision rights (commands the AI "
+  "workforce). DRIs carry responsibility to the end, are self-driven, coordinate without formal authority and now command agents. "
+  "Agents supply capability; the DRI supplies accountability. GitLab runs its company handbook on DRIs: the DRI consults the people "
+  "affected, then makes the final call.")
+src("Fortune, 'How Apple works: inside the world's biggest startup' (May 2011); GitLab Handbook: https://handbook.gitlab.com/handbook/people-group/directly-responsible-individuals/")
+h3("Meridian's DRI Charter")
+p("Write the DRI's rights down. If the DRI owns the outcome, the DRI must also be able to change the rules, spend the budget and stop "
+  "the agent; an owner without those rights is a scapegoat, not a DRI.")
+tbl(["Charter line", "Meridian (fictitious)"], [
+    ("Outcome", "Handling time from 18 to 11 minutes or less by day 90; complaints at 2% or less"),
+    ("DRI and backup", "Head of Service Desk; the senior coordinator steps in when the DRI is away"),
+    ("Agent team", "Triage agent drafts tickets; SLA agent flags late jobs; two coordinators review"),
+    ("Decision rights", "Changes routing rules and the playbook; decides what the agent may draft"),
+    ("Resource rights", "SGD 39,000 year-1 budget; system access granted through IT"),
+    ("Stop button", "Pauses the agent if rework tops 20% for two weeks"),
+    ("Boundaries", "A coordinator approves every dispatch; tenant-data questions go to the DPO"),
+    ("Rhythm", "Daily 8:00 exceptions brief, weekly review, monthly dashboard to the CEO")], [1.8, 4.9])
+h3("What a DRI Does, and Does Not Do")
+tbl(["A DRI does", "A DRI does not"], [
+    ("Consult the people affected, then make the final call", "Do all the work alone"),
+    ("Set the agents' goal, limits and checks", "Wait for consensus before deciding"),
+    ("Read the exceptions and sample the agents' work every week", "Rubber-stamp whatever the agent drafts"),
+    ("Answer for the result, good or bad, and report back", "Say 'the AI did it' when something goes wrong")], [3.35, 3.35])
+p("Test your board: write one person's name next to every outcome. A team, a committee or 'the AI' means you have no DRI yet.")
+h2("The Challenges: Why AI Transformations Stall")
 p("AI has made producing work almost free; owning the work (checking, approving and following up hundreds of outputs a day) is still expensive. McKinsey's State of Organizations 2026 (n = 10,018 leaders) found 72% say their organisation is not fully ready for the changes ahead. The usual reasons the change does not stick:")
 tbl(["Pain point", "What it looks like"], [
     ("Aimed at the wrong target", "Awareness campaigns and prompt classes, when the real gaps are judgement and incentives."),
@@ -359,7 +394,20 @@ tbl(["Pain point", "What it looks like"], [
     ("Shadow AI and policy lag", "Staff use tools nobody approved; the policy arrives after the incident."),
     ("Leaders over-rate themselves", "Prosci: on one-to-one AI conversations, leaders rate themselves 3.55 of 5; employees see 2.38.")], [2.2, 4.5])
 src("McKinsey, The State of Organizations 2026; Prosci, Leading AI integration (Sep 2026): https://www.prosci.com/blog/leading-ai-integration-what-separates-results-from-stalled-ai-investment")
-h2("From Outputs to Outcomes")
+h3("What Your People Feel: Challenges of AI Transformation")
+tbl(["Challenge", "What Meridian hears or sees"], [
+    ("Resistance to change", "Coordinators trust the current workflow and want a say in how it changes."),
+    ("Worry about job loss", "Staff ask whether drafting tickets is the first step in replacing their roles."),
+    ("Steep learning curve", "Teams need time to practise using the agent and checking its drafts."),
+    ("Trust and accountability", "Coordinators want clear approval rules and an escalation contact for mistakes."),
+    ("Pressure on managers", "Managers need protected time and resources to coach while running the service."),
+    ("Data and reliability", "Missing request details or poor tickets can make staff revert to manual work.")], [2.0, 4.7])
+h3("Job-Market Outlook and Demand for AI Skills")
+p("The World Economic Forum projects 170 million jobs created and 92 million displaced globally by 2030, yielding 78 million net jobs across technology, demographic, economic and environmental trends. AI and data roles are among the fastest-growing by percentage. Care, education and other occupations also contribute to job growth.")
+src("World Economic Forum, Future of Jobs Report 2025, Jobs Outlook: " + B.WORKFORCE_SOURCES["wef"])
+p("Singapore’s total employment increased by 27,700 in Q3 2026 in MOM’s advance release. Resident growth was supported by essential and public services. Construction and manufacturing contributed to non-resident growth. IMDA separately reports tech workforce growth of 2.7% to 214,000 in 2024, with AI and data and cybersecurity among the fastest-growing tech roles. The share of tech postings requiring AI skills rose from 11% in 2019 to 14% in 2024.")
+src("MOM, Labour Market Advance Release Q3 2026: " + B.WORKFORCE_SOURCES["mom"] + " · IMDA, Singapore Digital Economy Report 2025: " + B.WORKFORCE_SOURCES["imda"])
+h3("From Outputs to Outcomes")
 p("Adoption treats AI as a project; transformation changes how the business runs.")
 tbl(["", "Adoption operating model", "Transformation operating model"], [
     ("Funding", "Fixed budget tied to a scope", "Steady funding for a value stream, adjusted to outcomes"),
@@ -375,23 +423,50 @@ p("Open ai-readiness-scorecard.html from the Activity 3 folder (LMS download) in
 tbl(["Dimension (/20)", "What a high score looks like"], B.READINESS_DIMS, [2.0, 4.7])
 p("Then, in your group, share the shape, not the score: which dimension came out lowest and does it surprise you; what it looks like day to day; who would have to act differently for it to move; and one change you could make in the next 30 days without new budget.")
 prompt(B.LAB[3]["steps"][0]["prompt"])
-h3("What Your People Feel: Challenges of AI Transformation")
-tbl(["Challenge", "What Meridian hears or sees"], [
-    ("Resistance to change", "Coordinators trust the current workflow and want a say in how it changes."),
-    ("Worry about job loss", "Staff ask whether drafting tickets is the first step in replacing their roles."),
-    ("Steep learning curve", "Teams need time to practise using the agent and checking its drafts."),
-    ("Trust and accountability", "Coordinators want clear approval rules and an escalation contact for mistakes."),
-    ("Limited capacity", "Managers need protected time and resources to coach while running the service."),
-    ("Data and reliability", "Missing request details or poor tickets can make staff revert to manual work.")], [2.0, 4.7])
-h3("Job-Market Outlook and Demand for AI Skills")
-p("The World Economic Forum projects 170 million jobs created and 92 million displaced globally by 2030, yielding 78 million net jobs across technology, demographic, economic and environmental trends. AI and data roles are among the fastest-growing by percentage. Care, education and other occupations also contribute to job growth.")
-src("World Economic Forum, Future of Jobs Report 2025, Jobs Outlook: " + B.WORKFORCE_SOURCES["wef"])
-p("Singapore’s total employment increased by 27,700 in Q3 2026 in MOM’s advance release. Resident growth was supported by essential and public services. Construction and manufacturing contributed to non-resident growth. IMDA separately reports tech workforce growth of 2.7% to 214,000 in 2024, with AI and data and cybersecurity among the fastest-growing tech roles. The share of tech postings requiring AI skills rose from 11% in 2019 to 14% in 2024.")
-src("MOM, Labour Market Advance Release Q3 2026: " + B.WORKFORCE_SOURCES["mom"] + " · IMDA, Singapore Digital Economy Report 2025: " + B.WORKFORCE_SOURCES["imda"])
-h2("The SCALE Framework: Five Moves to Transform the Company")
-p("Topic 3 and Activity 3 follow one framework. Each move is a block on your SCALE board.")
+h2("The SCALE Framework: Five Moves That Make the Change Stick")
+p("Topic 3 and Activity 3 follow one framework. Each move is a block on your SCALE board. The rest of Topic 3 takes the moves in the order a company lives them, so that the change lasts: redesign jobs, coach, train, roll out in stages, win buy-in, lead from the top, then build AI into the process and govern it.")
 tbl(["", "Move", "What you do"], [(l, w, d) for l, w, d, _ in B.SCALE], [0.4, 1.5, 4.8])
-h2("S · Story: Communicate the Change")
+h2("A · Job Redesign: Move Your People Up")
+tbl(["Role", "Outlook"], [("Amplified commander (DRI)", "Directs a team of agents and people; owns the outcome; most valuable"),
+     ("Human-to-human work", "Trust, warmth, negotiation, calming a customer; endures"), ("Rubber-stamp manager", "Signs off AI output without judging; hollowed out"),
+     ("Rule-bound, predictable work", "AI already does it better, faster, cheaper; reskill")], [2.4, 4.3])
+p("Managers move from relaying information to judgement: the judge at scale who owns outcomes for agents and people; the coach who "
+  "teaches teams to work with agents; the translator and connector who moves tacit knowledge into the system during transition. The "
+  "manager who only holds meetings and passes on approvals is most exposed.")
+h3("Redesign the Job Around a Human Owner")
+p("Choose a named person to own each outcome. Give that person authority to set direction, approve consequential actions, resolve exceptions, pause the workflow and update the operating rules. Define the agent’s delegated work and record what the human checks. Judge the redesigned role by outcomes such as accurate tickets, response times and safe decisions.")
+tbl(["Human responsibility", "What the owner does"], [(name, action) for _, name, action in B.HUMAN_OWNER_RIGHTS], [1.6, 5.1])
+p("Meridian’s Head of Service Desk sets service targets and authorises the workflows. The agent extracts request details, drafts tickets and flags urgency. Coordinators check the evidence and approve dispatch. The Head of Service Desk reviews exceptions and can pause the workflow or change the rules.")
+p("A second example is Sarah, a marketing lead. The agent drafts campaign copy and decks. Sarah owns campaign outcomes, sets the creative direction, checks factual claims and approves release. She and her manager agree a two-week trial and review draft time, corrections and whether she had enough control.")
+src("Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, pp. 3, 4, 6 and 9.")
+h2("A · AI Coaching: Help Each Person Through the Change")
+h3("AI Coaching Mini Activity (10 Minutes, in Pairs)")
+p("Ask the employee what concerns them, explore their strengths and workload, co-create a role that uses their judgment, and agree one small trial and a review date. At Meridian, the coordinator keeps urgent dispatch decisions and spends more time on customer follow-up. Give employees practice on their own work, builders training on testing and controls, and managers time for coaching.")
+p("Worked example: Sarah produced campaign copy and decks most of the day and worried about her role and who gets blamed. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.")
+p("In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.")
+h2("A · AI Training That Builds Ability")
+p("Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.")
+src("Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value")
+h3("The Learner's Advantage and the Atrophy Trap")
+p("Stanford and MIT researchers tracking more than 5,000 customer-service agents found AI help raised issues resolved per hour by 14%, "
+  "and by 34% for novice and low-skilled staff; agents with two months' tenure using AI performed like staff with more than six months without it (Quarterly Journal of Economics, 2025). The difference that matters now is "
+  "appetite for mental effort. But judgement decays with disuse: doctors' detection of precancerous lesions fell from 28.4% to 22.4% after "
+  "the AI tool was removed, and people accepted planted wrong AI answers 80% of the time (Wharton). Ask for hints before answers, write "
+  "your position first, and keep some work unassisted.")
+h2("C · Progressive Change: Earn Each Step of Autonomy")
+p("Start with shadow mode, where the agent drafts alongside normal work. Move to assist mode with a person approving each action. Test supervised autonomy only for low-risk tasks that pass the agreed checks. Meridian starts with two sites, expands to ten after review and keeps human approval for dispatch. The DRI pauses the rollout when quality or safety falls outside limits.")
+h3("Flatten smart, not by decree")
+p("Flattening by decree wipes institutional memory. The right order: preserve and codify the knowledge in the decision layer first, "
+  "then simplify the hierarchy. Bayer halved its management layers, from as many as 12 to five or six in some units, over a planned "
+  "multi-year journey, running old and new side by side.")
+src("Bayer, Dynamic Shared Ownership: https://www.bayer.com/en/strategy/dynamic-shared-ownership")
+ol(["Codify tacit know-how into playbooks, the company map and skills.", "Run a business scenario test: real access to agents, a small valuable task, four "
+    "boundaries (goal, time, data, token spend).", "Spot the builders; they are your first DRIs.",
+    "Give each DRI matching decision rights and resource rights.", "Let relay layers fade as more DRIs emerge."])
+tbl(["Type seen in the test", "What to do"], [("Learners: use AI as a better search", "Give time and coaching"),
+     ("Followers: forward unchecked 'workslop'", "Do not mistake it for productivity"), ("Irreplaceable experts", "Pair with tool users; extract their knowledge"),
+     ("Builders: become a small team at once", "Your first DRIs; give them authority to match")], [3.2, 3.5])
+h2("S · Buy-In: Communicate the Change")
 p("Explain why Meridian is piloting triage, what the agent will draft, what staff still decide and when the plan will be reviewed. Explain the no-job-loss commitment for the pilot. Use a team huddle for coordinators, a service update for customers and a short review for leaders. Give each group a named contact for questions.")
 h3("Map the Stakeholders")
 tbl(["Group", "Power / interest", "What to do"], [
@@ -403,58 +478,13 @@ h3("Three Standard Moves Aimed at the Wrong Target")
 bl(["Awareness campaigns assume people do not know why AI matters; most already use it (KPMG and University of Melbourne, 2025: 66% use AI regularly). Explain why it matters to this company and this role.",
     "More town halls assume resistance is a communication problem; it is usually an incentive problem. Change time, targets and recognition.",
     "Tool and prompt training assumes prompting is the gap; the gap is judgement: knowing whether the output is good enough to send."])
-h3("What an Effective Sponsor Does")
-p("Prosci's benchmarking has found active and visible sponsorship to be the top contributor to change success in every report since 1998. Effective AI sponsors stay active and visible through the whole life cycle, build a coalition of peers and people managers, communicate the business reason directly, and use the tools themselves and say so.")
 p("Treat ADKAR (Awareness, Desire, Knowledge, Ability, Reinforcement) as a loop, not a line: each new model or tool restarts it, and successful AI integration happens one person at a time.")
+h2("C · Lead by Example: The C-Suite and Managers")
+p("Prosci's benchmarking has found active and visible sponsorship to be the top contributor to change success in every report since 1998. Effective AI sponsors stay active and visible through the whole life cycle, build a coalition of peers and people managers, communicate the business reason directly, and use the tools themselves and say so.")
+p("Staff watch two signals: does my manager have time for this, and does the boss actually use it? Back the managers: protect time to learn and redesign work, give each DRI a budget and a stop button, and treat early mistakes as data, not blame. The CEO goes first: Shopify's CEO wrote in April 2025 that reflexive AI usage is now a baseline expectation. Staff copy what leaders do.")
 src("Prosci, The primary sponsor's role: https://www.prosci.com/resources/articles/primary-sponsors-role-and-importance ; KPMG, Trust in AI 2025: https://kpmg.com/au/en/insights/artificial-intelligence-ai/trust-in-ai-global-insights-2025.html")
-h2("C · Commanders: Draw the Org Chart Around Outcomes")
-p("Draw the org chart around outcomes, not functions. Each leader owns one outcome (response time, client retention, first-time fix, cost per job) and a team of people and agents; some value streams, such as overnight alerts, run on agents and are audited daily by a person. Ask of every box: which outcome does this person own, and which agents work for them?")
-p("Managers are the lever, not the casualty. Gallup (survey of 23,717 US employees, February 2026) found 78% of employees with strongly supportive managers use AI frequently, against 44% of the rest. Gartner's October 2024 forecast that 20% of organisations will use AI to flatten and cut over half of middle-management roles through 2026 is a prediction, not an observation. Plan for managers who lead mixed teams of people and agents.")
-src("Gallup (12 Apr 2026): https://www.gallup.com/workplace/704252/workplace-separates-adopters-and-holdouts.aspx ; Gartner (22 Oct 2024) press release.")
-img(os.path.join(IMG, "ainative", "flattened-org.png"), "Rewrite companies in a flattened org chart", 5.4)
-p("A Directly Responsible Individual (DRI), a term from Apple, is the one person accountable for an outcome: singular (one named "
-  "person, not a committee), accountable (owns the outcome, not just the task) and holding the decision rights (commands the AI "
-  "workforce). DRIs carry responsibility to the end, are self-driven, coordinate without formal authority and now command agents. "
-  "Agents supply capability; the DRI supplies accountability.")
-h3("Flatten smart, not by decree")
-p("Block laid off about 4,000 people (nearly 40%) at once; about 30% of Zappos staff left after the Holacracy ultimatum in 2015; Google "
-  "removed engineering managers in 2001 and reinstated them within months. Flattening by decree wipes institutional memory. The right "
-  "order: preserve and codify the knowledge in the decision layer first, then simplify the hierarchy. Bayer says it halved its management "
-  "layers and cut management roles by two thirds; in some units layers fell from as many as 12 to five or six.")
-ol(["Codify tacit know-how into playbooks, the company map and skills.", "Run a business scenario test: real access to agents, a small valuable task, four "
-    "boundaries (goal, time, data, token spend).", "Spot the builders; they are your first DRIs.",
-    "Give each DRI matching decision rights and resource rights.", "Let relay layers fade as more DRIs emerge."])
-tbl(["Type seen in the test", "What to do"], [("Learners: use AI as a better search", "Give time and coaching"),
-     ("Followers: forward unchecked 'workslop'", "Do not mistake it for productivity"), ("Irreplaceable experts", "Pair with tool users; extract their knowledge"),
-     ("Builders: become a small team at once", "Your first DRIs; give them authority to match")], [3.2, 3.5])
-h3("Progressive Implementation")
-p("Start with shadow mode, where the agent drafts alongside normal work. Move to assist mode with a person approving each action. Test supervised autonomy only for low-risk tasks that pass the agreed checks. Meridian starts with two sites, expands to ten after review and keeps human approval for dispatch. The DRI pauses the rollout when quality or safety falls outside limits.")
-h2("A · Augment People: Redesign Roles and Coach")
-tbl(["Role", "Outlook"], [("Amplified commander (DRI)", "Manages many agents, raises output tenfold; most valuable"),
-     ("Human-to-human work", "Trust, warmth, negotiation, calming a customer; endures"), ("Rubber-stamp manager", "Signs off AI output without judging; hollowed out"),
-     ("Rule-bound, predictable work", "AI already does it better, faster, cheaper; reskill")], [2.4, 4.3])
-p("Managers move from relaying information to judgement: the judge at scale who owns outcomes for agents and people; the coach who "
-  "teaches teams to work with agents; the translator and connector who moves tacit knowledge into the system during transition. The "
-  "manager who only holds meetings and passes on approvals is most exposed.")
-h3("The Learner's Advantage and the Atrophy Trap")
-p("Stanford and MIT researchers tracking more than 5,000 customer-service agents found AI help raised issues resolved per hour by 14%, "
-  "and by 34% for novice and low-skilled staff; agents with two months' tenure using AI performed like staff with more than six months without it (Quarterly Journal of Economics, 2025). The difference that matters now is "
-  "appetite for mental effort. But judgement decays with disuse: doctors' detection of precancerous lesions fell from 28.4% to 22.4% after "
-  "the AI tool was removed, and people accepted planted wrong AI answers 80% of the time (Wharton). Ask for hints before answers, write "
-  "your position first, and keep some work unassisted.")
-h3("Redesign the Job Around a Human Owner")
-p("Choose a named person to own each outcome. Give that person authority to set direction, approve consequential actions, resolve exceptions, pause the workflow and update the operating rules. Define the agent’s delegated work and record what the human checks. Judge the redesigned role by outcomes such as accurate tickets, response times and safe decisions.")
-tbl(["Human responsibility", "What the owner does"], [(name, action) for _, name, action in B.HUMAN_OWNER_RIGHTS], [1.6, 5.1])
-p("Meridian’s Head of Service Desk sets service targets and authorises the workflows. The agent extracts request details, drafts tickets and flags urgency. Coordinators check the evidence and approve dispatch. The Head of Service Desk reviews exceptions and can pause the workflow or change the rules.")
-p("A second example is Sarah, a marketing lead. The agent drafts campaign copy and decks. Sarah owns campaign outcomes, sets the creative direction, checks factual claims and approves release. She and her manager agree a two-week trial and review draft time, corrections and whether she had enough control.")
-src("Dr Alfred Ang, Work Redesign for Managing AI Agents, 27 August 2026, pp. 3, 4, 6 and 9.")
-h3("Training That Builds Ability")
-p("Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.")
-src("Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value")
-h3("AI Coaching Mini Activity (10 Minutes, in Pairs)")
-p("Ask the employee what concerns them, explore their strengths and workload, co-create a role that uses their judgment, and agree one small trial and a review date. At Meridian, the coordinator keeps urgent dispatch decisions and spends more time on customer follow-up. Give employees practice on their own work, builders training on testing and controls, and managers time for coaching.")
-p("Worked example: Sarah produced campaign copy and decks most of the day and worried about her role and who gets blamed. Her redesigned role sets the campaign goal and brand voice; the agent drafts copy and decks; Sarah checks facts, approves release and improves the workflow, on a two-week trial reviewed on draft time, corrections and whether she had enough control.")
-p("In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.")
+src("Tobi Lütke, internal memo shared publicly on X, 7 Apr 2025.")
+
 h2("L · Loop Information: Build AI Into the Process (A6)")
 p("If the AI skill lives in one person, it leaves with them. Personal skill (prompts in one person's chat history, know-how in one enthusiast's head) does not add up to company capability. Build AI into the process so it survives turnover: new staff inherit it on day one.")
 ol(["Map the process (Step 2 of your plan).", "Write the playbook (instructions, examples and checks) into the SOP, not a personal chat.",
@@ -467,7 +497,7 @@ p("In an AI-native firm, information flows through the DRI and the decision laye
   "Communicate the change per stakeholder (what changes, what does not, who to ask), and run an idea pipeline where anyone can post an "
   "idea, the agent clusters them, and the best get a DRI and 30 days.")
 p("Close the loop with staff. Collect concerns and client feedback, review them weekly, name an owner for each change and tell people what was done. For example, Meridian could revise its intake form after coordinators repeatedly flag missing building details.")
-h2("E · Evaluate: Decide Whether to Continue or Scale")
+h2("E · Evaluate and Govern: Decide Whether to Continue or Scale")
 p("Check service outcomes, adoption, safety and staff or customer feedback against the agreed targets. Review costs and the stop rule with the DRI. Scale in stages when the evidence supports it, redesign and retest weak parts, or pause the pilot and return to the human workflow.")
 h3("Govern With a Light Policy Stack")
 tbl(["Layer", "Who", "What"], [
@@ -505,6 +535,7 @@ bl(["PDPA: collect and use personal data only for notified purposes; mask person
     "6 Right-sized models: control effort climbs with capability. Start with the smallest model that passes your own test and step up only when it fails; Anthropic keeps Claude Mythos Preview out of general release until better safeguards exist.",
     "Accountability: the organisation stays responsible for its agents' actions; keep an audit trail of who asked what and when.",
     "Ethics: transparency, fairness, explainability, human oversight; tell customers when they are dealing with an agent."])
+src("Claude Mythos Preview: Anthropic, Project Glasswing (https://www.anthropic.com/glasswing, 7 Apr 2026).")
 h3("Review Meridian’s Pilot Results (K5, A5)")
 bl(["Start narrow with one high-value process, a measured baseline and a named DRI.", "Keep a real human checkpoint for the first 90 days.",
     "Measure offline quality before launch and online telemetry after: cycle time, first-pass accuracy, complaints, adoption, cost per outcome.",
@@ -512,8 +543,8 @@ bl(["Start narrow with one high-value process, a measured baseline and a named D
 R = C.ROI_CASE
 tbl(["Day-90 metric", "Target", "Result"], [("Mean handling time", "≤ 11 min", "10.7 min"), ("Quality", "≥ 94%", "95.1%"),
      ("Complaints", "≤ 2%", "1.7%"), ("Sustained use", "≥ 70%", "77.5%"), ("Critical unsafe actions", "0", "0"),
-     ("Realised benefit vs year-1 cost", "benefit ≥ cost", f"SGD {R['day90_benefit']:,} vs SGD {R['first_year_cost']:,}")], [2.6, 2.0, 2.1])
-p("ROI = (realised benefit - cost) / cost. Here year-1 ROI is close to zero but recurring costs are lower, so the case for scaling rests on "
+     ("Modelled benefit (60% realisation) vs year-1 cost", "benefit ≥ cost", f"SGD {R['day90_benefit']:,} vs SGD {R['first_year_cost']:,}")], [2.6, 2.0, 2.1])
+p("ROI = (modelled benefit - cost) / cost. Here year-1 ROI is close to zero but recurring costs are lower, so the case for scaling rests on "
   "year 2 and on keeping quality. Always add a downside case (lower adoption, smaller time saving).")
 h2("Meridian Demo: SCALE Board (fictitious company)")
 p("At day 90 Meridian's numbers say scale: handling time 10.7 minutes, quality 95.1%, complaints 1.7%, adoption 77.5%. But coordinators fear replacement. Its SCALE board tells the story first (no one loses their job in the pilot), gives each outcome one DRI with an agent team, moves coordinators to client calls and exceptions, keeps people judging through weekly sample audits, sets a daily, weekly and monthly information rhythm, and decides to scale to all 30 sites with the same approval rules.")
