@@ -25,7 +25,7 @@ CSS = """@page{size:A4;margin:16mm 15mm}body{font:10.5pt/1.45 Calibri,Arial,sans
 .top h1{font-family:Cambria,Georgia,serif;margin:4px 0;font-size:20pt}.top p{margin:0;color:#C9C4B9}
 .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}.meta div{border:1px solid #E3DFD6;border-radius:6px;padding:6px 8px;background:#FAF9F5}
 .meta b{display:block;font-size:8.5pt;color:#C2603F;text-transform:uppercase;letter-spacing:.06em}
-.step{border:1px solid #E3DFD6;border-left:4px solid #D97757;border-radius:8px;padding:10px 14px;margin:12px 0;break-inside:avoid}
+h2{break-after:avoid}.keep{break-inside:avoid}.step{border:1px solid #E3DFD6;border-left:4px solid #D97757;border-radius:8px;padding:10px 14px;margin:12px 0;break-inside:avoid}
 .step.studio{border-left-color:#3A7D7B}.step h2{font-family:Cambria,Georgia,serif;font-size:13.5pt;margin:0 0 6px}
 .n{display:inline-block;background:#D97757;color:#fff;border-radius:50%;width:22px;height:22px;text-align:center;line-height:22px;font-size:10pt;margin-right:6px}
 .studio .n{background:#3A7D7B}.tag{font-size:8pt;font-weight:700;color:#3A7D7B;letter-spacing:.06em;text-transform:uppercase}
@@ -47,19 +47,21 @@ def lab_html(L):
          'Download <b>activities/prompts.html</b> from the LMS course materials or the course Activities folder and open it in a browser. Type your organisation once; it fills every prompt. Replace every <span class="b">[blank]</span> before you paste into Meta Muse. '
          'Muse drafts; your group decides. Never put personal data (NRIC, phone numbers, customer names) on a shared board.</div>']
     q, pts = B.PADLET_TALK[L['n']]   # v56: team padlet talk opens the group work
-    h.append(f'<div class="note"><b>Start here, right after the trainer’s Meridian demo: team padlet discussion (15 min, as a group).</b> {e(q)} Join your team padlet at '
-             '<b>alfredang.github.io/padlet</b> with your team code and your name, post one idea per card in this topic\'s column, then build the activity board together.<ol>'
-             + ''.join(f'<li>{e(x)}</li>' for x in pts) + '</ol>'
-             + ' · '.join(f'<b>Team {e(t)}</b> {c}' for t, c in B.PADLET_TEAMS) + '</div>')
-    h.append(qr_html([(f'Team {t} · {c}', B.PADLET_URL + c) for t, c in B.PADLET_TEAMS]))
-    if L["n"] == 1:
-        h.append('<h2>Earlier in Topic 1: Mini Activity — Try Meta Muse (20 min)</h2><p>Do this just after the agent introductions. No PP screenshot is required for this mini activity.</p>')
+    if L["n"] == 1:   # v58: the Muse mini activity runs earlier in Topic 1 (after the six always-on agents), so it comes first
+        h.append('<div class="keep"><h2>Earlier in Topic 1: Mini Activity — Try Meta Muse (20 min)</h2><p>Do this right after the six always-on agents are introduced. No PP screenshot is required for this mini activity.</p></div>')
         for i, step in enumerate(B.MINI_MUSE["steps"]):
             h.append(f'<div class="step"><h2>Mini step {i + 1} · {e(step["title"])}</h2><ol>' + ''.join(f'<li>{e(x)}</li>' for x in step["body"]) + '</ol>')
             if step.get("links") == "MUSE": h.append(qr_html(B.MUSE_LINKS))
             h.append(f'<pre>{blanks(step["prompt"])}</pre><p><b>Check:</b> {e(step["check"])}</p></div>')
         h.append('<h2>At the end of Topic 1: Activity 1 — Your Company BMC (80 min)</h2>')
-        h.append(f'<div class="step"><h2>After the padlet talk · {e(B.PAIN_HUNT["title"])} ({B.PAIN_HUNT["minutes"]} min)</h2><ol>'
+    lead = "Start here, after the Meridian demo and the Activity 1 overview" if L["n"] == 1 else "Start here, right after the trainer’s Meridian demo"
+    h.append(f'<div class="note"><b>{lead}: team padlet discussion (15 min, as a group).</b> {e(q)} Join your team padlet at '
+             '<b>alfredang.github.io/padlet</b> with your team code and your name, post one idea per card in this topic\'s column, then build the activity board together.<ol>'
+             + ''.join(f'<li>{e(x)}</li>' for x in pts) + '</ol>'
+             + ' · '.join(f'<b>Team {e(t)}</b> {c}' for t, c in B.PADLET_TEAMS) + '</div>')
+    h.append(qr_html([(f'Team {t} · {c}', B.PADLET_URL + c) for t, c in B.PADLET_TEAMS]))
+    if L["n"] == 1:
+        h.append(f'<div class="step"><h2>On the same padlet · {e(B.PAIN_HUNT["title"])} ({B.PAIN_HUNT["minutes"]} min)</h2><ol>'
                  + ''.join(f'<li>{e(x)}</li>' for x in B.PAIN_HUNT["body"]) + '</ol>'
                  f'<pre>{blanks(B.PAIN_HUNT["prompt"])}</pre><p><b>Check:</b> {e(B.PAIN_HUNT["check"])}</p></div>')   # v57: hunt follows the padlet talk
         h.append('<div class="note"><b>Group task.</b> Stay in your padlet team of <b>3-5 learners</b> and choose one member\'s company. '

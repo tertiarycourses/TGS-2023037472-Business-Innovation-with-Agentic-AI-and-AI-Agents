@@ -204,7 +204,7 @@ def vs(D, kicker, title, left, right, sub=None, source=None):
     if source: src(D, s, source)
     return s
 
-def ladder(D, kicker, title, steps, sub=None, source=None, foot=None):
+def ladder(D, kicker, title, steps, sub=None, source=None, foot=None, axis="more autonomy, more controls"):
     """Rising staircase: (label, line). Autonomy grows left to right."""
     s = D.new(); header(D, s, kicker, title, sub)
     n = len(steps); gap = 0.15; w = (12.1 - gap * (n - 1)) / n; base = 6.25
@@ -215,7 +215,7 @@ def ladder(D, kicker, title, steps, sub=None, source=None, foot=None):
         text(s, x + 0.15, y + 0.15, w - 0.3, 0.85, lab, 21, WHITE if dk else INK, bold=True, font=SERIF, minpt=12)
         text(s, x + 0.15, y + 1.05, w - 0.3, h - 1.15, de, 17, LIGHT if dk else MUTED, minpt=10)
     line(s, 0.6, base + 0.2, 12.7, base + 0.2, ACC, 2.5, arrow=True)
-    text(s, 9.0, base + 0.25, 3.7, 0.3, "more autonomy, more controls", 11, ACC, bold=True, align="r", autofit=False)
+    text(s, 8.0, base + 0.25, 4.7, 0.3, axis, 11, ACC, bold=True, align="r", autofit=False)
     if source: src(D, s, source)
     return s
 
@@ -383,7 +383,7 @@ def step_slide(D, L, i, title=None):
     for k, c in enumerate(("E06C5A", "E5B454", "7DB36B")): circle(s, 0.82 + k * 0.24, top + 0.18, 0.13, c)
     text(s, 1.6, top + 0.1, 6.8, 0.3, "PROMPT TEMPLATE  ·  LMS: download activities/prompts.html  ·  fill [blanks]  ·  paste into Muse", 10.5, DIM, autofit=False)
     text(s, 0.85, top + 0.5, 7.5, bot - top - 0.62, st["prompt"], 18, "F1EDE4", font=MONO, minpt=9.5, cw=0.66, lh=1.08)
-    side = [("check", "You should see", st.get("check", "")), ("kanban", "Then", "Discuss what the agent can do and where it asks for approval." if L.get("mini") else "Keep the answer: it feeds your group board in this activity.")]
+    side = [("check", "You should see", st.get("check", "")), ("kanban", "Then", st.get("then") or "Discuss what the agent can do and where it asks for approval." if L.get("mini") else "Keep the answer: it feeds your group board in this activity.")]
     rh = (bot - top) / len(side)
     for j, (ic, t, d) in enumerate(side):
         y = top + j * rh; icon(s, ic, 8.9, y + 0.05, 0.7)
@@ -612,10 +612,18 @@ def topic1(D, C, mark):
         ("Prompts", "2023", "Say it well"), ("Context", "2024", "Feed the right facts"),
         ("Harness", "2025", "Wire tools, state, checks"), ("Agents", "2026", "Delegate outcomes")],
         foot="Prompt, context and harness engineering, then AI agents: emphasis markers, not invention dates.")
-    ladder(D, "Topic 1 · History of AI", "The Agent Stairway: From Answers to Results", [
-        ("Chatbot", "You ask, it answers. It cannot act."), ("Task bot", "One clear job, precise instructions."),
-        ("Copilot", "Suggests; you steer and approve every step."), ("Autonomous agent", "Goal in, result out, while you sleep.")],
-        sub="The big jump is copilot → agent: from prompt-and-response to delegating a goal.")
+    # v58 (owner): chatbot -> agentic workflow -> agentic AI -> AI agents, in the C34 Ghana stairway form (subtitle explains the workflow step)
+    s = ladder(D, "Topic 1 · History of AI", "The Agent Stairway: From Answers to Results", [
+        ("Chatbot", "Explains the request policy. It cannot act."),
+        ("Agentic workflow", "Fixed steps read each request and open the ticket. Odd cases go to a person."),
+        ("Agentic AI", "Takes a goal, plans its own steps, uses tools and checks the result."),
+        ("AI agents", "Always on: watch the inbox and act within limits between your requests.")],
+        sub="A workflow follows steps you set. Agentic AI chooses its own steps toward a goal. AI agents keep doing it, always on.",
+        axis="More discretion, clearer controls")
+    s.notes_slide.notes_text_frame.text = ("Owner's sequence (v58): chatbot -> agentic workflow -> agentic AI -> AI agents. Workflow vs agent follows Anthropic, Building effective agents: "
+        "workflows orchestrate LLMs and tools through predefined code paths; agents let the LLM direct its own process and tool use. The big jump is workflow -> agentic AI: "
+        "you stop scripting the steps and start delegating the goal. AI agents here = the persistent, always-on class (next slide). Examples use Meridian's service requests. "
+        "Source: https://www.anthropic.com/research/building-effective-agents")
     # --- agentic AI vs AI agent
     s = vs(D, "Topic 1 · Agentic AI and always-on AI agents", "Always-On AI Agents: A Specialised Form of Agentic AI",
        ("Agentic AI", "network", ["Broad class of goal-directed AI", "Plans → acts → checks → repeats", "Can run as a task or a service"]),
@@ -633,14 +641,10 @@ def topic1(D, C, mark):
         ("check", "Check", "Review results; escalate exceptions")], cols=4,
         tipt="Service example: read a request, draft a ticket, check required fields, ask a person to approve routing.")
     agent_components_in_practice(D)
-    mark("mini_muse")
-    muse_get(D)
-    V.muse_invite(D, "Topic 1 · Mini Activity · Try Meta Muse")
-    step_slide(D, B.MINI_MUSE, 0, title="Step 1 · Say Hello: Your First Prompt to Meta Muse")
-    for i in (1, 2): step_slide(D, B.MINI_MUSE, i)
-    # --- always-on agents
+    N.t1_tools_skills(D)   # v58: Ghana Topic 1
+    # --- always-on agents (v58: the leaders' quotes replace the Andrew Ng quote, as in the Ghana deck)
     mark("t1always")
-    N.t1_agents_quote(D)   # v54: quote moved here, right before the agents are introduced
+    N.t1_leaders(D)
     s = D.new(); header(D, s, "Topic 1 · Always-on AI agents", "Always-On Agents Work While You Sleep",
                         "Meta Muse keeps watch on your inbox, calendar and goals, then asks before it acts.")
     picture(s, asset("ainative", "muse-productivity.png"), 0.7, 2.3, maxw=2.1, maxh=4.4)
@@ -655,6 +659,10 @@ def topic1(D, C, mark):
     src(D, s, "Meta Muse app (Singapore, Nov 2026) · Meta Newsroom: Muse in Singapore, 27 Oct 2026", V.NEWS)
     big_five(D)
     for a_ in APPS: app_page(D, a_)   # v54 (owner): one introduction + set-up page per always-on agent, back in; Gemini Spark added
+    # --- Mini activity: try Meta Muse (v58 owner: three simple steps, right after the six always-on agents are introduced)
+    mark("mini_muse")
+    muse_get(D)   # the invite code is on this slide and in Step 1 (Ghana v1.6 has no separate invite slide)
+    for i in range(len(B.MINI_MUSE["steps"])): step_slide(D, B.MINI_MUSE, i)
     # --- Singapore government news
     mark("t1sg")
     bignums(D, "Topic 1 · Singapore government news", "Singapore Is Betting the Country on Agents", [
@@ -703,8 +711,11 @@ def topic1(D, C, mark):
     service_agent_case(D)
     video_agent_team_case(D)
     N.t1_functions(D)   # v53: replaces the trading and scientific agent teams
-    # Meridian and the BMC follow the general innovation use cases.
+    # v58 (owner): Ghana order: the BMC, then the Meridian scenario, then Meridian's canvas block by block, then the three dimensions
     mark("t1gaps")
+    c1 = B.CANVAS["opportunity"]
+    board(D, "Topic 1 · Business Model Canvas", c1, "One Business Model, Nine Connected Blocks",
+          "Nine questions on how a company creates, delivers and captures value. Then watch Meridian answer them.", example=False)
     meridian_scene(D, K1 + " · Meridian scenario", "Meridian Today: 80 Requests a Day, Every One Re-Keyed by Hand",
         "Back to the firm from the course intro. Watch Meridian find where agents pay off; then do the same for your company in Activity 1.", [
         ("building", "Meridian Services Pte Ltd", "140 staff keep 30 commercial buildings running across Singapore."),
@@ -712,9 +723,8 @@ def topic1(D, C, mark):
         ("clock", "The cost", "18 minutes per request; an urgent leak at 2 am waits until morning."),
         ("rocket", "The new business", "Meridian Assist: an always-on agent it runs in-house first, then sells.")],
         "Where on our business model would AI agents pay off first, and which idea do we park?", "Meridian's Topic 1 question")
-    c1 = B.CANVAS["opportunity"]
-    board(D, "Topic 1 · Business Model Canvas", c1, "One Business Model, Nine Connected Blocks",
-          "The BMC shows how a company creates, delivers and captures value. Read the customer side, then delivery and money.", example=False)
+    board(D, "Topic 1 · Meridian's completed BMC", c1, "Meridian's Canvas, Block by Block",
+          "The first note of each block, readable. The live board holds three per block.", example=True)
     for title_, indexes in [("Customer Value: Where Agents Improve the Experience", (0, 1, 2)),
                              ("Relationships, Revenue and Activities: Where Agents Pay Off", (3, 4, 5)),
                              ("Resources, Partners and Costs: What Makes It Work", (6, 7, 8))]:
@@ -747,7 +757,7 @@ def topic1(D, C, mark):
     rich(s, 0.6, 5.2, 12.1, 1.2, [[("Example:  ", dict(color=ACC, bold=True, size=20, font=SERIF)),
                                    ("triage agent 5 × 4 × 4 = 80  ·  report agent 75  ·  fault predictor 24 → park it", dict(color=INK, size=20, font=SERIF))]])
     tip(D, s, "Set a veto: any score of 1 on data or risk stops the idea, whatever the total.", y=6.3)
-    N.quiz(D, 1, N.T1_QUIZ)   # v57 (owner): knowledge check first, then Meridian demo -> team padlet -> activity
+    # v58 (owner): no Topic 1 knowledge check; Meridian demo, the finished board, then choose the first pilot
     fill_demo(D, 1, c1, "BMC block", {b["id"]: f"{b['example'][0][0]}. {b['example'][0][1]}" for b in c1["blocks"]}, [
         ("Meridian Fills the Customer Side First", ["valueProps", "customerSeg", "customerRel", "channels"]),
         ("Then the Engine Room: What Agents Do, Need and Cost", ["keyActivities", "keyResources", "keyPartners", "costStructure", "revenueStreams"])])
@@ -756,14 +766,15 @@ def topic1(D, C, mark):
         ("Value first.", "Same-day answers, 24/7: the block every other block serves."),
         ("Scored, not guessed.", "Triage 80, reports 75, predictor 24: park it."),
         ("A human stays.", "Complaints, refunds and premium clients keep a person.")])
-    board(D, "Topic 1 · Meridian's completed BMC", c1, "Meridian's Canvas, Block by Block",
-          "The first note of each block, readable. The live board holds three per block.", example=True)
-    # --- Activity 1 Part A: team padlet talk, pain-point hunt, then steps 1-3 (Muse) on the group board
+    N.t1_decision(D)
+    # --- Activity 1 Part A (v58 owner: the padlet sits inside Activity 1): overview, team padlet talk, pain-point hunt,
+    #     groups and tools, then steps 1-3 (Muse) on the group board
     mark("labs1")
+    L1 = B.LAB[1]
+    lab_overview(D, L1)
     import slides_v54 as S6
     S6.padlet_teams(D, 1)   # v56 (owner): 15-min team padlet talk, then Activity 1 as a group
     N.t1_hunt(D)
-    L1 = B.LAB[1]
     icons(D, "Topic 1 · Activity 1", "Groups of 3-5: Build Your Company's BMC", [
         ("users", "Stay in your padlet team", "Your 3-5 teammates choose one member's company"),
         ("building", "Create one board", "Leader selects Activity 1 and names the company"),
@@ -772,7 +783,6 @@ def topic1(D, C, mark):
         sub="Open alfredang.github.io/bcm/?activity=opportunity. Use your company throughout all three activities.",
         tipt="Choose a company you know; use non-confidential facts. Each member keeps the board screenshot and writes PP answers individually.")
     activity_studio(D)   # v54: tools shown when groups first need them
-    lab_overview(D, L1)
     step_slide(D, L1, 0)
     board_steps(D, L1)
     muse_board(D, "Topic 1 · Activity 1 · Step 3 · Meta Muse", c1)
@@ -782,9 +792,9 @@ def topic1(D, C, mark):
     activity_intro(D, "Topic 1 · Activity 1", c1, C)
     board(D, "Topic 1 · Activity 1 · Your board", c1, "Your Canvas: The Question Each Block Answers",
           "Answer every block for your own organisation. Screenshot your group board for PP Task 1.", example=False)
+    mark("t1end")   # v58 QA: the "Next · Topic 2" bridge belongs to no activity range
     big_statement(D, "Next · Topic 2 · Prove", "You found the opportunity.\nNow prove it works here.",
                   "Give the agent what it lacks, test it on real cases against a baseline, then write the 90-day plan the CEO will fund.")
-    mark("t1end")
 
 
 # ------------------------------------------------------------------ v45: slides copied from C690 Human-AI Collaboration
@@ -1256,9 +1266,9 @@ def topic2(D, C, mark):
     muse_board(D, "Topic 2 · Activity 2 · Task 6 · Meta Muse", c2)
     board(D, "Topic 2 · Activity 2 · Your board", c2, "Your 90-Day Plan: The Question Each Block Answers",
           "Steps 1 to 5, for your own organisation. Screenshot your group board for PP Task 2.", example=False)
+    mark("t2end")   # v58 QA: the "Next · Topic 3" bridge belongs to no activity range
     big_statement(D, "Next · Topic 3 · Transform", "The pilot works.\nNow make it how the company works.",
                   "Stakeholders, org chart, roles, training, coaching, AI built into the process, token budgets, security and governance.")
-    mark("t2end")
 
 # ------------------------------------------------------------------ v48: five agent risks, one page each, and the challenges
 # of AI transformation at the end of Topic 3 (owner request, 18 Nov 2026). AI security principles copied from C690 v2.0 slide 124;

@@ -76,6 +76,34 @@ def poll(D, kicker, question, options, how="Raise 1, 2, 3 or 4 fingers, or type 
     if note: s.notes_slide.notes_text_frame.text = note
     return s
 
+LIVE_HOW = "Vote with the QR code on the next slide, or raise 1, 2, 3 or 4 fingers."
+
+def live_poll(D, topic, kicker, question):
+    """v58 (owner): the room poll runs live on alfredang.github.io/livepoll, laid out as the C34 Ghana join slide:
+    question left, results button, room code; right, the app's lime room code over a QR that opens the vote."""
+    import io, qrcode
+    code = B.LIVE_POLLS[topic]
+    join, results = f"{B.LIVEPOLL_URL}?join={code}", f"{B.LIVEPOLL_URL}?results={code}"
+    s = D.new(dark=True)
+    text(s, 0.65, 0.46, 7.0, 0.36, f"Topic {topic} · Live poll".upper(), 14, ACC, bold=True, autofit=False)
+    text(s, 0.65, 1.26, 7.0, 1.9, question, 32, WHITE, bold=True, font=SERIF, anchor="m", minpt=24, cw=0.52, lh=1.05)
+    text(s, 0.69, 3.35, 6.7, 0.55, "Scan to vote. Open results to see the live tally.", 20, "E8E5DE", autofit=False)
+    button(s, 0.71, 4.18, 3.05, 0.71, "Open the Poll Result", url=results, fill="E8E5DE", color=INK, size=20)
+    text(s, 0.69, 5.04, 6.7, 0.45, f"If prompted, enter {code}.", 17, "C9C4B9", autofit=False)
+    text(s, 8.16, 1.15, 4.4, 0.4, "SCAN TO VOTE", 16, WHITE, bold=True, align="c", autofit=False)
+    card(s, 8.16, 1.84, 4.4, 3.2, fill="0E0E0C", shadow=False)
+    text(s, 8.16, 1.95, 4.4, 1.05, code, 58, "C8F06A", bold=True, font=SERIF, align="c", anchor="m", autofit=False)
+    card(s, 9.4, 3.08, 1.92, 1.82, fill=WHITE, shadow=False)
+    img = qrcode.make(join, border=1); bio = io.BytesIO(); img.save(bio, format="PNG"); bio.seek(0)
+    pic = s.shapes.add_picture(bio, Inches(9.55), Inches(3.15), Inches(1.68), Inches(1.68))
+    pic.click_action.hyperlink.address = join
+    footer(D, s)
+    s.notes_slide.notes_text_frame.text = (
+        f"Live poll room {code} (always active, one question). Learners scan the QR or open {join}. Show the tally: {results}. "
+        "Before each new class clear the old votes: python3 courseware/.claude/scripts/livepoll_rooms.py --reset (then --verify). "
+        "If the app is down, run the poll by show of hands from the previous slide.")
+    return s
+
 def pains(D, kicker, title, stat, stat_label, items, sub=None, source=None, url=None, stat_note=None):
     """Pain points: one dark evidence panel on the left, the named pains on the right."""
     s = D.new(); header(D, s, kicker, title, sub)
@@ -124,7 +152,7 @@ def quiz(D, topic, qs):
         else: text(s, 6.6, 6.4, 6.1, 0.4, "Knowledge check complete · continue", 12.5, ACC, bold=True, align="r", autofit=False)
     return s
 
-def handson(D, kicker, title, sub, prompt_text, do, check, minutes=None):
+def handson(D, kicker, title, sub, prompt_text, do, check, minutes=None, prompt_label="PROMPT  ·  activities/prompts.html"):
     """Short hands-on exercise: what to do (left), the prompt (centre), what good looks like (right)."""
     s = D.new(); header(D, s, kicker + (f" · {minutes} min" if minutes else ""), title, sub)
     top, bot = 2.45, 6.7
@@ -137,7 +165,7 @@ def handson(D, kicker, title, sub, prompt_text, do, check, minutes=None):
         text(s, 1.38, y - 0.03, 2.7, 1.1, d, 13.5, WHITE, minpt=9.5)
     card(s, 4.4, top, 5.6, bot - top, fill=K.CODEBG)
     for k, c in enumerate(("E06C5A", "E5B454", "7DB36B")): circle(s, 4.6 + k * 0.24, top + 0.18, 0.13, c)
-    text(s, 5.4, top + 0.1, 4.5, 0.3, "PROMPT  ·  activities/prompts.html", 10.5, DIM, autofit=False)
+    text(s, 5.4, top + 0.1, 4.5, 0.3, prompt_label, 10.5, DIM, autofit=False)
     text(s, 4.62, top + 0.5, 5.2, bot - top - 0.62, prompt_text, 15, "F1EDE4", font=MONO, minpt=9, cw=0.66, lh=1.06)
     card(s, 10.2, top, 2.5, bot - top)
     icon(s, "check", 10.45, top + 0.25, 0.62, fill=TEAL)
@@ -254,17 +282,82 @@ MCK_ORG26 = "https://www.mckinsey.com/~/media/mckinsey/business%20functions/peop
 KPMG = "https://kpmg.com/au/en/insights/artificial-intelligence-ai/trust-in-ai-global-insights-2025.html"
 
 # ---------------------------------------------------------------- Topic 1 · Discover
-def t1_agents_quote(D):
-    """v54 (owner): the Topic 1 quote opens the always-on agents section, before the agents are introduced."""
-    quote(D, "AI agentic workflows will drive massive AI progress this year, perhaps even more than the next generation of foundation models.",
-          "Andrew Ng, DeepLearning.AI, March 2024", kicker="Topic 1 · Always-on AI agents",
-          note="Source: Andrew Ng on X, 21 Mar 2024, https://x.com/AndrewYNg/status/1770897666702233815 (opens 'I think ...'; checked 23 Nov 2026). Point: the gain comes from the workflow wrapped around the model, not from waiting for a better model. That is where your company's opportunity sits.")
+# v58 (owner, 28 Nov 2026): Topic 1 follows the C34 Ghana Topic 1: the leaders' quotes open the always-on agents section.
+LEADERS = (
+    ("Sundar Pichai", "CEO of Google and Alphabet",
+     "The conversation has gone from ‘Can we build an agent?’ to ‘How do we manage thousands of them?’",
+     "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/ (Cloud Next 2026)",
+     "pichai", "Lawrence Jackson / The White House, 4 May 2023, cropped. U.S. public domain. https://commons.wikimedia.org/wiki/File:V20230504LJ-0199-2.jpg"),
+    ("Satya Nadella", "CEO of Microsoft",
+     "… agents now can reason over those live transactions along with petabytes of historical records in real time.",
+     "https://news.microsoft.com/events/wp-content/uploads/2026/11/Nadella_TRANSCRIPT_Ignite-Keynote_Nov-2026.pdf (Ignite, Nov 2026)",
+     "nadella", "Lawrence Jackson / The White House, 4 May 2023, cropped. U.S. public domain. https://commons.wikimedia.org/wiki/File:V20230504LJ-0199-2.jpg"),
+    ("Jensen Huang", "Founder and CEO of NVIDIA", "The age of AI Agentics is here.",
+     "https://fortune.com/2025/01/07/nvidias-jensen-huang-says-ai-agents-are-a-multi-trillion-dollar-opportunity/ (CES, Jan 2025)",
+     "huang", "Daniel Torok / The White House, cropped. U.S. public domain. https://commons.wikimedia.org/wiki/File:Jen-Hsun_Huang_2025.jpg"),
+    ("Bill Gates", "Co-founder and former CEO of Microsoft",
+     "Agents are not only going to change how everyone interacts with computers. They’re also going to upend the software industry…",
+     "https://www.gatesnotes.com/ai-agents (Gates Notes, Nov 2023)",
+     "gates", "Office of U.S. Senator Chris Coons, cropped. U.S. public domain. https://commons.wikimedia.org/wiki/File:Bill_Gates_-_Nov._8,_2019.jpg"),
+)
+MOLLICK = ("The shift from chatbot to agent is the most important change in how people use AI since ChatGPT launched.",
+           "https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the?action=share")
+
+def t1_leaders(D):
+    """Four leaders on AI agents with portraits, plus Ethan Mollick (copied from C34 Ghana v57-based deck, agent_quote.py)."""
+    s = D.new(dark=True)
+    circle(s, 11.2, -1.6, 3.6, ACC)
+    text(s, 0.62, 0.43, 10.0, 0.33, "TOPIC 1 · ALWAYS-ON AI AGENTS", 14, ACC, bold=True, autofit=False)
+    text(s, 0.62, 0.83, 10.3, 0.6, "What Leaders Say About AI Agents", 32, WHITE, bold=True, font=SERIF, autofit=False)
+    notes = ["Read one line per leader, then ask: which of these is already true in your company, and which is still a slide?"]
+    for (who, role, q, src_, slug, credit), (x, y) in zip(LEADERS, [(0.65, 1.61), (6.73, 1.61), (0.65, 3.49), (6.73, 3.49)]):
+        h = 1.74 if y < 3 else 2.03
+        card(s, x, y, 5.94, h, fill=PANEL, shadow=False)
+        pic = s.shapes.add_picture(asset("portraits", f"{slug}.jpg"), Inches(x + 0.12), Inches(y + 0.12), Inches(1.375), Inches(1.5))
+        pic._element.nvPicPr.cNvPr.set("descr", f"Photograph of {who}")
+        text(s, x + 1.65, y + 0.1, 4.13, 0.34, who, 20, "F2A383", bold=True, autofit=False)
+        text(s, x + 1.65, y + 0.44, 4.13, 0.27, role, 12.5, "E8E5DE", autofit=False)
+        text(s, x + 1.65, y + 0.76, 4.13, h - 0.86, f"“{q}”", 16.5, WHITE, font=SERIF, minpt=12, lh=1.05)
+        notes += [f"{who} quotation source: {src_}", f"{who} photograph: {credit}"]
+    card(s, 0.65, 5.65, 12.02, 1.04, fill=PANEL, shadow=False)
+    text(s, 0.9, 5.8, 2.3, 0.36, "Ethan Mollick", 20, "F2A383", bold=True, autofit=False)
+    text(s, 0.9, 6.17, 2.3, 0.3, "Wharton professor", 13, "E8E5DE", autofit=False)
+    text(s, 3.15, 5.72, 9.3, 0.88, f"“{MOLLICK[0]}”", 19, WHITE, font=SERIF, anchor="m", minpt=14, lh=1.05)
+    notes.append(f"Ethan Mollick quotation source: {MOLLICK[1]} (17 Feb 2026)")
+    text(s, 0.65, 6.74, 12.0, 0.26, "Sources: Pichai, Google Cloud Next, 22 Apr 2026 · Nadella, Microsoft Ignite keynote, Nov 2026 · Huang, CES, Jan 2025 · "
+         "Gates, Gates Notes, Nov 2023 · Mollick, One Useful Thing, 17 Feb 2026. Links in the notes.", 9.5, K.DIM, autofit=False)
+    footer(D, s)
+    s.notes_slide.notes_text_frame.text = "\n".join(notes)
+    return s
+
+def t1_tools_skills(D):
+    """v58: from the C34 Ghana Topic 1, with Meridian examples."""
+    return K.compare(D, "Topic 1 · Tools and skills", "Tools Act. Skills Guide the Work.",
+        ("Tool · a callable operation", "tool", ["Read a new request from the shared inbox.", "Open a ticket in ServiceNow or book a technician's visit."]),
+        ("Skill · a reusable procedure", "book", ["Define how to triage a request and route it.", "Define what a complete ticket holds and how to check it."]),
+        tipt="Permissions still govern what any agent may do with its tools.")
+
+def t1_decision(D):
+    """v58: from the C34 Ghana Topic 1 decision slide: the scored ideas become one pilot, one next, one parked."""
+    s = D.new(); header(D, s, "Topic 1 · Choose the first pilot", "Three Options for Meridian: Pilot, Queue, Park",
+                        "Start where the data is ready, the work repeats and a person can verify the outcome.")
+    for i, (label, action, ev) in enumerate((
+            ("80 · Pilot request triage", "Into Topic 2's 90-day pilot", "Reads every request and opens the ticket. A coordinator approves urgent routing."),
+            ("75 · Monthly client reports", "Next in line", "Second-highest score. Build it once the triage pilot proves the data flow."),
+            ("24 · Park the fault predictor", "Score it again later", "Lowest score. Revisit when value, feasibility or data improves."))):
+        x = 0.6 + i * 4.1; dk = i == 0
+        card(s, x, 2.53, 3.9, 3.8, fill=CHAR if dk else WHITE)
+        text(s, x + 0.23, 2.8, 3.38, 0.65, label, 20, WHITE if dk else INK, bold=True, font=SERIF, minpt=16)
+        text(s, x + 0.23, 3.57, 3.38, 0.42, action, 16, "F2B49B" if dk else ACC_D, bold=True, minpt=14)
+        text(s, x + 0.23, 4.24, 3.38, 1.48, ev, 17, SOFT if dk else INK, minpt=15)
+    return s
 
 def t1_open(D):
     poll(D, "Topic 1 · Discover", "How Much of Your Team's Week Could an AI Agent Take On Today?",
          ["Under 10%: our work is mostly judgement and relationships", "10-30%: some drafting, sorting and chasing",
           "30-50%: a lot of re-keying, reports and status updates", "Over 50%: most of our week is rule-based paperwork"],
-         note="Count hands, note the spread on the whiteboard. Return to it after the pain-point hunt before Activity 1: did the estimate move once people listed real tasks and hours?")
+         how=LIVE_HOW, note="Count hands, note the spread on the whiteboard. Return to it after the pain-point hunt before Activity 1: did the estimate move once people listed real tasks and hours?")
+    live_poll(D, 1, "Topic 1 · Discover", "How Much of Your Team's Week Could an AI Agent Take On Today?")
     pains(D, "Topic 1 · Where companies get stuck", "Most Firms Use AI. Few Can Show It in the Numbers.",
           "39%", "see any EBIT impact from AI, though 88% use it in at least one function",
           [("Tools before problems", "“We bought the licences; now find a use.” The search starts from the product, not the pain."),
@@ -288,24 +381,18 @@ def t1_functions(D):
         sub="Illustrative patterns, not vendor claims. Your pain-point hunt will find your own.",
         tipt="Look for work that is high-volume, rule-guided and easy to check: agents pay off there first.")
 
-T1_QUIZ = [
-    ("Which Step on the Agent Stairway Is the Big Jump?",
-     ["Chatbot → task bot", "Task bot → copilot", "Copilot → autonomous agent", "Agent → multi-agent team"], 2,
-     "From prompt-and-response to delegating a goal: the agent plans, acts and checks, and you approve the result."),
-    ("Your Model Does Not Know What 'Active Customer' Means in Your Firm. Which Gap Is That?",
-     ["Private data", "Your language", "Live context", "No guardrails"], 1,
-     "Internal language. You close it with the company map in Topic 2: plain-English definitions written by the people who run the work."),
-    ("An Idea Scores Value 5, Feasibility 4, Data 1. What Do You Do?",
-     ["Build it: the total is high", "Park it: a 1 on data vetoes it", "Buy a bigger model to fix the data", "Pilot it anyway and see"], 1,
-     "Set a veto: any 1 on data or risk stops the idea, whatever the total. Fix the data first, then score it again."),
-]
+# v58 (owner): the Topic 1 knowledge check was removed (Topic 1 follows the C34 Ghana flow); Topics 2 and 3 keep theirs.
 
 def t1_hunt(D):
     quote(D, "Point your first AI agent at the pain, not at the platform.", kicker="Topic 1 · Activity 1")   # v56: maxims about AI agents too
     h = B.PAIN_HUNT
-    handson(D, "Topic 1 · Activity 1 · Hands-on", "Pain-Point Hunt: Three Time-Sinks, One Vote",
-            "Before any canvas: find the work that wastes the most hours. That is where an agent earns its keep.",
-            h["prompt"], [h["body"][0], h["body"][1], "Carry the winner into the BMC as your first opportunity."], h["check"], minutes=h["minutes"])
+    # v58 (owner asked "is it for the padlet?"): yes; the hunt now happens on the team padlet, the Muse prompt is optional
+    handson(D, "Topic 1 · Activity 1 · On your team padlet", "Pain-Point Hunt: Post Three Time-Sinks, Vote for One",
+            "Still on your team padlet: post the work that wastes the most hours. The most-liked card goes on your BMC.",
+            h["prompt"], ["Alone, 3 min: post three cards on your team padlet, one task each, with rough hours per week.",
+                          "Together, 2 min: group the repeats and like the cards you agree with. The most-liked card wins.",
+                          "Carry the winner into your BMC as your first opportunity."], h["check"], minutes=h["minutes"],
+            prompt_label="OPTIONAL  ·  ask Muse to check your top three")
 
 # ---------------------------------------------------------------- Topic 2 · Prove
 def t2_open(D):
@@ -314,7 +401,8 @@ def t2_open(D):
           note="Source: https://www.anthropic.com/research/building-effective-agents (19 Dec 2024; original: 'Success in the LLM space isn't about ...'; checked 23 Nov 2026). Point: prove the simplest agent that fixes one process against a baseline before anyone buys a platform.")
     poll(D, "Topic 2 · Prove", "AI Promises Greater Efficiency. Has It Delivered That for You?",
          ["Yes, and we measured it", "Yes, it feels faster", "Not yet", "It created more work to check"],
-         note="B is the trap: feeling faster is not being faster. The next slide shows experts who felt 20% faster and measured 19% slower.")
+         how=LIVE_HOW, note="B is the trap: feeling faster is not being faster. The next slide shows experts who felt 20% faster and measured 19% slower.")
+    live_poll(D, 2, "Topic 2 · Prove", "AI Promises Greater Efficiency. Has It Delivered That for You?")
     pains(D, "Topic 2 · Where pilots stall", "Pilot Purgatory: Where Good Ideas Go to Wait",
           "−19%", "measured change in speed; the same developers expected +24%",
           [("Five demo cases, five hundred real ones", "The demo passes; the messy, urgent and incomplete cases fail."),
@@ -401,7 +489,8 @@ def t3_challenges(D):
     poll(D, "Topic 3 · The challenges", "Is Your Organisation Built to Benefit from AI?",
          ["Yes: roles and workflows were redesigned", "Partly: some teams have changed how they work",
           "Not yet: AI is a personal tool people use alone", "We have not started"],
-         note="Most rooms answer C. That is the point of Topic 3: personal AI skill does not add up to company capability, and it leaves when the person leaves.")
+         how=LIVE_HOW, note="Most rooms answer C. That is the point of Topic 3: personal AI skill does not add up to company capability, and it leaves when the person leaves.")
+    live_poll(D, 3, "Topic 3 · The challenges", "Is Your Organisation Built to Benefit from AI?")
     pains(D, "Topic 3 · The challenges · why transformations stall", "Six Reasons the Change Does Not Stick",
           "72%", "of 10,018 leaders say their organisation is not fully ready for the changes ahead",
           [("Aimed at the wrong target", "Awareness campaigns and prompt classes, when the gaps are judgement and incentives."),

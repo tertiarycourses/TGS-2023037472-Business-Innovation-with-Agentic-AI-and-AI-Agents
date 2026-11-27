@@ -11,8 +11,8 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v57"
-VERSION_DATE = "23 November 2026"
+VERSION      = "v58"
+VERSION_DATE = "28 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
 TRAINER      = "Dr. Alfred Ang"
@@ -58,10 +58,10 @@ TOPICS = [
       title="Identifying Business Innovation Opportunities with Agentic AI and AI Agents",
       short="Discover: explore AI agent opportunities",
       pitch="Agents now do real work. As your company's AI consultant, find where they pay off first.",
-      items=["Where companies get stuck: adoption without impact", "From rules to LLMs, then the Agent Stairway",
-             "What an agent is, then the Meta Muse mini activity", "Always-on agents, Singapore and five ways to team up",
-             "Use cases by function; Meridian and the nine-block BMC", "Five capability gaps, value levers and scoring",
-             "Knowledge check, Meridian demo, padlet, Activity 1 (BMC)"]),
+      items=["Live poll; where companies get stuck", "From rules to LLMs, then the Agent Stairway",
+             "What an agent is, with its tools and skills", "Leaders on agents; six always-on agents",
+             "Singapore, five ways to team up, use cases", "The nine-block BMC, Meridian and scoring",
+             "Meridian demo, Muse mini activity, Activity 1 (BMC)"]),
  dict(num=2, code="02", lo=1, codes="K3, K4, A3, A4", day="Day 1 PM - Day 2 AM",
       title="Designing Digital Architectures and AI Agent Implementation Plans",
       short="Prove: plan, test and evaluate",

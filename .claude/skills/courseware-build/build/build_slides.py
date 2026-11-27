@@ -11,6 +11,7 @@ from ccdeck import (cover, cards, rows, table, image, flow, trainer, header, car
                     ACC, TEAL, CHAR, PANEL, WHITE, INK, MUTED, SOFT, SERIF)
 import slides_bi as T
 import slides_v53 as N
+sys.path.insert(0, os.path.expanduser("~/.claude/skills/tertiary-ppt-design")); import trainer_badges as TB   # one profile for every deck
 
 REPO = os.path.normpath(os.path.join(HERE, "..", "..", "..", ".."))
 def asset(*p): return os.path.join(REPO, "courseware", "assets", *p)
@@ -42,9 +43,9 @@ trainer(D, "Introduction", "Dr. Alfred Ang", "AI Trainer & Engineer\nTertiary In
         [("grad", "Qualifications", "PhD-qualified trainer specialising in AI, automation and business innovation."),
          ("robot", "Expertise", "Builds autonomous AI agents and agentic workflows for business."),
          ("users", "Experience", "Trains professionals across Singapore on practical, project-based AI skills."),
-         ("medal", "Certifications", "Claude Certified Architect, Claude Certified Developer and Claude Certified Associate (Foundations); PMP, AWS, Microsoft, CompTIA, CKA, CKAD."),
+         ("medal", "Certifications", TB.CERT_LINE),
          ("linkedin", "Profile", "linkedin.com/in/angchewhoe   ·   github.com/alfredang")],
-        badge=[asset("badge-ccar-f.png"), asset("badge-ccdv-f.png"), asset("claude-certified-associate.png")])
+        badge=[(os.path.join(TB.ART, img), nm) for img, nm in TB.BADGES])   # v58: canonical badge row (CCAR-P, CCAR-F, CCDV-F, CCAO-F)
 
 s = D.new(dark=True); header(D, s, "Introduction", "Let's Know Each Other", "One minute each:")
 for i, (ic, t) in enumerate([("user", "Name & role"), ("building", "Your organisation"),

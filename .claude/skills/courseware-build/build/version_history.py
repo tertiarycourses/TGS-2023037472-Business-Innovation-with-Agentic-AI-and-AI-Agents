@@ -71,4 +71,7 @@ V56 = ("56", "23 November 2026",
 V57 = ("57", "23 November 2026",
        "Each topic: knowledge check, Meridian demo of every box, team padlet talk, then the board; six AI Coaching profiles.",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54, V55, V56, V57]
+V58 = ("58", "28 November 2026",
+       "Topic 1 reordered, BMC kept: live polls; four-step stairway; Topic 1 knowledge check and invite slide removed; 3-step Muse after the agents; padlet inside Activity 1; Day 1 re-timed.",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54, V55, V56, V57, V58]

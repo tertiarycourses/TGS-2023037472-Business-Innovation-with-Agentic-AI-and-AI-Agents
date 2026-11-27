@@ -59,7 +59,7 @@ tbl(["Topic", "Meridian's plan for AI agents"], [
     ("1 · Discover", "Map the business model, score the agent ideas and pick one: a triage agent that reads every request and opens the ticket."),
     ("2 · Prove", "Pilot triage at 10 sites for 90 days: 18 to 11 minutes per request, SGD 39,000 in year 1, one owner and a stop rule."),
     ("3 · Transform", "The day-90 numbers say scale: roll out to all 30 sites, redesign roles, train staff, govern the agents and budget the tokens.")], [1.3, 5.4])
-p("The slides are interactive: the course map, the SCALE navigator and each topic's knowledge check are clickable in slide-show mode. Each topic has a room poll and a one-line quote, and names the pain points companies hit before it teaches the method.")
+p("The slides are interactive: the course map, the SCALE navigator and the Topic 2 and Topic 3 knowledge checks are clickable in slide-show mode. Each topic opens with a live poll: scan the QR code on the slide to vote at alfredang.github.io/livepoll (or raise your hand) and watch the tally move. Each topic also names the pain points companies hit before it teaches the method.")
 note("Work on your own organisation. Never put personal data (NRIC, phone numbers, "
      "customer names) or confidential figures on a board: boards are shared by link.")
 note("SkillsFuture free AI subscription: Singapore Citizens aged 18+ who attend an eligible course (look for the official \u201cFree AI sub\u201d "
@@ -96,9 +96,13 @@ tbl(["Lens", "Emphasis", "Architecture implication"], [
     ("Harness engineering", "2025", "Wire tools, state, permissions, checks and logs around the model so it can act safely."),
     ("AI agents", "2026", "Delegate outcomes; design human decision boundaries, evaluation and monitoring for autonomous work.")], [1.6, 0.8, 4.3])
 h3("The Agent Stairway: From Answers to Results")
-tbl(["Level", "How the work is shared"], [("Chatbot", "Answers a message; no business-system action is configured in this example."),
-    ("Task bot", "Performs one defined job within clear instructions."), ("Copilot", "Suggests or prepares work while a person steers and approves."),
-    ("Autonomous agent", "Pursues a delegated goal using tools, checks and escalation rules.")], [1.5, 5.2])
+tbl(["Step", "How the work is shared", "Meridian example"], [
+    ("Chatbot", "Answers a message. It cannot act in your systems.", "Explains the request policy."),
+    ("Agentic workflow", "Runs fixed steps you designed; the model does each step and odd cases go to a person.", "Every request is read and a ticket opened by a set flow."),
+    ("Agentic AI", "Takes a goal, plans its own steps, chooses tools and checks the result.", "Works out what a request needs and drafts the right ticket."),
+    ("AI agents", "Persistent workers that watch for work and act within limits between your requests (always on).", "Watches the inbox overnight and asks a coordinator only about exceptions.")], [1.35, 3.0, 2.35])
+p("A workflow follows steps you set. Agentic AI chooses its own steps toward a goal. AI agents keep doing it, always on. The big jump is from workflow to agentic AI: you stop scripting the steps and start delegating the goal, so the controls (permissions, checks, approvals) must grow with it.")
+src("Anthropic, Building effective agents (workflows vs agents): https://www.anthropic.com/research/building-effective-agents")
 h2("1.2 Always-On AI Agents: A Specialised Form of Agentic AI")
 tbl(["", "Agentic AI", "Always-on AI agent"], [
     ("What it is", "The broad class of goal-directed AI that plans, uses tools and checks results", "A specialised persistent implementation of those capabilities"),
@@ -113,16 +117,16 @@ tbl(["Component", "What it does", "Example in Claude Code"],
     [(name, role, B.CLAUDE_CODE_COMPONENT_EXAMPLES[name]) for _, name, role in B.AGENT_COMPONENTS],
     [1.45, 2.55, 2.7])
 src(f"Anthropic, Claude Code documentation: {B.CLAUDE_CODE_COMPONENT_SOURCE}")
-h3("Mini Activity: Try Meta Muse (20 minutes)")
-p("Try Meta Muse right after learning how an AI agent works. Spend 20 minutes on setup, access and a read-only inbox brief.")
-for i, step in enumerate(B.MINI_MUSE["steps"]):
-    h3(f"Mini step {i + 1}: {step['title']}")
-    bl(step["body"])
-    if step.get("links") == "MUSE": bl([f"{label}: {url}" for label, url in B.MUSE_LINKS])
-    prompt(step["prompt"])
-    p("Check: " + step["check"])
-p("Debrief: what did the agent know, which access did it need, and which decision stayed with you? Use your own authorised account or the trainer's non-confidential demonstration; do not use another learner's login.")
+h3("Tools and Skills")
+p("Tools act; skills guide the work. A tool is a callable operation the agent is permitted to use. A skill is a reusable procedure that tells the agent how to do a job well and how to check it. Permissions still govern what any agent may do with its tools.")
+tbl(["", "Tool: a callable operation", "Skill: a reusable procedure"], [
+    ("Meridian example 1", "Read a new request from the shared inbox", "How to triage a request and route it"),
+    ("Meridian example 2", "Open a ticket in ServiceNow or book a technician's visit", "What a complete ticket holds and how to check it")], [1.4, 2.65, 2.65])
 h2("1.3 Always-On AI Agents: Muse, Dots, Duet, Grok Bot, Cue and Gemini Spark")
+h3("What Leaders Say About AI Agents")
+import slides_v53 as _N
+tbl(["Leader", "What they said"], [(f"{w} ({r})", f"“{q}”") for w, r, q, *_ in _N.LEADERS] + [("Ethan Mollick (Wharton professor)", f"“{_N.MOLLICK[0]}”")], [2.0, 4.7])
+src("; ".join(f"{w}: {src_.split(' (')[0]}" for w, _, _, src_, *_ in _N.LEADERS) + f"; Ethan Mollick: {_N.MOLLICK[1]}")
 p("Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in all three activities. It connects to Gmail and Google Calendar, "
   "keeps watch on your inbox, nudges you before deadlines, builds small apps called Spaces from one prompt, and asks before sending "
   "or buying anything. Use read-only connector access where offered and approve every send yourself.")
@@ -145,6 +149,16 @@ p("Compared side by side: Meta Muse and OpenAI Dots run a single agent; Grok Bot
   "Dots, Grok Bot, Duet and Gemini Spark need paid plans. Models and prices were checked on 31 Oct and 1 Nov 2026 (Google on 23 Nov 2026), "
   "and vendors change both without notice.")
 src("Meta Newsroom, 27 Oct 2026; ChatGPT Learn: Get started with your dot; Anthropic: Introducing Claude Duet; xAI docs: Grok Bot computer and apps; cue.im; Google: The Gemini app becomes more agentic, 19 May 2026; Gemini Apps Help: Manage your tasks; BULDRR comparison, 22 Oct 2026.")
+h3("Mini Activity: Try Meta Muse (20 minutes)")
+p("Right after the six always-on agents are introduced, try Meta Muse in three simple steps: connect it to your email, ask for your most important emails, then ask it for a 15-second social media ad presented by an AI human avatar. Muse can talk to you through a live avatar, but it may not render a finished video; if it cannot, it gives you the script, timings and avatar brief to produce the ad in a video tool.")
+for i, step in enumerate(B.MINI_MUSE["steps"]):
+    h3(f"Mini step {i + 1}: {step['title']}")
+    bl(step["body"])
+    if step.get("links") == "MUSE": bl([f"{label}: {url}" for label, url in B.MUSE_LINKS])
+    prompt(step["prompt"])
+    p("Check: " + step["check"])
+p("Debrief: what did the agent know, which access did it need, and which decision stayed with you? Use your own authorised account or the trainer's non-confidential demonstration; do not use another learner's login. Label AI-generated ads and check every product claim before anything is posted.")
+
 h2("1.4 Singapore Government News")
 bl(["IMDA published the world's first Model AI Governance Framework for Agentic AI at Davos on 22 January 2026; version 1.5 (20 May 2026) "
     "folded in feedback from more than 60 organisations. Four dimensions: assess and bound the risks upfront; make humans meaningfully "
@@ -196,12 +210,12 @@ tbl(["Function", "An agent can", "A person still"], [
     ("HR", "Screen applications against criteria and book interviews", "Decides who is hired"),
     ("Operations", "Triage requests, plan schedules, chase overdue jobs", "Approves dispatch and handles emergencies"),
     ("Marketing", "Draft campaign variants and report weekly what worked", "Sets the brand voice and approves release")], [1.4, 2.9, 2.4])
-h2("1.6 Meridian Services: The Scenario")
-p("Meridian Services Pte Ltd is a fictitious Singapore facilities firm: 140 staff support 30 commercial buildings. About 80 emails and WhatsApps arrive daily; coordinators spend 38% of their time re-keying requests, each taking 18 minutes to handle. Meridian wants faster service without losing human care. All figures are synthetic.")
-h2("1.7 What the Business Model Canvas Shows")
+h2("1.6 What the Business Model Canvas Shows")
 p("The Business Model Canvas (BMC) maps how a company creates, delivers and captures value across nine connected blocks. Start with who is served and why they choose you; link channels and relationships to the activities, resources and partners needed; then check revenue and costs. AI agents may improve several blocks, but the whole model must still make sense.")
 tbl(["BMC block", "Meaning", "Meridian agent use and benefit"], [(r[0], r[1], r[2] + " " + r[3]) for r in B.BMC_BENEFITS], [1.35, 1.65, 3.7])
 p("Read these proposed benefits as hypotheses. Faster replies do not guarantee retention or new revenue. The predictor is a future option, parked until its data is ready; the premium response tier also needs validation. Human approval remains on urgent jobs, complaints and refunds.")
+h2("1.7 Meridian Services: The Scenario")
+p("Meridian Services Pte Ltd is a fictitious Singapore facilities firm: 140 staff support 30 commercial buildings. About 80 emails and WhatsApps arrive daily; coordinators spend 38% of their time re-keying requests, each taking 18 minutes to handle. Meridian wants faster service without losing human care. All figures are synthetic.")
 h2("1.8 Why AI Projects Stall: Five Capability Gaps")
 p("Deploy a model straight out of the box and five structural gaps appear at once:")
 ol(["Private data: contracts, customer records and internal processes are blank to it.",

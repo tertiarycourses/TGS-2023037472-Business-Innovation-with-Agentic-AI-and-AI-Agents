@@ -30,7 +30,7 @@ def card(pid, kicker, title, prompt, note="", board=None):
 sec = []
 nav = [("mini-muse", "Mini Activity · Muse")]
 mini_cards = [card(f"mini{i + 1}", f"Mini Activity · Step {i + 1}", st["title"], st["prompt"], "Check: " + st.get("check", "")) for i, st in enumerate(B.MINI_MUSE["steps"])]
-sec.append('<section id="mini-muse"><div class="sk">Topic 1 · 20 minutes · Try Meta Muse</div><h2>Mini Activity · Try Meta Muse</h2><p class="pitch">Immediately after the agent introductions. Explore capabilities and approvals; the group BMC activity comes later.</p>' + ''.join(mini_cards) + '</section>')
+sec.append('<section id="mini-muse"><div class="sk">Topic 1 · 20 minutes · Try Meta Muse</div><h2>Mini Activity · Try Meta Muse</h2><p class="pitch">Right after the six always-on agents are introduced: connect your email, find your most important emails, then ask for a 15-second ad. The group BMC activity comes later.</p>' + ''.join(mini_cards) + '</section>')
 for L in B.LABS:
     cv = B.CANVAS[L["canvas"]]; sid = f"lab{L['n']}"; nav.append((sid, f"Activity {cv['num']}"))
     items = []

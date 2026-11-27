@@ -98,9 +98,28 @@ LABS[0]["minutes"] = 80
 for i, step in enumerate(LABS[0]["steps"]): step["part"] = "A" if i < 3 else "B"
 LABS[0]["steps"][1]["title"] = "Join your group board"
 LABS[0]["steps"][1]["body"][0] = "Use the ONE Activity 1 board created by your group leader. Join with its Board ID or QR code and your own name."
-MINI_MUSE["steps"][2]["prompt"] = "Prepare a read-only inbox brief: exclude newsletters, promotions and routine alerts from the summary. Rank up to five emails that need me, with one line on why each matters. Rule: anything from [your boss's name] is always in the top three. Do not send, archive, delete, mute, change settings or create a recurring task. First tell me whether ongoing monitoring is supported; ask before enabling it."
-MINI_MUSE["steps"][2]["body"] = ["Try a read-only inbox brief. Ask how ongoing monitoring would work; enable it only after you approve the scope."]
-MINI_MUSE["steps"][2]["check"] = "Up to five ranked emails with reasons, no mailbox changes; the agent explains its monitoring capability and asks before enabling it."
+# v58 (owner, 28 Nov 2026): keep the mini activity simple: connect Muse to email, find the most important emails, make a 15-second ad.
+MINI_MUSE["steps"] = [
+ dict(title="Connect Muse to your email", part="A", links="MUSE",
+      body=["Open Muse (phone app or muse.ai), then Settings > Connectors > Connect beside Gmail and finish the Google sign-in.",
+            "No Muse yet? Install 'Muse from Meta' or open muse.ai, sign in with your Facebook (Meta) account and redeem the invite code H1KWDZ.",
+            "Choose read-only access where offered. Muse must ask before it sends anything.",
+            "No Facebook account? Pair with a partner; never sign in with someone else's account."],
+      prompt="Which email account are you connected to? Tell me what you can do in it, and what you will always ask me before doing.",
+      check="Gmail shows as connected, and Muse says it will not send anything without your approval.",
+      then="Tell your neighbour one thing Muse can now see, and one thing it will never do without you."),
+ dict(title="Ask for your most important emails", part="A",
+      body=["Let Muse read your inbox and pick out what needs you today. Nothing in the mailbox should change."],
+      prompt="What are my most important emails right now? List the top five, with one line each on why it matters and what I should do next. Skip newsletters, promotions and automatic alerts. Do not send, archive or delete anything.",
+      check="Five emails ranked, each with a reason and a next action; nothing in your mailbox changed.",
+      then="Did Muse rank anything you would not? Ask it why, then correct it in one line."),
+ dict(title="Make a 15-second social media ad", part="A",
+      body=["Pick a product or service you are allowed to promote. Ask Muse for a 15-second ad presented by an AI human avatar.",
+            "Label AI-generated content and check every product claim before anything is posted."],
+      prompt="Create a 15-second social media video ad for [your product or service], presented by an AI human avatar, for [your target customers]. Hook them in the first 3 seconds, show one clear benefit, and end with one call to action. If you cannot make the video here, give me the script with timings (0-3 s, 3-12 s, 12-15 s), the avatar's look and voice, and the on-screen text.",
+      check="A 15-second video, or a script whose timings add up to 15 seconds, with a hook, one benefit and a call to action.",
+      then="Share your best hook with the group. Who in your company must approve an ad before it posts?"),
+]
 LABS[1]["steps"][1]["prompt"] += " Also identify the current SOP and policy owner, version and effective date; specify allowed tools, prohibited actions, approval thresholds, exception escalation and one worked example. If a rule is missing or contradictory, ask the process owner rather than inventing it."
 LABS[1]["steps"][1]["check"] = "Corrected definitions and relationships, current policy sources, two approval rules, permitted actions, one live event and one exception case; the process owner validates the map."
 LAB = {L['n']: L for L in LABS}
@@ -266,9 +285,9 @@ for _c in CANVASES: _c["muse_prompt"] = muse_prompt(_c)
 # --------------------------------------------------------------------------- AI Native key concepts (Kai-Fu Lee, AI Native, 2026)
 # term, one-line gist, definition (paraphrased from the book), example, chapter, icon
 AI_NATIVE = [
- dict(term="Agent Stairway", gist="Chatbot → task → copilot → agent", ch=3, icon="trend",
-      definition="Four levels of AI help: a chatbot answers; a task bot does one defined job; a copilot suggests while you steer; an autonomous agent takes a goal and delivers the result. The step change is from copilot to agent.",
-      example="Copilot: drafts your reply. Agent: triages the whole inbox overnight and asks you only about the exceptions."),
+ dict(term="Agent Stairway", gist="Chatbot → agentic workflow → agentic AI → AI agents", ch=3, icon="trend",
+      definition="Four steps of AI help: a chatbot answers; an agentic workflow runs fixed steps you designed, with the model doing each step; agentic AI takes a goal and chooses its own steps, tools and checks; AI agents run as persistent workers that watch for work and act within limits between your requests. The big jump is from workflow to agentic AI: you stop scripting the steps and start delegating the goal.",
+      example="Agentic workflow: every new email is summarised and filed by a fixed flow. AI agent: watches the inbox overnight, handles the routine and asks you only about the exceptions."),
  dict(term="Five capability gaps", gist="Why smart models stall", ch=6, icon="alert",
       definition="Out of the box, a model does not know your private data or your internal language, cannot see live changes, cannot act in your systems and has no guardrails.",
       example="It cannot tell what 'active customer' means in your company."),
@@ -310,12 +329,11 @@ AI_NATIVE_BY = {c["term"]: c for c in AI_NATIVE}
 SCHEDULE = {
  1: [
   ('9:30', '9:50', 20, 'admin', "Welcome, digital attendance, trainer, learning outcomes, your role as your company's AI consultant, ground rules, course materials and the SkillsFuture free AI subscription", 1),
-  ('9:50', '10:25', 35, 'topic', 'Topic 1 (Part A) - room poll; where companies get stuck; AI history and the 2023-2026 lenses; Agent Stairway; agentic AI and always-on agents; the seven components of an agent', 1),
-  ('10:25', '10:45', 20, 'lab', 'Mini Activity - Try Meta Muse: sign in, connect permitted apps and try a read-only inbox brief; discuss ongoing monitoring and approvals', 1),
-  ('10:45', '11:00', 15, 'break', 'Tea break', 1),
-  ('11:00', '11:35', 35, 'topic', 'Topic 1 (Part B) - six always-on agents, one page each; Singapore and AgentSea; five ways humans and agents team up; use cases by function', 1),
-  ('11:35', '12:10', 35, 'topic', 'Topic 1 (Part C) - Meridian scenario; nine-block BMC; five capability gaps; value levers and opportunity scoring; knowledge check; Meridian demo: how to fill each BMC block, then the completed board', 1),
-  ('12:10', '12:40', 30, 'activity', 'Activity 1 (Part A) - 15-min team padlet discussion (what AI agents can do); pain-point hunt; the padlet team of 3-5 chooses one company, joins one board and drafts its BMC', 1),
+  ('9:50', '10:40', 50, 'topic', 'Topic 1 (Part A) - live poll; where companies get stuck; AI history and the 2023-2026 lenses; Agent Stairway (chatbot, agentic workflow, agentic AI, AI agents); always-on agents; the seven components; tools and skills; what leaders say about AI agents; six always-on agents, one page each', 1),
+  ('10:40', '11:00', 20, 'lab', 'Mini Activity - Try Meta Muse: connect your email, ask for your most important emails, then ask for a 15-second social media ad with an AI human avatar', 1),
+  ('11:00', '11:15', 15, 'break', 'Tea break', 1),
+  ('11:15', '12:10', 55, 'topic', 'Topic 1 (Part B) - Singapore and AgentSea; five ways humans and agents team up; use cases by function; nine-block BMC and the Meridian scenario; five capability gaps; value levers and opportunity scoring; Meridian demo: how to fill each BMC block; choose the first pilot', 1),
+  ('12:10', '12:40', 30, 'activity', 'Activity 1 (Part A) - overview; 15-min team padlet discussion (what AI agents can do); pain-point hunt on the padlet; the padlet team of 3-5 chooses one company, joins one board and drafts its BMC', 1),
   ('12:40', '13:40', 60, 'lunch', 'Lunch break', 0),
   ('13:40', '14:30', 50, 'activity', 'Activity 1 (Part B) - verify and refine all nine BMC blocks, score opportunities and capture individual PP Task 1 evidence', 1),
   ('14:30', '14:55', 25, 'topic', 'Topic 2 (Part A) - room poll; pilot purgatory; Step 1 set the goal and baseline; Step 2 mine the process from dormant data and event logs', 2),
@@ -346,8 +364,8 @@ SCHEDULE = {
 
 # --- Activity 1: open with a five-minute pain-point hunt (inside Part A; minutes unchanged)
 PAIN_HUNT = dict(title="Pain-point hunt: three time-sinks, one vote", minutes=5,
-                 body=["Alone, 3 minutes: write the three tasks that waste the most hours in your team each week, with a rough number of hours.",
-                       "As a group, 2 minutes: read them out, cluster the repeats and vote. The winner is your first BMC question."],
+                 body=["Alone, 3 minutes: on your team padlet, post three cards, one per task that wastes the most hours in your team each week, each with a rough number of hours.",
+                       "Together, 2 minutes: read the cards, group the repeats and like the ones you agree with. The most-liked card is your first BMC opportunity. Optional: ask Muse to check the top three with the prompt below."],
                  prompt="My team: [team and role]. Our three biggest weekly time-sinks: [1, hours], [2, hours], [3, hours]. For each, tell me whether an AI agent could take it on today (yes, partly or no), what data it would need, and who would have to approve its work. Rank the three by hours saved. Mark guesses as (assumption).",
                  check="Three time-sinks with hours; one ranked first; the data and the approver named for each.")
 
@@ -390,6 +408,10 @@ LAB = {L['n']: L for L in LABS}
 # Rooms on alfredang.github.io/padlet (Firestore padlet-7c3eb), owned by the trainer's Google account; each room has one
 # column per topic with the questions pinned, plus a column for board screenshots.
 PADLET_URL = "https://alfredang.github.io/padlet/?room="
+# v58 (owner, 28 Nov 2026): one live-poll room per topic room poll on alfredang.github.io/livepoll (Firebase, always active).
+# Created by courseware/.claude/scripts/livepoll_rooms.py; --verify checks them, --reset clears the votes before a new class.
+LIVEPOLL_URL = "https://alfredang.github.io/livepoll/"
+LIVE_POLLS = {1: "469720", 2: "919649", 3: "299409"}
 PADLET_TEAMS = [("Catalyst", "W2GQC7"), ("Horizon", "XBMF8X"), ("Momentum", "5APT8X"), ("Pioneer", "JRSUDS"), ("Quantum", "B39XG6")]
 PADLET_TALK = {
     1: ("What business innovation can AI agents do for us?",

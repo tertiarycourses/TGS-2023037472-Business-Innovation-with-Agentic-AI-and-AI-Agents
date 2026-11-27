@@ -21,8 +21,8 @@ KIND_FILL = {"topic": TOPIC_FILL, "activity": TOPIC_FILL, "break": BREAK_FILL, "
 GREY = RGBColor(0x55, 0x5B, 0x66)
 
 def rng(a, b): return str(MAP[a]) if MAP[b] - 1 <= MAP[a] else f"{MAP[a]}–{MAP[b] - 1}"
-ROUTES = [("Welcome", ("admin", "t1")), ("Topic 1 (Part A)", ("t1", "mini_muse")), ("Mini Activity", ("mini_muse", "t1always")),
-          ("Topic 1 (Part B)", ("t1always", "t1gaps")), ("Topic 1 (Part C)", ("t1gaps", "labs1")),
+ROUTES = [("Welcome", ("admin", "t1")), ("Topic 1 (Part A)", ("t1", "mini_muse")),   # v58: Topic 1 follows the C34 Ghana flow
+          ("Mini Activity", ("mini_muse", "t1sg")), ("Topic 1 (Part B)", ("t1sg", "labs1")),
           ("Activity 1 (Part A)", ("labs1", "act1")), ("Activity 1 (Part B)", ("act1", "t1end")), ("Topic 2 (Part A)", ("t2", "t2step3")),
           ("Topic 2 (Part B)", ("t2step3", "t2test")), ("Topic 2 (Part C)", ("t2test", "act2a")), ("Activity 2 (Part A)", ("act2a", "act2b")),
           ("Activity 2 (Part B)", ("act2b", "t2end")), ("Topic 3 (Part A)", ("t3", "act3a")), ("Activity 3 (Part A)", ("act3a", "t3scale")),
@@ -70,7 +70,7 @@ for lo in C.LEARNING_OUTCOMES: doc.add_paragraph(style="List Bullet").add_run(lo
 
 H("Topics, Outcomes and Slides")
 tt = doc.add_table(rows=0, cols=4); tt.style = "Table Grid"; head(tt, ["Topic", "Content", "LO · K & A", "Slides"])
-tslides = {1: rng("t1", "t2"), 2: rng("t2", "t3"), 3: rng("t3", "bonus")}
+tslides = {1: rng("t1", "t1end"), 2: rng("t2", "t2end"), 3: rng("t3", "bonus")}   # v58 QA: the "Next · Topic N" bridge is in no topic range
 for tp in C.TOPICS:
     c = tt.add_row().cells
     cell(c[0], f"Topic {tp['num']}: {tp['title']}", bold=True, fill=TOPIC_FILL); cell(c[1], "; ".join(tp["items"]))
@@ -121,7 +121,7 @@ for cv in B.CANVASES:
     lab_ = next(L for L in B.LABS if L["canvas"] == cv["key"])
     assert lab_["minutes"] == sched, f"Activity {cv['num']}: lab says {lab_['minutes']} min, schedule gives {sched} min"
 doc.add_paragraph("AI Coaching Mini Activity (10 min, Day 2): in pairs, learners coach a worried employee on the AI Coaching simulator (https://alfredang.github.io/AICoaching/), read its feedback, swap and debrief. It is practice for SCALE A (Augment people), not a PP activity.")
-doc.add_paragraph("Mini Activity (20 min): immediately after the agent introductions, learners try Meta Muse using the first section of Activity 1 Instructions. It is separate from the three PP group-board activities. A current offline prompts.html is included in activities/.")
+doc.add_paragraph("Mini Activity (20 min): right after the six always-on agents are introduced, learners try Meta Muse in three steps (connect email, ask for the most important emails, ask for a 15-second social media ad with an AI human avatar) using the first section of Activity 1 Instructions. It is separate from the three PP group-board activities. A current offline prompts.html is included in activities/.")
 H("Activities (one per learning outcome)")
 at = doc.add_table(rows=0, cols=5); at.style = "Table Grid"; head(at, ["Activity", "What learners do", "Group board", "Topic · LO", "Assessment evidence"])
 for L in B.LABS:

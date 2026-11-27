@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 57 · 23 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 58 · 28 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -70,7 +70,7 @@ Meridian Services Pte Ltd is fictitious and every figure is synthetic. Its 140 s
 | 2 · Prove | Pilot triage at 10 sites for 90 days: 18 to 11 minutes per request, SGD 39,000 in year 1, one owner and a stop rule. |
 | 3 · Transform | The day-90 numbers say scale: roll out to all 30 sites, redesign roles, train staff, govern the agents and budget the tokens. |
 
-The slides are interactive: the course map, the SCALE navigator and each topic's knowledge check are clickable in slide-show mode. Each topic has a room poll and a one-line quote, and names the pain points companies hit before it teaches the method.
+The slides are interactive: the course map, the SCALE navigator and the Topic 2 and Topic 3 knowledge checks are clickable in slide-show mode. Each topic opens with a live poll: scan the QR code on the slide to vote at alfredang.github.io/livepoll (or raise your hand) and watch the tally move. Each topic also names the pain points companies hit before it teaches the method.
 
 > Work on your own organisation. Never put personal data (NRIC, phone numbers, customer names) or confidential figures on a board: boards are shared by link.
 
@@ -120,12 +120,16 @@ A teaching sequence of where practitioners focused their effort. The years are e
 
 ### The Agent Stairway: From Answers to Results
 
-| Level | How the work is shared |
-|---|---|
-| Chatbot | Answers a message; no business-system action is configured in this example. |
-| Task bot | Performs one defined job within clear instructions. |
-| Copilot | Suggests or prepares work while a person steers and approves. |
-| Autonomous agent | Pursues a delegated goal using tools, checks and escalation rules. |
+| Step | How the work is shared | Meridian example |
+|---|---|---|
+| Chatbot | Answers a message. It cannot act in your systems. | Explains the request policy. |
+| Agentic workflow | Runs fixed steps you designed; the model does each step and odd cases go to a person. | Every request is read and a ticket opened by a set flow. |
+| Agentic AI | Takes a goal, plans its own steps, chooses tools and checks the result. | Works out what a request needs and drafts the right ticket. |
+| AI agents | Persistent workers that watch for work and act within limits between your requests (always on). | Watches the inbox overnight and asks a coordinator only about exceptions. |
+
+A workflow follows steps you set. Agentic AI chooses its own steps toward a goal. AI agents keep doing it, always on. The big jump is from workflow to agentic AI: you stop scripting the steps and start delegating the goal, so the controls (permissions, checks, approvals) must grow with it.
+
+*Source: Anthropic, Building effective agents (workflows vs agents): https://www.anthropic.com/research/building-effective-agents*
 
 ## 1.2 Always-On AI Agents: A Specialised Form of Agentic AI
 
@@ -157,54 +161,28 @@ Give an agent a goal and boundaries. It uses relevant context and memory, select
 
 *Source: Anthropic, Claude Code documentation: https://code.claude.com/docs/en/features-overview*
 
-### Mini Activity: Try Meta Muse (20 minutes)
+### Tools and Skills
 
-Try Meta Muse right after learning how an AI agent works. Spend 20 minutes on setup, access and a read-only inbox brief.
+Tools act; skills guide the work. A tool is a callable operation the agent is permitted to use. A skill is a reusable procedure that tells the agent how to do a job well and how to check it. Permissions still govern what any agent may do with its tools.
 
-### Mini step 1: Get Meta Muse: phone app or website
-
-- Use the Meta Muse phone app OR the muse.ai website: both work for every activity. Phone app: iPhone - open the App Store, search 'Muse from Meta' (or scan the QR code), tap Get. Android - open Google Play, search 'Muse from Meta' (or scan the QR code), tap Install.
-- Open the app and sign in with your Facebook (Meta) account. Allow notifications if asked, so the always-on agent can reach you.
-- Website: on a laptop or any browser, go to muse.ai, click Log in or Sign up, continue with your Facebook (Meta) account and finish the short onboarding.
-- Redeem the trainer's invite code: Settings > General > Usage > Redeem invite code, key in H1KWDZ within 48 hours of joining.
-- Tip: using the phone app? Download the current activities/prompts.html from the LMS course materials and open it in a browser on the same device for copy and paste.
-- No Facebook account? Ask your trainer to pair you with a partner for this activity; never sign in with someone else's account.
-
-- iPhone · App Store: https://apps.apple.com/sg/app/muse-from-meta/id6760173601
-- Android · Google Play: https://play.google.com/store/apps/details?gl=sg&id=com.facebook.aura
-- Laptop · muse.ai: https://muse.ai/
-
-```text
-Introduce yourself in three sentences: what you can do for a business manager, what you need access to, and what you will always ask me before doing.
-```
-
-Check: Muse is installed (phone) or open at muse.ai (laptop), you are signed in, and it answers with what it will always ask before doing.
-
-### Mini step 2: Connect Gmail and Google Calendar
-
-- Settings > Connectors > Connect beside Gmail > Continue; finish the Google sign-in.
-- Repeat for Google Calendar.
-- Choose read-only access where offered. Approve every send yourself.
-
-```text
-Confirm which of my apps you are connected to, and what you can and cannot do in each one.
-```
-
-Check: Gmail and Calendar show as connected; Muse says it cannot send without your approval.
-
-### Mini step 3: Feel the always-on agent: triage your inbox
-
-- Try a read-only inbox brief. Ask how ongoing monitoring would work; enable it only after you approve the scope.
-
-```text
-Prepare a read-only inbox brief: exclude newsletters, promotions and routine alerts from the summary. Rank up to five emails that need me, with one line on why each matters. Rule: anything from [your boss's name] is always in the top three. Do not send, archive, delete, mute, change settings or create a recurring task. First tell me whether ongoing monitoring is supported; ask before enabling it.
-```
-
-Check: Up to five ranked emails with reasons, no mailbox changes; the agent explains its monitoring capability and asks before enabling it.
-
-Debrief: what did the agent know, which access did it need, and which decision stayed with you? Use your own authorised account or the trainer's non-confidential demonstration; do not use another learner's login.
+|  | Tool: a callable operation | Skill: a reusable procedure |
+|---|---|---|
+| Meridian example 1 | Read a new request from the shared inbox | How to triage a request and route it |
+| Meridian example 2 | Open a ticket in ServiceNow or book a technician's visit | What a complete ticket holds and how to check it |
 
 ## 1.3 Always-On AI Agents: Muse, Dots, Duet, Grok Bot, Cue and Gemini Spark
+
+### What Leaders Say About AI Agents
+
+| Leader | What they said |
+|---|---|
+| Sundar Pichai (CEO of Google and Alphabet) | “The conversation has gone from ‘Can we build an agent?’ to ‘How do we manage thousands of them?’” |
+| Satya Nadella (CEO of Microsoft) | “… agents now can reason over those live transactions along with petabytes of historical records in real time.” |
+| Jensen Huang (Founder and CEO of NVIDIA) | “The age of AI Agentics is here.” |
+| Bill Gates (Co-founder and former CEO of Microsoft) | “Agents are not only going to change how everyone interacts with computers. They’re also going to upend the software industry…” |
+| Ethan Mollick (Wharton professor) | “The shift from chatbot to agent is the most important change in how people use AI since ChatGPT launched.” |
+
+*Source: Sundar Pichai: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/; Satya Nadella: https://news.microsoft.com/events/wp-content/uploads/2026/11/Nadella_TRANSCRIPT_Ignite-Keynote_Nov-2026.pdf; Jensen Huang: https://fortune.com/2025/01/07/nvidias-jensen-huang-says-ai-agents-are-a-multi-trillion-dollar-opportunity/; Bill Gates: https://www.gatesnotes.com/ai-agents; Ethan Mollick: https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the?action=share*
 
 Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in all three activities. It connects to Gmail and Google Calendar, keeps watch on your inbox, nudges you before deadlines, builds small apps called Spaces from one prompt, and asks before sending or buying anything. Use read-only connector access where offered and approve every send yourself.
 
@@ -222,6 +200,50 @@ Meta Muse (in Singapore since 27 October 2026) is the always-on agent used in al
 Compared side by side: Meta Muse and OpenAI Dots run a single agent; Grok Bot and Manus Cue run teams of agents; Anthropic has not said for Claude Duet; Gemini Spark runs up to 15 tasks in parallel. Muse's core use is free in Singapore and Cue is free for now with an invite code; Dots, Grok Bot, Duet and Gemini Spark need paid plans. Models and prices were checked on 31 Oct and 1 Nov 2026 (Google on 23 Nov 2026), and vendors change both without notice.
 
 *Source: Meta Newsroom, 27 Oct 2026; ChatGPT Learn: Get started with your dot; Anthropic: Introducing Claude Duet; xAI docs: Grok Bot computer and apps; cue.im; Google: The Gemini app becomes more agentic, 19 May 2026; Gemini Apps Help: Manage your tasks; BULDRR comparison, 22 Oct 2026.*
+
+### Mini Activity: Try Meta Muse (20 minutes)
+
+Right after the six always-on agents are introduced, try Meta Muse in three simple steps: connect it to your email, ask for your most important emails, then ask it for a 15-second social media ad presented by an AI human avatar. Muse can talk to you through a live avatar, but it may not render a finished video; if it cannot, it gives you the script, timings and avatar brief to produce the ad in a video tool.
+
+### Mini step 1: Connect Muse to your email
+
+- Open Muse (phone app or muse.ai), then Settings > Connectors > Connect beside Gmail and finish the Google sign-in.
+- No Muse yet? Install 'Muse from Meta' or open muse.ai, sign in with your Facebook (Meta) account and redeem the invite code H1KWDZ.
+- Choose read-only access where offered. Muse must ask before it sends anything.
+- No Facebook account? Pair with a partner; never sign in with someone else's account.
+
+- iPhone · App Store: https://apps.apple.com/sg/app/muse-from-meta/id6760173601
+- Android · Google Play: https://play.google.com/store/apps/details?gl=sg&id=com.facebook.aura
+- Laptop · muse.ai: https://muse.ai/
+
+```text
+Which email account are you connected to? Tell me what you can do in it, and what you will always ask me before doing.
+```
+
+Check: Gmail shows as connected, and Muse says it will not send anything without your approval.
+
+### Mini step 2: Ask for your most important emails
+
+- Let Muse read your inbox and pick out what needs you today. Nothing in the mailbox should change.
+
+```text
+What are my most important emails right now? List the top five, with one line each on why it matters and what I should do next. Skip newsletters, promotions and automatic alerts. Do not send, archive or delete anything.
+```
+
+Check: Five emails ranked, each with a reason and a next action; nothing in your mailbox changed.
+
+### Mini step 3: Make a 15-second social media ad
+
+- Pick a product or service you are allowed to promote. Ask Muse for a 15-second ad presented by an AI human avatar.
+- Label AI-generated content and check every product claim before anything is posted.
+
+```text
+Create a 15-second social media video ad for [your product or service], presented by an AI human avatar, for [your target customers]. Hook them in the first 3 seconds, show one clear benefit, and end with one call to action. If you cannot make the video here, give me the script with timings (0-3 s, 3-12 s, 12-15 s), the avatar's look and voice, and the on-screen text.
+```
+
+Check: A 15-second video, or a script whose timings add up to 15 seconds, with a hook, one benefit and a call to action.
+
+Debrief: what did the agent know, which access did it need, and which decision stayed with you? Use your own authorised account or the trainer's non-confidential demonstration; do not use another learner's login. Label AI-generated ads and check every product claim before anything is posted.
 
 ## 1.4 Singapore Government News
 
@@ -290,11 +312,7 @@ Look for work that is high-volume, rule-guided and easy to check. These are illu
 | Operations | Triage requests, plan schedules, chase overdue jobs | Approves dispatch and handles emergencies |
 | Marketing | Draft campaign variants and report weekly what worked | Sets the brand voice and approves release |
 
-## 1.6 Meridian Services: The Scenario
-
-Meridian Services Pte Ltd is a fictitious Singapore facilities firm: 140 staff support 30 commercial buildings. About 80 emails and WhatsApps arrive daily; coordinators spend 38% of their time re-keying requests, each taking 18 minutes to handle. Meridian wants faster service without losing human care. All figures are synthetic.
-
-## 1.7 What the Business Model Canvas Shows
+## 1.6 What the Business Model Canvas Shows
 
 The Business Model Canvas (BMC) maps how a company creates, delivers and captures value across nine connected blocks. Start with who is served and why they choose you; link channels and relationships to the activities, resources and partners needed; then check revenue and costs. AI agents may improve several blocks, but the whole model must still make sense.
 
@@ -311,6 +329,10 @@ The Business Model Canvas (BMC) maps how a company creates, delivers and capture
 | Cost Structure | What running the business costs | Budget SGD 39,000 in year one for licences, integration, training and change. Test whether time saved exceeds full costs; include human review and assurance. |
 
 Read these proposed benefits as hypotheses. Faster replies do not guarantee retention or new revenue. The predictor is a future option, parked until its data is ready; the premium response tier also needs validation. Human approval remains on urgent jobs, complaints and refunds.
+
+## 1.7 Meridian Services: The Scenario
+
+Meridian Services Pte Ltd is a fictitious Singapore facilities firm: 140 staff support 30 commercial buildings. About 80 emails and WhatsApps arrive daily; coordinators spend 38% of their time re-keying requests, each taking 18 minutes to handle. Meridian wants faster service without losing human care. All figures are synthetic.
 
 ## 1.8 Why AI Projects Stall: Five Capability Gaps
 
@@ -370,8 +392,8 @@ Each activity opens with a 15-minute group discussion on your team padlet (alfre
 
 ### Hands-on: Pain-Point Hunt (5 minutes, after the padlet talk)
 
-- Alone, 3 minutes: write the three tasks that waste the most hours in your team each week, with a rough number of hours.
-- As a group, 2 minutes: read them out, cluster the repeats and vote. The winner is your first BMC question.
+- Alone, 3 minutes: on your team padlet, post three cards, one per task that wastes the most hours in your team each week, each with a rough number of hours.
+- Together, 2 minutes: read the cards, group the repeats and like the ones you agree with. The most-liked card is your first BMC opportunity. Optional: ask Muse to check the top three with the prompt below.
 
 ```text
 My team: [team and role]. Our three biggest weekly time-sinks: [1, hours], [2, hours], [3, hours]. For each, tell me whether an AI agent could take it on today (yes, partly or no), what data it would need, and who would have to approve its work. Rank the three by hours saved. Mark guesses as (assumption).

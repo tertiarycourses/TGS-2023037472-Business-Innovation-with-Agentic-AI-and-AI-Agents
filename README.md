@@ -27,11 +27,11 @@ A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day act
 | Current Meta Muse prompt templates | Download [activities/prompts.html](activities/prompts.html) from the course materials and open it in a browser |
 | Meridian demo boards (read-only) | [Activity 1](https://alfredang.github.io/bcm/?join=meridian-activity-1) · [Activity 2](https://alfredang.github.io/bcm/?join=meridian-activity-2) · [Activity 3](https://alfredang.github.io/bcm/?join=meridian-activity-3): a finished board for the fictitious Meridian Services |
 | AI Coaching simulator (Topic 3 demo) | [alfredang.github.io/AICoaching](https://alfredang.github.io/AICoaching/): practise coaching a worried employee; demo mode or your own OpenAI / MiniMax / Anthropic (Claude Haiku 5.5) key |
-| Courseware version | v57 · 23 November 2026 · 253 slides |
+| Courseware version | v58 · 28 November 2026 · 251 slides |
 
 ## About the course
 
-You act as the AI consultant inside your own company, through three phases: **Discover** where AI agents pay off (Business Model Canvas), **Prove** that one works here (a five-step 90-day plan with a real test on your own cases), then **Transform** the company (SCALE: stakeholders, org chart, roles, training, coaching, AI built into the process, token cost, security and governance). Every topic opens with a one-line quote and a room poll, names the pain points companies hit, and ends with a clickable knowledge check. Groups work on one shared online board per activity (no login), let Meta Muse draft the inputs, and judge, refine and own the result. Each board is one Practical Performance task.
+You act as the AI consultant inside your own company, through three phases: **Discover** where AI agents pay off (Business Model Canvas), **Prove** that one works here (a five-step 90-day plan with a real test on your own cases), then **Transform** the company (SCALE: stakeholders, org chart, roles, training, coaching, AI built into the process, token cost, security and governance). Every topic opens with a live poll (scan the QR to vote, the tally shows on screen), names the pain points companies hit, and Topics 2 and 3 end with a clickable knowledge check. Groups work on one shared online board per activity (no login), let Meta Muse draft the inputs, and judge, refine and own the result. Each board is one Practical Performance task.
 
 ## Learning outcomes
 
@@ -43,7 +43,7 @@ You act as the AI consultant inside your own company, through three phases: **Di
 
 | Topic | Framework | What you learn |
 |---|---|---|
-| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents (**Discover**) | **BMC** | Where companies get stuck; Rules → ML → Deep Learning → LLM; 2023–2026 lenses; the Agent Stairway; always-on agents (Meta Muse mini activity); Singapore and AgentSea; five ways humans and agents team up; use cases by function; five capability gaps, value levers and scoring; pain-point hunt. |
+| 1. Identifying Business Innovation Opportunities with Agentic AI and AI Agents (**Discover**) | **BMC** | Where companies get stuck; Rules → ML → Deep Learning → LLM; 2023–2026 lenses; the Agent Stairway (chatbot → agentic workflow → agentic AI → AI agents); tools and skills; what leaders say about AI agents; six always-on agents and the Meta Muse mini activity; Singapore and AgentSea; five ways humans and agents team up; use cases by function; the BMC with Meridian; five capability gaps, value levers and scoring; choosing the first pilot; pain-point hunt on the team padlet. |
 | 2. Designing Digital Architectures and AI Agent Implementation Plans (**Prove**) | **90-Day Plan** | Pilot purgatory and measured vs felt gains; set the goal and baseline; mine the process from dormant data; the decision layer and the company map in plain English; test before you trust (test set, four checks, replay → shadow → assist); owner, pilot and stop rule. |
 | 3. Managing AI-Driven Innovation, Governance and Stakeholder Collaboration (**Transform**) | **SCALE** | Why transformations stall; outputs to outcomes; AI readiness diagnostic; stakeholder map and sponsors; outcome-tree org chart and DRIs; job redesign, training that builds ability and coaching (AI Coaching mini activity); AI built into the process so it survives staff turnover; governance stack, access models, token cost, six AI security principles including guardrails, and measuring real results. |
 
@@ -54,7 +54,7 @@ You act as the AI consultant inside your own company, through three phases: **Di
 
 ## Activities
 
-The 20-minute Meta Muse mini activity follows the agent introductions; its instructions are the first section of Activity 1 Instructions. The later BMC group task takes 80 minutes. Three group boards remain the PP evidence.
+The 20-minute Meta Muse mini activity follows the six always-on agents (connect your email, find your most important emails, ask for a 15-second ad); its instructions are the first section of Activity 1 Instructions. The later BMC group task takes 80 minutes. Three group boards remain the PP evidence.
 
 | # | Activity | Topic · LO | Materials | Assessment evidence |
 |---|---|---|---|---|
@@ -62,6 +62,7 @@ The 20-minute Meta Muse mini activity follows the agent introductions; its instr
 | 2 | **AI Agent 90-Day Action Plan** | Topic 2 · LO2 | [Instructions PDF](<activities/activity-02-ai-agent-90-day-action-plan/ACTIVITY-02-Instructions.pdf>) · [Open board](https://alfredang.github.io/bcm/?activity=actionplan) | PP Task 2 · screenshot of your action plan board |
 | 3 | **Sustain and Operate with AI Agents (SCALE)** | Topic 3 · LO3 | [Instructions PDF](<activities/activity-03-sustain-and-operate-with-ai-agents-scale/ACTIVITY-03-Instructions.pdf>) · [Open board](https://alfredang.github.io/bcm/?activity=change) | PP Task 3 · screenshot of your SCALE board |
 
+- **Live polls** (one per topic; scan the QR on the slide or join with the room code): [Topic 1 · 469720](https://alfredang.github.io/livepoll/?join=469720) · [Topic 2 · 919649](https://alfredang.github.io/livepoll/?join=919649) · [Topic 3 · 299409](https://alfredang.github.io/livepoll/?join=299409)
 - **Activity Studio** (live boards, no login: create a board, everyone joins by QR code or Board ID): https://alfredang.github.io/bcm/
 - **Team padlets** (a 15-minute group discussion opens each activity; join with your team code and your name): [Catalyst W2GQC7](https://alfredang.github.io/padlet/?room=W2GQC7) · [Horizon XBMF8X](https://alfredang.github.io/padlet/?room=XBMF8X) · [Momentum 5APT8X](https://alfredang.github.io/padlet/?room=5APT8X) · [Pioneer JRSUDS](https://alfredang.github.io/padlet/?room=JRSUDS) · [Quantum B39XG6](https://alfredang.github.io/padlet/?room=B39XG6)
 - **Current Meta Muse prompt templates**: download [activities/prompts.html](activities/prompts.html), open it in a browser, fill the blanks and copy into Muse. The public website may contain an earlier revision.
@@ -72,7 +73,7 @@ The 20-minute Meta Muse mini activity follows the agent introductions; its instr
 
 | File | What it is |
 |---|---|
-| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v57.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v57.pdf>) | Trainer slides |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v58.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v58.pdf>) | Trainer slides |
 | [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
 | [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
 | [activities/](activities/) | One folder per activity with its Instructions PDF |

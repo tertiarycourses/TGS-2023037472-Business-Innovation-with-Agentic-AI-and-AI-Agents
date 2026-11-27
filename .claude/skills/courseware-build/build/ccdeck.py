@@ -526,7 +526,7 @@ def hub(D, kicker, title, center, spokes, sub=None, foot=None, dark=False):
 def trainer(D, kicker, name, role, rows_, template=False, badge=None):
     """badge: optional certification badge image, shown under the role (card content shifts up)."""
     s = D.new(); header(D, s, kicker, "About the Trainer")
-    card(s, 0.9, 1.95, 3.6, 3.9, fill=CHAR)
+    card(s, 0.9, 1.95, 3.6, 3.9, fill=CHAR).name = "trainer card"   # trainer_badges.py finds the card by this name
     dy = -0.2 if badge else 0
     circle(s, 2.25, 2.35 + dy, 0.9, ACC)
     text(s, 2.25, 2.35 + dy, 0.9, 0.9, "?" if template else "AA", 22, WHITE, bold=True, font=SERIF, align="c", anchor="m", autofit=False)
@@ -536,8 +536,10 @@ def trainer(D, kicker, name, role, rows_, template=False, badge=None):
         bl = badge if isinstance(badge, (list, tuple)) else [badge]
         d = 1.2 if len(bl) == 1 else min(1.05, 3.3 / len(bl) - 0.06)
         x0 = 2.7 - (len(bl) * d + (len(bl) - 1) * 0.06) / 2
-        for k, b in enumerate(bl):
-            s.shapes.add_picture(b, Inches(x0 + k * (d + 0.06)), Inches(4.55), Inches(d), Inches(d))
+        for k, b in enumerate(bl):   # b: an image path, or (path, shape name) from trainer_badges.BADGES
+            path, nm = b if isinstance(b, tuple) else (b, None)
+            pic = s.shapes.add_picture(path, Inches(x0 + k * (d + 0.06)), Inches(4.55), Inches(d), Inches(d))
+            if nm: pic.name = nm
     n = len(rows_); rh = 4.6 / n
     for i, (ic, lab, val) in enumerate(rows_):
         y = 1.95 + i * rh
