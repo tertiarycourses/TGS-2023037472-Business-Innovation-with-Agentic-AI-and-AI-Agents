@@ -80,4 +80,7 @@ V59 = ("59", "28 November 2026",
 V60 = ("60", "28 November 2026",
        "Live poll of the AI Coaching scores after the mini activity; Activity 3 introduced before the team padlet, as in Activities 1-2.",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54, V55, V56, V57, V58, V59, V60]
+V61 = ("61", "28 November 2026",
+       "Activity 2 board boxes numbered 1-9 to match the board; each box names its plan step (Step 1-5) under the title. Meridian board screenshot re-captured.",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54, V55, V56, V57, V58, V59, V60, V61]

@@ -7,6 +7,13 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import data_bi as B
 
 repo = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser("~/projects/edtools/bcm")
+import re
+# v61 (owner, 28 Nov 2026): the board draws each box's number (1-9) in a circle. A title that starts with a
+# number must start with THAT number; the old plan-step prefixes (1,1,2,3,3,4,5,5,5) read as wrong numbering.
+for c in B.CANVASES:
+    for i, b in enumerate(c["blocks"]):
+        m = re.match(r"(\d+)\s*·", b["title"])
+        assert not m or int(m.group(1)) == i + 1, f"{c['key']} box {i + 1}: title '{b['title']}' starts with another number"
 out = []
 for c in sorted(B.CANVASES, key=lambda c: c["num"]):
     out.append(dict(key=c["key"], num=c["num"], topic=c["topic"], lo=c["lo"], codes=c["codes"], layout=c["layout"],

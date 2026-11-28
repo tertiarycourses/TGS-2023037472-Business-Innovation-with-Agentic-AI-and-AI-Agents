@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 60 · 28 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 61 · 28 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -501,7 +501,7 @@ Most AI pilots neither fail nor scale: they wait. In METR's randomised trial (10
 
 ## The 90-Day Action Plan: Five Steps to Get Started
 
-Topic 2 and Activity 2 follow one five-step plan. Each step is a numbered block on your action plan board.
+Topic 2 and Activity 2 follow one five-step plan. Each step covers one or more of the nine numbered boxes (1-9) on your action plan board.
 
 | Step | What you do | What you decide |
 |---|---|---|
@@ -513,7 +513,7 @@ Topic 2 and Activity 2 follow one five-step plan. Each step is a numbered block 
 
 ## Step 1 · Set the Goal
 
-Fill Objective & Outcome and Cost & Value. Record the population, current performance, target date, owner and a quality limit before approving a pilot.
+Fill boxes 1 · Objective & Outcome and 2 · Cost & Value. Record the population, current performance, target date, owner and a quality limit before approving a pilot.
 
 Same-day response. Cut handling time from 18 to ≤11 min by day 90. Keep complaints at ≤2%. Meridian has 10,000 eligible requests out of 28,800 a year. Year 1 costs SGD 39,000. Modelled benefit SGD 39,200 at 60% realisation. Test a lower-adoption case.
 
@@ -559,7 +559,7 @@ Apply this in Activity 2. Pick a process with an authorised event export or use 
 
 ## Step 3 · Plug In the Agents
 
-Fill Where Agents Plug In and Digital Architecture. Agent checks details, drafts tickets and flags urgent cases. Coordinator approves dispatch. Hybrid: ticketing add-on and Meridian rules. Read and draft access, approval gates and action logs.
+Fill boxes 4 · Where Agents Plug In and 5 · Digital Architecture. Agent checks details, drafts tickets and flags urgent cases. Coordinator approves dispatch. Hybrid: ticketing add-on and Meridian rules. Read and draft access, approval gates and action logs.
 
 Classify each step by how much the AI may do, and name the accountable human for each. This is the human decision boundary.
 
@@ -658,11 +658,11 @@ In Activity 2 your group runs a ten-case version of this test (Task 4) and write
 
 ## Step 4 · Name the Owner
 
-Fill DRI, Team & Resources. Give one directly responsible individual the authority to change rules, allocate resources and pause the pilot. Head of Service Desk owns results and budget. Two coordinators review. IT manages connectors and access.
+Fill box 6 · DRI, Team & Resources. Give one directly responsible individual the authority to change rules, allocate resources and pause the pilot. Head of Service Desk owns results and budget. Two coordinators review. IT manages connectors and access.
 
 ## Step 5 · Run and Evaluate the 90-Day Pilot
 
-Fill Pilot Milestones, Risks & Controls and Success Measures. Day 30: 2 sites with full review. Day 60: 10 sites if checks pass. Day 90: board decides whether to scale. Escalate urgent jobs to the duty coordinator. Pause if rework exceeds 20% for two weeks.
+Fill boxes 7 · Pilot: 30 / 60 / 90 Days, 8 · Risks & Controls and 9 · Success Measures. Day 30: 2 sites with full review. Day 60: 10 sites if checks pass. Day 90: board decides whether to scale. Escalate urgent jobs to the duty coordinator. Pause if rework exceeds 20% for two weeks.
 
 ### Evaluation Metrics for Your Company
 
@@ -695,14 +695,14 @@ Meridian chose request triage. Today the work follows six steps and three handof
 | Action-plan box | Meridian's completed entry |
 |---|---|
 | 1 · Objective & Outcome | Same-day response. Cut handling time from 18 to ≤11 min by day 90. Keep complaints at ≤2%. |
-| 1 · Cost & Value | Year 1 costs SGD 39,000. Modelled benefit SGD 39,200 at 60% realisation. Test a lower-adoption case. |
-| 2 · Mine the Business Process | Map six steps and three handoffs. Ticket traces show missing details and rework. Baseline rework 14%. |
-| 3 · Where Agents Plug In | Agent checks details, drafts tickets and flags urgent cases. Coordinator approves dispatch. |
-| 3 · Digital Architecture | Hybrid: ticketing add-on and Meridian rules. Read and draft access, approval gates and action logs. |
-| 4 · DRI, Team & Resources | Head of Service Desk owns results and budget. Two coordinators review. IT manages connectors and access. |
-| 5 · Pilot: 30 / 60 / 90 Days | Day 30: 2 sites with full review. Day 60: 10 sites if checks pass. Day 90: board decides whether to scale. |
-| 5 · Risks & Controls | Escalate urgent jobs to the duty coordinator. Pause if rework exceeds 20% for two weeks. |
-| 5 · Success Measures | Weekly review: handling time, accuracy, rework and complaints. Day 90: scale, redesign or stop. |
+| 2 · Cost & Value | Year 1 costs SGD 39,000. Modelled benefit SGD 39,200 at 60% realisation. Test a lower-adoption case. |
+| 3 · Mine the Business Process | Map six steps and three handoffs. Ticket traces show missing details and rework. Baseline rework 14%. |
+| 4 · Where Agents Plug In | Agent checks details, drafts tickets and flags urgent cases. Coordinator approves dispatch. |
+| 5 · Digital Architecture | Hybrid: ticketing add-on and Meridian rules. Read and draft access, approval gates and action logs. |
+| 6 · DRI, Team & Resources | Head of Service Desk owns results and budget. Two coordinators review. IT manages connectors and access. |
+| 7 · Pilot: 30 / 60 / 90 Days | Day 30: 2 sites with full review. Day 60: 10 sites if checks pass. Day 90: board decides whether to scale. |
+| 8 · Risks & Controls | Escalate urgent jobs to the duty coordinator. Pause if rework exceeds 20% for two weeks. |
+| 9 · Success Measures | Weekly review: handling time, accuracy, rework and complaints. Day 90: scale, redesign or stop. |
 
 Meridian's filled Activity 2 board (read-only): https://alfredang.github.io/bcm/?join=meridian-activity-2. Open it, compare it with your own, then make every note about your own organisation. Meridian is fictitious and all its figures are synthetic.
 
@@ -720,15 +720,15 @@ Board: https://alfredang.github.io/bcm/?activity=actionplan · 155 min · PP Tas
 
 | Block | Question | Example (fictional sample company) |
 |---|---|---|
-| 1 · Objective & Outcome | Which organisational objective does this serve, and how will you know? | Same-day response for every client: Handling time 18 -> 11 min by day 90; complaints stay at or below 2%. |
-| 1 · Cost & Value | What does it cost and what does it return? | Year 1: Cost SGD 39,000; modelled benefit SGD 39,200 at 60% realisation; Downside: At 55% adoption, benefit falls; keep scope small until proven. |
-| 2 · Mine the Business Process | What actually happens today, step by step? | As-is triage: 6 steps, 3 handoffs: Email -> coordinator reads -> re-keys ticket -> calls client -> assigns -> chases; Friction: 38% of time spent re-keying; 14% rework from missing details. |
-| 3 · Where Agents Plug In | Which steps go to an agent, which stay human? | Agent prepares: Reads email, extracts site, fault and urgency, drafts the ticket; Human approves: Coordinator confirms routing for urgent and VIP clients; Agent monitors: Watches SLA timers and alerts the supervisor. |
-| 3 · Digital Architecture | Which systems, data, agents and controls make it work? | Hybrid: Bought ticketing AI add-on + our own routing rules and terms; Connectors: Gmail, WhatsApp Business API, ServiceNow via MCP; read + draft only; Controls: Coordinator approval on urgent jobs; every agent action logged. |
-| 4 · DRI, Team & Resources | Who owns it and what can they mobilise? | DRI: Head of Service Desk: Decides routing rules; budget SGD 39,000; 2 coordinators as reviewers; IT: Connectors and access reviews; DPO: PDPA check before go-live. |
-| 5 · Pilot: 30 / 60 / 90 Days | What ships when? | Day 30: Agent drafts tickets for 2 sites; coordinators approve 100%; Day 60: 10 sites; measure handling time and rework weekly; Day 90: Board review: scale, redesign or stop. |
-| 5 · Risks & Controls | What could go wrong and what stops it? | Misrouted urgent job: Human approval for urgent tickets; daily sample audit; Kill criterion: Stop if rework rises above 20% for 2 weeks. |
-| 5 · Success Measures | Which numbers decide scale, redesign or stop? | KPIs: Handling time, first-pass accuracy, complaints, coordinator adoption; Rhythm: Weekly DRI review; day-90 board decision. |
+| 1 · Objective & Outcome | Step 1 · Which organisational objective does this serve, and how will you know? | Same-day response for every client: Handling time 18 -> 11 min by day 90; complaints stay at or below 2%. |
+| 2 · Cost & Value | Step 1 · What does it cost and what does it return? | Year 1: Cost SGD 39,000; modelled benefit SGD 39,200 at 60% realisation; Downside: At 55% adoption, benefit falls; keep scope small until proven. |
+| 3 · Mine the Business Process | Step 2 · What actually happens today, step by step? | As-is triage: 6 steps, 3 handoffs: Email -> coordinator reads -> re-keys ticket -> calls client -> assigns -> chases; Friction: 38% of time spent re-keying; 14% rework from missing details. |
+| 4 · Where Agents Plug In | Step 3 · Which steps go to an agent, which stay human? | Agent prepares: Reads email, extracts site, fault and urgency, drafts the ticket; Human approves: Coordinator confirms routing for urgent and VIP clients; Agent monitors: Watches SLA timers and alerts the supervisor. |
+| 5 · Digital Architecture | Step 3 · Which systems, data, agents and controls make it work? | Hybrid: Bought ticketing AI add-on + our own routing rules and terms; Connectors: Gmail, WhatsApp Business API, ServiceNow via MCP; read + draft only; Controls: Coordinator approval on urgent jobs; every agent action logged. |
+| 6 · DRI, Team & Resources | Step 4 · Who owns it and what can they mobilise? | DRI: Head of Service Desk: Decides routing rules; budget SGD 39,000; 2 coordinators as reviewers; IT: Connectors and access reviews; DPO: PDPA check before go-live. |
+| 7 · Pilot: 30 / 60 / 90 Days | Step 5 · What ships when? | Day 30: Agent drafts tickets for 2 sites; coordinators approve 100%; Day 60: 10 sites; measure handling time and rework weekly; Day 90: Board review: scale, redesign or stop. |
+| 8 · Risks & Controls | Step 5 · What could go wrong and what stops it? | Misrouted urgent job: Human approval for urgent tickets; daily sample audit; Kill criterion: Stop if rework rises above 20% for 2 weeks. |
+| 9 · Success Measures | Step 5 · Which numbers decide scale, redesign or stop? | KPIs: Handling time, first-pass accuracy, complaints, coordinator adoption; Rhythm: Weekly DRI review; day-90 board decision. |
 
 Team padlet (15 minutes, after this introduction): Which action plan should we focus on? Which process should your 90-day pilot start with, and why that one? What must be true at day 30 for you to keep going? Who is the DRI, and what can they decide without asking? Carry the answers into your Activity 2 plan. Then work through the eight tasks.
 
@@ -783,22 +783,22 @@ Check: Your group's own pass rate (for example 7 of 10), the failed cases named,
 
 ```text
 Act as my innovation consultant. Our organisation: [your organisation in two sentences: industry, size, customers, this year's objective]. Draft our AI Agent 90-Day Action Plan with these 9 blocks:
-1. 1 · Objective & Outcome: Which organisational objective does this serve, and how will you know?
-2. 1 · Cost & Value: What does it cost and what does it return?
-3. 2 · Mine the Business Process: What actually happens today, step by step?
-4. 3 · Where Agents Plug In: Which steps go to an agent, which stay human?
-5. 3 · Digital Architecture: Which systems, data, agents and controls make it work?
-6. 4 · DRI, Team & Resources: Who owns it and what can they mobilise?
-7. 5 · Pilot: 30 / 60 / 90 Days: What ships when?
-8. 5 · Risks & Controls: What could go wrong and what stops it?
-9. 5 · Success Measures: Which numbers decide scale, redesign or stop?
+1. Objective & Outcome: Step 1 · Which organisational objective does this serve, and how will you know?
+2. Cost & Value: Step 1 · What does it cost and what does it return?
+3. Mine the Business Process: Step 2 · What actually happens today, step by step?
+4. Where Agents Plug In: Step 3 · Which steps go to an agent, which stay human?
+5. Digital Architecture: Step 3 · Which systems, data, agents and controls make it work?
+6. DRI, Team & Resources: Step 4 · Who owns it and what can they mobilise?
+7. Pilot: 30 / 60 / 90 Days: Step 5 · What ships when?
+8. Risks & Controls: Step 5 · What could go wrong and what stops it?
+9. Success Measures: Step 5 · Which numbers decide scale, redesign or stop?
 
 Rules: two specific notes per block, at most 15 words each, with names, numbers and owners. Use my email and calendar only where relevant and name the source. Mark guesses as (assumption).
 Reply ONLY in this format, so I can paste it into our board:
-1. 1 · Objective & Outcome
+1. Objective & Outcome
 - first note
 - second note
-2. 1 · Cost & Value
+2. Cost & Value
 - first note
 - second note
 (continue to block 9). End with: Verify first: the three notes I should check.

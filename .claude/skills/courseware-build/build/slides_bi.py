@@ -308,7 +308,7 @@ def muse_board(D, kicker, cv):
     for k, c in enumerate(("E06C5A", "E5B454", "7DB36B")): circle(s, 0.82 + k * 0.24, top + 0.18, 0.13, c)
     text(s, 1.6, top + 0.1, 7.4, 0.3, "PROMPT (short view)  ·  full template: board › Copy Muse prompt, or the prompts page", 11, DIM, autofit=False)
     shown = (f"Act as my innovation consultant. Our organisation: [your organisation in two sentences]. Draft our {cv['title']}:\n"
-             + "\n".join(f"{i + 1}. {b['title']}" for i, b in enumerate(cv["blocks"]))
+             + "\n".join(f"{i + 1}. {B.block_name(b)}" for i, b in enumerate(cv["blocks"]))
              + "\nTwo specific notes per block; mark guesses (assumption).\nReply as numbered blocks so I can paste it into our board.")
     text(s, 0.85, top + 0.5, 8.1, bot - top - 0.62, shown, 14, "F1EDE4", font=MONO, minpt=9, cw=0.68, lh=1.04)
     for i, (ic, t, d) in enumerate([("sparkles", "Muse drafts", "Every block, with sources"), ("eyecheck", "You verify", "Strike guesses and generic lines"),
@@ -1168,14 +1168,14 @@ def topic2(D, C, mark):
         ("target", "Target", "11 minutes or less by day 90"),
         ("user", "Owner", "Head of Service Desk"),
         ("shield", "Quality limit", "Complaints at or below 2%")], cols=5,
-        sub="Boxes to fill: Objective & Outcome and Cost & Value.",
+        sub="Boxes to fill: 1 · Objective & Outcome and 2 · Cost & Value.",
         tipt="Year 1 costs SGD 39,000. The modelled benefit is SGD 39,200 at 60% realisation. Test a lower-adoption case.")
     mark("t2steps")
     icons(D, "Topic 2 · Step 2 · Mine the process", "Step 2: Mine the Business Process", arrows=True, items=[
         ("target", "Pick one", "A process that hurts weekly"), ("inbox", "Pull the trail", "Emails, tickets, logs, chats"),
         ("list", "Rebuild it", "Trigger, steps, hand-offs"), ("clock", "Measure", "Waits, rework, touch time"),
         ("hand", "Mark decisions", "Who judges, on what evidence")],
-        sub="Box to fill: Mine the Business Process. Map Meridian’s actual triage workflow.", tipt="Meridian found 6 steps, 3 handoffs and 38% of coordinator time spent re-keying.")
+        sub="Box to fill: 3 · Mine the Business Process. Map Meridian’s actual triage workflow.", tipt="Meridian found 6 steps, 3 handoffs and 38% of coordinator time spent re-keying.")
     big_statement(D, "Topic 2 · Step 2 · Mine the process", "Dormant Data Is a Gold Mine.", "Calls, chats, tickets and logs hold clues to demand, delays and repeat problems. Agents can help turn permitted records into business evidence.")
     icons(D, "Topic 2 · Step 2 · Mine the process", "Awaken the Data You Already Own", [
         ("file", "Text", "Emails, chats, tickets, notes"), ("phone", "Audio", "Calls and voice notes"),
@@ -1240,7 +1240,7 @@ def topic2(D, C, mark):
     ladder(D, "Topic 2 · Step 3 · Plug in the agents", "Step 3: Where Agents Plug In", [
         ("Inform", "Summarise, alert"), ("Recommend", "Rank, suggest"), ("Prepare", "Draft the ticket"),
         ("Execute with approval", "Acts after your yes"), ("Execute with monitoring", "Acts; you audit")],
-        sub="Boxes to fill: Where Agents Plug In and Digital Architecture. Name the approval point for each action.")
+        sub="Boxes to fill: 4 · Where Agents Plug In and 5 · Digital Architecture. Name the approval point for each action.")
     vs(D, "Topic 2 · Step 3 · Plug in the agents", "Meridian Triage Before and During the Pilot",
        ("Before", "user", ["Coordinator reads 80 emails a day", "Re-keys every ticket by hand", "18 min a request · 14% rework"]),
        ("After", "robot", ["Aim to draft eligible tickets in 1 min", "Coordinator approves dispatch and calls clients", "Target 11 min · rework below 12%"]))
@@ -1259,13 +1259,13 @@ def topic2(D, C, mark):
         ("coins", "Budget", "SGD 39,000 for licences, integration, training and change"),
         ("users", "Reviewers", "Two coordinators check drafts and handle exceptions"),
         ("shield", "Support", "IT manages access. The data protection officer reviews data use.")], cols=4,
-        sub="Box to fill: DRI, Team & Resources. Give the owner authority to act on the measures.")
+        sub="Box to fill: 6 · DRI, Team & Resources. Give the owner authority to act on the measures.")
     mark("t2step5")
     icons(D, "Topic 2 · Step 5 of 5 · Run a 90-day pilot", "Pilot Meridian’s Plan Over 30, 60 and 90 Days", [
         ("flask", "Day 30", "Draft tickets at 2 sites. Coordinators approve every draft."),
         ("chart", "Day 60", "Expand to 10 sites if checks pass. Review time and rework weekly."),
         ("flag", "Day 90", "Board uses the scorecard to decide whether to scale, redesign or stop.")], cols=3,
-        sub="Boxes to fill: Pilot Milestones, Risks & Controls and Success Measures.",
+        sub="Boxes to fill: 7 · Pilot: 30 / 60 / 90 Days, 8 · Risks & Controls and 9 · Success Measures.",
         tipt="Keep human approval for dispatch. Pause if rework exceeds 20% for two consecutive weeks.")
     table(D, "Topic 2 · Step 5 · Success measures", "Choose Metrics That Match the Business Goal",
               ["Outcome", "Measure"], B.PILOT_METRICS, colw=[3.7, 8.4],
