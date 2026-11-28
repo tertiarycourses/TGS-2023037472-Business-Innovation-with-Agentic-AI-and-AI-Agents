@@ -11,7 +11,7 @@ from data_bi import SCHEDULE, CANVASES, LABS, BCM_URL   # noqa: F401  (re-export
 TITLE        = "Business Innovation with Agentic AI and AI Agents"
 SHORT_TITLE  = "Business Innovation with Agentic AI and AI Agents"
 COURSE_CODE  = "TGS-2023037472"
-VERSION      = "v58"
+VERSION      = "v59"
 VERSION_DATE = "28 November 2026"
 ORG          = "Tertiary Infotech Academy Pte Ltd"
 UEN          = "UEN: 201200696W"
@@ -68,7 +68,7 @@ TOPICS = [
       pitch="Prove it works here before you bet on it: five steps, a real test set and a 90-day pilot the CEO will fund.",
       items=["Pilot purgatory: why good ideas stall", "Step 1 · Set the goal and the baseline", "Step 2 · Mine the process from dormant data",
              "Step 3 · Plug in agents: company map, rules, architecture", "Test before you trust: 30 cases, four checks",
-             "Steps 4-5 · Name the owner, run the 90-day pilot", "Knowledge check, Meridian demo, padlet, Activity 2 (plan)"]),
+             "Steps 4-5 · Name the owner, run the 90-day pilot", "Recap poll, Meridian demo, Activity 2 (plan), padlet"]),
  dict(num=3, code="03", lo=2, codes="K5, K6, A5, A6", day="Day 2 PM",
       title="Managing AI-Driven Innovation, Governance and Stakeholder Collaboration",
       short="Transform: lead the company's AI transformation",

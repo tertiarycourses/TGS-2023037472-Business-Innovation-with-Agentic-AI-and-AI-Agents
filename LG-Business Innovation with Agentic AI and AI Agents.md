@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 58 · 28 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 59 · 28 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -70,7 +70,7 @@ Meridian Services Pte Ltd is fictitious and every figure is synthetic. Its 140 s
 | 2 · Prove | Pilot triage at 10 sites for 90 days: 18 to 11 minutes per request, SGD 39,000 in year 1, one owner and a stop rule. |
 | 3 · Transform | The day-90 numbers say scale: roll out to all 30 sites, redesign roles, train staff, govern the agents and budget the tokens. |
 
-The slides are interactive: the course map, the SCALE navigator and the Topic 2 and Topic 3 knowledge checks are clickable in slide-show mode. Each topic opens with a live poll: scan the QR code on the slide to vote at alfredang.github.io/livepoll (or raise your hand) and watch the tally move. Each topic also names the pain points companies hit before it teaches the method.
+The slides are interactive: the course map and the SCALE navigator are clickable in slide-show mode. Each topic opens with a live poll, and Topics 2 and 3 close with a recap poll: scan the QR code on the slide to vote at alfredang.github.io/livepoll (or raise your hand) and watch the tally move. Each topic also names the pain points companies hit before it teaches the method.
 
 > Work on your own organisation. Never put personal data (NRIC, phone numbers, customer names) or confidential figures on a board: boards are shared by link.
 
@@ -370,9 +370,29 @@ Meridian's filled Activity 1 board (read-only): https://alfredang.github.io/bcm/
 
 ## Activity 1 — Your Company's BMC in Groups of 3-5 (PP Task 1)
 
+First meet the activity and its board: one shared nine-block Business Model Canvas per group, filled in five steps. The question each block answers is below.
+
+In groups of 3-5, join one shared board and create a nine-block BMC for one member's company; evaluate its AI agent opportunities.
+
+Use nine connected business-model blocks to identify and evaluate where AI agents add value.
+
+Board: https://alfredang.github.io/bcm/?activity=opportunity · 80 min · PP Task 1 · screenshot of your BMC
+
+| Block | Question | Example (fictional sample company) |
+|---|---|---|
+| Key Partners | Which partners hold the data, systems or AI platforms your agents need? | ServiceNow (ticketing vendor): Holds every service request since 2019; agent API access needs a contract addendum; Meta Muse / Google Workspace: Always-on agent reads Gmail and Calendar for 140 staff; Building owners: Share sensor feeds an agent can watch for faults. |
+| Key Activities | Which key activities could AI agents do, speed up or watch over? | Request triage (agent): Agent reads 80 emails and WhatsApps a day, drafts tickets; coordinators approve; Technician scheduling: Agent proposes routes; supervisor confirms; Monthly client reports: Agent drafts from tickets; account manager reviews. |
+| Key Resources | Which data and know-how would make your agents smart about your business? | 5 years of closed tickets: Root causes and repeat faults per site: fuel for a predictor agent; Technician photos and voice notes: Thousands in WhatsApp groups, never searched; Senior coordinator know-how: Which clients need a call, not an email. |
+| Value Propositions | What new or better value can AI agents deliver to your customers? | Same-day answers, 24/7: Always-on triage agent replies within minutes, even at 2 am; No repeat faults: Predictor agent flags sites likely to fail again within 30 days; Live job status: Agent updates the client portal as work progresses. |
+| Customer Relationships | How will agents change the way you serve and keep customers, and where must a human stay? | Agent first, human always reachable: Routine updates by agent; complaints and refunds by a coordinator; DRI: Head of Service Desk: Owns triage accuracy and handling time; Personal touch kept: Account managers call key clients monthly. |
+| Channels | Through which channels will your agents meet customers? | Email + WhatsApp Business: Agent drafts every reply; coordinator sends at first; Client portal: Agent posts live job status; Teams channel: Daily 8:00 exceptions brief to supervisors. |
+| Customer Segments | Which customer segments gain most from AI agents, and which still want a person? | Building managers (clients): Want same-day answers; happy with an agent for status updates; Premium contracts: Expect a named human: agent supports, person serves; Small offices (new): Low-cost, agent-led service tier becomes viable. |
+| Cost Structure | What will the agents cost, and which costs will they remove or add? | Year-1 cost SGD 39,000: Licences 14k, integration 15k, training and change 10k; Cost removed: 38% of coordinator time spent re-keying; Risk cost: Human approval for 90 days to avoid misrouted urgent jobs. |
+| Revenue Streams | How will the agents grow revenue or protect it, and which objective do they serve? | Premium '2-hour response' tier: Agent makes the SLA affordable: +SGD 6k a month (assumption); Fewer lost contracts: Faster answers protect renewals; objective: same-day response; Scores: Triage agent 5x4x4 = 80; report agent 75; predictor 24 (park it). |
+
 ### Team Padlets: 15 Minutes of Talk Before Each Activity
 
-Every topic runs in the same order: the trainer first shows how Meridian fills each box of the board, your team then talks for 15 minutes on its padlet, and only then do you fill your own board.
+Every topic runs in the same order: the trainer shows how Meridian fills each box of the board and introduces the activity and its board; your team then talks for 15 minutes on its padlet, and only then do you fill your own board.
 
 Each activity opens with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. Post a screenshot of each finished board in the last column.
 
@@ -402,8 +422,6 @@ My team: [team and role]. Our three biggest weekly time-sinks: [1, hours], [2, h
 Check: Three time-sinks with hours; one ranked first; the data and the approver named for each.
 
 Stay in your padlet team of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.
-
-In groups of 3-5, join one shared board and create a nine-block BMC for one member's company; evaluate its AI agent opportunities.
 
 **Step 1 — Ask Muse for the agentic AI opportunities**
 
@@ -460,23 +478,7 @@ Reply ONLY in this format, so I can paste it into our board:
 - Click Screenshot view, then Download PNG or Download PDF.
 - Keep it for PP Task 1. You will answer the PP questions on your own.
 
-Use nine connected business-model blocks to identify and evaluate where AI agents add value.
-
-Board: https://alfredang.github.io/bcm/?activity=opportunity · 80 min · PP Task 1 · screenshot of your BMC
-
 Discuss: Which block of your business model would an AI agent change the most? Which opportunity moves a number your leadership already tracks? Which of the five capability gaps (private data, internal language, live context, action, guardrails) could stop it?
-
-| Block | Question | Example (fictional sample company) |
-|---|---|---|
-| Key Partners | Which partners hold the data, systems or AI platforms your agents need? | ServiceNow (ticketing vendor): Holds every service request since 2019; agent API access needs a contract addendum; Meta Muse / Google Workspace: Always-on agent reads Gmail and Calendar for 140 staff; Building owners: Share sensor feeds an agent can watch for faults. |
-| Key Activities | Which key activities could AI agents do, speed up or watch over? | Request triage (agent): Agent reads 80 emails and WhatsApps a day, drafts tickets; coordinators approve; Technician scheduling: Agent proposes routes; supervisor confirms; Monthly client reports: Agent drafts from tickets; account manager reviews. |
-| Key Resources | Which data and know-how would make your agents smart about your business? | 5 years of closed tickets: Root causes and repeat faults per site: fuel for a predictor agent; Technician photos and voice notes: Thousands in WhatsApp groups, never searched; Senior coordinator know-how: Which clients need a call, not an email. |
-| Value Propositions | What new or better value can AI agents deliver to your customers? | Same-day answers, 24/7: Always-on triage agent replies within minutes, even at 2 am; No repeat faults: Predictor agent flags sites likely to fail again within 30 days; Live job status: Agent updates the client portal as work progresses. |
-| Customer Relationships | How will agents change the way you serve and keep customers, and where must a human stay? | Agent first, human always reachable: Routine updates by agent; complaints and refunds by a coordinator; DRI: Head of Service Desk: Owns triage accuracy and handling time; Personal touch kept: Account managers call key clients monthly. |
-| Channels | Through which channels will your agents meet customers? | Email + WhatsApp Business: Agent drafts every reply; coordinator sends at first; Client portal: Agent posts live job status; Teams channel: Daily 8:00 exceptions brief to supervisors. |
-| Customer Segments | Which customer segments gain most from AI agents, and which still want a person? | Building managers (clients): Want same-day answers; happy with an agent for status updates; Premium contracts: Expect a named human: agent supports, person serves; Small offices (new): Low-cost, agent-led service tier becomes viable. |
-| Cost Structure | What will the agents cost, and which costs will they remove or add? | Year-1 cost SGD 39,000: Licences 14k, integration 15k, training and change 10k; Cost removed: 38% of coordinator time spent re-keying; Risk cost: Human approval for 90 days to avoid misrouted urgent jobs. |
-| Revenue Streams | How will the agents grow revenue or protect it, and which objective do they serve? | Premium '2-hour response' tier: Agent makes the SLA affordable: +SGD 6k a month (assumption); Fewer lost contracts: Faster answers protect renewals; objective: same-day response; Scores: Triage agent 5x4x4 = 80; report agent 75; predictor 24 (park it). |
 
 # Topic 2 — Designing Digital Architectures and AI Agent Implementation Plans
 
@@ -712,6 +714,24 @@ Form a group of 3–5 and choose one member’s company. Use a priority from Act
 
 In groups of 3-5, use one member’s company: mine the process, write the company map, test the agent on 10 real cases and complete all nine boxes of its 90-day plan on one shared board.
 
+Five steps to get started: set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot.
+
+Board: https://alfredang.github.io/bcm/?activity=actionplan · 155 min · PP Task 2 · screenshot of your action plan board
+
+| Block | Question | Example (fictional sample company) |
+|---|---|---|
+| 1 · Objective & Outcome | Which organisational objective does this serve, and how will you know? | Same-day response for every client: Handling time 18 -> 11 min by day 90; complaints stay at or below 2%. |
+| 1 · Cost & Value | What does it cost and what does it return? | Year 1: Cost SGD 39,000; modelled benefit SGD 39,200 at 60% realisation; Downside: At 55% adoption, benefit falls; keep scope small until proven. |
+| 2 · Mine the Business Process | What actually happens today, step by step? | As-is triage: 6 steps, 3 handoffs: Email -> coordinator reads -> re-keys ticket -> calls client -> assigns -> chases; Friction: 38% of time spent re-keying; 14% rework from missing details. |
+| 3 · Where Agents Plug In | Which steps go to an agent, which stay human? | Agent prepares: Reads email, extracts site, fault and urgency, drafts the ticket; Human approves: Coordinator confirms routing for urgent and VIP clients; Agent monitors: Watches SLA timers and alerts the supervisor. |
+| 3 · Digital Architecture | Which systems, data, agents and controls make it work? | Hybrid: Bought ticketing AI add-on + our own routing rules and terms; Connectors: Gmail, WhatsApp Business API, ServiceNow via MCP; read + draft only; Controls: Coordinator approval on urgent jobs; every agent action logged. |
+| 4 · DRI, Team & Resources | Who owns it and what can they mobilise? | DRI: Head of Service Desk: Decides routing rules; budget SGD 39,000; 2 coordinators as reviewers; IT: Connectors and access reviews; DPO: PDPA check before go-live. |
+| 5 · Pilot: 30 / 60 / 90 Days | What ships when? | Day 30: Agent drafts tickets for 2 sites; coordinators approve 100%; Day 60: 10 sites; measure handling time and rework weekly; Day 90: Board review: scale, redesign or stop. |
+| 5 · Risks & Controls | What could go wrong and what stops it? | Misrouted urgent job: Human approval for urgent tickets; daily sample audit; Kill criterion: Stop if rework rises above 20% for 2 weeks. |
+| 5 · Success Measures | Which numbers decide scale, redesign or stop? | KPIs: Handling time, first-pass accuracy, complaints, coordinator adoption; Rhythm: Weekly DRI review; day-90 board decision. |
+
+Team padlet (15 minutes, after this introduction): Which action plan should we focus on? Which process should your 90-day pilot start with, and why that one? What must be true at day 30 for you to keep going? Who is the DRI, and what can they decide without asking? Carry the answers into your Activity 2 plan. Then work through the eight tasks.
+
 **Task 1 — Mine your business process from dormant data**
 
 - Pick one recurring process you handle: approvals, quotes, scheduling or reporting.
@@ -792,24 +812,6 @@ Reply ONLY in this format, so I can paste it into our board:
 **Task 8 — Capture your evidence**
 
 - Screenshot view, then Download PNG or PDF. Keep it for PP Task 2.
-
-Five steps to get started: set the goal, mine the process, plug in the agents, name the owner, run a 90-day pilot.
-
-Board: https://alfredang.github.io/bcm/?activity=actionplan · 155 min · PP Task 2 · screenshot of your action plan board
-
-Discuss: Which step of the mined process gives the fastest visible win? What must be true at day 30 for you to keep going? Who is the DRI, and what decision rights do they hold?
-
-| Block | Question | Example (fictional sample company) |
-|---|---|---|
-| 1 · Objective & Outcome | Which organisational objective does this serve, and how will you know? | Same-day response for every client: Handling time 18 -> 11 min by day 90; complaints stay at or below 2%. |
-| 1 · Cost & Value | What does it cost and what does it return? | Year 1: Cost SGD 39,000; modelled benefit SGD 39,200 at 60% realisation; Downside: At 55% adoption, benefit falls; keep scope small until proven. |
-| 2 · Mine the Business Process | What actually happens today, step by step? | As-is triage: 6 steps, 3 handoffs: Email -> coordinator reads -> re-keys ticket -> calls client -> assigns -> chases; Friction: 38% of time spent re-keying; 14% rework from missing details. |
-| 3 · Where Agents Plug In | Which steps go to an agent, which stay human? | Agent prepares: Reads email, extracts site, fault and urgency, drafts the ticket; Human approves: Coordinator confirms routing for urgent and VIP clients; Agent monitors: Watches SLA timers and alerts the supervisor. |
-| 3 · Digital Architecture | Which systems, data, agents and controls make it work? | Hybrid: Bought ticketing AI add-on + our own routing rules and terms; Connectors: Gmail, WhatsApp Business API, ServiceNow via MCP; read + draft only; Controls: Coordinator approval on urgent jobs; every agent action logged. |
-| 4 · DRI, Team & Resources | Who owns it and what can they mobilise? | DRI: Head of Service Desk: Decides routing rules; budget SGD 39,000; 2 coordinators as reviewers; IT: Connectors and access reviews; DPO: PDPA check before go-live. |
-| 5 · Pilot: 30 / 60 / 90 Days | What ships when? | Day 30: Agent drafts tickets for 2 sites; coordinators approve 100%; Day 60: 10 sites; measure handling time and rework weekly; Day 90: Board review: scale, redesign or stop. |
-| 5 · Risks & Controls | What could go wrong and what stops it? | Misrouted urgent job: Human approval for urgent tickets; daily sample audit; Kill criterion: Stop if rework rises above 20% for 2 weeks. |
-| 5 · Success Measures | Which numbers decide scale, redesign or stop? | KPIs: Handling time, first-pass accuracy, complaints, coordinator adoption; Rhythm: Weekly DRI review; day-90 board decision. |
 
 # Topic 3 — Managing AI-Driven Innovation, Governance and Stakeholder Collaboration
 
@@ -1206,6 +1208,22 @@ Part A is the readiness diagnostic above. In Part B (55 minutes) form groups of 
 
 Score your company's AI readiness, then use SCALE (Story, Commanders, Augment people, Loop information, Evaluate) to plan the company-wide change; Meta Muse drafts, your group decides.
 
+Five moves to run the business with AI agents: Story, Commanders, Augment people, Loop information, Evaluate.
+
+Board: https://alfredang.github.io/bcm/?activity=change · 70 min · PP Task 3 · screenshot of your SCALE board
+
+| Block | Question | Example (fictional sample company) |
+|---|---|---|
+| S · The Change Story | Why, what and when, in three sentences anyone can repeat. | Why: Clients wait too long and coordinators drown in re-keying; What: An agent drafts every ticket; people decide, approve and handle clients; Not changing: No one loses their job in the pilot; every client still reaches a person. |
+| S · Stakeholder Map | Who is affected, how much, and what do they worry about? | CEO (sponsor): Wants proof by day 90; Coordinators: Fear replacement; want less re-keying; Clients: Want faster answers, not a chatbot wall. |
+| S · Messages & Channels | What does each group hear, from whom, through which channel? | Coordinators: Huddle with the DRI + hands-on demo; weekly Q&A; Clients: Email from account manager: faster updates, same people; All staff: Intranet FAQ + anonymous question form. |
+| C · DRIs & Agent Teams | Who is the one person accountable for each outcome? | Service DRI: Triage agent + SLA watcher; owns handling time; Client-reporting DRI: Report agent; owns report accuracy and on-time delivery. |
+| A · Workforce Transition | Where will each role land, and how will you help? | Senior coordinators: Become DRIs or coaches; 6-week agent-management training; Coordinators: Move to client calls and exception handling (human-to-human work); Managers who only relay: Retrain as translators who move tacit know-how into the company map. |
+| A · Guardrails & Judgement | How do you keep people genuinely judging, not rubber-stamping? | Sample audits: Reviewers re-do 5 tickets a week unassisted; Audit trail: Every agent action logged with who asked and when. |
+| L · Information Flow & Rhythm | How does information flow without layers of relay? | Daily 8:00: Agent posts exceptions brief to the team channel; Weekly: DRI reviews KPIs and agent errors with coordinators; Monthly: Leadership sees one dashboard: KPIs, risks, ideas. |
+| L · Idea Pipeline | How do staff share and develop the next innovation? | Idea board: Any staff posts an idea; the agent clusters them weekly; Monthly pitch: Top 3 ideas pitched to leadership; winner gets a DRI and 30 days. |
+| E · Evaluate: Review Success | How will you judge whether the innovation worked? | Day-90 review: Handling time 10.7 min, quality 95.1%, complaints 1.7%, adoption 77.5%; Decision: Scale to all 30 sites with the same approval rules. |
+
 **Step 1 — Score your AI readiness: six dimensions**
 
 - Open ai-readiness-scorecard.html from the Activity 3 folder (LMS download). Alone, 5 minutes: score your company on six dimensions, then copy the result.
@@ -1279,27 +1297,13 @@ Check: Your final decision is in your own words; you can name what changed it.
 
 - Screenshot view, then Download PNG or PDF. Keep it for PP Task 3.
 
-Five moves to run the business with AI agents: Story, Commanders, Augment people, Loop information, Evaluate.
-
-Board: https://alfredang.github.io/bcm/?activity=change · 70 min · PP Task 3 · screenshot of your SCALE board
-
 Discuss: Which group hears about the change last today, and should hear first? Which manager role becomes a DRI, a coach or a translator? How will staff send you new ideas once the agents are live?
-
-| Block | Question | Example (fictional sample company) |
-|---|---|---|
-| S · The Change Story | Why, what and when, in three sentences anyone can repeat. | Why: Clients wait too long and coordinators drown in re-keying; What: An agent drafts every ticket; people decide, approve and handle clients; Not changing: No one loses their job in the pilot; every client still reaches a person. |
-| S · Stakeholder Map | Who is affected, how much, and what do they worry about? | CEO (sponsor): Wants proof by day 90; Coordinators: Fear replacement; want less re-keying; Clients: Want faster answers, not a chatbot wall. |
-| S · Messages & Channels | What does each group hear, from whom, through which channel? | Coordinators: Huddle with the DRI + hands-on demo; weekly Q&A; Clients: Email from account manager: faster updates, same people; All staff: Intranet FAQ + anonymous question form. |
-| C · DRIs & Agent Teams | Who is the one person accountable for each outcome? | Service DRI: Triage agent + SLA watcher; owns handling time; Client-reporting DRI: Report agent; owns report accuracy and on-time delivery. |
-| A · Workforce Transition | Where will each role land, and how will you help? | Senior coordinators: Become DRIs or coaches; 6-week agent-management training; Coordinators: Move to client calls and exception handling (human-to-human work); Managers who only relay: Retrain as translators who move tacit know-how into the company map. |
-| A · Guardrails & Judgement | How do you keep people genuinely judging, not rubber-stamping? | Sample audits: Reviewers re-do 5 tickets a week unassisted; Audit trail: Every agent action logged with who asked and when. |
-| L · Information Flow & Rhythm | How does information flow without layers of relay? | Daily 8:00: Agent posts exceptions brief to the team channel; Weekly: DRI reviews KPIs and agent errors with coordinators; Monthly: Leadership sees one dashboard: KPIs, risks, ideas. |
-| L · Idea Pipeline | How do staff share and develop the next innovation? | Idea board: Any staff posts an idea; the agent clusters them weekly; Monthly pitch: Top 3 ideas pitched to leadership; winner gets a DRI and 30 days. |
-| E · Evaluate: Review Success | How will you judge whether the innovation worked? | Day-90 review: Handling time 10.7 min, quality 95.1%, complaints 1.7%, adoption 77.5%; Decision: Scale to all 30 sites with the same approval rules. |
 
 # Bonus Topic — Vibe Code Your AI Transformation Dashboard
 
 Continue from Topic 3. Turn the numbers in your Activity 2 plan and the progress on your SCALE board into one live page your CEO opens every Monday. Vibe coding means you describe the dashboard in plain English and a coding agent (Codex in the ChatGPT desktop app, or Claude Code) writes the code. Checking every number is still your job. This project is self-paced, outside the contact hours and not assessed.
+
+Proof that it works: on 31 Oct 2026 Andrej Karpathy, who coined “vibe coding”, wrote that he was fed up with YouTube’s recommendations and asked Claude Code (Opus 5.5 on medium effort) for his own. In about two hours Claude went through the Hacker News comments from 2007 to 2026 (43 million, per his X post), kept the 40,000 that recommend a YouTube video, and built and deployed HackerTube (hackertube.org): 6,454 videos across 150 topics. His only manual work was an API key, a server and a domain name. Source: his blog post, karpathy.bearblog.dev/hacker-tube (31 Oct 2026). Watch the 6:46 explainer: https://www.youtube.com/watch?v=TL0V9b2r2Q8 (Taelo Kim, 7 Nov 2026).
 
 | Panel | The CEO's question | Where the numbers come from |
 |---|---|---|

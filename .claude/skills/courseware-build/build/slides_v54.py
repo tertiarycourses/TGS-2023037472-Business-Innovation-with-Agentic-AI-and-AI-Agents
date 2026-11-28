@@ -526,7 +526,8 @@ def padlet_teams(D, topic):
     from slides_bi import qr
     q, pts = B.PADLET_TALK[topic]
     s = D.new(); header(D, s, f"Topic {topic} · Activity {topic} · Team padlet · 15 min", "Join Your Team Padlet: Talk First, Then Build",
-                        f"You just saw Meridian fill each box. Talk for 15 minutes as a team of 3-5, then fill your own board.")   # v57: demo -> padlet -> activity
+                        ("You have seen Activity 1 and its BMC board. Talk for 15 minutes as a team of 3-5, then fill your own board." if topic == 1 else
+                         "You have seen Activity 2 and its plan board. Talk for 15 minutes as a team of 3-5, then fill your own board." if topic == 2 else "You just saw Meridian fill each box. Talk for 15 minutes as a team of 3-5, then fill your own board."))   # v59 (owner): T1 padlet follows the board intro   # v57: demo -> padlet -> activity
     g = 0.18; w = (12.1 - 4 * g) / 5; top = 2.3
     for i, (team, code) in enumerate(B.PADLET_TEAMS):
         x = 0.6 + i * (w + g); dk = i % 2 == 0

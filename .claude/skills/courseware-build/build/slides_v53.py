@@ -78,14 +78,14 @@ def poll(D, kicker, question, options, how="Raise 1, 2, 3 or 4 fingers, or type 
 
 LIVE_HOW = "Vote with the QR code on the next slide, or raise 1, 2, 3 or 4 fingers."
 
-def live_poll(D, topic, kicker, question):
+def live_poll(D, topic, kicker, question, code=None, label="Live poll", notes=None):
     """v58 (owner): the room poll runs live on alfredang.github.io/livepoll, laid out as the C34 Ghana join slide:
     question left, results button, room code; right, the app's lime room code over a QR that opens the vote."""
     import io, qrcode
-    code = B.LIVE_POLLS[topic]
+    code = code or B.LIVE_POLLS[topic]
     join, results = f"{B.LIVEPOLL_URL}?join={code}", f"{B.LIVEPOLL_URL}?results={code}"
     s = D.new(dark=True)
-    text(s, 0.65, 0.46, 7.0, 0.36, f"Topic {topic} · Live poll".upper(), 14, ACC, bold=True, autofit=False)
+    text(s, 0.65, 0.46, 7.0, 0.36, f"Topic {topic} · {label}".upper(), 14, ACC, bold=True, autofit=False)
     text(s, 0.65, 1.26, 7.0, 1.9, question, 32, WHITE, bold=True, font=SERIF, anchor="m", minpt=24, cw=0.52, lh=1.05)
     text(s, 0.69, 3.35, 6.7, 0.55, "Scan to vote. Open results to see the live tally.", 20, "E8E5DE", autofit=False)
     button(s, 0.71, 4.18, 3.05, 0.71, "Open the Poll Result", url=results, fill="E8E5DE", color=INK, size=20)
@@ -101,8 +101,23 @@ def live_poll(D, topic, kicker, question):
     s.notes_slide.notes_text_frame.text = (
         f"Live poll room {code} (always active, one question). Learners scan the QR or open {join}. Show the tally: {results}. "
         "Before each new class clear the old votes: python3 courseware/.claude/scripts/livepoll_rooms.py --reset (then --verify). "
-        "If the app is down, run the poll by show of hands from the previous slide.")
+        + (notes or "If the app is down, run the poll by show of hands from the previous slide."))
     return s
+
+RECAP = {
+    2: ("Which of the Five Steps Will Be Hardest in Your Company?",
+        "Options: 1 Set the goal, 2 Mine the process, 3 Plug in the agents, 4 Name the owner, 5 Run a 90-day pilot. "
+        "Show the tally, then ask the biggest group why. Link each answer back to its step: goal and baseline first (Step 1), "
+        "mine the real process (Step 2), test before you trust (Step 3), one DRI (Step 4), stop rule and day-90 review (Step 5)."),
+    3: ("Which SCALE Move Does Your Organisation Need Most?",
+        "Options: S Story, C Commanders, A Augment people, L Loop information, E Evaluate. "
+        "Show the tally, then ask two learners from different companies why. Recap each letter in one line, with Meridian's example."),
+}
+
+def recap_poll(D, topic):
+    """v59 (owner, 28 Nov 2026): a survey-style live poll replaces the clickable MCQ knowledge check of Topics 2 and 3."""
+    q, notes = RECAP[topic]
+    return live_poll(D, topic, f"Topic {topic} · Recap", q, code=B.LIVE_RECAP[topic], label="Recap poll", notes=" " + notes)
 
 def pains(D, kicker, title, stat, stat_label, items, sub=None, source=None, url=None, stat_note=None):
     """Pain points: one dark evidence panel on the left, the named pains on the right."""
@@ -381,7 +396,7 @@ def t1_functions(D):
         sub="Illustrative patterns, not vendor claims. Your pain-point hunt will find your own.",
         tipt="Look for work that is high-volume, rule-guided and easy to check: agents pay off there first.")
 
-# v58 (owner): the Topic 1 knowledge check was removed (Topic 1 follows the C34 Ghana flow); Topics 2 and 3 keep theirs.
+# v58 (owner): the Topic 1 knowledge check was removed (Topic 1 follows the C34 Ghana flow); v59: Topics 2 and 3 use recap live polls (recap_poll) instead.
 
 def t1_hunt(D):
     quote(D, "Point your first AI agent at the pain, not at the platform.", kicker="Topic 1 · Activity 1")   # v56: maxims about AI agents too

@@ -59,7 +59,7 @@ tbl(["Topic", "Meridian's plan for AI agents"], [
     ("1 · Discover", "Map the business model, score the agent ideas and pick one: a triage agent that reads every request and opens the ticket."),
     ("2 · Prove", "Pilot triage at 10 sites for 90 days: 18 to 11 minutes per request, SGD 39,000 in year 1, one owner and a stop rule."),
     ("3 · Transform", "The day-90 numbers say scale: roll out to all 30 sites, redesign roles, train staff, govern the agents and budget the tokens.")], [1.3, 5.4])
-p("The slides are interactive: the course map, the SCALE navigator and the Topic 2 and Topic 3 knowledge checks are clickable in slide-show mode. Each topic opens with a live poll: scan the QR code on the slide to vote at alfredang.github.io/livepoll (or raise your hand) and watch the tally move. Each topic also names the pain points companies hit before it teaches the method.")
+p("The slides are interactive: the course map and the SCALE navigator are clickable in slide-show mode. Each topic opens with a live poll, and Topics 2 and 3 close with a recap poll: scan the QR code on the slide to vote at alfredang.github.io/livepoll (or raise your hand) and watch the tally move. Each topic also names the pain points companies hit before it teaches the method.")
 note("Work on your own organisation. Never put personal data (NRIC, phone numbers, "
      "customer names) or confidential figures on a board: boards are shared by link.")
 note("SkillsFuture free AI subscription: Singapore Citizens aged 18+ who attend an eligible course (look for the official \u201cFree AI sub\u201d "
@@ -241,8 +241,10 @@ p("Meridian's filled Activity 1 board (read-only): https://alfredang.github.io/b
 img(os.path.join(IMG, "screenshots", "meridian-bmc.png"), "Meridian Services (fictitious): filled Activity 1 board in the Activity Studio", 5.2)
 
 h2("Activity 1 — Your Company's BMC in Groups of 3-5 (PP Task 1)")
+p("First meet the activity and its board: one shared nine-block Business Model Canvas per group, filled in five steps. The question each block answers is below.")
+X.append(("canvas", "opportunity", "board"))
 h3("Team Padlets: 15 Minutes of Talk Before Each Activity")
-p("Every topic runs in the same order: the trainer first shows how Meridian fills each box of the board, your team then talks for 15 minutes on its padlet, and only then do you fill your own board.")
+p("Every topic runs in the same order: the trainer shows how Meridian fills each box of the board and introduces the activity and its board; your team then talks for 15 minutes on its padlet, and only then do you fill your own board.")
 p("Each activity opens with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. "
   "Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. "
   "Post a screenshot of each finished board in the last column.")
@@ -253,7 +255,7 @@ bl(B.PAIN_HUNT["body"])
 prompt(B.PAIN_HUNT["prompt"])
 p("Check: " + B.PAIN_HUNT["check"])
 p("Stay in your padlet team of 3-5 and choose one member's company. The leader opens https://alfredang.github.io/bcm/?activity=opportunity, creates one Activity 1 board and names the group and company. Everyone joins using its Board ID or QR code and their own name. Create your company's nine-block BMC, showing where AI agents add value; use non-confidential facts and label assumptions. Use this same company for Activities 2 and 3.")
-X.append(("canvas", "opportunity"))
+X.append(("canvas", "opportunity", "steps"))
 
 # ------------------------------------------------------------------ Topic 2
 h1("Topic 2 — " + C.TOPICS[1]["title"])
@@ -365,7 +367,9 @@ img(os.path.join(IMG, "screenshots", "meridian-plan.png"), "Meridian Services (f
 
 h2("Activity 2 — AI Agent 90-Day Action Plan with Meta Muse (PP Task 2)")
 p("Form a group of 3–5 and choose one member’s company. Use a priority from Activity 1. Create one shared board and fill all nine boxes in order. Agree on the baseline, targets, guardrails and decision rubric. Each learner saves the group’s completed board and writes their individual PP answers.")
-X.append(("canvas", "actionplan"))
+X.append(("canvas", "actionplan", "board"))
+p("Team padlet (15 minutes, after this introduction): " + B.PADLET_TALK[2][0] + " " + " ".join(B.PADLET_TALK[2][1]) + " Then work through the eight tasks.")
+X.append(("canvas", "actionplan", "steps"))
 
 # ------------------------------------------------------------------ Topic 3
 h1("Topic 3 — " + C.TOPICS[2]["title"])
@@ -614,6 +618,11 @@ h1("Bonus Topic — Vibe Code Your AI Transformation Dashboard")
 p("Continue from Topic 3. Turn the numbers in your Activity 2 plan and the progress on your SCALE board into one live page your CEO opens every Monday. "
   "Vibe coding means you describe the dashboard in plain English and a coding agent (Codex in the ChatGPT desktop app, or Claude Code) writes the code. "
   "Checking every number is still your job. This project is self-paced, outside the contact hours and not assessed.")
+p("Proof that it works: on 31 Oct 2026 Andrej Karpathy, who coined “vibe coding”, wrote that he was fed up with YouTube’s recommendations and asked Claude Code (Opus 5.5 on medium effort) for his own. "
+  "In about two hours Claude went through the Hacker News comments from 2007 to 2026 (43 million, per his X post), kept the 40,000 that recommend a YouTube video, "
+  "and built and deployed HackerTube (hackertube.org): 6,454 videos across 150 topics. "
+  "His only manual work was an API key, a server and a domain name. Source: his blog post, karpathy.bearblog.dev/hacker-tube (31 Oct 2026). "
+  "Watch the 6:46 explainer: https://www.youtube.com/watch?v=TL0V9b2r2Q8 (Taelo Kim, 7 Nov 2026).")
 tbl(["Panel", "The CEO's question", "Where the numbers come from"], [
     ("Results vs targets", "Are we hitting targets?", "Activity 2: baseline, target and current value of each metric"),
     ("Trend", "Is it getting better?", "Weekly values of the main metric, with the target line"),
@@ -676,15 +685,16 @@ def md():
         elif k == "img": o += [f"*[Figure: {b[2]}]*", ""]
         elif k == "prompt": o += ["```text", b[1], "```", ""]
         elif k == "canvas":
-            cv, rows = canvas_rows(b[1]); L = lab_of(b[1])
-            o += [L["goal"], ""]
-            for i, st in enumerate(L["steps"]):
+            cv, rows = canvas_rows(b[1]); L = lab_of(b[1]); part = b[2] if len(b) > 2 else "all"   # v59: board before the padlet
+            if part in ("all", "board"):
+                o += [L["goal"], "", cv["pitch"], "", f"Board: {B.BCM_URL}?activity={cv['key']} · {cv['minutes']} min · {cv['evidence']}", "",
+                      "| Block | Question | Example (fictional sample company) |", "|---|---|---|"] + [f"| {a} | {q} | {e} |" for a, q, e in rows] + [""]
+            for i, st in (enumerate(L["steps"]) if part in ("all", "steps") else []):
                 o += [f"**{'Task' if L['n'] == 2 else 'Step'} {i + 1} — {st['title']}**", ""] + [f"- {x}" for x in st["body"]] + ([f"- {a}: {u}" for a, u in B.MUSE_LINKS] if st.get("links") == "MUSE" else []) + [""]
                 if step_prompt(L, st): o += ["```text", step_prompt(L, st), "```", ""]
                 if st.get("check"): o += [f"Check: {st['check']}", ""]
-            o += [cv["pitch"], "", f"Board: {B.BCM_URL}?activity={cv['key']} · {cv['minutes']} min · {cv['evidence']}", "",
-                  "Discuss: " + " ".join(cv["discuss"]), "", "| Block | Question | Example (fictional sample company) |", "|---|---|---|"]
-            o += [f"| {a} | {q} | {e} |" for a, q, e in rows] + [""]
+            if part == "all" or (part == "steps" and L["n"] == 1):
+                o += ["Discuss: " + " ".join(cv["discuss"]), ""]
     return "\n".join(o)
 open(os.path.join(REPO, f"LG-{C.SHORT_TITLE}.md"), "w", encoding="utf-8").write(md())
 
@@ -731,10 +741,12 @@ for b in X:
         pp = doc.add_paragraph(); r = pp.add_run(b[1]); r.font.name = "Consolas"; r.font.size = Pt(9.5)
         prodoc._shade_cell if False else None
     elif k == "canvas":
-        cv, rows = canvas_rows(b[1]); L = lab_of(b[1])
-        doc.add_paragraph(L["goal"])
-        doc.add_paragraph(f"Group board: {B.BCM_URL}?activity={cv['key']}  ·  {L['minutes']} min  ·  {cv['evidence']}  ·  current prompt templates: download activities/prompts.html from the LMS course materials")
-        for i, st in enumerate(L["steps"]):
+        cv, rows = canvas_rows(b[1]); L = lab_of(b[1]); part = b[2] if len(b) > 2 else "all"   # v59: board before the padlet
+        if part in ("all", "board"):
+            doc.add_paragraph(L["goal"])
+            doc.add_paragraph(f"Group board: {B.BCM_URL}?activity={cv['key']}  ·  {L['minutes']} min  ·  {cv['evidence']}  ·  current prompt templates: download activities/prompts.html from the LMS course materials")
+            table(["Block", "Question", "Example (fictional sample company)"], rows, [1.5, 2.2, 3.0])
+        for i, st in (enumerate(L["steps"]) if part in ("all", "steps") else []):
             hp = doc.add_paragraph(); hr = hp.add_run(f"{'Task' if L['n'] == 2 else 'Step'} {i + 1} — {st['title']}"); hr.bold = True
             for x in st["body"]: doc.add_paragraph(x, style="List Bullet")
             if st.get("links") == "MUSE":
@@ -743,9 +755,9 @@ for b in X:
                 pp = doc.add_paragraph(); rr = pp.add_run(step_prompt(L, st)); rr.font.name = "Consolas"; rr.font.size = Pt(9)
             if st.get("check"):
                 cr = doc.add_paragraph().add_run("Check: " + st["check"]); cr.italic = True
-        doc.add_paragraph("Discuss in your team:")
-        for q in cv["discuss"]: doc.add_paragraph(q, style="List Bullet")
-        table(["Block", "Question", "Example (fictional sample company)"], rows, [1.5, 2.2, 3.0])
+        if part == "all" or (part == "steps" and L["n"] == 1):
+            doc.add_paragraph("Discuss in your team:")
+            for q in cv["discuss"]: doc.add_paragraph(q, style="List Bullet")
 prodoc.add_page_numbers(doc); prodoc.enable_update_fields(doc)
 OUT = os.path.join(REPO, "courseware", f"LG-{C.SHORT_TITLE}.docx")
 doc.save(OUT); print("Saved", OUT)

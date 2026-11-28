@@ -333,14 +333,14 @@ SCHEDULE = {
   ('10:40', '11:00', 20, 'lab', 'Mini Activity - Try Meta Muse: connect your email, ask for your most important emails, then ask for a 15-second social media ad with an AI human avatar', 1),
   ('11:00', '11:15', 15, 'break', 'Tea break', 1),
   ('11:15', '12:10', 55, 'topic', 'Topic 1 (Part B) - Singapore and AgentSea; five ways humans and agents team up; use cases by function; nine-block BMC and the Meridian scenario; five capability gaps; value levers and opportunity scoring; Meridian demo: how to fill each BMC block; choose the first pilot', 1),
-  ('12:10', '12:40', 30, 'activity', 'Activity 1 (Part A) - overview; 15-min team padlet discussion (what AI agents can do); pain-point hunt on the padlet; the padlet team of 3-5 chooses one company, joins one board and drafts its BMC', 1),
+  ('12:10', '12:40', 30, 'activity', 'Activity 1 (Part A) - overview and the BMC board; 15-min team padlet discussion (what AI agents can do); pain-point hunt on the padlet; the padlet team of 3-5 chooses one company, joins one board and drafts its BMC', 1),
   ('12:40', '13:40', 60, 'lunch', 'Lunch break', 0),
   ('13:40', '14:30', 50, 'activity', 'Activity 1 (Part B) - verify and refine all nine BMC blocks, score opportunities and capture individual PP Task 1 evidence', 1),
   ('14:30', '14:55', 25, 'topic', 'Topic 2 (Part A) - room poll; pilot purgatory; Step 1 set the goal and baseline; Step 2 mine the process from dormant data and event logs', 2),
   ('14:55', '15:55', 60, 'topic', 'Topic 2 (Part B) - Step 3 plug in the agents: the decision layer and company map in plain English, business briefing, policies into permissions, patterns, build or buy', 2),
   ('15:55', '16:10', 15, 'break', 'Tea break', 2),
-  ('16:10', '17:10', 60, 'topic', 'Topic 2 (Part C) - test before you trust: test set, four checks, shadow to autonomy; Step 4 name the owner; Step 5 run and evaluate the pilot; knowledge check; Meridian demo: how to fill each plan box', 2),
-  ('17:10', '18:15', 65, 'activity', 'Activity 2 (Part A) - 15-min team padlet discussion (which action plan to focus on); the padlet team chooses a company, mine its process and write the company map the agent needs', 2),
+  ('16:10', '17:10', 60, 'topic', 'Topic 2 (Part C) - test before you trust: test set, four checks, shadow to autonomy; Step 4 name the owner; Step 5 run and evaluate the pilot; recap live poll; Meridian demo: how to fill each plan box', 2),
+  ('17:10', '18:15', 65, 'activity', 'Activity 2 (Part A) - activity introduction; 15-min team padlet discussion (which action plan to focus on); the padlet team chooses a company, mine its process and write the company map the agent needs', 2),
   ('18:15', '18:30', 15, 'recap', 'Day 1 recap, Q&A and PM digital attendance', 2),
  ],
  2: [
@@ -353,7 +353,7 @@ SCHEDULE = {
   ('13:00', '14:00', 60, 'lunch', 'Lunch break', 0),
   ('14:00', '14:10', 10, 'lab', 'AI Coaching Mini Activity - in pairs, coach a worried employee on the AI Coaching simulator, read the feedback, swap and debrief', 3),
   ('14:10', '14:35', 25, 'topic', 'Topic 3 (Part C) - AI training that builds ability; progressive change; buy-in (story, stakeholders, ADKAR); C-suite and managers lead by example', 3),
-  ('14:35', '15:05', 30, 'topic', 'Topic 3 (Part D) - L build AI into the workflow and processes; E evaluate and govern: policy stack, access, token cost drill, agent risks, six security principles; knowledge check; Meridian demo: how to fill each SCALE box', 3),
+  ('14:35', '15:05', 30, 'topic', 'Topic 3 (Part D) - L build AI into the workflow and processes; E evaluate and govern: policy stack, access, token cost drill, agent risks, six security principles; recap live poll; Meridian demo: how to fill each SCALE box', 3),
   ('15:05', '15:20', 15, 'break', 'Tea break', 3),
   ('15:20', '16:15', 55, 'activity', "Activity 3 (Part B) - 15-min team padlet discussion (org change, DRI, ontology); Muse drafts the change messages and the SCALE board; the group refines it and judges the decision (PP Task 3 evidence)", 3),
   ('16:15', '16:30', 15, 'assess', 'Course recap and Briefing for Assessment', 3),
@@ -412,6 +412,7 @@ PADLET_URL = "https://alfredang.github.io/padlet/?room="
 # Created by courseware/.claude/scripts/livepoll_rooms.py; --verify checks them, --reset clears the votes before a new class.
 LIVEPOLL_URL = "https://alfredang.github.io/livepoll/"
 LIVE_POLLS = {1: "469720", 2: "919649", 3: "299409"}
+LIVE_RECAP = {2: "572975", 3: "859069"}   # v59 (owner): recap polls replace the Topic 2/3 MCQ knowledge checks (livepoll_rooms.py keys 2r, 3r)
 PADLET_TEAMS = [("Catalyst", "W2GQC7"), ("Horizon", "XBMF8X"), ("Momentum", "5APT8X"), ("Pioneer", "JRSUDS"), ("Quantum", "B39XG6")]
 PADLET_TALK = {
     1: ("What business innovation can AI agents do for us?",

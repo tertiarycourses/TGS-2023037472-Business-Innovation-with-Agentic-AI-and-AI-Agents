@@ -135,7 +135,7 @@ doc.add_paragraph("Materials: one folder per activity under activities/ with a s
                   "email; never use another person's account.")
 
 H("Bonus Topic (self-paced, outside the contact hours)")
-doc.add_paragraph(f"Slides {rng('bonus', 'wrap')}: self-paced: vibe code an AI transformation dashboard from the Activity 2 plan and the SCALE board with a coding agent (Codex or Claude Code). The Meridian example is activities/meridian-ai-dashboard.html. Share with Sites after class.")
+doc.add_paragraph(f"Slides {rng('bonus', 'wrap')}: self-paced. Opens with Andrej Karpathy's HackerTube, built with Claude Code in about two hours (6:46 video). Then vibe code an AI transformation dashboard from the Activity 2 plan and the SCALE board with a coding agent (Codex or Claude Code). The Meridian example is activities/meridian-ai-dashboard.html. Share with Sites after class.")
 
 prodoc.add_page_numbers(doc); prodoc.enable_update_fields(doc)
 OUT = os.path.join(REPO, "courseware", f"LP-{C.SHORT_TITLE}.docx")

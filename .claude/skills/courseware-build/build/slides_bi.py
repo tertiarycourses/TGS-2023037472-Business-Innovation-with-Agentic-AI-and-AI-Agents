@@ -767,13 +767,17 @@ def topic1(D, C, mark):
         ("Scored, not guessed.", "Triage 80, reports 75, predictor 24: park it."),
         ("A human stays.", "Complaints, refunds and premium clients keep a person.")])
     N.t1_decision(D)
-    # --- Activity 1 Part A (v58 owner: the padlet sits inside Activity 1): overview, team padlet talk, pain-point hunt,
-    #     groups and tools, then steps 1-3 (Muse) on the group board
+    # --- Activity 1 Part A (v59 owner, 28 Nov 2026): introduce Activity 1 and the BMC board FIRST, then the team padlet
+    #     talk and the pain-point hunt on the padlet, then groups, tools, step 1 and Muse's draft on the group board
     mark("labs1")
     L1 = B.LAB[1]
+    c1 = B.CANVAS["opportunity"]
     lab_overview(D, L1)
+    board_steps(D, L1)
+    board(D, "Topic 1 · Activity 1 · Your board", c1, "Your Canvas: The Question Each Block Answers",
+          "Answer every block for your own organisation. Screenshot your group board for PP Task 1.", example=False)
     import slides_v54 as S6
-    S6.padlet_teams(D, 1)   # v56 (owner): 15-min team padlet talk, then Activity 1 as a group
+    S6.padlet_teams(D, 1)   # v56 (owner): 15-min team padlet talk; v59: after the board intro
     N.t1_hunt(D)
     icons(D, "Topic 1 · Activity 1", "Groups of 3-5: Build Your Company's BMC", [
         ("users", "Stay in your padlet team", "Your 3-5 teammates choose one member's company"),
@@ -784,14 +788,10 @@ def topic1(D, C, mark):
         tipt="Choose a company you know; use non-confidential facts. Each member keeps the board screenshot and writes PP answers individually.")
     activity_studio(D)   # v54: tools shown when groups first need them
     step_slide(D, L1, 0)
-    board_steps(D, L1)
     muse_board(D, "Topic 1 · Activity 1 · Step 3 · Meta Muse", c1)
-    # --- Activity 1 Part B: refine, score and capture the same board.
+    # --- Activity 1 Part B (after lunch): reopen the same group board; refine, score and capture it.
     mark("act1")
-    c1 = B.CANVAS["opportunity"]
     activity_intro(D, "Topic 1 · Activity 1", c1, C)
-    board(D, "Topic 1 · Activity 1 · Your board", c1, "Your Canvas: The Question Each Block Answers",
-          "Answer every block for your own organisation. Screenshot your group board for PP Task 1.", example=False)
     mark("t1end")   # v58 QA: the "Next · Topic 2" bridge belongs to no activity range
     big_statement(D, "Next · Topic 2 · Prove", "You found the opportunity.\nNow prove it works here.",
                   "Give the agent what it lacks, test it on real cases against a baseline, then write the 90-day plan the CEO will fund.")
@@ -1064,11 +1064,47 @@ DASH_PROMPT = (
     "Then list every number you used and where it came from, so I can check it."
 )
 
+KARPATHY_BLOG = "https://karpathy.bearblog.dev/hacker-tube/"
+KARPATHY_VIDEO = "https://www.youtube.com/watch?v=TL0V9b2r2Q8"   # Taelo Kim, "Andrej Karpathy Rebuilt YouTube in 2 Hours (Here's How)", 7 Nov 2026, 6:46
+
+def bonus_karpathy(D, KB):
+    """v59 (owner, 28 Nov 2026): Karpathy's HackerTube as the bonus's proof that vibe coding works. Facts from his
+    blog post 'HackerTube' (31 Oct 2026) and his X post: 43M HN comments, 40K that recommend a video, 6,454 videos,
+    150 topics, ~2 hours, Claude Code desktop app, Opus 5.5 on medium effort; his only manual work was an API key,
+    a server and a domain name."""
+    from pptx_online_video import add_online_video
+    s = D.new()
+    header(D, s, KB + " · Inspiration", "Karpathy Built His Own YouTube in Two Hours",
+           "Fed up with YouTube's feed, Andrej Karpathy, who coined “vibe coding”, asked Claude Code for a better one. It built HackerTube.")
+    card(s, 0.6, 2.3, 5.9, 3.85)
+    for i, (big, lab) in enumerate([("43M", "Hacker News comments, 2007-2026"), ("40K", "comments that recommend a video"),
+                                    ("6,454", "videos across 150 topics")]):
+        y = 2.48 + i * 0.78
+        text(s, 0.85, y, 1.85, 0.66, big, 30, ACC, bold=True, font=SERIF, autofit=False)
+        text(s, 2.75, y + 0.14, 3.6, 0.45, lab, 14, INK, minpt=11)
+    line(s, 0.85, 4.86, 6.25, 4.86, color=LIGHT)
+    rich(s, 0.85, 4.98, 5.45, 1.1, [[("About 2 hours.  ", dict(color=INK, bold=True, size=14, font=SERIF)),
+                                     ("Claude Code, Opus 5.5 on medium effort. His only manual work: an API key, a server and a domain name. "
+                                      "“I only talk to Claude and have it do everything.”", dict(color=MUTED, size=12.5))]])
+    add_online_video(s, KARPATHY_VIDEO, 6.8, 2.3, 5.9, 3.32, poster=asset("bonus", "hackertube-poster-play.jpg"),
+                     name="Andrej Karpathy Rebuilt YouTube in 2 Hours (Taelo Kim, YouTube)")
+    tip(D, s, "Your dashboard is the same pattern, smaller: you decide what it shows and approve it; the agent reads, builds and deploys.",
+        y=6.3, label="YOUR TURN")
+    links_row(s, [("Karpathy's post, 31 Oct 2026", KARPATHY_BLOG), ("hackertube.org", "https://hackertube.org/"),
+                  ("Video: Taelo Kim, 7 Nov 2026", KARPATHY_VIDEO)])
+    s.notes_slide.notes_text_frame.text = (
+        "Play the 6:46 video (needs internet; click the frame, or the Open in YouTube link). "
+        "Source of the numbers: Karpathy's blog post 'HackerTube', 31 Oct 2026 (karpathy.bearblog.dev/hacker-tube), and his X post. "
+        "Claude ran Sonnet over the comments in a Claude Code Workflow, removed spam, then built, deployed and hardened the site. "
+        "Ask: what is the YouTube in your job, the feed or report you put up with every week? That is your first dashboard.")
+    return s
+
 def bonus(D, C, mark):
     """v54 (owner): continue Topic 3 by vibe coding a dashboard that shows the AI transformation's progress."""
     KB = "Bonus · Vibe code the dashboard"
     mark("bonus")
     bonus_open(D)
+    bonus_karpathy(D, KB)   # v59 (owner): Karpathy's HackerTube + video, right after the opener
     icons(D, KB + " · Plan the panels", "Six Panels, Each One Answers a Question the CEO Asks", [
         ("gauge", "Are we hitting targets?", "Results vs baseline and target, from Activity 2"),
         ("trend", "Is it getting better?", "Weekly trend of the main metric"),
@@ -1237,7 +1273,7 @@ def topic2(D, C, mark):
     table(D, "Topic 2 · Step 5 · Evaluation rubric", "Use Meridian’s Scorecard to Decide What Happens Next",
           ["Decision", "Rule", "Meridian example"], B.PILOT_RUBRIC, colw=[1.65, 5.05, 5.4],
           sub="Review weekly. At day 90, evaluate handling time (18 to ≤11 min), complaints (≤2%) and the rework stop rule.")
-    N.quiz(D, 2, N.T2_QUIZ)   # v57 (owner): knowledge check first, then Meridian demo -> team padlet -> activity
+    N.recap_poll(D, 2)   # v59 (owner): a live recap poll replaces the MCQ knowledge check; then Meridian demo -> activity -> padlet
     # --- Meridian demo and Activity 2
     mark("t2scenario")
     c2 = B.CANVAS["actionplan"]
@@ -1254,10 +1290,10 @@ def topic2(D, C, mark):
           example_notes=B.MERIDIAN_PLAN_BOXES)
     mark("act2a")
     L2 = B.LAB[2]
-    import slides_v54 as S6
-    S6.padlet_teams(D, 2)
     activity_intro(D, "Topic 2 · Activity 2", c2, C)
     lab_overview(D, L2)
+    import slides_v54 as S6
+    S6.padlet_teams(D, 2)   # v59 (owner): the padlet talk follows the Activity 2 introduction
     for i in range(2): step_slide(D, L2, i)
     mark("act2b")
     step_slide(D, L2, 2)
@@ -1547,7 +1583,7 @@ def topic3(D, C, mark):
         ("10.7", "minutes per request", "from 18 · target ≤ 11"), ("95.1%", "quality", "target ≥ 94%"),
         ("1.7%", "complaints", "limit 2%"), ("77.5%", "staff adoption", "target ≥ 70%")],
         tipt="Example pilot: modelled benefit SGD 39,200 (at 60% realisation) vs year-1 cost SGD 39,000. Scale, redesign, hold or stop?")
-    N.quiz(D, 3, N.T3_QUIZ)   # v57 (owner): knowledge check first, then Meridian demo -> team padlet -> activity
+    N.recap_poll(D, 3)   # v59 (owner): a live recap poll replaces the MCQ knowledge check
     c4 = B.CANVAS["change"]
     ids4 = [b["id"] for b in c4["blocks"]]
     fill_demo(D, 3, c4, "SCALE box", B.MERIDIAN_SCALE_BOXES, [
