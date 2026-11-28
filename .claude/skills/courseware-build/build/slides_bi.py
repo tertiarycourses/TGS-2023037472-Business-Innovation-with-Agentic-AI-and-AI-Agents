@@ -1395,7 +1395,7 @@ def coach_demo(D, kicker):
     text(s, 0.8, 5.55, 3.6, 0.95, "Choose Demo mode and select a worried employee. Use fictional work details.", 11.5, SOFT, align="c", minpt=9)
     steps = [("Pick a person", "Sarah, David, Mei Ling, Arjun, Aisha or Farah: each fears an agent for a different reason."),
              ("Coach for 6 to 10 turns", "Hear the fear, explore strengths, co-create the new role, agree a small experiment."),
-             ("Get Coach Feedback", "A score out of 30 and three tips quoting your own words."),
+             ("Get Coach Feedback", "A score out of 30 and three tips. Then vote your score in the live poll."),
              ("Swap and debrief", "Partner takes the next person. Which line moved the employee?")]
     for i, (t_, d) in enumerate(steps):
         y = 2.5 + i * 1.03
@@ -1495,6 +1495,7 @@ def topic3(D, C, mark):
     S6.coach_profiles(D)   # v57 (owner): all six AI Coaching profiles, one page each; Sarah's page keeps the v54 worked example
     mark("coachmini")
     coach_demo(D, "Topic 3 · A · AI Coaching Mini Activity · 10 min · pairs")
+    N.coach_poll(D)   # v60 (owner): live poll of the coaching scores right after the mini activity
     # --- Part C: AI training, progressive change, buy-in, leaders by example
     mark("t3work")
     N.t3_training_ability(D)
@@ -1600,9 +1601,9 @@ def topic3(D, C, mark):
     mark("act3")
     L3 = B.LAB[3]
     import slides_v54 as S6
-    S6.padlet_teams(D, 3)
     activity_intro(D, "Topic 3 · Activity 3", c4, C)
     lab_overview(D, L3)
+    S6.padlet_teams(D, 3)   # v60 (owner): the padlet follows the activity introduction, as in Activities 1-2
     step_slide(D, L3, 1)
     board_steps(D, L3)
     muse_board(D, "Topic 3 · Activity 3 · Step 4 · Meta Muse", c4)

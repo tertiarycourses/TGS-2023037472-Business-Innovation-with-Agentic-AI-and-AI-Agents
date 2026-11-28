@@ -245,7 +245,7 @@ p("First meet the activity and its board: one shared nine-block Business Model C
 X.append(("canvas", "opportunity", "board"))
 h3("Team Padlets: 15 Minutes of Talk Before Each Activity")
 p("Every topic runs in the same order: the trainer shows how Meridian fills each box of the board and introduces the activity and its board; your team then talks for 15 minutes on its padlet, and only then do you fill your own board.")
-p("Each activity opens with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. "
+p("Each activity follows its introduction with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. "
   "Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. "
   "Post a screenshot of each finished board in the last column.")
 tbl(["Team", "Padlet code", "Link"], [("Team " + t, c, B.PADLET_URL + c) for t, c in B.PADLET_TEAMS], [1.4, 1.2, 4.0])
@@ -473,7 +473,7 @@ p("The AI Coaching simulator gives you six fictional employees. Each fears the a
 tbl(["Person", "Coaching tension", "The job they own now", "Safe experiment"],
     [(f"{x['name']}, {x['role']}", x["tension"], x["owns"], x["trial"]) for x in B.COACH_PROFILES], [1.3, 1.2, 2.1, 2.1])
 src("AI Coaching simulator, https://github.com/alfredang/AICoaching (six coaching scenarios); safe experiments are course suggestions.")
-p("In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.")
+p("In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then vote your score band in the live poll (room 672894: below 30%, 30-50%, 50-75%, above 75%) and swap. Debrief: which line made the employee feel heard? Use fictional work details only.")
 h2("A · AI Training That Builds Ability")
 p("Prosci reports that user proficiency is the largest AI adoption challenge (38% of those reported). One-off tool classes, e-learning completion targets, static policy decks and confidence surveys transfer knowledge only. Ability comes from practice on the person's own work, day-to-day coaching from their manager, teams judging real AI output together against named standards, and feedback on the output rather than self-rating. Make coaching visible: on one-to-one AI conversations, leaders rate themselves 3.55 of 5, while employees see 2.38.")
 src("Prosci, AI adoption challenges (Sep 2026): https://www.prosci.com/blog/ai-adoption-challenges-how-to-turn-adoption-into-business-value")
@@ -611,7 +611,9 @@ img(os.path.join(IMG, "screenshots", "meridian-scale.png"), "Meridian Services (
 
 h2("Activity 3 — Sustain and Operate with AI Agents (SCALE) with Meta Muse (PP Task 3)")
 p("Part A is the readiness diagnostic above. In Part B (55 minutes) form groups of 3–5 and continue with the same company and pilot. Join one shared board and fill every SCALE box with your own actions, owners and review measures. Add one AI-policy rule and a monthly token budget to Guardrails & Judgement, and name where each agent's playbook lives and its backup owner.")
-X.append(("canvas", "change"))
+X.append(("canvas", "change", "board"))
+p("Team padlet (15 minutes, after this introduction): " + B.PADLET_TALK[3][0] + " " + " ".join(B.PADLET_TALK[3][1]) + " Then work through the steps.")
+X.append(("canvas", "change", "steps"))   # v60 (owner): Activity 3 also introduces the board before the padlet
 
 # ------------------------------------------------------------------ v54 bonus topic (owner): vibe code an AI transformation dashboard
 h1("Bonus Topic — Vibe Code Your AI Transformation Dashboard")

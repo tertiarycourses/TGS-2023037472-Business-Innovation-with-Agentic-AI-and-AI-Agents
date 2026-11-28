@@ -120,7 +120,7 @@ for cv in B.CANVASES:
     assert sched == cv["minutes"], f"Activity {cv['num']}: canvas says {cv['minutes']} min, schedule gives {sched} min"
     lab_ = next(L for L in B.LABS if L["canvas"] == cv["key"])
     assert lab_["minutes"] == sched, f"Activity {cv['num']}: lab says {lab_['minutes']} min, schedule gives {sched} min"
-doc.add_paragraph("AI Coaching Mini Activity (10 min, Day 2): in pairs, learners coach a worried employee on the AI Coaching simulator (https://alfredang.github.io/AICoaching/), read its feedback, swap and debrief. It is practice for SCALE A (Augment people), not a PP activity.")
+doc.add_paragraph("AI Coaching Mini Activity (10 min, Day 2): in pairs, learners coach a worried employee on the AI Coaching simulator (https://alfredang.github.io/AICoaching/), read its feedback (a score out of 30), vote the score band in a live poll (below 30%, 30-50%, 50-75%, above 75%), swap and debrief. It is practice for SCALE A (Augment people), not a PP activity.")
 doc.add_paragraph("Mini Activity (20 min): right after the six always-on agents are introduced, learners try Meta Muse in three steps (connect email, ask for the most important emails, ask for a 15-second social media ad with an AI human avatar) using the first section of Activity 1 Instructions. It is separate from the three PP group-board activities. A current offline prompts.html is included in activities/.")
 H("Activities (one per learning outcome)")
 at = doc.add_table(rows=0, cols=5); at.style = "Table Grid"; head(at, ["Activity", "What learners do", "Group board", "Topic · LO", "Assessment evidence"])

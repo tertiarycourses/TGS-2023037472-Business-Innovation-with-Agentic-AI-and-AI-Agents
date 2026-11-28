@@ -1,6 +1,6 @@
 # Learner Guide — Business Innovation with Agentic AI and AI Agents
 
-**TGS-2023037472 · Version 59 · 28 November 2026 · Tertiary Infotech Academy Pte Ltd**
+**TGS-2023037472 · Version 60 · 28 November 2026 · Tertiary Infotech Academy Pte Ltd**
 
 # About This Course
 
@@ -394,7 +394,7 @@ Board: https://alfredang.github.io/bcm/?activity=opportunity · 80 min · PP Tas
 
 Every topic runs in the same order: the trainer shows how Meridian fills each box of the board and introduces the activity and its board; your team then talks for 15 minutes on its padlet, and only then do you fill your own board.
 
-Each activity opens with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. Post a screenshot of each finished board in the last column.
+Each activity follows its introduction with a 15-minute group discussion on your team padlet (alfredang.github.io/padlet). Join with your team code and your name. Each padlet has one column per topic with the questions pinned: post one idea per card and like the ones you agree with, then build the activity board together. Post a screenshot of each finished board in the last column.
 
 | Team | Padlet code | Link |
 |---|---|---|
@@ -997,7 +997,7 @@ The AI Coaching simulator gives you six fictional employees. Each fears the agen
 
 *Source: AI Coaching simulator, https://github.com/alfredang/AICoaching (six coaching scenarios); safe experiments are course suggestions.*
 
-In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then swap. Debrief: which line made the employee feel heard? Use fictional work details only.
+In class, in pairs: open https://alfredang.github.io/AICoaching/ (Demo mode) and pick a worried employee. Coach for 6 to 10 turns with the four moves (hear the fear, explore their reality, co-create the role, agree a safe experiment), read the score out of 30 and the three tips, then vote your score band in the live poll (room 672894: below 30%, 30-50%, 50-75%, above 75%) and swap. Debrief: which line made the employee feel heard? Use fictional work details only.
 
 ## A · AI Training That Builds Ability
 
@@ -1224,6 +1224,8 @@ Board: https://alfredang.github.io/bcm/?activity=change · 70 min · PP Task 3 �
 | L · Idea Pipeline | How do staff share and develop the next innovation? | Idea board: Any staff posts an idea; the agent clusters them weekly; Monthly pitch: Top 3 ideas pitched to leadership; winner gets a DRI and 30 days. |
 | E · Evaluate: Review Success | How will you judge whether the innovation worked? | Day-90 review: Handling time 10.7 min, quality 95.1%, complaints 1.7%, adoption 77.5%; Decision: Scale to all 30 sites with the same approval rules. |
 
+Team padlet (15 minutes, after this introduction): Org change, DRI and ontology: how do we drive AI transformation? What does your organisation look like with fewer layers and mixed teams of people and agents? Which outcome needs a DRI first, and which business rules must agents never get wrong (your ontology)? What will stall the change, and who must lead by example? Carry the answers into your SCALE board. Then work through the steps.
+
 **Step 1 — Score your AI readiness: six dimensions**
 
 - Open ai-readiness-scorecard.html from the Activity 3 folder (LMS download). Alone, 5 minutes: score your company on six dimensions, then copy the result.
@@ -1296,8 +1298,6 @@ Check: Your final decision is in your own words; you can name what changed it.
 **Step 7 — Capture your evidence**
 
 - Screenshot view, then Download PNG or PDF. Keep it for PP Task 3.
-
-Discuss: Which group hears about the change last today, and should hear first? Which manager role becomes a DRI, a coach or a translator? How will staff send you new ideas once the agents are live?
 
 # Bonus Topic — Vibe Code Your AI Transformation Dashboard
 

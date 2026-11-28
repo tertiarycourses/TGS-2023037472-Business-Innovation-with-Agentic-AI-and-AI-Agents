@@ -351,11 +351,11 @@ SCHEDULE = {
   ('12:05', '12:20', 15, 'activity', 'Activity 3 (Part A) - AI readiness diagnostic: score six dimensions, then share the shape with your group', 3),
   ('12:20', '13:00', 40, 'topic', 'Topic 3 (Part B) - SCALE: five moves that make the change stick; A job redesign around decisions; AI coaching with GROW and the six simulator profiles', 3),
   ('13:00', '14:00', 60, 'lunch', 'Lunch break', 0),
-  ('14:00', '14:10', 10, 'lab', 'AI Coaching Mini Activity - in pairs, coach a worried employee on the AI Coaching simulator, read the feedback, swap and debrief', 3),
+  ('14:00', '14:10', 10, 'lab', 'AI Coaching Mini Activity - in pairs, coach a worried employee on the AI Coaching simulator, read the feedback, swap and debrief; live poll of the coaching scores', 3),
   ('14:10', '14:35', 25, 'topic', 'Topic 3 (Part C) - AI training that builds ability; progressive change; buy-in (story, stakeholders, ADKAR); C-suite and managers lead by example', 3),
   ('14:35', '15:05', 30, 'topic', 'Topic 3 (Part D) - L build AI into the workflow and processes; E evaluate and govern: policy stack, access, token cost drill, agent risks, six security principles; recap live poll; Meridian demo: how to fill each SCALE box', 3),
   ('15:05', '15:20', 15, 'break', 'Tea break', 3),
-  ('15:20', '16:15', 55, 'activity', "Activity 3 (Part B) - 15-min team padlet discussion (org change, DRI, ontology); Muse drafts the change messages and the SCALE board; the group refines it and judges the decision (PP Task 3 evidence)", 3),
+  ('15:20', '16:15', 55, 'activity', "Activity 3 (Part B) - activity introduction; 15-min team padlet discussion (org change, DRI, ontology); Muse drafts the change messages and the SCALE board; the group refines it and judges the decision (PP Task 3 evidence)", 3),
   ('16:15', '16:30', 15, 'assess', 'Course recap and Briefing for Assessment', 3),
   ('16:30', '17:30', 60, 'assess', 'Written Assessment (WA-SAQ) - 1 hour, open book; TRAQOM survey and assessment attendance first', -1),
   ('17:30', '18:30', 60, 'assess', 'Practical Performance (PP) - 1 hour, open book; paste the group board screenshots; upload on the LMS or hand in a printed copy', -1),
@@ -412,7 +412,8 @@ PADLET_URL = "https://alfredang.github.io/padlet/?room="
 # Created by courseware/.claude/scripts/livepoll_rooms.py; --verify checks them, --reset clears the votes before a new class.
 LIVEPOLL_URL = "https://alfredang.github.io/livepoll/"
 LIVE_POLLS = {1: "469720", 2: "919649", 3: "299409"}
-LIVE_RECAP = {2: "572975", 3: "859069"}   # v59 (owner): recap polls replace the Topic 2/3 MCQ knowledge checks (livepoll_rooms.py keys 2r, 3r)
+LIVE_RECAP = {2: "572975", 3: "859069"}
+LIVE_COACH = "672894"   # v60 (owner): AI Coaching score poll after the mini activity (livepoll_rooms.py key 3c)   # v59 (owner): recap polls replace the Topic 2/3 MCQ knowledge checks (livepoll_rooms.py keys 2r, 3r)
 PADLET_TEAMS = [("Catalyst", "W2GQC7"), ("Horizon", "XBMF8X"), ("Momentum", "5APT8X"), ("Pioneer", "JRSUDS"), ("Quantum", "B39XG6")]
 PADLET_TALK = {
     1: ("What business innovation can AI agents do for us?",

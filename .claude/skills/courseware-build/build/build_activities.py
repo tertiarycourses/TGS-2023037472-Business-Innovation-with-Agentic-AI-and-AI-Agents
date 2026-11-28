@@ -54,7 +54,7 @@ def lab_html(L):
             if step.get("links") == "MUSE": h.append(qr_html(B.MUSE_LINKS))
             h.append(f'<pre>{blanks(step["prompt"])}</pre><p><b>Check:</b> {e(step["check"])}</p></div>')
         h.append('<h2>At the end of Topic 1: Activity 1 — Your Company BMC (80 min)</h2>')
-    lead = "Start here, after the Meridian demo, the Activity 1 overview and the BMC board" if L["n"] == 1 else "Start here, after the Meridian demo and the Activity 2 introduction" if L["n"] == 2 else "Start here, right after the trainer’s Meridian demo"
+    lead = "Start here, after the Meridian demo, the Activity 1 overview and the BMC board" if L["n"] == 1 else "Start here, after the Meridian demo and the Activity 2 introduction" if L["n"] == 2 else "Start here, after the Meridian demo and the Activity 3 introduction"
     h.append(f'<div class="note"><b>{lead}: team padlet discussion (15 min, as a group).</b> {e(q)} Join your team padlet at '
              '<b>alfredang.github.io/padlet</b> with your team code and your name, post one idea per card in this topic\'s column, then build the activity board together.<ol>'
              + ''.join(f'<li>{e(x)}</li>' for x in pts) + '</ol>'

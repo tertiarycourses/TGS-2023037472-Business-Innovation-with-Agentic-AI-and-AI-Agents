@@ -78,7 +78,7 @@ def poll(D, kicker, question, options, how="Raise 1, 2, 3 or 4 fingers, or type 
 
 LIVE_HOW = "Vote with the QR code on the next slide, or raise 1, 2, 3 or 4 fingers."
 
-def live_poll(D, topic, kicker, question, code=None, label="Live poll", notes=None):
+def live_poll(D, topic, kicker, question, code=None, label="Live poll", notes=None, bands=None):
     """v58 (owner): the room poll runs live on alfredang.github.io/livepoll, laid out as the C34 Ghana join slide:
     question left, results button, room code; right, the app's lime room code over a QR that opens the vote."""
     import io, qrcode
@@ -90,6 +90,14 @@ def live_poll(D, topic, kicker, question, code=None, label="Live poll", notes=No
     text(s, 0.69, 3.35, 6.7, 0.55, "Scan to vote. Open results to see the live tally.", 20, "E8E5DE", autofit=False)
     button(s, 0.71, 4.18, 3.05, 0.71, "Open the Poll Result", url=results, fill="E8E5DE", color=INK, size=20)
     text(s, 0.69, 5.04, 6.7, 0.45, f"If prompted, enter {code}.", 17, "C9C4B9", autofit=False)
+    if bands:   # v60: answer bands shown on the slide (e.g. score out of 30 -> percentage band)
+        text(s, 0.69, 5.62, 7.2, 0.35, bands[0], 13, ACC, bold=True, autofit=False)
+        g = 0.12; w = (7.2 - 3 * g) / 4
+        for i, (a, b) in enumerate(bands[1]):
+            x = 0.69 + i * (w + g)
+            card(s, x, 6.0, w, 0.62, fill="3A3935", shadow=False)
+            text(s, x, 6.02, w, 0.32, a, 14, WHITE, bold=True, align="c", autofit=False)
+            text(s, x, 6.3, w, 0.28, b, 11, "C9C4B9", align="c", autofit=False)
     text(s, 8.16, 1.15, 4.4, 0.4, "SCAN TO VOTE", 16, WHITE, bold=True, align="c", autofit=False)
     card(s, 8.16, 1.84, 4.4, 3.2, fill="0E0E0C", shadow=False)
     text(s, 8.16, 1.95, 4.4, 1.05, code, 58, "C8F06A", bold=True, font=SERIF, align="c", anchor="m", autofit=False)
@@ -113,6 +121,17 @@ RECAP = {
         "Options: S Story, C Commanders, A Augment people, L Loop information, E Evaluate. "
         "Show the tally, then ask two learners from different companies why. Recap each letter in one line, with Meridian's example."),
 }
+
+COACH_POLL_NOTES = (" Options: below 30% (0-8 of 30), 30-50% (9-15), 50-75% (16-22), above 75% (23-30). Each learner votes the OVERALL score "
+    "from Coach Feedback. Show the tally, then ask one high scorer which line made the employee feel heard, and one low scorer what they would "
+    "say first next time. Most first attempts land in the middle: the score rises once people listen before they propose.")
+
+def coach_poll(D):
+    """v60 (owner, 28 Nov 2026): after the AI Coaching mini activity, a live poll of the score bands (simulator scores out of 30)."""
+    return live_poll(D, 3, "Topic 3 · AI Coaching", "What Did You Score on the AI Coaching Simulator?", code=B.LIVE_COACH,
+                     label="AI Coaching poll", notes=COACH_POLL_NOTES,
+                     bands=("YOUR OVERALL SCORE OUT OF 30 → VOTE THIS BAND", [("Below 30%", "0-8 of 30"), ("30-50%", "9-15 of 30"),
+                                                                          ("50-75%", "16-22 of 30"), ("Above 75%", "23-30 of 30")]))
 
 def recap_poll(D, topic):
     """v59 (owner, 28 Nov 2026): a survey-style live poll replaces the clickable MCQ knowledge check of Topics 2 and 3."""

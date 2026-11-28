@@ -27,7 +27,7 @@ A hands-on WSQ course built on the Business Model Canvas, a five-step 90-day act
 | Current Meta Muse prompt templates | Download [activities/prompts.html](activities/prompts.html) from the course materials and open it in a browser |
 | Meridian demo boards (read-only) | [Activity 1](https://alfredang.github.io/bcm/?join=meridian-activity-1) · [Activity 2](https://alfredang.github.io/bcm/?join=meridian-activity-2) · [Activity 3](https://alfredang.github.io/bcm/?join=meridian-activity-3): a finished board for the fictitious Meridian Services |
 | AI Coaching simulator (Topic 3 demo) | [alfredang.github.io/AICoaching](https://alfredang.github.io/AICoaching/): practise coaching a worried employee; demo mode or your own OpenAI / MiniMax / Anthropic (Claude Haiku 5.5) key |
-| Courseware version | v59 · 28 November 2026 · 242 slides |
+| Courseware version | v60 · 28 November 2026 · 243 slides |
 
 ## About the course
 
@@ -62,7 +62,7 @@ The 20-minute Meta Muse mini activity follows the six always-on agents (connect 
 | 2 | **AI Agent 90-Day Action Plan** | Topic 2 · LO2 | [Instructions PDF](<activities/activity-02-ai-agent-90-day-action-plan/ACTIVITY-02-Instructions.pdf>) · [Open board](https://alfredang.github.io/bcm/?activity=actionplan) | PP Task 2 · screenshot of your action plan board |
 | 3 | **Sustain and Operate with AI Agents (SCALE)** | Topic 3 · LO3 | [Instructions PDF](<activities/activity-03-sustain-and-operate-with-ai-agents-scale/ACTIVITY-03-Instructions.pdf>) · [Open board](https://alfredang.github.io/bcm/?activity=change) | PP Task 3 · screenshot of your SCALE board |
 
-- **Live polls** (one per topic; scan the QR on the slide or join with the room code): [Topic 1 · 469720](https://alfredang.github.io/livepoll/?join=469720) · [Topic 2 · 919649](https://alfredang.github.io/livepoll/?join=919649) · [Topic 3 · 299409](https://alfredang.github.io/livepoll/?join=299409); recap polls: [Topic 2 · 572975](https://alfredang.github.io/livepoll/?join=572975) · [Topic 3 · 859069](https://alfredang.github.io/livepoll/?join=859069)
+- **Live polls** (one per topic; scan the QR on the slide or join with the room code): [Topic 1 · 469720](https://alfredang.github.io/livepoll/?join=469720) · [Topic 2 · 919649](https://alfredang.github.io/livepoll/?join=919649) · [Topic 3 · 299409](https://alfredang.github.io/livepoll/?join=299409); recap polls: [Topic 2 · 572975](https://alfredang.github.io/livepoll/?join=572975) · [Topic 3 · 859069](https://alfredang.github.io/livepoll/?join=859069); AI Coaching score poll: [672894](https://alfredang.github.io/livepoll/?join=672894)
 - **Activity Studio** (live boards, no login: create a board, everyone joins by QR code or Board ID): https://alfredang.github.io/bcm/
 - **Team padlets** (a 15-minute group discussion in each activity, after the activity and its board are introduced; join with your team code and your name): [Catalyst W2GQC7](https://alfredang.github.io/padlet/?room=W2GQC7) · [Horizon XBMF8X](https://alfredang.github.io/padlet/?room=XBMF8X) · [Momentum 5APT8X](https://alfredang.github.io/padlet/?room=5APT8X) · [Pioneer JRSUDS](https://alfredang.github.io/padlet/?room=JRSUDS) · [Quantum B39XG6](https://alfredang.github.io/padlet/?room=B39XG6)
 - **Current Meta Muse prompt templates**: download [activities/prompts.html](activities/prompts.html), open it in a browser, fill the blanks and copy into Muse. The public website may contain an earlier revision.
@@ -73,7 +73,7 @@ The 20-minute Meta Muse mini activity follows the six always-on agents (connect 
 
 | File | What it is |
 |---|---|
-| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v59.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v59.pdf>) | Trainer slides |
+| [Slide deck (.pptx)](<courseware/Business Innovation with Agentic AI and AI Agents-v60.pptx>) · [PDF](<courseware/Business Innovation with Agentic AI and AI Agents-v60.pdf>) | Trainer slides |
 | [Lesson Plan (.docx)](<courseware/LP-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LP-Business Innovation with Agentic AI and AI Agents.pdf>) | Day-by-day schedule mapped to the learning units |
 | [Learner Guide (.docx)](<courseware/LG-Business Innovation with Agentic AI and AI Agents.docx>) · [PDF](<courseware/LG-Business Innovation with Agentic AI and AI Agents.pdf>) · [Markdown](<LG-Business Innovation with Agentic AI and AI Agents.md>) | Concepts, frameworks, step-by-step activities |
 | [activities/](activities/) | One folder per activity with its Instructions PDF |

@@ -77,4 +77,7 @@ V58 = ("58", "28 November 2026",
 V59 = ("59", "28 November 2026",
        "Activities 1-2 introduced before the team padlet; live recap polls replace the Topic 2-3 knowledge checks; bonus opens with Karpathy's HackerTube (Claude Code, two hours) and a video.",
        "Dr. Alfred Ang")
-ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54, V55, V56, V57, V58, V59]
+V60 = ("60", "28 November 2026",
+       "Live poll of the AI Coaching scores after the mini activity; Activity 3 introduced before the team padlet, as in Activities 1-2.",
+       "Dr. Alfred Ang")
+ALL = PRIOR + [V41, V42, V43, V44, V45, V46, V47, V48, V49, V50, V51, V52, V53, V54, V55, V56, V57, V58, V59, V60]
